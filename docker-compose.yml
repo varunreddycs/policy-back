@@ -1,0 +1,70 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: policy-platform-postgres
+    environment:
+      POSTGRES_USER: policy
+      POSTGRES_PASSWORD: policy
+      POSTGRES_DB: policy_platform
+    ports:
+      - "5433:5432"
+    volumes:
+      - policy_platform_pgdata:/var/lib/postgresql/data
+
+  azurite:
+    image: mcr.microsoft.com/azure-storage/azurite:3.33.0
+    container_name: policy-platform-azurite
+    command: >-
+      azurite
+      --blobHost 0.0.0.0 --blobPort 10000
+      --queueHost 0.0.0.0 --queuePort 10001
+      --tableHost 0.0.0.0 --tablePort 10002
+      --location /data
+      --skipApiVersionCheck
+      --silent
+    ports:
+      - "10000:10000"
+      - "10001:10001"
+      - "10002:10002"
+    volumes:
+      - policy_platform_azurite:/data
+
+  api:
+    build: .
+    container_name: policy-platform-api
+    env_file:
+      - .env
+    environment:
+      # Containers must talk to Postgres over the docker network.
+      DATABASE_URL: postgresql+psycopg://policy:policy@postgres:5432/policy_platform
+      # Containers must talk to Azurite over the docker network...
+      AZURE_STORAGE_BLOB_ACCOUNT_URL_INTERNAL: http://azurite:10000/devstoreaccount1
+      AZURE_STORAGE_QUEUE_ACCOUNT_URL_INTERNAL: http://azurite:10001/devstoreaccount1
+      # ...but the API should still generate host-accessible SAS URLs.
+      AZURE_STORAGE_ACCOUNT_URL: http://127.0.0.1:10000/devstoreaccount1
+      AZURE_STORAGE_QUEUE_ACCOUNT_URL: http://127.0.0.1:10001/devstoreaccount1
+    ports:
+      - "8000:8000"
+    depends_on:
+      - postgres
+      - azurite
+
+  worker:
+    build: .
+    container_name: policy-platform-worker
+    command: ["python", "-m", "worker.policy_processor"]
+    env_file:
+      - .env
+    environment:
+      DATABASE_URL: postgresql+psycopg://policy:policy@postgres:5432/policy_platform
+      AZURE_STORAGE_BLOB_ACCOUNT_URL_INTERNAL: http://azurite:10000/devstoreaccount1
+      AZURE_STORAGE_QUEUE_ACCOUNT_URL_INTERNAL: http://azurite:10001/devstoreaccount1
+      AZURE_STORAGE_ACCOUNT_URL: http://127.0.0.1:10000/devstoreaccount1
+      AZURE_STORAGE_QUEUE_ACCOUNT_URL: http://127.0.0.1:10001/devstoreaccount1
+    depends_on:
+      - postgres
+      - azurite
+
+volumes:
+  policy_platform_pgdata:
+  policy_platform_azurite:

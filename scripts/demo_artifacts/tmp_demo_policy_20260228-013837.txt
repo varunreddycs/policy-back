@@ -1,0 +1,13 @@
+﻿HIPAA Privacy Rule (Demo) (v1)
+
+RunId: 20260228-013837
+
+1. Purpose
+This is a demo policy used to exercise the pipeline.
+
+2. Scope
+Applies to all staff handling PHI.
+
+3. Controls
+- Access logging
+- Minimum necessary use

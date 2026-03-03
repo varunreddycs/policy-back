@@ -1,0 +1,119 @@
+{
+  "tenant_id": "00000000-0000-0000-0000-000000000001",
+
+  "create_batch": {
+    "tenant_id": "00000000-0000-0000-0000-000000000001",
+    "source_system": "manual_upload",
+    "correlation_id": "policyDocs-seed"
+  },
+
+  "upload_url_requests": [
+    {
+      "local_filename": "Claims_and_Appeals_Policy_v1.docx",
+      "body": {
+        "container_name": "policy-raw",
+        "blob_path": "policies/demo/Claims_and_Appeals_Policy_v1.docx",
+        "content_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+      }
+    },
+    {
+      "local_filename": "Claims_and_Appeals_Policy_v2.docx",
+      "body": {
+        "container_name": "policy-raw",
+        "blob_path": "policies/demo/Claims_and_Appeals_Policy_v2.docx",
+        "content_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+      }
+    },
+    {
+      "local_filename": "HIPAA_Data_Handling_Policy_v1.pdf",
+      "body": {
+        "container_name": "policy-raw",
+        "blob_path": "policies/demo/HIPAA_Data_Handling_Policy_v1.pdf",
+        "content_type": "application/pdf"
+      }
+    },
+    {
+      "local_filename": "Prior_Authorization_Quick_Policy.txt",
+      "body": {
+        "container_name": "policy-raw",
+        "blob_path": "policies/demo/Prior_Authorization_Quick_Policy.txt",
+        "content_type": "text/plain"
+      }
+    }
+  ],
+
+  "register_requests": [
+    {
+      "body": {
+        "container_name": "policy-raw",
+        "blob_path": "policies/demo/Claims_and_Appeals_Policy_v1.docx",
+        "policy_external_id": "CLAIMS_APPEALS",
+        "policy_name": "Claims & Appeals Policy",
+        "version_label": "v1",
+        "effective_date": "2026-01-01",
+        "title": "Claims & Appeals Policy",
+        "metadata": {
+          "policy_type": "claims",
+          "department": "claims_ops",
+          "owner_email": "claims.ops@poc-health.org",
+          "sensitivity": "PHI"
+        },
+        "correlation_id": "policyDocs-claims-v1"
+      }
+    },
+    {
+      "body": {
+        "container_name": "policy-raw",
+        "blob_path": "policies/demo/Claims_and_Appeals_Policy_v2.docx",
+        "policy_external_id": "CLAIMS_APPEALS",
+        "policy_name": "Claims & Appeals Policy",
+        "version_label": "v2",
+        "effective_date": "2026-02-15",
+        "title": "Claims & Appeals Policy",
+        "metadata": {
+          "policy_type": "claims",
+          "department": "claims_ops",
+          "owner_email": "claims.ops@poc-health.org",
+          "sensitivity": "PHI"
+        },
+        "correlation_id": "policyDocs-claims-v2"
+      }
+    },
+    {
+      "body": {
+        "container_name": "policy-raw",
+        "blob_path": "policies/demo/HIPAA_Data_Handling_Policy_v1.pdf",
+        "policy_external_id": "HIPAA_DATA_HANDLING",
+        "policy_name": "HIPAA Data Handling Policy",
+        "version_label": "v1",
+        "effective_date": "2026-01-10",
+        "title": "HIPAA Data Handling Policy",
+        "metadata": {
+          "policy_type": "hipaa",
+          "department": "privacy_office",
+          "owner_email": "privacy.office@poc-health.org",
+          "sensitivity": "PHI"
+        },
+        "correlation_id": "policyDocs-hipaa-v1"
+      }
+    },
+    {
+      "body": {
+        "container_name": "policy-raw",
+        "blob_path": "policies/demo/Prior_Authorization_Quick_Policy.txt",
+        "policy_external_id": "PRIOR_AUTH_QUICK",
+        "policy_name": "Prior Authorization Quick Policy",
+        "version_label": "v1",
+        "effective_date": "2026-02-01",
+        "title": "Prior Authorization Quick Policy",
+        "metadata": {
+          "policy_type": "utilization_management",
+          "department": "util_mgmt",
+          "owner_email": "utilization.mgmt@poc-health.org",
+          "sensitivity": "PHI"
+        },
+        "correlation_id": "policyDocs-prior-auth-v1"
+      }
+    }
+  ]
+}

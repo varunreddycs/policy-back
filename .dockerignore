@@ -1,0 +1,17 @@
+.venv/
+__pycache__/
+**/__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.sqlite
+*.log
+.mypy_cache/
+.pytest_cache/
+.vscode/
+
+# local demo artifacts
+__azurite_db_blob__.json
+__azurite_db_blob_extent__.json
+scripts/tmp_demo_policy_*.txt
+scripts/demo_artifacts/

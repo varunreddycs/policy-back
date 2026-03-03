@@ -1,0 +1,16 @@
+{
+  "container_name": "policy-raw",
+  "blob_path": "policies/demo/Prior_Authorization_Quick_Policy.txt",
+  "policy_external_id": "PRIOR_AUTH_QUICK",
+  "policy_name": "Prior Authorization Quick Policy",
+  "version_label": "v1",
+  "effective_date": "2026-02-01",
+  "title": "Prior Authorization Quick Policy",
+  "metadata": {
+    "policy_type": "utilization_management",
+    "department": "util_mgmt",
+    "owner_email": "utilization.mgmt@poc-health.org",
+    "sensitivity": "PHI"
+  },
+  "correlation_id": "policyDocs-register-only"
+}

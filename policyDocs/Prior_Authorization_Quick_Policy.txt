@@ -1,0 +1,13 @@
+POC Health — Prior Authorization Quick Policy
+Effective Date: 2026-02-01
+Owner: utilization.mgmt@poc-health.org
+
+1. Requests
+Submit prior auth via portal with clinical notes.
+
+2. Timelines
+Standard: decision within 5 business days.
+Expedited: decision within 72 hours.
+
+3. Documentation
+All decisions must cite clinical criteria used.
