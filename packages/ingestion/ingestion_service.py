@@ -238,9 +238,19 @@ class IngestionService:
         if not policy_name or not policy_name.strip():
             raise ValueError("policy_name must be non-empty")
 
+        # Normalize source URL keys so downstream retrieval can consistently expose public_url.
+        normalized_metadata = dict(metadata or {})
+        source_url = (
+            normalized_metadata.get("source_url")
+            or normalized_metadata.get("public_url")
+            or normalized_metadata.get("url")
+        )
+        if source_url:
+            normalized_metadata["source_url"] = str(source_url)
+
         blob_bytes = self._blob_service.download_blob_bytes(container_name, blob_path)
         content_hash = sha256_hex(blob_bytes)
-        metadata_hash = metadata_sha256(metadata)
+        metadata_hash = metadata_sha256(normalized_metadata)
 
         with self._session.begin():
             batch = self._batches.get(batch_id)
@@ -270,15 +280,15 @@ class IngestionService:
 
             # Phase 2: persist stable policy metadata onto the policy row so retrieval filters work.
             # Keep this conservative: only set fields when metadata provides a value.
-            policy_type = metadata.get("policy_type") or metadata.get("type")
+            policy_type = normalized_metadata.get("policy_type") or normalized_metadata.get("type")
             if policy_type and not getattr(policy, "policy_type", None):
                 policy.policy_type = str(policy_type)
 
-            department_scope = metadata.get("department_scope") or metadata.get("department")
+            department_scope = normalized_metadata.get("department_scope") or normalized_metadata.get("department")
             if department_scope and (getattr(policy, "department_scope", None) in (None, "", "all")):
                 policy.department_scope = str(department_scope)
 
-            authority_level = metadata.get("authority_level")
+            authority_level = normalized_metadata.get("authority_level")
             if authority_level is not None:
                 try:
                     authority_level_int = int(authority_level)
@@ -330,7 +340,7 @@ class IngestionService:
                 content_type=content_type,
                 content_length=content_length,
                 content_sha256=content_hash,
-                metadata_json=metadata,
+                metadata_json=normalized_metadata,
                 metadata_sha256=metadata_hash,
                 ingest_batch_id=batch.id,
                 parse_status="pending",
@@ -351,7 +361,7 @@ class IngestionService:
                 content_type=content_type,
                 content_length=content_length,
                 content_sha256=content_hash,
-                metadata_json=metadata,
+                metadata_json=normalized_metadata,
                 metadata_sha256=metadata_hash,
                 correlation_id=correlation_id,
                 status="received",

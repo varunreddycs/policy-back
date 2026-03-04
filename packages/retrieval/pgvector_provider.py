@@ -71,6 +71,7 @@ class PgVectorRetriever(IVectorRetriever):
 			f"""
 			SELECT
 				p.id AS policy_id,
+				p.name AS policy_name,
 				pv.id AS policy_version_id,
 				ps.id AS section_id,
 				ps.text AS section_text,
@@ -79,6 +80,11 @@ class PgVectorRetriever(IVectorRetriever):
 				ps.section_index AS section_index,
 				pv.is_current AS is_current,
 				pv.effective_date AS effective_date,
+				COALESCE(
+					pv.metadata_json->>'source_url',
+					pv.metadata_json->>'public_url',
+					pv.metadata_json->>'url'
+				) AS public_url,
 				COALESCE(pe.authority_level, p.authority_level, 0) AS authority_level,
 				COALESCE(pe.department_scope, p.department_scope, 'all') AS department_scope,
 				COALESCE(pe.policy_type, p.policy_type) AS policy_type,
@@ -109,6 +115,8 @@ class PgVectorRetriever(IVectorRetriever):
 					metadata={
 						"section_path": row.section_path,
 						"title": row.section_title,
+						"policy_name": row.policy_name,
+						"public_url": row.public_url,
 						"section_index": int(row.section_index or 0),
 						"retriever": "pgvector",
 						"is_current": bool(row.is_current),

@@ -1,5 +1,5 @@
 import { apiRequest } from "./client";
-import type { AskRequest, AskResponse } from "./types";
+import type { AskRequest, AskResponse, PolicySectionDetailResponse } from "./types";
 
 export const policyApi = {
   ask(request: AskRequest) {
@@ -7,6 +7,13 @@ export const policyApi = {
       method: "POST",
       body: JSON.stringify(request)
     });
+  },
+
+  getPolicySection(sectionId: string, tenantId: string) {
+    const params = new URLSearchParams({ tenant_id: tenantId });
+    return apiRequest<PolicySectionDetailResponse>(
+      `/v1/policy-sections/${encodeURIComponent(sectionId)}?${params.toString()}`
+    );
   },
 
   getAudit(auditId: string, tenantId: string) {

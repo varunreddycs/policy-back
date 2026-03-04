@@ -5,13 +5,14 @@ import AnswerCard from "./AnswerCard";
 
 interface AnswerStreamProps {
   answers: AskResponse[];
+  tenantId: string;
   department: string;
   onCopy: (value: string, label: string) => void;
   onOpenAudit: (auditId: string) => void;
   onOpenEvidence: () => void;
 }
 
-export default function AnswerStream({ answers, department, onCopy, onOpenAudit, onOpenEvidence }: AnswerStreamProps) {
+export default function AnswerStream({ answers, tenantId, department, onCopy, onOpenAudit, onOpenEvidence }: AnswerStreamProps) {
   if (!answers.length) {
     return (
       <Box
@@ -41,6 +42,7 @@ export default function AnswerStream({ answers, department, onCopy, onOpenAudit,
         <AnswerCard
           key={`${answer.audit_id}-${answer.created_at}`}
           answer={answer}
+          tenantId={tenantId}
           department={department}
           onCopy={onCopy}
           onOpenAudit={onOpenAudit}

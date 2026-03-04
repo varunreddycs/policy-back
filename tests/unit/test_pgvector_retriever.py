@@ -33,6 +33,7 @@ def test_pgvector_retriever_returns_correct_section_for_deadline_query() -> None
     rows = [
         SimpleNamespace(
             policy_id=policy_id,
+            policy_name="Appeals Policy",
             policy_version_id=policy_version_id,
             section_id=section_id,
             section_text="Members may file an appeal within 90 days of notice.",
@@ -44,6 +45,7 @@ def test_pgvector_retriever_returns_correct_section_for_deadline_query() -> None
             authority_level=80,
             department_scope="all",
             policy_type="claims",
+            public_url="https://example.org/policies/appeals",
             distance=0.12,
         )
     ]
@@ -58,3 +60,5 @@ def test_pgvector_retriever_returns_correct_section_for_deadline_query() -> None
     assert "within 90 days" in candidates[0].text
     assert candidates[0].source == "pgvector"
     assert candidates[0].metadata["department_scope"] == "all"
+    assert candidates[0].metadata["policy_name"] == "Appeals Policy"
+    assert candidates[0].metadata["public_url"] == "https://example.org/policies/appeals"

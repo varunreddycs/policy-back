@@ -115,6 +115,7 @@ export default function ConsolePage() {
 
             <AnswerStream
               answers={answers}
+              tenantId={TENANT_ID}
               department={department || "unknown"}
               onCopy={handleCopy}
               onOpenAudit={(auditId) => navigate(`/audit?id=${encodeURIComponent(auditId)}`)}

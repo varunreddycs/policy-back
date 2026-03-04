@@ -63,9 +63,15 @@ class PgsqlFtsRetriever(IVectorRetriever):
 
 		def _build_stmt(tsquery):
 			rank = func.ts_rank(tsv, tsquery)
+			public_url = func.coalesce(
+				PolicyVersion.metadata_json.op("->>")("source_url"),
+				PolicyVersion.metadata_json.op("->>")("public_url"),
+				PolicyVersion.metadata_json.op("->>")("url"),
+			)
 			stmt = (
 				select(
 					Policy.id.label("policy_id"),
+					Policy.name.label("policy_name"),
 					PolicyVersion.policy_id,
 					PolicySection.policy_version_id,
 					PolicySection.id,
@@ -75,6 +81,7 @@ class PgsqlFtsRetriever(IVectorRetriever):
 					PolicySection.section_index,
 					PolicyVersion.is_current,
 					PolicyVersion.effective_date,
+					public_url.label("public_url"),
 					PolicyVersion.parse_status,
 					Policy.authority_level,
 					Policy.department_scope,
@@ -119,6 +126,8 @@ class PgsqlFtsRetriever(IVectorRetriever):
 					metadata={
 						"section_path": row.section_path,
 						"title": row.title,
+						"policy_name": row.policy_name,
+						"public_url": row.public_url,
 						"section_index": int(row.section_index or 0),
 						"retriever": "pgsql_fts",
 						"is_current": bool(row.is_current),

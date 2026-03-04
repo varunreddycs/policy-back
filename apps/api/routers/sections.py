@@ -3,10 +3,10 @@ from __future__ import annotations
 import uuid
 from typing import List
 
-from fastapi import APIRouter, Depends, Query
+from fastapi import APIRouter, Depends, HTTPException, Query, status
 
 from apps.api.deps import get_policy_query_service
-from apps.api.schemas.sections import PolicySectionResponse
+from apps.api.schemas.sections import PolicySectionDetailResponse, PolicySectionResponse
 from packages.db.policy_query_service import PolicyQueryService
 
 
@@ -32,3 +32,23 @@ def list_policy_version_sections(
         limit=limit,
         offset=offset,
     )
+
+
+@router.get(
+    "/policy-sections/{section_id}",
+    response_model=PolicySectionDetailResponse,
+    summary="Get section detail",
+    description="Fetches a specific section with policy/version context (tenant-scoped).",
+)
+def get_policy_section_detail(
+    section_id: uuid.UUID,
+    tenant_id: uuid.UUID = Query(..., description="Tenant UUID"),
+    service: PolicyQueryService = Depends(get_policy_query_service),
+) -> PolicySectionDetailResponse:
+    detail = service.get_policy_section_detail(tenant_id=tenant_id, section_id=section_id)
+    if detail is None:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail={"code": "NOT_FOUND", "message": "Policy section not found"},
+        )
+    return PolicySectionDetailResponse.model_validate(detail)

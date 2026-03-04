@@ -11,6 +11,7 @@ from dataclasses import dataclass
 from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
+from urllib.parse import unquote
 
 import requests
 from requests.adapters import HTTPAdapter
@@ -118,6 +119,63 @@ def load_sidecar_source_url(file_path: Path) -> str | None:
         value = payload.get("source_url")
         if isinstance(value, str) and value.strip():
             return value.strip()
+    return None
+
+
+def _normalize_slug(value: str) -> str:
+    text = unquote((value or "").strip())
+    # Crawler-safe filenames may encode specific URL bytes as _XX.
+    text = re.sub(r"_28", "(", text, flags=re.IGNORECASE)
+    text = re.sub(r"_29", ")", text, flags=re.IGNORECASE)
+    text = re.sub(r"_2b", "+", text, flags=re.IGNORECASE)
+    text = re.sub(r"_20", " ", text, flags=re.IGNORECASE)
+    text = text.lower().replace("+", "-")
+    text = text.replace("_", "-")
+    text = re.sub(r"[^a-z0-9-]", "-", text)
+    text = re.sub(r"-+", "-", text).strip("-")
+    return text
+
+
+def load_policy_links_lookup(input_dir: Path) -> dict[str, str]:
+    # Expected path from crawler output: <input_dir_parent>/policy_links.json
+    links_path = input_dir.parent / "policy_links.json"
+    if not links_path.exists():
+        return {}
+
+    try:
+        payload = json.loads(links_path.read_text(encoding="utf-8"))
+    except Exception:
+        return {}
+
+    if not isinstance(payload, list):
+        return {}
+
+    lookup: dict[str, str] = {}
+    for item in payload:
+        if not isinstance(item, str) or not item.strip():
+            continue
+        url = item.strip()
+        slug = url.rsplit("/", 1)[-1]
+        normalized = _normalize_slug(slug)
+        if normalized and normalized not in lookup:
+            lookup[normalized] = url
+    return lookup
+
+
+def infer_source_url_from_lookup(file_path: Path, links_lookup: dict[str, str]) -> str | None:
+    if not links_lookup:
+        return None
+
+    stem = file_path.stem
+    base = stem.split("__", 1)[0]
+    normalized_base = _normalize_slug(base)
+    if normalized_base in links_lookup:
+        return links_lookup[normalized_base]
+
+    # Secondary fallback for occasional naming drift between filenames and URL slugs.
+    for key, url in links_lookup.items():
+        if key == normalized_base or key in normalized_base or normalized_base in key:
+            return url
     return None
 
 
@@ -262,6 +320,7 @@ def plan_files(
     run_stamp_value: str,
 ) -> list[FilePlan]:
     plans: list[FilePlan] = []
+    links_lookup = load_policy_links_lookup(input_dir)
 
     normalized_blob_prefix = blob_prefix.strip()
     if not normalized_blob_prefix:
@@ -295,6 +354,8 @@ def plan_files(
             "content_type": content_type,
         }
         source_url = load_sidecar_source_url(path)
+        if not source_url:
+            source_url = infer_source_url_from_lookup(path, links_lookup)
         if source_url:
             metadata["source_url"] = source_url
 

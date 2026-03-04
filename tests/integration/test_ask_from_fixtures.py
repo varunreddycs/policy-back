@@ -3,6 +3,7 @@ from __future__ import annotations
 import json
 import os
 import pathlib
+import re
 import urllib.error
 import urllib.request
 
@@ -73,6 +74,9 @@ def _post_json(url: str, payload: dict) -> tuple[int, dict]:
             return int(e.code), {"raw": data}
 
 
+URL_RE = re.compile(r"^https?://", re.IGNORECASE)
+
+
 @pytest.mark.integration
 def test_ask_fixtures_hit_running_api() -> None:
     if not _should_run_integration():
@@ -98,3 +102,32 @@ def test_ask_fixtures_hit_running_api() -> None:
         assert isinstance(resp, dict)
         assert "answer" in resp
         assert "created_at" in resp
+
+        assert resp.get("audit_id") is not None
+
+        citations = resp.get("citations")
+        assert isinstance(citations, list)
+        assert len(citations) >= 1
+
+        citation_items = resp.get("citation_items")
+        assert isinstance(citation_items, list)
+        assert len(citation_items) >= 1
+
+        decision = resp.get("decision")
+        assert isinstance(decision, dict)
+        assert isinstance(decision.get("selected_bucket"), str)
+        assert decision.get("selected_bucket")
+
+        secondary = resp.get("secondary_evidence")
+        assert isinstance(secondary, list)
+
+        evidence = resp.get("evidence")
+        assert isinstance(evidence, list)
+        assert len(evidence) >= 1
+        first_md = (evidence[0] or {}).get("metadata") or {}
+        assert first_md.get("policy_name")
+
+        public_url = (citation_items[0] or {}).get("public_url")
+        if public_url is not None:
+            assert isinstance(public_url, str)
+            assert bool(URL_RE.match(public_url))
