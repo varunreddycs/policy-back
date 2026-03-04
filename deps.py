@@ -5,9 +5,11 @@ from functools import lru_cache
 from fastapi import Depends
 from sqlalchemy.orm import Session
 
-from db.session import get_db_session
-from services import BlobService, IngestionService, QueueService
-from services.policy_query_service import PolicyQueryService
+from packages.db.policy_query_service import PolicyQueryService
+from packages.db.session import get_db_session
+from packages.ingestion.ingestion_service import IngestionService
+from packages.queue.queue_service import QueueService
+from packages.storage.blob_service import BlobService
 
 
 def db_session_dep() -> Session:

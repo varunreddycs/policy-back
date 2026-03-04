@@ -15,7 +15,42 @@ class AnswerService:
 		self._ranker = ranker or PolicyRanker()
 
 	def ask(self, request: AskRequest) -> AnswerResponse:
-		candidates = self._retriever.retrieve(tenant_id=request.tenant_id, query=request.question, limit=10)
+		user = request.user
+		if user is not None and user.tenant_id != request.tenant_id:
+			# Defensive: request must be tenant-scoped
+			user = user.model_copy(update={"tenant_id": request.tenant_id})  # type: ignore[attr-defined]
+
+		candidates = self._retriever.retrieve(
+			tenant_id=request.tenant_id,
+			query=request.question,
+			scope=request.scope,
+			user=user,
+			top_k=10,
+		)
 		ranked = self._ranker.rank(candidates)
-		# Phase 2: produce answer via LLM; Phase 1 scaffold returns empty answer.
-		return AnswerResponse(answer="", evidence=ranked, created_at=datetime.now(timezone.utc))
+		created_at = datetime.now(timezone.utc)
+		if not ranked:
+			return AnswerResponse(
+				answer="Insufficient evidence in available policy sections.",
+				refusal_reason="insufficient_evidence",
+				evidence=[],
+				citations=[],
+				created_at=created_at,
+			)
+
+		best = ranked[0]
+		excerpt = (best.text or "").strip().replace("\n", " ")
+		if len(excerpt) > 600:
+			excerpt = excerpt[:600].rstrip() + "…"
+
+		citation = f"[policy_version_id={best.policy_version_id} section_id={best.section_id}]"
+		answer = f"Most relevant excerpt: {excerpt} {citation}"
+		citations = [citation]
+		return AnswerResponse(
+			answer=answer,
+			evidence=ranked,
+			citations=citations,
+			confidence=0.5,
+			created_at=created_at,
+		)
+

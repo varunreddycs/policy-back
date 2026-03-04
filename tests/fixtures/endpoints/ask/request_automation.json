@@ -1,0 +1,7 @@
+{
+  "tenantId": "local",
+  "question": "What is the deadline to file an appeal?",
+  "mode": "strict",
+  "user": { "email": "dev@local", "role": "user", "department": "claims_ops" },
+  "policyScope": { "onlyCurrent": true, "policyTypes": ["claims"] }
+}

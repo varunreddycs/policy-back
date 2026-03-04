@@ -30,7 +30,8 @@ Design Requirements:
 - Enterprise-grade logging and error handling
 
 Running the API:
-- `uvicorn app:app --host 0.0.0.0 --port 8000`
+- Back-compat entrypoint (still works): `uvicorn app:app --host 0.0.0.0 --port 8000`
+- New canonical entrypoint: `uvicorn apps.api.main:app --host 0.0.0.0 --port 8000`
 
 Local dev (Phase 1 end-to-end): Postgres + Azurite
 
@@ -73,7 +74,13 @@ Swagger UI:
 
 4) Run API + Worker:
 - API (VS Code launch config or CLI): `uvicorn app:app --reload --env-file .env`
-- Worker (VS Code launch config or CLI): `python -m worker.policy_processor`
+- Worker (back-compat): `python -m worker.policy_processor`
+- Worker (new canonical): `python -m apps.worker.main`
+
+Phase 2 endpoints:
+- `POST /v1/ask`
+- `GET /v1/audit/{audit_id}`
+- `POST /v1/audit/{audit_id}/replay`
 
 Phase 1 demo flow (Swagger UI or Postman)
 

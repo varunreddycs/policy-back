@@ -52,7 +52,7 @@ services:
   worker:
     build: .
     container_name: policy-platform-worker
-    command: ["python", "-m", "worker.policy_processor"]
+    command: ["python", "-m", "apps.worker.main"]
     env_file:
       - .env
     environment:

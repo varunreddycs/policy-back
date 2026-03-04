@@ -9,8 +9,8 @@ ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from db.session import get_sessionmaker  # noqa: E402
-from models import Tenant  # noqa: E402
+from packages.db.models.policy_models import Tenant  # noqa: E402
+from packages.db.session import get_sessionmaker  # noqa: E402
 
 
 def _load_dotenv_if_present() -> None:
