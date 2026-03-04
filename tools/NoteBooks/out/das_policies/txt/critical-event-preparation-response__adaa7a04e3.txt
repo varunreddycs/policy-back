@@ -1,0 +1,584 @@
+TITLE: Critical Event Preparation and Response (HR-49)
+URL: https://das.ohio.gov/wps/portal/gov/das/employee-relations/policies/critical-event-preparation-response
+
+===== PAGE TEXT =====
+Critical Event Preparation and Response (HR-49)
+
+IBM WebSphere Portal
+
+An official State of Ohio site.
+
+Here’s how you know
+
+Official websites use Ohio.gov
+
+An Ohio.gov website belongs to an official government organization in the State of Ohio.
+
+Secure .gov websites use HTTPS
+
+A lock
+ or https:// means you've safely connected to the .gov website. Share sensitive information only on official, secure websites.
+
+Trusted applications are secured by OHID
+
+When you log in with OHID, your privacy, data, and personal information are protected by federal and state digital security standards.
+
+Close
+
+learn-more
+
+        Skip to Navigation
+
+
+        Skip to Main Content
+
+
+Ohio Department
+
+Menu
+
+                        	Home
+
+                        	Buying & Selling
+
+                        	Property Services
+
+                        	Technology & Strategy
+
+                        	Employee Relations
+
+                        	About
+
+                        	Help
+
+                        	Search
+
+top-help
+
+odx-helplink-label
+
+top-search
+
+odx-searchbox-label
+
+Type in your search keywords and hit enter to submit or escape to close
+
+top-search
+
+top-close
+
+Critical Event Preparation and Response (HR-49)
+
+{}
+
+Web Content Viewer
+
+Actions
+
+
+
+DAS
+
+Employee Relations
+
+Policies
+
+                Overview
+
+
+                Benefits Administration
+
+
+                Collective Bargaining Services
+
+
+                Combined Charitable Campaign
+
+
+                Office of Opportunity and Accessibility
+
+
+                Human Resources Operations
+
+
+                Talent Management
+
+
+                Policies
+
+
+                  Critical Event Preparation and Response (HR-49)
+
+
+September 01, 2023
+
+ |
+
+Agency
+
+State of Ohio Administrative Policy
+
+No: HR-49 -
+State Human Resources Division
+
+Effective:
+September 1, 2023
+
+Issued By:
+Kathleen C. Madden, Director
+
+Purpose
+
+To establish a consistent approach to the maintenance of governmental services during an event that results in, or could result in, a significant and/or unexpected disruption to the workforce and/or the performance of
+Mission Essential Functions
+. The first occurrence of a defined term in the policy is in bold, italic type and is hyperlinked to the definition in Section IV.
+
+Scope
+
+This policy applies to all state agencies, boards, and commissions under the authority of the Governor (collectively referred to as Agency or Agencies).
+
+Policy
+
+The State of Ohio is committed to ensuring the maintenance of governmental services during an event that results in, or could result in, a significant and/or unexpected disruption to the workforce and/or the performance of Mission Essential Functions. State Agencies are responsible for providing the Mission Essential Functions upon which Ohio citizens rely. Any
+Critical Event
+ has the potential to result in a significant and/or unexpected disruption to an Agency’s workforce and operations, therefore impacting those essential functions. During these types of events, Mission Essential Functions must be maintained and/or resumed quickly in order to prevent an interruption in services. Agencies must plan for and prepare a response to any situation that could result in a decrease (potentially significant decrease) in the number of employees available to perform governmental functions and services. This policy outlines the steps Agencies should follow during a Critical Event.
+[1]
+
+Preparation Steps
+
+The ability to respond to a Critical Event that impacts the workforce and operations is based on an Agency’s level of preparedness and planned action steps. Agencies must take the following steps to ensure they are prepared for potential interruptions in staffing and governmental services.
+
+Maintain a
+Continuity of Operations
+ Plan: Each Agency shall develop and maintain a Continuity of Operations Plan (COOP). The COOP plan dictates the Agency’s response to an event that could impact Mission Essential Functions. In an effort to ensure Mission Essential Functions are maintained, an Agency’s COOP plan should be reviewed and updated regularly. Planning templates, tools, and guidance may be found on the DAS
+Business Continuity
+ website (see Section VI. Resources for more information).
+
+Maintain Agency
+Pandemic
+ Plan: Agencies shall develop and maintain a Pandemic Plan, in addition to a COOP. A Pandemic Plan is meant to supplement an Agency’s COOP and address the specific issues Agencies may face in the event of a Pandemic which may include a significant decrease in available workforce or increase in absenteeism.
+
+Review Agency Workforce Plan:
+
+Agencies shall regularly engage in workforce planning to identify potential gaps in staffing that would impact the ability to perform essential functions if there was a significant and/or unexpected disruption in the workforce. Identifying gaps in advance can allow an Agency to develop alternative plans to fill that gap in the event of an emergency or Critical Event.
+
+Agencies should identify which Mission Essential Functions exist and who would perform those functions if needed. This may include advance preparedness by cross-training appropriate employees, documenting work and business processes, and identifying employees that can be appropriately reassigned in the event of employee absence.
+
+Review Applicable Agency and Statewide Policies: Agencies shall review policies that address specific Critical Events. These policies include, but may not be limited to:
+
+HR-11 Public Safety Emergencies
+
+State of Ohio Family and Medical Leave Act (FMLA)
+
+HR-42 Response to an Active Aggressor
+
+Agency specific work hours, leave and attendance policies
+
+Establish/Maintain Notification System: Consistent with State of Ohio Administrative Policy HR-42 Response to an Active Aggressor, Agencies shall have a system and/or procedure in place for notifying their employees in the event of an emergency or Critical Event. Agencies must communicate the notification process and procedures to employees. For example, Agencies should tell employees whether they should check for updates and information the Agency website, call a designated telephone number, or any other utilized method of communication.
+
+Human Resources Considerations
+
+Any event that impacts an Agency’s ability to provide services and perform Mission Essential Functions should be treated on a case-by-case basis, including the response. However, there are some basic considerations that can be made during any event in order to determine how an Agency should respond in order to maintain functions and services.
+
+Designate Employees Required to Work During a
+Public Safety Emergency
+.
+
+Pursuant to State of Ohio Administrative Policy HR-11 Public Safety Emergency, Agencies must maintain a list of employees who are expected to work during a Public Safety Emergency (commonly referred to as essential employees). These are employees who have been designated as critical to maintaining operations and essential office functions during a declared Public Safety Emergency. In the event a Public Safety Emergency is declared, these designations will be used to determine which employees in your Agency are required to report to work.
+
+The process of designating essential employees will also require an Agency to identify operations and functions that must continue during a Critical Event.
+
+Alternative Work Locations: In advance of an event that impedes an employee’s ability to report to their normal work location, Agencies should designate alternative work locations where applicable. If an employee is unable to report to their normal work location, an alternative work location will allow an employee to continue working during a Critical Event.
+
+Once an Agency has a designated alternative work location, the location should be communicated to employees so they know where to go in the event they need to report to that location.
+
+When faced with a situation where an employee cannot report to their normal location, such as a building closure or power outage, Agencies should promptly communicate with employees on whether they should report to their alternative work location.
+
+Teleworking: Agencies are encouraged to consider implementing a teleworking policy that could be used during a Critical Event to ensure the maintenance of Mission Essential Functions. Statewide Administrative Policy, HR-32, permits Agencies to develop a teleworking policy with the approval of the Director of DAS.
+
+A teleworking policy can be limited to a case-by-case basis (e.g., only utilized in the event of an emergency or health crisis).
+
+In the event an eligible employee cannot report to work during an unexpected event, such as exposure to illness, the Agency may utilize teleworking.
+
+When an Agency designates essential employees in accordance with State of Ohio Administrative Policy HR-11 Public Safety Emergency, the Agency should also designate which employees are eligible to telework during a Critical Event. This will ensure that these employees are not only identified but have the capabilities in place to telework unexpectedly (e.g., remote network access).
+
+If an Agency does not have a teleworking policy in place, and a Critical Event, as determined by the Director of DAS, occurs, the Agency appointing authority or designee can authorize an employee to telework for the duration of the event. When making any such authorization, the Agency must provide, as soon as practicable, a notice to the affected employee(s) informing them of their responsibilities while teleworking and that authorization must be reported to the Director of DAS within thirty (30) days of the conclusion of the significant and/or unexpected disruption. See
+Attachment 1: Sample Teleworking Notice
+ for a sample employee notice.
+
+Increased Interruption to Services Due to Illness: Seasonal outbreaks, such as the common cold or influenza, or a more serious scenario such as a Pandemic, can have a significant impact on the workforce. Agencies may have an increased number of employees away from the workplace due to illness and/or in the event of a more severe outbreak or Pandemic. The following considerations and steps may be used to respond during this type of situation.
+
+Employee Education: Agencies should educate employees on preventative recommendations for avoiding getting sick and staying healthy. The following measures are applicable:
+
+Wash hands often with soap and water or use alcohol-based sanitizer when unable to wash.
+
+Try not to touch eyes, nose, and mouth as germs are often spread this way.
+
+Get plenty of rest, as sleep is shown to help the body fight off illness.
+
+If an employee is sick, they should stay home to prevent spreading illness to others.
+
+Employee Concerns: Any time there are increased instances of illness at home, work, or the community, employees may have increased stress and/or fear during the event. Agencies should communicate with their employees as appropriate.
+
+Distribute illness prevention and control guidelines as discussed above.
+
+Distribute educational materials provided by the Ohio Department of Health, Center for Disease Control, and/or other reputable government sources.
+
+Remind employees of their support resources, such as a contact in the human resources division, their health care provider, Employee Assistance Program, etc.
+
+Addressing Symptoms as they Arise: During an event such as an outbreak or Pandemic, if symptoms arise, encourage employees to contact their health care provider and/or consider using telemedicine options to prevent the spread of illness to others. The State’s telemedicine provider allows eligible state employees and their dependents enrolled in the state’s medical plan to use their mobile device or computer to visit a doctor using telemedicine. Employees who are at work when symptoms arise should be instructed to return to their work area and contact their health care provider. See Section C of this policy for instruction on applicable leave usage in these situations.
+
+Social Distancing: In the event of a Pandemic or other similar health crisis, there may be situations where Agencies need to physically separate employees from one another, especially when working in close proximity to each other in order to reduce the risk of transmitting illness.
+
+Agencies are recommended to use teleworking (see Section III.B.3.), alternative work locations (see Section III.B.2.), flexible scheduling, and/or alternative work schedules to implement social distancing practices.
+
+Agencies can also use phone conferencing, video conferencing, webinars, and email to conduct meetings and business as much as possible.
+
+Consider avoiding non-essential activities where employees might come into close contact with individuals who may be ill.
+
+Business Travel: Depending on the nature of the event, Agencies should consider whether employee business travel is necessary for mission critical functions during that time. All unnecessary travel should be cancelled or postponed during such an event, which may also include non-essential meetings, gatherings, workshops, or training sessions. When making these determinations, Agencies could consider both national and international indicators of whether travel is essential, such as travel health notices and/or airline response.
+
+Time and Attendance: During a seasonal outbreak, Pandemic, or other health issue, there is an increased risk that a higher number of employees than normal will be absent from work. As with any absence from work, employees will continue to be responsible for following Agency policies on leave requests and time reporting.
+
+Employees could be absent due to personal illness, illness of a family member, school/building closures, public transportation closures, etc. (See Section C for examples of applicable leave for employees who are absent, including applicable leave for those employees caring for an ill family member.)
+
+Depending on the severity of an event (e.g., Pandemic or increased vulnerability to the populations), Agencies may be tasked with monitoring the absence of sick employees. In this event, Agencies should designate someone within their human resources office to monitor employee absence in order to prepare for any reassignments of Mission Essential Functions during those absences.
+
+Applicable Leave Provisions
+
+In the case of a Critical Event, employees may need to be absent from the workplace to care for themselves or a family member. There are many types of accrued leave and leave benefit programs that State employees may be eligible to use during and after a Critical Event. Below is an overview of the most common types of leave that may be applicable in a Critical Event situation. For specific information on each type of leave, reference Agency human resources policies, applicable collective bargaining agreements, applicable administrative rules, or applicable Revised Code provisions.
+
+Sick Leave:
+
+Employees may use available sick leave for absence due to personal illness, illness of a member of the employee’s immediate family, exposure to contagious disease that could be communicated to other employees, and illness, injury, or death
+[2]
+ in the employee’s family. If a Critical Event occurs, managers should be reasonable in approving sick leave for employees.
+
+If an employee does not have available sick leave, the appointing authority has discretion to allow an employee to use other types of accrued leave in lieu of sick leave (e.g., vacation in lieu of sick leave).
+
+Discretionary Leave:
+
+Depending on the circumstances of the Critical Event, use of accrued vacation, personal leave, or compensatory time off may be more appropriate than sick leave or used in lieu of sick leave if available sick leave has been exhausted. If an employee is serving as a caregiver for an individual who is not within the employee’s immediate family (as defined in sick leave provisions), it may be appropriate to grant an employee’s request for vacation, personal leave, or compensatory time off.
+
+In certain situations (e.g., power outage, building closure), it may be appropriate for an appointing authority to grant discretionary leave to employees who are not performing Mission Essential Functions instead of using an alternative work location.
+
+Family and Medical Leave Act: Employees who have been employed by the State for at least twelve (12) months and have actually worked at least 1,250 hours during the past twelve (12) months, are eligible for twelve (12) workweeks of leave for the serious health condition of the employee, employee’s spouse, employee’s children, or employee’s parents under the Family and Medical Leave Act (FMLA). Employees must follow their Agency’s policy regarding appropriate notice and documentation. FMLA is used concurrently with accrued leave. An employee who is eligible for FMLA must exhaust all accrued sick, vacation, personal, and, in some cases, compensatory time balances prior to going on unpaid leave.
+
+Disability Leave:
+
+An employee with a disabling illness that will last more than fourteen (14) consecutive calendar days and who has completed one year of continuous state service immediately prior to the date of the disability is eligible for disability benefits.
+
+An employee who is not eligible for disability leave, but who has a disabling illness, injury, or condition may be granted a leave of absence without pay.
+
+Leave Donation: An employee may be eligible to receive donated leave during or after a Critical Event. An employee is eligible for donated leave if the employee or a member of the employee’s immediate family has a serious illness, has no accrued leave, has not been approved to receive other state-paid benefits and has applied for any paid leave or benefits program for which the employee is eligible. An employee may receive donated leave up to the number of hours the employee is scheduled to work each pay period.
+
+Leave of Absence without Pay: An appointing authority may grant a leave of absence without pay to an employee. Specific eligibility requirements and duration are included in applicable collective bargaining agreements and administrative rule.
+
+In addition to the types of employee leave listed in this section, there may be circumstances where it may be appropriate for an appointing authority to consider a leave status that is otherwise not listed here. If a critical event occurs, the Director of DAS will consult with the appointing authority regarding available appropriate options.
+
+Definitions
+
+Business Continuity:
+ An enterprise approach to emergency response planning that ensures all state Agencies, boards and commissions have viable Continuity of Operations programs in place that establish a comprehensive continuity of government function for the State of Ohio.
+
+Continuity of Operations:
+ An effort within individual state Agencies to ensure that the Agency’s Mission Essential Functions continue to be performed during any Critical Event.
+
+Critical Event:
+ Any event that could cause a significant and/or unexpected disruption in the performance of Mission Essential Functions. For example, a declared Public Safety Emergency, power outage, building closure, Pandemic, act of nature, active aggressor, accidents, technological attacks, or increased absences due to illness that all have the potential to cause significant and/or unexpected disruptions to the normal business of an Agency.
+
+Mission Essential Functions:
+ Activities directly related to accomplishing an Agency’s mission as set forth in statute or code, and/or activities which support the State of Ohio’s essential functions (i.e., maintain civil law and order, provide essential services to the public, ensure availability of critical infrastructure, ensure continuity of government, ensure economic stability, offer resource and logistical support to key stakeholders). It is generally expected that Mission Essential Functions must be performed continuously or resumed within twelve (12) hours of a Critical Event.
+
+Pandemic:
+ An epidemic of disease that has spread across a large region or world-wide. Often caused by a virus that is either entirely new or not circulated recently and widely in the human population which results in an almost universal vulnerability to infection in humans.
+
+Public Safety Emergency:
+ A term of art which refers to all formal declarations or proclamations by the Governor or the Governor’s designee which may limit a state employee’s obligation to travel to and from work for a specific period of time pursuant to State of Ohio Administrative Policy HR-11 Public Safety Emergency.
+
+Authority
+
+OAC 123:1-45-01
+
+Resources
+
+ Business Continuity - Department of Administrative Services
+
+ Labor Relations and Human Resources Policy - Department of Administrative Services
+
+ Talent Management - Department of Administrative Services
+
+ Statewide Human Resources Policies - Policy Finder - Department of Administrative Services
+
+ Ohio Emergency Management Agency
+
+ Ohio Department of Health
+
+ Centers for Disease Control and Prevention - CDC
+
+Attachment 1: Sample Teleworking Notice
+
+Inquiries
+
+Direct inquiries about this policy to:
+
+Labor Relations and Human Resources Policy or Business Continuity
+Office of Collective Bargaining
+Ohio Department of Administrative Services
+4200 Surface Road
+Columbus, Ohio 43228
+614.752.5393 |
+DASHRD.HRPolicy@das.ohio.gov
+
+State of Ohio Administrative Policies may be found online at
+Policy Finder - Department of Administrative Services
+
+Revision History
+
+Date
+
+Description of Change
+
+03/06/2020
+
+Original policy.
+
+06/14/2022
+
+Reissued with housekeeping changes.
+
+09/01/2023
+
+Housekeeping changes made and policy reissued in new statewide policy template.
+
+Attachment 1: Sample Teleworking Notice
+
+(To be provided to employee before, or as soon as practicable after a verbal teleworking authorization)
+
+Employee name, has been authorized to telework beginning on Insert Date. The decision to authorize teleworking is solely within the discretion of the appointing authority and can be modified or terminated at any time. When the appointing authority terminates the teleworking authorization, you will be notified and will be required to report to your normal report in location.
+
+For the duration of the teleworking authorization, the following provisions are applicable to you:
+
+Teleworking authorization does not affect basic terms and conditions of employment with the State of Ohio. This includes your rate of pay, retirement benefits, and State of Ohio sponsored insurance coverage if applicable.
+
+You are still obligated to comply with all statewide and Agency rules, policies, practices and instructions. A violation of such may result in a revocation of the teleworking authorization and discipline, up to and including removal.
+
+If you need to use leave during the time you are teleworking, you must comply with all Agency call off policies and procedures for obtaining approval prior to using leave.
+
+You are authorized to telework during your normally scheduled work hours,
+insert hours here
+ (e.g., 8:00 am to 5:00 pm). If you are required to work outside of those hours, you will be notified by your supervisor. All Agency overtime and compensatory time policies apply during teleworking.
+
+You are responsible for accurately reporting your time worked for the duration of the teleworking authorization.
+
+For the extent of the teleworking authorization, you and your supervisor must establish a method of communication and you must be available for contact by the Agency during your normal work hours.
+
+In accordance with Agency and statewide policy, you are still responsible for protecting all sensitive data and personally identifiable information.
+
+Footnotes
+
+Back to the content-[1]
+ This policy is not intended to supersede or replace the state’s Business Continuity program, or an Agency’s Continuity of Operations Plan, Pandemic plan, or any other Agency specific policy/procedure on the maintenance of operations. Agencies should still maintain and follow their specific, applicable plans/policies and procedures. This policy does not supersede or replace State of Ohio Administrative Policy HR-11 Public Safety Emergency, Public Safety Emergencies and in an event of a declared public safety emergency, Agencies must follow HR-11. This policy is meant to supplement the above referenced policies and plans.
+
+Back to the content-[2]
+ Death in the employee’s immediate family may also qualify for bereavement leave.
+
+      Share this
+
+
+Expand All Sections
+
+
+
+Web Content Viewer
+
+Actions
+
+
+
+
+            About Us
+
+
+
+            Administrative Support Division
+
+
+
+            First Responder Communications Initiatives
+
+
+
+            General Services Division
+
+
+
+            Office of Collective Bargaining
+
+
+
+            Office of Data and Efficiency
+
+
+
+            Office of Information Technology
+
+
+
+            State Human Resources Division
+
+
+
+            Media Center
+
+
+
+            News
+
+
+
+            Events
+
+
+
+            Hidden
+
+
+
+            Hidden
+
+
+            Resources
+
+
+            Policy Finder
+
+
+
+            Careers
+
+
+
+            Public Records Requests
+
+
+
+            State MLK Holiday Commission
+
+
+
+            Hidden
+
+
+
+            Hidden
+
+
+Ohio Department of Administrative Services  | 30 E. Broad St., Columbus, Ohio 43215 |
+614-466-6511
+
+Powered by
+
+
+                    Privacy Notice and Policies
+
+
+
+
+
+
+
+                    Accessibility
+
+
+
+
+
+
+
+                    Ohio Checkbook
+
+
+
+
+
+
+linkedin icon
+
+x icon
+
+top-menu
+
+top-close
+
+top-help
+
+top-search
+
+
+odx-searchbox-label
+
+
+Submit your search
+
+Close
+
+
+
+Complementary Content
+
+${title}
+${badge}
+
+${loading}
+
+===== REFERENCES (ALL LINKS) =====
+https://checkbook.ohio.gov/
+https://das.ohio.gov/employee-relations/office-of-collective-bargaining/Labor-relations-and-human-resources-policy
+https://das.ohio.gov/employee-relations/office-of-collective-bargaining/business-continuity
+https://das.ohio.gov/employee-relations/policies
+https://das.ohio.gov/employee-relations/talent-management/03-talent-management
+https://das.ohio.gov/home/policy-finder/filter-policy-finder
+https://das.ohio.gov/wps/portal/gov/das/about
+https://das.ohio.gov/wps/portal/gov/das/about/about-us
+https://das.ohio.gov/wps/portal/gov/das/about/administrative-support-division-site-area/administrative-support-division
+https://das.ohio.gov/wps/portal/gov/das/about/first-responder-comms-initiatives/first-responder-comms-initiatives
+https://das.ohio.gov/wps/portal/gov/das/about/general-services-division/general-services-division
+https://das.ohio.gov/wps/portal/gov/das/about/office-of-collective-bargaining/office-of-collective-bargaining-1
+https://das.ohio.gov/wps/portal/gov/das/about/office-of-information-technology
+https://das.ohio.gov/wps/portal/gov/das/about/state-human-resources-division/state-human-resources-division
+https://das.ohio.gov/wps/portal/gov/das/buying-and-selling
+https://das.ohio.gov/wps/portal/gov/das/employee-relations
+https://das.ohio.gov/wps/portal/gov/das/employee-relations/benefits-administration
+https://das.ohio.gov/wps/portal/gov/das/employee-relations/combined-charitable-campaign
+https://das.ohio.gov/wps/portal/gov/das/employee-relations/emloyee-relations-overview
+https://das.ohio.gov/wps/portal/gov/das/employee-relations/human-resources+-operations-site-area
+https://das.ohio.gov/wps/portal/gov/das/employee-relations/office-of-collective-bargaining
+https://das.ohio.gov/wps/portal/gov/das/employee-relations/office-of-opportunity-and-accessibility
+https://das.ohio.gov/wps/portal/gov/das/employee-relations/policies
+https://das.ohio.gov/wps/portal/gov/das/employee-relations/policies/critical-event-preparation-response
+https://das.ohio.gov/wps/portal/gov/das/employee-relations/policies/google.com
+https://das.ohio.gov/wps/portal/gov/das/employee-relations/talent-management
+https://das.ohio.gov/wps/portal/gov/das/help-center
+https://das.ohio.gov/wps/portal/gov/das/help-center/accessibility/accessibility-
+https://das.ohio.gov/wps/portal/gov/das/help-center/privacy-notice-and-policies/privacy-notice-and-policies
+https://das.ohio.gov/wps/portal/gov/das/help-center/public-records-request-site-area/public-records-requests
+https://das.ohio.gov/wps/portal/gov/das/home
+https://das.ohio.gov/wps/portal/gov/das/home/media-center/all-events/all-events-landing-page
+https://das.ohio.gov/wps/portal/gov/das/home/media-center/all-news/all-news
+https://das.ohio.gov/wps/portal/gov/das/home/media-center/das-media-center
+https://das.ohio.gov/wps/portal/gov/das/home/ohio-mlk-holiday-commission/mlk-commission/mlk-holiday-commission
+https://das.ohio.gov/wps/portal/gov/das/home/policy-finder/filter-policy-finder
+https://das.ohio.gov/wps/portal/gov/das/property-services
+https://das.ohio.gov/wps/portal/gov/das/search
+https://das.ohio.gov/wps/portal/gov/das/technology-and-strategy
+https://das.ohio.gov/wps/portal/gov/das/technology-and-strategy/data-and-efficiency/office-of-data-and-efficiency
+https://dasstateoh.taleo.net/careersection/oh_int/jobsearch.ftl
+https://ema.ohio.gov/
+https://odh.ohio.gov/wps/portal/gov/odh/home
+https://twitter.com/ohiodas
+https://www.cdc.gov/
+https://www.linkedin.com/company/ohiodas
+javascript:;
+mailto:DASHRD.HRPolicy@das.ohio.gov
+tel:1-614-466-6511

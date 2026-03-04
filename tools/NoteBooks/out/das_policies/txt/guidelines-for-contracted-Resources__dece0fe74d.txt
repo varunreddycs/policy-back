@@ -1,0 +1,642 @@
+TITLE: Guidelines for Contracted Resources (HR-50)
+URL: https://das.ohio.gov/wps/portal/gov/das/employee-relations/policies/guidelines-for-contracted-Resources
+
+===== PAGE TEXT =====
+Guidelines for Contracted Resources (HR-50)
+
+IBM WebSphere Portal
+
+An official State of Ohio site.
+
+Here’s how you know
+
+Official websites use Ohio.gov
+
+An Ohio.gov website belongs to an official government organization in the State of Ohio.
+
+Secure .gov websites use HTTPS
+
+A lock
+ or https:// means you've safely connected to the .gov website. Share sensitive information only on official, secure websites.
+
+Trusted applications are secured by OHID
+
+When you log in with OHID, your privacy, data, and personal information are protected by federal and state digital security standards.
+
+Close
+
+learn-more
+
+        Skip to Navigation
+
+
+        Skip to Main Content
+
+
+Ohio Department
+
+Menu
+
+                        	Home
+
+                        	Buying & Selling
+
+                        	Property Services
+
+                        	Technology & Strategy
+
+                        	Employee Relations
+
+                        	About
+
+                        	Help
+
+                        	Search
+
+top-help
+
+odx-helplink-label
+
+top-search
+
+odx-searchbox-label
+
+Type in your search keywords and hit enter to submit or escape to close
+
+top-search
+
+top-close
+
+Guidelines for Contracted Resources (HR-50)
+
+{}
+
+Web Content Viewer
+
+Actions
+
+
+
+DAS
+
+Employee Relations
+
+Policies
+
+                Overview
+
+
+                Benefits Administration
+
+
+                Collective Bargaining Services
+
+
+                Combined Charitable Campaign
+
+
+                Office of Opportunity and Accessibility
+
+
+                Human Resources Operations
+
+
+                Talent Management
+
+
+                Policies
+
+
+                  Guidelines for Contracted Resources (HR-50)
+
+
+September 01, 2023
+
+ |
+
+Agency
+
+State of Ohio Administrative Policy
+
+No: HR-50 -
+State Human Resources Division
+
+Effective:
+September 1, 2023
+
+Issued By:
+
+Kathleen C. Madden, Director
+
+Purpose
+
+To establish uniform guidelines for Agencies that are currently contracting or considering contracting for specific service needs that cannot be filled with
+State Employees
+. The first occurrence of a defined term in the policy is in bold, italic type, and is hyperlinked to the definition in Section IV.
+
+Scope
+
+This policy applies to all State agencies, boards, and commissions under the authority of the Governor (collectively referred to as Agency or Agencies).
+
+Policy
+
+Generally, Agencies should use State Employees to perform Agency core functions. Ohio Revised Code (ORC) Section 124.14(A) requires the Director of the Department of Administrative Services to establish a job classification plan that includes all jobs performed by State Employees. Except as provided below, job responsibilities that are covered by the State’s job classification plan should be performed by State Employees. Agencies with service needs that cannot be filled with State Employees—as determined by the procedure established below—may use a
+Contracted Resource
+ to perform those services.
+
+Agency Responsibility – Prior to Engaging with a Contracted Resource
+
+Agencies should consider establishing an internal procedure requiring the person, division, office, etc. that is requesting a Contracted Resource to prepare a rationale for the services needed. The rationale could include the assessment criteria described below. Agencies should consider consultation with the Agency’s human resources office, legal counsel, finance office, Agency procurement officer, and other Agency personnel as necessary (e.g., Chief Information Officer if the Contracted Resource requested is an IT professional) when deciding whether to engage with a Contracted Resource.
+
+Assessment of Agency Service Needs: A multi-step analysis, outlined below, should be conducted to specifically identify the needs of the Agency and to determine whether the service need should be filled by a State Employee or a Contracted Resource.
+
+Define the Service Need. This definition includes a detailed description of the services to be provided to or on behalf of the Agency, including any deliverables. As part of this analysis, the following items should be addressed:
+
+The duties to be performed including specialized tasks and/or deliverables, and the level of independent judgment (e.g., outside hearing officers as required by the ORC or third-party neutrals) required to perform the necessary services;
+
+The qualifications necessary to fill the need, and any required education, training, skills, knowledge, experience, licensure, or certifications; and
+
+Details on the duration of the service need. This may include whether the service involves a temporary task, a service provided through a non-permanent funding source (e.g., capital appropriation or grant funding), and/or is related to a specific
+Project
+. This may also include temporary services being provided while an Agency seeks to fill a permanent position with a State Employee.
+
+Evaluate the Service Need for Inherently Governmental Functions. If the service needs and corresponding duties involve matters that are so intimately related to the public interest that they are inherently governmental, the work is more appropriately suited for a State Employee. Examples of such work may include, but are not limited to:
+
+Establishing policy.
+
+Influencing or enacting legislation on behalf of the Agency.
+
+Preparing budget requests.
+
+Managing/supervising State Employees.
+
+Approving position descriptions or performance standards of State Employees.
+
+Awarding or terminating State contracts.
+
+Obligating the State or Agency to payment, providing authority to purchase or authorize purchase orders, the authority to sign contracts, accept deliverables, approve payment for time or expenses, or engaging in any related or similar function.
+
+Other fiduciary or managerial functions.
+
+Compare the Service Need to State Employee Job Responsibilities. There should be a comparison of the duties necessary to fill the service need to relevant job responsibilities as listed in the State’s job classification plan. The Agency should use State Employees to perform the work where:
+
+The qualifications, experience, required training, skill, knowledge, licensure, and/or certifications being sought are otherwise available from State Employees within the Agency. A current State Employee is considered available when the employee can perform the duties without causing an undue burden to the employee or to the employing Agency and without violating any applicable collective bargaining agreement.
+
+The work is within the scope of a new or established program or service provided by a State Agency in its normal operations; and
+
+The work does not have specified time parameters that establish a date or timeframe of commencement and date of completion.
+
+Consider Alternative Methods of Staffing. For services that are temporary or short-term, Agencies should also explore options such as
+Project Employees
+,
+Intermittent Employees
+, or a
+Shared Employee
+ to determine if such appointment types could be a more appropriate staffing solution.
+
+Selecting a Contractor and Limitations
+
+In General: Once it has been determined that use of a Contracted Resource is appropriate, guidelines regarding purchasing procedures and written contracts shall be followed, including but not limited to the requirement to make a selection in a competitive manner.
+
+Individual Resources: Many vendors who provide Contracted Resources hire subcontractors to perform the work instead of having the individuals in the vendor’s direct employ. As a result, a Contracted Resource may have a working relationship with more than one vendor. Guidelines/limitations in this Policy relate to both, the Contracted Resource and the vendor. As such, Agencies may not circumvent the guidelines in this Policy by procuring the same Contracted Resource from different successive vendors. Additionally, Agencies shall require a Contracted Resource, at the time of engagement, to warrant that it has not, and will not, enter into any contracts to perform substantially identical services for the State without the written approval of the Agency. Agencies should also consult the Office of Budget and Management’s Safe Accounting Fiscal Essentials (SAFE) Manual for additional instruction on Duplicate Payments to further ensure that a resource is not receiving duplicate payments for substantially identical services.
+
+Duration: The length of the engagement with a Contracted Resource is one factor that should be considered when determining if the service need is appropriately filled by a Contracted Resource or should be filled by a State Employee.
+
+Duration for Contracted Resources Performing
+Information Technology (IT) Functions
+. Any new engagement with a Contracted Resources performing IT Functions should be tied to Project lengths as identified in a solicitation and shall be less than two (2) years in duration. If there is a specific need for a longer duration, Agencies are responsible for documenting the justified need pursuant to Section III.B.3.b below.
+
+Long-term Engagements for Contracted Resources Performing IT Functions. If the engagement with a Contracted Resource performing IT Functions is expected to last for more than two (2) years, Agencies are responsible for justifying the need for the extended duration by conducting the analysis set forth in Section III.A. and for documenting the analysis. The documented analysis must be maintained in accordance with the Agency’s records retention policy. Successive contracts with the same Contracted Resource, even with a break, should not be used to circumvent the two-year limitation in this policy related to IT Functions.
+
+Continuation of a Contractual Relationship
+
+In certain situations, once a service has been contracted and work has been completed, there is a need for additional follow-up services. Use of the same Contracted Resource may be advantageous due to the individual’s skill set, work product, or specialized knowledge. In these situations, Agencies should strongly consider developing a knowledge transfer plan, including training or reskilling current State Employees, to allow the current workforce to meet the ongoing service need.
+
+Renewal or new engagements with a Contracted Resource are also subject to this Policy. Agencies should conduct the assessment set forth in Section III.A. with current information and not rely on any previous assessment.
+
+Other Limitations. Agencies shall not use a Contracted Resource in any of the following circumstances:
+
+The contracted service would be used to circumvent personnel ceilings and/or employment procedures for a current State Employee. Questions about an Agency’s personnel ceilings should be directed to the Agency’s human resources office.
+
+The contracted service is provided by a
+Requisite Procurement Program
+.
+
+The contracted service can be provided by another State Agency.
+
+Ongoing Evaluation
+
+In general, anytime an Agency has engaged with a Contracted Resource, the Agency must monitor its relationship with the Contracted Resource to ensure that the delineation between State Employees and Contracted Resources doesn’t erode over time. If the Contracted Resource begins to spend significant time performing functions that can be performed by a State Employee, or if the Contracted Resource’s role otherwise evolves, and it becomes difficult to distinguish between the Contracted Resource’s work responsibilities and those of other State Employees, the Agency should consult the Agency’s human resources office and/or legal counsel to assess the contractor’s service and implement measures to preserve or reestablish an independent contractor relationship. This evaluation is also necessary to ensure that the Agency maintains compliance with federal and state employment laws, as well as requirements for benefits and tax withholdings.
+
+Factors to Consider: Below is a list of circumstances that Agencies should use when assessing a particular service need, or when evaluating the relationship (or potential relationship) between the Agency and a Contracted Resource. This is not an exhaustive list; rather, it is intended to provide Agencies with practical examples of the types of conditions that may be relevant. Where applicable, Agencies should discuss the following considerations with their human resources office and legal counsel:
+
+The level of control or independent judgment exercised by the Contracted Resource to direct his/her work. This may include factors such as: the Agency’s right to assign work; prioritize tasks; and/or otherwise dictate the methods used by the contractor to complete the work.
+
+The extent to which the services performed by the Contracted Resource are integral to the operation of the work unit or the Agency.
+
+Other than a general orientation, any specific training given to a Contracted Resource by an experienced State Employee, or otherwise arranged by the State Agency.
+
+The length of the relationship (i.e., how long the Contracted Resource has performed services for the Agency).
+
+The amount of investment in facilities and equipment by the Contracted Resource, such as the purchase and use of their own equipment, materials, and supplies.
+
+Other Considerations
+
+Anytime an Agency enters into a contract for services, the Agency and the Agency’s legal counsel must ensure that the contract contains all necessary provisions. Agencies leveraging a DAS contract should consult the Office of Procurement Services to address any additional Agency-specific provisions. In addition, the Agency shall also adhere to the following guidelines while engaged in a contract for service and make all contractors aware of the guidelines:
+
+Ethics: Any individual performing services on behalf of an Agency through a contract for services is required to comply with the Ohio ethics laws and any applicable State or Agency policy and procedure. For specific questions regarding Ohio ethics laws, please contact your Agency’s chief legal counsel or the Ohio Ethics Commission.
+
+Public Records: Documents or communications made by the Contracted Resource concerning the services being provided to the State may be a public record even if the communication is not saved on a State server or sent using a State system (e.g., State email). Agencies must work with their records offices and legal counsel to ensure that Contracted Resources are aware of how public records should be stored so they can be made available during and after the engagement with the State.
+
+Confidential/Proprietary Information: Information that is confidential or proprietary must be maintained as such by the Contracted Resource during and after the engagement with the State.
+
+Additional Information: Agencies should consider whether any other Agency-specific information, procedures and/or policies should be provided to the Contracted Resource before they perform services on behalf of the Agency.
+
+Implementation
+
+In order to ensure that all Contracted Resources are provided the guidelines and expectations, each Agency should consider developing consistent procedures to use at the time of engagement of a Contracted Resource.
+
+Contracted Resources shall be distinguished from State Employees. Any access badge(s) which the Contracted Resource needs must be designated with the word “Contractor” visible on the badge. If the Contracted Resource is issued a State email address, the “signature” portion of the email address must indicate contractor status, and the assigned Outlook profile will indicate non-employee status.
+
+Agency use of
+Staff Augmentation
+ through a direct contract,
+Managed Service Provider
+, or other means is subject to all applicable provisions of this Policy, including the assessment described in Section III.A. Where applicable, use of the term “Contracted Resource” in this policy also means a Staff Augmentation resource.
+
+Nothing in this policy is intended to limit an Agency’s ability to
+Contract Out
+ functions or services. Agencies considering outsourcing functions or services should consider the State’s Requisite Procurement Program, existing State contracts, and also refer to the State’s collective bargaining agreements and state law for additional considerations.
+
+Definitions
+
+Contract Out:
+ Entering into an agreement with an entity (e.g., a private company) to perform a service or function of the Agency in whole or in part. It is also referred to as outsourcing.
+
+Contracted Resource.
+ A non-employee performing a service pursuant to a contract. Where applicable, the term Contracted Resource also means a Staff Augmentation resource. For purposes of this policy, this definition does not include non-employees working for vendors awarded Projects pursuant to a competitive selection process as defined by ORC 125.01(I).
+
+Information Technology (IT) Functions.
+ Includes but is not limited to software design, systems analysis, IT planning and Project management, network, and development.
+
+Intermittent Employees.
+ A person appointed to a non-permanent position in State service that is limited in duration pursuant to a collective bargaining agreement and/or Ohio Administrative Code (OAC).
+
+Managed Service Provider.
+ A vendor that has a contract with the State of Ohio, through which an Agency can select an individual resource to perform services. It is also referred to as a Third-Party Administrator.
+
+Project.
+ A temporary endeavor undertaken to create a unique service or result with a defined timeframe for completion.
+
+Project Employees.
+ A person appointed to a non-permanent position in State service that is limited in duration based on the scope of the work (e.g., length of the assignment or task) pursuant to an applicable collective bargaining agreement.
+
+Requisite Procurement Program.
+ A procurement program listed in ORC 125.035 and OAC 123:5-1-17. Prior to purchasing goods or services from outside suppliers, Ohio law requires State Agencies to purchase certain goods or services from State resources, generally known as Requisite Procurement Programs. Requisite Procurement Programs include but are not limited to: the Office of Information Technology at the Department of Administrative Services as established in ORC 125.18 and Ohio Penal Industries (OPI) within the Department of Rehabilitation and Correction as prescribed in ORC 5147.07. State of Ohio Administrative Policy PM-01, Purchasing Procedures, provides guidance on use of Requisite Procurement Programs.
+
+Shared Employee.
+ An employee who is temporarily assigned to another Agency pursuant to ORC 124.389 and OAC 123:1-46-06, or applicable collective bargaining agreement, to further the goals and objectives of the participating Agencies.
+
+Staff Augmentation.
+ The use of non-employees (i.e., Contracted Resources) to supplement the State workforce. Some of the reasons Staff Augmentation may be used include the need for a specialized skill set, to fill in gaps (such as during the posting and selection process), or for Project-based work when the duration is insufficient to justify hiring a State Employee.
+
+State Employee.
+ Any person holding a position of employment in the service of the state who is subject to appointment, removal, promotion, or reduction by an appointing authority, including such positions that are covered by a State of Ohio collective bargaining agreement.
+
+Authority
+
+OAC 123:1-45-01, 123:1-46-06
+
+Resources
+
+Attachment 1: Long-Term Engagement for Contracted Resources for Information Technology | Justification under HR-50 template
+
+Inquiries
+
+Direct inquiries about this policy to:
+
+Labor Relations and Human Resources Policy
+Office of Collective Bargaining
+Ohio Department of Administrative Services
+4200 Surface Road
+Columbus, Ohio 43228
+614.752.5393 |
+DASHRD.HRPolicy@das.ohio.gov
+
+State of Ohio Administrative Policies may be found online at
+Policy Finder - Department of Administrative Services
+
+Revision History
+
+Date
+
+Description of Change
+
+10/22/2019
+
+Policy issued. This policy replaces the former DAS Directive HR-D-13, Independent Contractor Guidelines.
+
+07/12/2021
+
+Reissued for housekeeping.
+
+01/09/2023
+
+Updated with revisions to the exemption process under section 2.2.3.2 along with additional clarifications throughout.
+
+09/01/2023
+
+Housekeeping changes made and policy reissued in the new statewide policy template.
+
+Attachment 1: Long-Term Engagement for Contracted Resources for Information Technology | Justification under HR-50 template
+
+[INSERT AGENCY LETTERHEAD]
+
+JUSTIFICATION OF NEED
+
+Guidelines for Contracted Resources (HR-50) Policy
+ provides that contracts for Information Technology (IT) Functions
+[1]
+ with a Contracted Resource
+[2]
+ be executed for a period of no more than two (2) years. If an Agency requires a long-term engagement (anything over 2 years), it must complete this form and maintain it in accordance with the Agency’s records retention schedule.
+
+Section 1: Background (Read Only Form)
+
+Resource Name
+
+
+Vendor Name
+
+
+Contract End date
+
+
+Expected Duration of Need
+
+
+Section 2: Assessment of Need (Read Only Form)
+
+What is the IT function, Project, or service being performed under this contract? What is the level of independent judgment required to perform the service?
+
+
+Do the service needs and/or duties involve inherently governmental functions?
+[3]
+
+
+Do you currently have State Employees on staff that are able to provide these services?
+
+
+Are there alternative methods of staffing available to provide the services?
+
+
+Why does this contract require more than two years to complete?
+
+
+Form completed by
+Name
+
+
+Title
+
+ on
+Date
+
+.
+
+AGENCY JUSTIFICATION OF NEED (Agency to Determine Signatories)
+
+Based on the above information, I certify that this Long-Term Engagement for Contracted Resources for Information Technology meets compliance with State of Ohio Policy HR-50 based on the justified need of the Agency.
+
+Agency Human Resource Director (Read Only Form)
+
+Agency Human Resource Director
+
+
+Signature
+
+
+Date
+
+
+Printed Name
+
+
+Agency Director (Read Only Form)
+
+Agency Director
+
+
+Signature
+
+
+Date
+
+
+Printed Name
+
+
+Footnotes
+
+Back to Content[1]
+ Includes but is not limited to software design, systems analysis, IT planning, network, and development. Project management services for IT-related Projects are included.
+
+Back to Content[2]
+ A non-employee performing a service pursuant to a contract. Where applicable, the term Contracted Resource also means a Staff Augmentation resource. For purposes of this policy, this definition does not include non-employees working for vendors awarded Projects pursuant to a competitive selection process as defined by ORC 125.01(I).
+
+Back to Content[3]
+ See Section III.A.1.b of State Policy HR-50 for examples of inherently governmental functions.
+
+      Share this
+
+
+Expand All Sections
+
+
+
+Web Content Viewer
+
+Actions
+
+
+
+
+            About Us
+
+
+
+            Administrative Support Division
+
+
+
+            First Responder Communications Initiatives
+
+
+
+            General Services Division
+
+
+
+            Office of Collective Bargaining
+
+
+
+            Office of Data and Efficiency
+
+
+
+            Office of Information Technology
+
+
+
+            State Human Resources Division
+
+
+
+            Media Center
+
+
+
+            News
+
+
+
+            Events
+
+
+
+            Hidden
+
+
+
+            Hidden
+
+
+            Resources
+
+
+            Policy Finder
+
+
+
+            Careers
+
+
+
+            Public Records Requests
+
+
+
+            State MLK Holiday Commission
+
+
+
+            Hidden
+
+
+
+            Hidden
+
+
+Ohio Department of Administrative Services  | 30 E. Broad St., Columbus, Ohio 43215 |
+614-466-6511
+
+Powered by
+
+
+                    Privacy Notice and Policies
+
+
+
+
+
+
+
+                    Accessibility
+
+
+
+
+
+
+
+                    Ohio Checkbook
+
+
+
+
+
+
+linkedin icon
+
+x icon
+
+top-menu
+
+top-close
+
+top-help
+
+top-search
+
+
+odx-searchbox-label
+
+
+Submit your search
+
+Close
+
+
+
+Complementary Content
+
+${title}
+${badge}
+
+${loading}
+
+===== REFERENCES (ALL LINKS) =====
+https://checkbook.ohio.gov/
+https://das.ohio.gov/employee-relations/policies/guidelines-for-contracted-Resources
+https://das.ohio.gov/home/policy-finder/filter-policy-finder
+https://das.ohio.gov/wps/portal/gov/das/about
+https://das.ohio.gov/wps/portal/gov/das/about/about-us
+https://das.ohio.gov/wps/portal/gov/das/about/administrative-support-division-site-area/administrative-support-division
+https://das.ohio.gov/wps/portal/gov/das/about/first-responder-comms-initiatives/first-responder-comms-initiatives
+https://das.ohio.gov/wps/portal/gov/das/about/general-services-division/general-services-division
+https://das.ohio.gov/wps/portal/gov/das/about/office-of-collective-bargaining/office-of-collective-bargaining-1
+https://das.ohio.gov/wps/portal/gov/das/about/office-of-information-technology
+https://das.ohio.gov/wps/portal/gov/das/about/state-human-resources-division/state-human-resources-division
+https://das.ohio.gov/wps/portal/gov/das/buying-and-selling
+https://das.ohio.gov/wps/portal/gov/das/employee-relations
+https://das.ohio.gov/wps/portal/gov/das/employee-relations/benefits-administration
+https://das.ohio.gov/wps/portal/gov/das/employee-relations/combined-charitable-campaign
+https://das.ohio.gov/wps/portal/gov/das/employee-relations/emloyee-relations-overview
+https://das.ohio.gov/wps/portal/gov/das/employee-relations/human-resources+-operations-site-area
+https://das.ohio.gov/wps/portal/gov/das/employee-relations/office-of-collective-bargaining
+https://das.ohio.gov/wps/portal/gov/das/employee-relations/office-of-opportunity-and-accessibility
+https://das.ohio.gov/wps/portal/gov/das/employee-relations/policies
+https://das.ohio.gov/wps/portal/gov/das/employee-relations/policies/google.com
+https://das.ohio.gov/wps/portal/gov/das/employee-relations/policies/guidelines-for-contracted-Resources
+https://das.ohio.gov/wps/portal/gov/das/employee-relations/talent-management
+https://das.ohio.gov/wps/portal/gov/das/help-center
+https://das.ohio.gov/wps/portal/gov/das/help-center/accessibility/accessibility-
+https://das.ohio.gov/wps/portal/gov/das/help-center/privacy-notice-and-policies/privacy-notice-and-policies
+https://das.ohio.gov/wps/portal/gov/das/help-center/public-records-request-site-area/public-records-requests
+https://das.ohio.gov/wps/portal/gov/das/home
+https://das.ohio.gov/wps/portal/gov/das/home/media-center/all-events/all-events-landing-page
+https://das.ohio.gov/wps/portal/gov/das/home/media-center/all-news/all-news
+https://das.ohio.gov/wps/portal/gov/das/home/media-center/das-media-center
+https://das.ohio.gov/wps/portal/gov/das/home/ohio-mlk-holiday-commission/mlk-commission/mlk-holiday-commission
+https://das.ohio.gov/wps/portal/gov/das/home/policy-finder/filter-policy-finder
+https://das.ohio.gov/wps/portal/gov/das/property-services
+https://das.ohio.gov/wps/portal/gov/das/search
+https://das.ohio.gov/wps/portal/gov/das/technology-and-strategy
+https://das.ohio.gov/wps/portal/gov/das/technology-and-strategy/data-and-efficiency/office-of-data-and-efficiency
+https://dasstateoh.taleo.net/careersection/oh_int/jobsearch.ftl
+https://twitter.com/ohiodas
+https://www.linkedin.com/company/ohiodas
+javascript:;
+mailto:DASHRD.HRPolicy@das.ohio.gov
+tel:1-614-466-6511

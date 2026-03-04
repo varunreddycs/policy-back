@@ -1,0 +1,95 @@
+{
+  "run_id": "20260304T171703Z-7560a3f6",
+  "agency": "DAS",
+  "tenant_id": "00000000-0000-0000-0000-000000000001",
+  "batch_id": "fa781536-1d23-4827-ab5f-fefa7d26ccdc",
+  "batch_status": "received",
+  "timed_out": false,
+  "counts": {
+    "registered": 0,
+    "processing": 0,
+    "ready": 0,
+    "failed": 0
+  },
+  "documents": [
+    {
+      "external_id": "here-s-how-you-know-6dc0a457fb32",
+      "source_url": "https://das.ohio.gov/employee-relations/policies",
+      "blob_path": "",
+      "status": "skipped",
+      "detail": "cached_unchanged",
+      "policy_version_id": null
+    },
+    {
+      "external_id": "policies-d73369dae1b8",
+      "source_url": "https://das.ohio.gov/wps/portal/gov/das/employee-relations/policies",
+      "blob_path": "",
+      "status": "skipped",
+      "detail": "cached_unchanged",
+      "policy_version_id": null
+    },
+    {
+      "external_id": "policy-finder-6df433e46496",
+      "source_url": "https://das.ohio.gov/wps/portal/gov/das/home/policy-finder/filter-policy-finder",
+      "blob_path": "",
+      "status": "skipped",
+      "detail": "cached_unchanged",
+      "policy_version_id": null
+    },
+    {
+      "external_id": "here-s-how-you-know-3ddaae7b194b",
+      "source_url": "https://das.ohio.gov/home/policy-finder/filter-policy-finder",
+      "blob_path": "",
+      "status": "skipped",
+      "detail": "cached_unchanged",
+      "policy_version_id": null
+    },
+    {
+      "external_id": "policy-finder-de82f52c88e0",
+      "source_url": "https://das.ohio.gov/wps/portal/gov/das/home/policy-finder",
+      "blob_path": "",
+      "status": "skipped",
+      "detail": "cached_unchanged",
+      "policy_version_id": null
+    },
+    {
+      "external_id": "here-s-how-you-know-f8415a835501",
+      "source_url": "https://das.ohio.gov/employee-relations/policies/admin-leave",
+      "blob_path": "",
+      "status": "skipped",
+      "detail": "cached_unchanged",
+      "policy_version_id": null
+    },
+    {
+      "external_id": "miscellaneous-letters-and-templates-department-o-2f8d6eec4293",
+      "source_url": "https://das.ohio.gov/employee-relations/office-of-collective-bargaining/labor-relations-and-human-resources-policy/miscellaneous-letters-and-templates",
+      "blob_path": "",
+      "status": "skipped",
+      "detail": "cached_unchanged",
+      "policy_version_id": null
+    },
+    {
+      "external_id": "hidden-4d98d595bf20",
+      "source_url": "https://das.ohio.gov/employee-relations/policies/google.com",
+      "blob_path": "",
+      "status": "skipped",
+      "detail": "cached_unchanged",
+      "policy_version_id": null
+    }
+  ],
+  "resume_state_path": "C:\\VarunProjects\\2026\\MistrV\\PolicyPlatform\\policy-back\\tools\\ohio_docs_ingestor\\out\\state\\das-ingest-state.json",
+  "embeddings": {
+    "command": "C:\\VarunProjects\\2026\\MistrV\\PolicyPlatform\\policy-back\\.venv\\Scripts\\python.exe -m apps.worker.jobs.embed_backfill --tenant-id 00000000-0000-0000-0000-000000000001 --only-current",
+    "return_code": 1,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"<frozen runpy>\", line 198, in _run_module_as_main\n  File \"<frozen runpy>\", line 88, in _run_code\n  File \"C:\\VarunProjects\\2026\\MistrV\\PolicyPlatform\\policy-back\\apps\\worker\\jobs\\embed_backfill.py\", line 195, in <module>\n    main()\n  File \"C:\\VarunProjects\\2026\\MistrV\\PolicyPlatform\\policy-back\\apps\\worker\\jobs\\embed_backfill.py\", line 182, in main\n    SessionLocal = get_sessionmaker()\n                   ^^^^^^^^^^^^^^^^^^\n  File \"C:\\VarunProjects\\2026\\MistrV\\PolicyPlatform\\policy-back\\packages\\db\\session.py\", line 41, in get_sessionmaker\n    _SessionLocal = sessionmaker(bind=get_engine(), autoflush=False, autocommit=False, future=True)\n                                      ^^^^^^^^^^^^\n  File \"C:\\VarunProjects\\2026\\MistrV\\PolicyPlatform\\policy-back\\packages\\db\\session.py\", line 34, in get_engine\n    _ENGINE = create_engine_from_env()\n              ^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\VarunProjects\\2026\\MistrV\\PolicyPlatform\\policy-back\\packages\\db\\session.py\", line 19, in create_engine_from_env\n    database_url = _require_env(\"DATABASE_URL\")\n                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\VarunProjects\\2026\\MistrV\\PolicyPlatform\\policy-back\\packages\\db\\session.py\", line 13, in _require_env\n    raise RuntimeError(f\"Missing required environment variable: {name}\")\nRuntimeError: Missing required environment variable: DATABASE_URL",
+    "counts_before": {
+      "policy_sections": 0,
+      "policy_embeddings": 0
+    },
+    "counts_after": {
+      "policy_sections": 0,
+      "policy_embeddings": 0
+    }
+  }
+}

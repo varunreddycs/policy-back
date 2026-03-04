@@ -1,0 +1,44 @@
+{
+  "run_stamp": "20260304T202738Z",
+  "dry_run": true,
+  "input_dir": "C:\\VarunProjects\\2026\\MistrV\\PolicyPlatform\\policy-back\\tools\\NoteBooks\\out\\das_policies\\txt",
+  "tenant_id": "00000000-0000-0000-0000-000000000001",
+  "api_base_url": "http://localhost:8000",
+  "source_system": "ohio-docs",
+  "agency": "DAS",
+  "batch_id": null,
+  "only_current": true,
+  "files_total": 3,
+  "results": [
+    {
+      "file": "C:\\VarunProjects\\2026\\MistrV\\PolicyPlatform\\policy-back\\tools\\NoteBooks\\out\\das_policies\\txt\\2100-01__f8dc615369.txt",
+      "policy_external_id": "ohio-docs-das-c19460679520",
+      "blob_path": "external/das/ohio-docs-das-c19460679520/20260304T202738Z-2100-01__f8dc615369.txt",
+      "version_label": "v1-20260304T202738Z-c0f65782",
+      "effective_date": null,
+      "content_type": "text/plain",
+      "file_sha256": "c0f6578216476bc9931030ac42449925c19cae76a4bac241d5f8f35787165b97",
+      "status": "dry-run"
+    },
+    {
+      "file": "C:\\VarunProjects\\2026\\MistrV\\PolicyPlatform\\policy-back\\tools\\NoteBooks\\out\\das_policies\\txt\\2100-02-mobile-computing__3efceb87e1.txt",
+      "policy_external_id": "ohio-docs-das-b4260cde6506",
+      "blob_path": "external/das/ohio-docs-das-b4260cde6506/20260304T202738Z-2100-02-mobile-computing__3efceb87e1.txt",
+      "version_label": "v1-20260304T202738Z-9d09a8d7",
+      "effective_date": null,
+      "content_type": "text/plain",
+      "file_sha256": "9d09a8d7612c911775cf1f5b5e25545b1719b71b7f0ecd9106dd4b1f621b11f3",
+      "status": "dry-run"
+    },
+    {
+      "file": "C:\\VarunProjects\\2026\\MistrV\\PolicyPlatform\\policy-back\\tools\\NoteBooks\\out\\das_policies\\txt\\2100-03-system-and-information-integrity__b5979a949e.txt",
+      "policy_external_id": "ohio-docs-das-af062eedb3d6",
+      "blob_path": "external/das/ohio-docs-das-af062eedb3d6/20260304T202738Z-2100-03-system-and-information-integrity__b5979a949e.txt",
+      "version_label": "v1-20260304T202738Z-cd17a8ab",
+      "effective_date": null,
+      "content_type": "text/plain",
+      "file_sha256": "cd17a8ab132476cf9afc3b9cdc01fb7a95000ffa6cbd97f1026518ddeaff2f32",
+      "status": "dry-run"
+    }
+  ]
+}

@@ -1,0 +1,457 @@
+TITLE: Personnel Actions (HR-30)
+URL: https://das.ohio.gov/wps/portal/gov/das/employee-relations/policies/personnel-actions
+
+===== PAGE TEXT =====
+Personnel Actions (HR-30)
+
+IBM WebSphere Portal
+
+An official State of Ohio site.
+
+Here’s how you know
+
+Official websites use Ohio.gov
+
+An Ohio.gov website belongs to an official government organization in the State of Ohio.
+
+Secure .gov websites use HTTPS
+
+A lock
+ or https:// means you've safely connected to the .gov website. Share sensitive information only on official, secure websites.
+
+Trusted applications are secured by OHID
+
+When you log in with OHID, your privacy, data, and personal information are protected by federal and state digital security standards.
+
+Close
+
+learn-more
+
+        Skip to Navigation
+
+
+        Skip to Main Content
+
+
+Ohio Department
+
+Menu
+
+                        	Home
+
+                        	Buying & Selling
+
+                        	Property Services
+
+                        	Technology & Strategy
+
+                        	Employee Relations
+
+                        	About
+
+                        	Help
+
+                        	Search
+
+top-help
+
+odx-helplink-label
+
+top-search
+
+odx-searchbox-label
+
+Type in your search keywords and hit enter to submit or escape to close
+
+top-search
+
+top-close
+
+Personnel Actions (HR-30)
+
+{}
+
+Web Content Viewer
+
+Actions
+
+
+
+DAS
+
+Employee Relations
+
+Policies
+
+                Overview
+
+
+                Benefits Administration
+
+
+                Collective Bargaining Services
+
+
+                Combined Charitable Campaign
+
+
+                Office of Opportunity and Accessibility
+
+
+                Human Resources Operations
+
+
+                Talent Management
+
+
+                Policies
+
+
+                  Personnel Actions (HR-30)
+
+
+August 24, 2023
+
+ |
+
+Agency
+
+State of Ohio Administrative Policy
+
+No: HR-30 -
+State Human Resources Division
+
+Effective:
+August 24, 2023
+
+Issued By:
+Kathleen C. Madden, Director
+
+Purpose
+
+To set forth responsibilities of
+Centralized agencies
+,
+Decentralized agencies
+, and DAS in the personnel action (PA) process. The first occurrence of a defined term in the policy is in bold, italic type, and is hyperlinked to the definition in Section IV.
+
+Scope
+
+This policy applies to all state agencies, boards, and commissions under the authority of the Governor (collectively referred to as Agency or Agencies).
+
+Policy
+
+Agencies and the Department of Administrative Services are required to use the electronic personnel action request (EPAR) system. This allows DAS to electronically approve PAs for Centralized Agencies and for Decentralized Agencies to electronically approve their own PAs. Once approved, the information in the PA is transferred into the Ohio Administrative Knowledge System (OAKS).
+
+Agency Responsibilities
+
+All Agencies, regardless of Centralized/Decentralized status, have responsibilities in the PA process. This list of Agency responsibilities is not all-inclusive. For questions regarding Agency responsibilities, contact the assigned human resources analyst in DAS State Human Resources Division, State Services (DAS State Services) for your Agency.
+
+Certification: Agencies are required to submit a certification document to DAS every year which outlines the Agency's understanding of their role in the PA process and their obligation to uphold the Civil Service Laws and Rules for the State of Ohio.
+
+PA Preparation: PAs must be prepared in accordance with the PA manual. See Section VI. Resources for the location of this manual. For both Centralized and Decentralized Agencies, PAs must be initiated in the EPAR system in accordance with the applicable timeframes required by current policies and procedures. Agencies must ensure that any applicable personnel action falls within the Agency’s personnel ceilings. Agencies are also reminded that information entered into the EPAR system (including comments) may be considered to be public record. Any concerns regarding what can and should be entered into the system should be resolved with Agency legal counsel.
+
+Minimum Qualifications: Proper verification of an applicant's minimum qualifications should be done by comparing the applicant's training and experience to the requirement outlined on the classification specification for the position to which the applicant is being appointed.
+
+Background Checks: Agencies must follow State of Ohio Administrative Policy HR-29 Disclosure of Criminal Convictions During the Application Process. See Section VI. Resources for the location of the unclassified background check forms.
+
+Drug Tests: Ensure that drug tests are completed for new unclassified appointments and positions designated as safety sensitive. Any questions regarding this matter should be directed to the DAS State Human Resources Division, Office of Drug-Free Workplace.
+
+Certification: Certain PAs are subject to recall and reemployment lists. These include new hires, promotions, demotions, laterals, transfers within and between Agencies, civil service status changes, appointment changes, displacements, position changes if the headquarter county changes, and headquarter county changes. Agencies must verify whether a recall and reemployment list exists and attach the required verification to the PA. Agencies must also follow applicable collective bargaining agreements, Ohio Revised Code (ORC) and Ohio Administrative Code (OAC) sections.
+
+Advance Step Appointments: Agencies must follow State of Ohio Administrative Policy HR-03 Advanced Step Appointments.
+
+Verification of Licenses: Agencies must ensure that any required licenses for a position are active. Proof of verification must accompany the PA. For example, Agencies must ensure that Nurses’ licenses are active. This can be accomplished by going to the Nursing Board website
+Ohio Board of Nursing - Home - Ohio Board of Nursing
+.
+
+Attachments: For both Centralized and Decentralized Agencies, PAs must have the appropriate documentation attached in the EPAR system. However, when initiating PAs that relate to medical conditions (e.g., workers’ compensation or disability leave benefits) the relevant medical documentation is not to be attached in the EPAR system.
+
+Approval: Within the EPAR system, PAs are approved electronically. For Centralized Agencies a PA can be approved in the EPAR system by the Agency approver but a PA will not be considered approved until it is approved in the EPAR system by DAS State Services. If necessary, a PA will be routed through the EPAR system to the Office of the Governor as required by DAS policies. For Decentralized Agencies, after a PA is initiated in the EPAR system a Decentralized Agency must electronically approve the PA as the Appointing Authority and then finalize the approval by approving as a Decentralized Agency approver. For Decentralized Agencies, the EPAR system will automatically route required PAs to the Office of the Governor for approval.
+
+DAS Human Resources Division Responsibilities
+
+Training: Training will be available from DAS State Services in every aspect of PA processing. All new personnel who will be involved in the PA process should participate in PA training within 30 days following their hire date. Training will be available in the following areas:
+
+Technical training for entering data into the EPAR system.
+
+How to properly prepare a PA, including information such as what attachments are necessary, notes that should be included, etc.
+
+Familiarizing Agency HR staff with the Decentralized process and how roles change within the Agency and at DAS.
+
+Consultation: Agency specific training can be developed to address an Agency's specific needs. This training can be provided, upon request of the Agency, on-site by the DAS State Services analysts. In addition, the analysts have in-depth technical knowledge regarding the processing of PAs and will continue to be available to provide consultation.
+
+Calculating, Approving, and Processing Prior Service Time: To maintain consistency throughout state Agencies in regard to granting prior service time, this process will be handled by DAS State Services for both Centralized and Decentralized Agencies. The Agency is responsible for entering the PA into the EPAR system and attaching the supporting documentation from the previous employer.
+
+Assistance with Layoffs: DAS State Services staff will continue to assist Agencies with processing layoffs.
+
+Compliance Review: DAS State Services will continue to conduct periodic compliance reviews of Decentralized agency PAs pursuant to the Decentralization Procedures Manual.
+
+Special Considerations for Decentralized Agencies
+
+Decentralized Agencies have additional responsibilities in the PA process.
+
+Pursuant to the Decentralization Procedures Manual, Agencies must continue to maintain a written policy of internal procedures for the processing and approving of PAs. Policies should include, at a minimum, the following information: a general summary of the process, in narrative format or a flow chart, from initiation of the PA to final approval; document tracking; procedure for error correction; information regarding maintenance of records; identification of who is accountable for ensuring that the policy is properly followed; a statement of intent indicating that the Agency will continue to be in compliance with the ORC, OAC, applicable collective bargaining agreements, directives issued by the Governor's Office, and DAS policies and procedures regarding PA processing and approval. Agencies must keep the internal policy updated and make it accessible to those with PA responsibilities.
+
+A document shall be developed and maintained at the Agency stating the name of the appointing authority and listing all employees who will have approval authority for PAs.
+
+When a change in Agency administration occurs, the Agency must initiate a meeting with DAS State Services. DAS will provide the Agency with a review of the process. The Agency must sign a new decentralization certification document.
+
+DAS Analysts are not required to approve every PA for Decentralized Agencies. Therefore, the DAS Analysts will be available as technical advisors and may conduct audits and compliance reviews. The purpose of a compliance review is to verify that a Decentralized Agency is in compliance with the legal, policy and procedural requirements associated with actions documented by PAs. The frequency of these reviews will depend upon the volume of PAs processed by an Agency. DAS State Services will provide recommendations to the Agency's HR Administrator when issues are identified.
+
+DAS will closely monitor selected PAs during the Agency's initial six months of PA decentralization. This will allow the DAS State Services staff to immediately alert the Agency to problem areas that may cause difficulties in the future. After the initial six months, the Agency's PA decentralization process will be periodically monitored by randomly selecting PAs for review and running reports.
+
+If either DAS or Agency-established policies and procedures for PA processing are found to be consistently ignored or if problems found by DAS compliance reviews are not resolved, the Agency director will be notified by DAS. If the problems are still not resolved, DAS reserves the right to revoke Decentralized Agency certification.
+
+Legal Responsibility
+
+All Agencies will continue to be responsible for compliance with collective bargaining agreements, the ORC, and the OAC. As Agencies should be aware, ORC 124.62 prohibits an appointing authority from knowingly or willfully making an appointment contrary to rule or law. Approving personnel actions is a task not to be taken lightly. It is imperative that the Agency's director's office, legal office, fiscal office, and human resources office work closely to follow all relevant laws and rules and maintain open lines of communication in this process. Legally, DAS is charged with policy authority for State of Ohio personnel practices. DAS delegates significant authority and responsibility to both Centralized and Decentralized Agencies, thereby granting Agencies authority to act on behalf of the director, while DAS retains overall authority and responsibility for ensuring that the Civil Service Laws are applied consistently throughout all state Agencies.
+
+Definitions
+
+Centralized Agency:
+ An Agency for which the Director of DAS maintains the authority and responsibility of individual personnel decisions.
+
+Decentralized Agency:
+ An Agency which has been granted by the Director of DAS under ORC 124.04(M) the authority and responsibility of individual personnel decisions.
+
+Authority
+
+ORC 124.20
+OAC 123:1-45-01
+
+Resources
+
+Designated Agency HCM staff can access Personnel Processing Manual and Decentralization Procedure Manual in the HCM module of
+myOhio - Department of Administrative Services
+.
+
+Background Check Forms (Unclassified Positions)
+
+Inquiries
+
+Direct inquiries about this policy to:
+
+Office of State Services
+State Human Resources Division
+Ohio Department of Administrative Services
+30 East Broad Street, 40th Floor
+Columbus, Ohio 43215
+614.466.4194 |
+DASHRD.stateservices@das.ohio.gov
+State of Ohio Administrative Policies may be found online at
+Policy Finder - Department of Administrative Services
+
+Revision History
+
+Date
+
+Description of Change
+
+01/28/2013
+
+Original policy.
+
+07/06/2022
+
+Reissued policy with housekeeping changes.
+
+08/24/2023
+
+Reissued policy with housekeeping changes and in new statewide policy template.
+
+      Share this
+
+
+Expand All Sections
+
+
+
+Web Content Viewer
+
+Actions
+
+
+
+
+            About Us
+
+
+
+            Administrative Support Division
+
+
+
+            First Responder Communications Initiatives
+
+
+
+            General Services Division
+
+
+
+            Office of Collective Bargaining
+
+
+
+            Office of Data and Efficiency
+
+
+
+            Office of Information Technology
+
+
+
+            State Human Resources Division
+
+
+
+            Media Center
+
+
+
+            News
+
+
+
+            Events
+
+
+
+            Hidden
+
+
+
+            Hidden
+
+
+            Resources
+
+
+            Policy Finder
+
+
+
+            Careers
+
+
+
+            Public Records Requests
+
+
+
+            State MLK Holiday Commission
+
+
+
+            Hidden
+
+
+
+            Hidden
+
+
+Ohio Department of Administrative Services  | 30 E. Broad St., Columbus, Ohio 43215 |
+614-466-6511
+
+Powered by
+
+
+                    Privacy Notice and Policies
+
+
+
+
+
+
+
+                    Accessibility
+
+
+
+
+
+
+
+                    Ohio Checkbook
+
+
+
+
+
+
+linkedin icon
+
+x icon
+
+top-menu
+
+top-close
+
+top-help
+
+top-search
+
+
+odx-searchbox-label
+
+
+Submit your search
+
+Close
+
+
+
+Complementary Content
+
+${title}
+${badge}
+
+${loading}
+
+===== REFERENCES (ALL LINKS) =====
+https://checkbook.ohio.gov/
+https://das.ohio.gov/employee-relations/policies/background-check-forms-unclassified-positions
+https://das.ohio.gov/home/policy-finder/filter-policy-finder
+https://das.ohio.gov/wps/portal/gov/das/about
+https://das.ohio.gov/wps/portal/gov/das/about/about-us
+https://das.ohio.gov/wps/portal/gov/das/about/administrative-support-division-site-area/administrative-support-division
+https://das.ohio.gov/wps/portal/gov/das/about/first-responder-comms-initiatives/first-responder-comms-initiatives
+https://das.ohio.gov/wps/portal/gov/das/about/general-services-division/general-services-division
+https://das.ohio.gov/wps/portal/gov/das/about/office-of-collective-bargaining/office-of-collective-bargaining-1
+https://das.ohio.gov/wps/portal/gov/das/about/office-of-information-technology
+https://das.ohio.gov/wps/portal/gov/das/about/state-human-resources-division/state-human-resources-division
+https://das.ohio.gov/wps/portal/gov/das/buying-and-selling
+https://das.ohio.gov/wps/portal/gov/das/employee-relations
+https://das.ohio.gov/wps/portal/gov/das/employee-relations/benefits-administration
+https://das.ohio.gov/wps/portal/gov/das/employee-relations/combined-charitable-campaign
+https://das.ohio.gov/wps/portal/gov/das/employee-relations/emloyee-relations-overview
+https://das.ohio.gov/wps/portal/gov/das/employee-relations/human-resources+-operations-site-area
+https://das.ohio.gov/wps/portal/gov/das/employee-relations/office-of-collective-bargaining
+https://das.ohio.gov/wps/portal/gov/das/employee-relations/office-of-opportunity-and-accessibility
+https://das.ohio.gov/wps/portal/gov/das/employee-relations/policies
+https://das.ohio.gov/wps/portal/gov/das/employee-relations/policies/google.com
+https://das.ohio.gov/wps/portal/gov/das/employee-relations/policies/personnel-actions
+https://das.ohio.gov/wps/portal/gov/das/employee-relations/talent-management
+https://das.ohio.gov/wps/portal/gov/das/help-center
+https://das.ohio.gov/wps/portal/gov/das/help-center/accessibility/accessibility-
+https://das.ohio.gov/wps/portal/gov/das/help-center/privacy-notice-and-policies/privacy-notice-and-policies
+https://das.ohio.gov/wps/portal/gov/das/help-center/public-records-request-site-area/public-records-requests
+https://das.ohio.gov/wps/portal/gov/das/home
+https://das.ohio.gov/wps/portal/gov/das/home/media-center/all-events/all-events-landing-page
+https://das.ohio.gov/wps/portal/gov/das/home/media-center/all-news/all-news
+https://das.ohio.gov/wps/portal/gov/das/home/media-center/das-media-center
+https://das.ohio.gov/wps/portal/gov/das/home/ohio-mlk-holiday-commission/mlk-commission/mlk-holiday-commission
+https://das.ohio.gov/wps/portal/gov/das/home/policy-finder/filter-policy-finder
+https://das.ohio.gov/wps/portal/gov/das/property-services
+https://das.ohio.gov/wps/portal/gov/das/search
+https://das.ohio.gov/wps/portal/gov/das/technology-and-strategy
+https://das.ohio.gov/wps/portal/gov/das/technology-and-strategy/data-and-efficiency/office-of-data-and-efficiency
+https://dasstateoh.taleo.net/careersection/oh_int/jobsearch.ftl
+https://myohio.gov
+https://twitter.com/ohiodas
+https://www.linkedin.com/company/ohiodas
+https://www.nursing.ohio.gov
+javascript:;
+mailto:DASHRD.stateservices@das.ohio.gov
+tel:1-614-466-6511

@@ -1,0 +1,613 @@
+TITLE: MPP 22.0 Radio Talkgroup Patching Policy
+URL: https://das.ohio.gov/technology-and-strategy/marcs/mpp-22-0-radio-talkgroup-patching-policy
+
+===== PAGE TEXT =====
+MPP 22.0 Radio Talkgroup Patching Policy
+
+IBM WebSphere Portal
+
+An official State of Ohio site.
+
+Here’s how you know
+
+Official websites use Ohio.gov
+
+An Ohio.gov website belongs to an official government organization in the State of Ohio.
+
+Secure .gov websites use HTTPS
+
+A lock
+ or https:// means you've safely connected to the .gov website. Share sensitive information only on official, secure websites.
+
+Trusted applications are secured by OHID
+
+When you log in with OHID, your privacy, data, and personal information are protected by federal and state digital security standards.
+
+Close
+
+learn-more
+
+        Skip to Navigation
+
+
+        Skip to Main Content
+
+
+Ohio Department
+
+Menu
+
+                        	Home
+
+                        	Buying & Selling
+
+                        	Property Services
+
+                        	Technology & Strategy
+
+                        	Employee Relations
+
+                        	About
+
+                        	Help
+
+                        	Search
+
+top-help
+
+odx-helplink-label
+
+top-search
+
+odx-searchbox-label
+
+Type in your search keywords and hit enter to submit or escape to close
+
+top-search
+
+top-close
+
+MPP 22.0 Radio Talkgroup Patching Policy
+
+{}
+
+Web Content Viewer
+
+Actions
+
+
+
+DAS
+
+Technology & Strategy
+
+MARCS
+
+                Overview
+
+
+                IT Innovation Information Center
+
+
+                IT Strategic Investment and Architecture
+
+
+                Information Security & Privacy
+
+
+                IT Enterprise Services
+
+
+                InnovateOhio Platform
+
+
+                Office of Data and Efficiency
+
+
+                Ohio 9-1-1 Program Office
+
+
+                MARCS
+
+
+                OGRIP
+
+
+                Policies
+
+
+                IT Policy Glossary
+
+
+                    MPP 22.0 Radio Talkgroup Patching Policy
+
+
+The Radio Talkgroup Patching Policy establishes the terms and conditions for patching 2 way voice radio equipment into the Multi-Agency Radio Communication System (MARCS) infrastructure.
+
+Radio Patching
+ is one of several terms used to define the connection of an Ohio MARCS radio to another radio or radios, resulting in the ability to establish Interoperable communications between radios and systems not compatible with each other directly. Some of the other terms used to define this process include “cross-connect”, “interconnect”, or “bridging”.
+
+odx-attachment
+
+MARCS MPP-22 (2023) with attachment.pdf | 755 KB
+
+odx-download
+
+odx-download
+
+      Share this
+
+
+Expand All Sections
+
+
+
+Web Content Viewer
+
+Actions
+
+
+
+
+            About Us
+
+
+
+            Administrative Support Division
+
+
+
+            First Responder Communications Initiatives
+
+
+
+            General Services Division
+
+
+
+            Office of Collective Bargaining
+
+
+
+            Office of Data and Efficiency
+
+
+
+            Office of Information Technology
+
+
+
+            State Human Resources Division
+
+
+
+            Media Center
+
+
+
+            News
+
+
+
+            Events
+
+
+
+            Hidden
+
+
+
+            Hidden
+
+
+            Resources
+
+
+            Policy Finder
+
+
+
+            Careers
+
+
+
+            Public Records Requests
+
+
+
+            State MLK Holiday Commission
+
+
+
+            Hidden
+
+
+
+            Hidden
+
+
+Ohio Department of Administrative Services  | 30 E. Broad St., Columbus, Ohio 43215 |
+614-466-6511
+
+Powered by
+
+
+                    Privacy Notice and Policies
+
+
+
+
+
+
+
+                    Accessibility
+
+
+
+
+
+
+
+                    Ohio Checkbook
+
+
+
+
+
+
+linkedin icon
+
+x icon
+
+top-menu
+
+top-close
+
+top-help
+
+top-search
+
+
+odx-searchbox-label
+
+
+Submit your search
+
+Close
+
+
+
+Complementary Content
+
+${title}
+${badge}
+
+${loading}
+
+===== REFERENCES (ALL LINKS) =====
+https://checkbook.ohio.gov/
+https://das.ohio.gov/technology-and-strategy/marcs/google.com
+https://das.ohio.gov/technology-and-strategy/marcs/mpp-22-0-radio-talkgroup-patching-policy
+https://das.ohio.gov/wps/portal/gov/das/about
+https://das.ohio.gov/wps/portal/gov/das/about/about-us
+https://das.ohio.gov/wps/portal/gov/das/about/administrative-support-division-site-area/administrative-support-division
+https://das.ohio.gov/wps/portal/gov/das/about/first-responder-comms-initiatives/first-responder-comms-initiatives
+https://das.ohio.gov/wps/portal/gov/das/about/general-services-division/general-services-division
+https://das.ohio.gov/wps/portal/gov/das/about/office-of-collective-bargaining/office-of-collective-bargaining-1
+https://das.ohio.gov/wps/portal/gov/das/about/office-of-information-technology
+https://das.ohio.gov/wps/portal/gov/das/about/state-human-resources-division/state-human-resources-division
+https://das.ohio.gov/wps/portal/gov/das/buying-and-selling
+https://das.ohio.gov/wps/portal/gov/das/employee-relations
+https://das.ohio.gov/wps/portal/gov/das/help-center
+https://das.ohio.gov/wps/portal/gov/das/help-center/accessibility/accessibility-
+https://das.ohio.gov/wps/portal/gov/das/help-center/privacy-notice-and-policies/privacy-notice-and-policies
+https://das.ohio.gov/wps/portal/gov/das/help-center/public-records-request-site-area/public-records-requests
+https://das.ohio.gov/wps/portal/gov/das/home
+https://das.ohio.gov/wps/portal/gov/das/home/media-center/all-events/all-events-landing-page
+https://das.ohio.gov/wps/portal/gov/das/home/media-center/all-news/all-news
+https://das.ohio.gov/wps/portal/gov/das/home/media-center/das-media-center
+https://das.ohio.gov/wps/portal/gov/das/home/ohio-mlk-holiday-commission/mlk-commission/mlk-holiday-commission
+https://das.ohio.gov/wps/portal/gov/das/home/policy-finder/filter-policy-finder
+https://das.ohio.gov/wps/portal/gov/das/property-services
+https://das.ohio.gov/wps/portal/gov/das/search
+https://das.ohio.gov/wps/portal/gov/das/technology-and-strategy
+https://das.ohio.gov/wps/portal/gov/das/technology-and-strategy/911-home-program-office
+https://das.ohio.gov/wps/portal/gov/das/technology-and-strategy/OGRIP
+https://das.ohio.gov/wps/portal/gov/das/technology-and-strategy/data-and-efficiency
+https://das.ohio.gov/wps/portal/gov/das/technology-and-strategy/data-and-efficiency/office-of-data-and-efficiency
+https://das.ohio.gov/wps/portal/gov/das/technology-and-strategy/information-security-privacy
+https://das.ohio.gov/wps/portal/gov/das/technology-and-strategy/innovateohio-platform-iop
+https://das.ohio.gov/wps/portal/gov/das/technology-and-strategy/it-enterprise-services
+https://das.ohio.gov/wps/portal/gov/das/technology-and-strategy/it-innovation-information-center
+https://das.ohio.gov/wps/portal/gov/das/technology-and-strategy/it-policy-glossary
+https://das.ohio.gov/wps/portal/gov/das/technology-and-strategy/it-strategic-investment-and-architecture
+https://das.ohio.gov/wps/portal/gov/das/technology-and-strategy/marcs
+https://das.ohio.gov/wps/portal/gov/das/technology-and-strategy/overview
+https://das.ohio.gov/wps/portal/gov/das/technology-and-strategy/policies
+https://das.ohio.gov/wps/wcm/connect/gov/de823acc-4007-4324-9725-9a05990f468c/MARCS+MPP-22+%282023%29+with+attachment.pdf?MOD=AJPERES&CONVERT_TO=url&CACHEID=ROOTWORKSPACE.Z18_JQGCH4S04P41206HNUKVF31000-de823acc-4007-4324-9725-9a05990f468c-pe8B-aQ
+https://dasstateoh.taleo.net/careersection/oh_int/jobsearch.ftl
+https://twitter.com/ohiodas
+https://www.linkedin.com/company/ohiodas
+javascript:;
+tel:1-614-466-6511
+
+
+
+========== PDF CONTENT ==========
+PDF: https://das.ohio.gov/wps/wcm/connect/gov/de823acc-4007-4324-9725-9a05990f468c/MARCS+MPP-22+%282023%29+with+attachment.pdf?MOD=AJPERES&CONVERT_TO=url&CACHEID=ROOTWORKSPACE.Z18_JQGCH4S04P41206HNUKVF31000-de823acc-4007-4324-9725-9a05990f468c-pe8B-aQ
+
+--- PDF Page 1 ---
+MARCS IT Policy 
+Radio Patching 
+ 
+Page 1 of 6 
+MPP-22.0 Radio Patching 
+ 
+ 
+ 
+ 
+ 
+ 
+                                   
+ 
+ 
+ 
+MARCS IT Policy 
+Radio Patching 
+No: MPP-22.0 
+Effective: 3/15/08 
+Revised: 4/27/23 
+Issued By:  
+OIT MARCS  
+Published By: 
+MARCS Program Office 
+ 
+1.0 Introduction 
+ 
+This policy establishes the terms and conditions for patching 2-way radio equipment into the 
+Multi-Agency Radio Communication System (MARCS) infrastructure. 
+ 
+2.0 Purpose 
+ 
+The purpose of this policy is to establish protocols for the use and deployment of radio 
+patching utilizing the MARCS system, ensuring the most effective system usage while 
+maintaining the high grade of service (GOS) necessary for all users of the system. 
+ 
+3.0 Definitions 
+ 
+Radio Patching is one of several terms used to define the connection of an Ohio MARCS radio 
+to another radio or radios, resulting in the ability to establish Interoperable communications 
+between radios and systems not compatible with each other directly. 
+ 
+Some of the other terms used to define this process include “cross-connect”, “interconnect”, 
+or “bridging”.  
+ 
+Of the six levels of Interoperability as originally defined by the Association of Public Safety 
+Communications Officials ( APCO), patching is defined as Level Four (4). Patching is also 
+defined in the “Statewide Communications Interoperable Plan” published in April 2021. 
+ 
+Disable is the term used to define a change in status of a radio operating on the MARCS 
+system. Disabling a radio on the MARCS system results in removing the ability of the radio to 
+operate on MARCS. 
+ 
+Gateway Patch  allows users to communicate on MARCS from another radio system’s
+
+
+--- PDF Page 2 ---
+MARCS IT Policy 
+Radio Patching 
+ 
+Page 2 of 6 
+MPP-22.0 Radio Patching 
+frequency or talkgroup when needed, without the assistance of a dispatcher or radio operator. 
+The patch is available when needed, while creating no additional usage of airtime resources 
+until the need to communicate arises. There shall be no gateway patches without the 
+expressed written permission of MARCS.   This includes LMR to LMR, cellular to LMR , and 
+any other developing technology that enable gateway abilities. 
+ 
+4.0 Background 
+ 
+Ohio MARCS is a performance rated system based on channel and frequency usage at any 
+given time. The performance of MARCS is directly related to how efficiently it is utilized by 
+subscriber agencies. The patching of other radio systems and frequencies to MARCS directly 
+affects the resources available to all users. 
+ 
+Patching a radio system to MARCS is the equivalent of adding the same number of radios in 
+use on that system onto MARCS. In certain situations, this adversely affects the ability of other 
+MARCS users to access the system. Every time a radio is patched to MARCS, even for 
+“monitoring” purposes, a channel may be used at one or more tower sites on the system. This 
+result may minimize the resources available to other agencies on MARCS. 
+ 
+5.0 Administrative Responsibilities 
+ 
+MARCS is responsible for but not limited to the following: 
+ 
+a) MARCS is responsible for ensuring the necessary network throughput is available at 
+all times for MARCS primary customers. 
+ 
+b) MARCS provides trunked voice system maintenance and administration services 
+including, but not limited to software or configuration updates and security vulnerability 
+information when received from the manufacturer  and a centralized tracking 
+mechanism for addressing software issues associated with the manufacturer. 
+c) MARCS performs preventive system maintenance and administration per 
+manufacturer’s recommendations. 
+d) MARCS is responsible for ensuring the necessary network throughput is available for 
+only the prescribed or authorized product and affiliated modules. 
+e) MARCS is responsible for establishing a process to patch essential radio 
+communication systems through MARCS to optimize emergency communications. 
+f) MARCS is responsible for monitoring the use of patches in place and their impact on 
+the MARCS network. 
+g) MARCS provides 24/7 Helpdesk support. Call 1- 866-OHMARCS (646-2727) or use
+
+
+--- PDF Page 3 ---
+MARCS IT Policy 
+Radio Patching 
+ 
+Page 3 of 6 
+MPP-22.0 Radio Patching 
+the “HELPDESK” talkgroup on MARCS radios. 
+h) MARCS provides 24/7 on-call technical staff support, as well as 24/7 call out response 
+when necessary. 
+i) MARCS retains the right to shut down a patch at any time. 
+ 
+6.0 Customer Responsibilities 
+ 
+Customers MUST be aware of the need for justification of patching and conser vation of 
+MARCS system resources. 
+ 
+a) Agencies employing radio patch capabilities shall advise MARCS of the type of 
+equipment utilized and its intended purpose. This includes defining mobile or fixed 
+capabilities and the systems  available to be patched. The r esponsible agency s hall 
+contact the MARCS Operations Center (NOC) Helpdesk via radio –  HELPDESK 
+talkgroup or call 1-866-646-2727 if contemplating a standard emergency type patch to 
+MARCS. 
+b) Agencies shall be required to provide a single point of contact (Inc ident Commander 
+or the appointed Communications Unit Leader [COML]). This person shall be in direct 
+control of the patching equipment. 
+c) During an incident or exercise, the decision to patch shall be made at the Incident 
+Commander level if possible. An ICS 205 Communications plan shall be submitted to 
+MARCS. The availability of the patch shall be dependent upon MARCS system 
+resources and shall be continually monitored by MARCS. 
+d) When the event has terminated, the patch shall be discontinued. 
+ 
+7.0 Cost Assessment 
+ 
+a) If a long- term or permanent patch is requested, a cost will be assessed to the 
+requesting agency on an annual basis.  The cost will be determined using a formula 
+that determines the actual  cost incurred by MARCS in the form of towers and 
+talkgroups and/or other resources used by the patching agency. 
+b) If the agency terminates the patch prior to  a full year’s use, the annual costs will be 
+pro-rated based on the actual period of use. 
+c) Long-term or permanent patches will be renewed on an annual basis and new costs 
+may be determined and/or re-assessed based on current rates and/or actual usage at 
+that time.
+
+
+--- PDF Page 4 ---
+MARCS IT Policy 
+Radio Patching 
+ 
+Page 4 of 6 
+MPP-22.0 Radio Patching 
+ 
+ 
+8.0 Gateway Patch 
+ 
+a) MARCS recognizes the benefit of gateway patches due to the fact they can be set up 
+without requiring human intervention. 
+b) MARCS does not allow gateway patches without prior notification and permission from 
+MARCS. After Gateway patches are approved, the administrator of any gateway patch 
+in place must immediately report the radio ID and location of the patched device.  (to 
+include LMR to LMR gateway, cellular to LMR gateway, and any other developing 
+gateway technologies). 
+c) MARCS has the right to disable the gateway if it affects system performance. 
+ 
+9.0 Prohibitions 
+ 
+a) Utilizing MARCS as a means for monitoring a patched radio system from outside the 
+subscriber’s daily response region is prohibited. 
+b) Utilization of any statewide mass interoperability talkgroups (MCALL/M COMM, SO-
+CEN, SO-NE, SO-NW, etc.) for patching is strictly prohibited. 
+c) ECOMM talkgroups shall not be used for the purposes of patching. 
+d) Utilization of agency specific talkgroups (those used internally by OSHP/ODNR/OEMA 
+tactical or  dispatch talkgroup, local  police/fire/EMS) is strictly prohibited without 
+express permission from the owning agency. ( e.g., If an OSHP dispatcher needs to 
+patch an OSHP dispatch to a county sheriff dispatch, the OSHP dispatcher must first 
+ask the county sheriff dispatcher if it can be done and precisely which talkgroup can 
+be used for the patch.) Exceptions shall be made only if the incident lies within the 
+command jurisdiction of the owning agency. It is up to the talkgroup owning agency to 
+decide which talkgroup to use for the patch. Utilization of the agency specific dispatch 
+is still prohibited.
+
+
+--- PDF Page 5 ---
+MARCS IT Policy 
+Radio Patching 
+ 
+Page 5 of 6 
+MPP-22.0 Radio Patching 
+ 
+10.0 Enforcement 
+ 
+a) Violation of the above rules shall result in a thorough administrative investigation by 
+agents of the MARCS program office. 
+b) Violations of this policy shall result in the affected device being disabled by MARCS. 
+Disabling a radio results in the device not being able to transmit on MARCS. 
+c) If a patch is detected that is found to be adversely affecting the performance of 
+MARCS, and the means to contact the Communication Unit Leader (COML) fails, then 
+MARCS reserves the right to remotely “inhibit” or turn off the radio that is being used 
+to patch to other s ystems. This means shall be used as a last resort only when 
+necessary to preserve MARCS system performance for all other users. 
+d) If it is determined that an unauthorized patch resulted in a significant amount of 
+depletion of MARCS resources, a cost will also be assessed to the offending agency 
+for the amount of actual cost determined to have been incurred by the MARCS 
+program. 
+e) It is not the intention of MARCS to deter the use of radio patching capabilities but 
+rather, maximize usage of the system statewide. MARCS is responsible for ensuring 
+system performance is maximized at all times for all users. 
+ 
+11.0 Effective Date 
+The current version of this policy was approved and adopted by the MARCS Steering 
+Committee on May 9, 2023. 
+12.0 Revision History 
+ 
+ 
+DATE  Description of Change 
+03/15/2008 Original document 
+12/16/2021 Adding revision history fields, updating letterhead, removing 
+3.5 related information 
+4/25/2023 Modified definition for Gateway Patch, revised call out 
+availability as to all customers , added potential cost remedy 
+where a prohibited patch is detected, and a potential cost 
+determination and assessment  where a long- term or 
+permanent patch is desired
+
+
+--- PDF Page 6 ---
+MARCS IT Policy 
+Radio Patching 
+ 
+Page 6 of 6 
+MPP-22.0 Radio Patching 
+13.0 Attachments 
+Agency Gateway Information and Agreement form
+
+
+--- PDF Page 7 ---
+Agency Gateway Information and Agreement 
+ 
+ 
+ 
+Date:  Click or tap to enter a date.  
+Requesting Agency: Enter MARCS Customer Agency Name Here. 
+Agency Contact: Enter Agency Contact Information Here Including 
+Contact Information. 
+MARCS Customer ID: Enter MARCS Customer ID. 
+MARCS Device ID: Enter MARCS Device ID. 
+Device Model and Serial Number: Enter Device Model and Serial Number here. 
+MARCS Talkgroup Requested: Enter Requested MARCS Talkgroup Information 
+Here. 
+ 
+Solution Design Description: Please describe proposed solution in detail in this area. 
+ 
+Requested Gateway Activation Dates: 
+From: Click or tap to enter a date. To: Click or tap to enter a date. 
+ 
+Authorized Agency Contact Information: 
+ 
+Name: Enter Authorized Agency Contact Information here. 
+Title:  Enter Title of Authorized Agency Contact here. 
+Date: Click or tap to enter a date. 
+ 
+This agreement is between the Ohio Department of Administrative Services, Office of Information 
+Technology, Multi -Agency Radio Communication System (MARCS) and the undersigned 
+(SUBSCRIBER).  The subscribing agency agrees to the terms and conditions of this agreement 
+as posted on the MARCS Services website (MMP-22) and to the current rates in effect at the time 
+of billing, if applicable.  Any person executing this Agreement in a representative capacity hereby 
+states that he/she has been duly authorized by his/her authorizing authority to execute this 
+Agreement on such authorizing authority’s behalf. 
+ 
+ 
+Signed_________________________________________ Date_________________ 
+(Print name below signature)

@@ -1,0 +1,621 @@
+TITLE: 2100-20 Identity Proofing
+URL: https://das.ohio.gov/wps/portal/gov/das/technology-and-strategy/policies/2100-20-identity-proofing
+
+===== PAGE TEXT =====
+2100-20 Identity Proofing
+
+IBM WebSphere Portal
+
+An official State of Ohio site.
+
+Here’s how you know
+
+Official websites use Ohio.gov
+
+An Ohio.gov website belongs to an official government organization in the State of Ohio.
+
+Secure .gov websites use HTTPS
+
+A lock
+ or https:// means you've safely connected to the .gov website. Share sensitive information only on official, secure websites.
+
+Trusted applications are secured by OHID
+
+When you log in with OHID, your privacy, data, and personal information are protected by federal and state digital security standards.
+
+Close
+
+learn-more
+
+        Skip to Navigation
+
+
+        Skip to Main Content
+
+
+Ohio Department
+
+Menu
+
+                        	Home
+
+                        	Buying & Selling
+
+                        	Property Services
+
+                        	Technology & Strategy
+
+                        	Employee Relations
+
+                        	About
+
+                        	Help
+
+                        	Search
+
+top-help
+
+odx-helplink-label
+
+top-search
+
+odx-searchbox-label
+
+Type in your search keywords and hit enter to submit or escape to close
+
+top-search
+
+top-close
+
+2100-20 Identity Proofing
+
+{}
+
+Web Content Viewer
+
+Actions
+
+
+
+DAS
+
+Technology & Strategy
+
+Policies
+
+                Overview
+
+
+                IT Innovation Information Center
+
+
+                IT Strategic Investment and Architecture
+
+
+                Information Security & Privacy
+
+
+                IT Enterprise Services
+
+
+                InnovateOhio Platform
+
+
+                Office of Data and Efficiency
+
+
+                Ohio 9-1-1 Program Office
+
+
+                MARCS
+
+
+                OGRIP
+
+
+                Policies
+
+
+                IT Policy Glossary
+
+
+                    2100-20 Identity Proofing
+
+
+The purpose of this policy is to provide guidance for the use of identity proofing for nonorganizational users associated with the state’s identity management system.
+
+odx-attachment
+
+2100-20 Identity Proofing Policy .pdf | 309 KB
+
+odx-download
+
+odx-download
+
+      Share this
+
+
+Expand All Sections
+
+
+
+Web Content Viewer
+
+Actions
+
+
+
+
+            About Us
+
+
+
+            Administrative Support Division
+
+
+
+            First Responder Communications Initiatives
+
+
+
+            General Services Division
+
+
+
+            Office of Collective Bargaining
+
+
+
+            Office of Data and Efficiency
+
+
+
+            Office of Information Technology
+
+
+
+            State Human Resources Division
+
+
+
+            Media Center
+
+
+
+            News
+
+
+
+            Events
+
+
+
+            Hidden
+
+
+
+            Hidden
+
+
+            Resources
+
+
+            Policy Finder
+
+
+
+            Careers
+
+
+
+            Public Records Requests
+
+
+
+            State MLK Holiday Commission
+
+
+
+            Hidden
+
+
+
+            Hidden
+
+
+Ohio Department of Administrative Services  | 30 E. Broad St., Columbus, Ohio 43215 |
+614-466-6511
+
+Powered by
+
+
+                    Privacy Notice and Policies
+
+
+
+
+
+
+
+                    Accessibility
+
+
+
+
+
+
+
+                    Ohio Checkbook
+
+
+
+
+
+
+linkedin icon
+
+x icon
+
+top-menu
+
+top-close
+
+top-help
+
+top-search
+
+
+odx-searchbox-label
+
+
+Submit your search
+
+Close
+
+
+
+Complementary Content
+
+${title}
+${badge}
+
+${loading}
+
+===== REFERENCES (ALL LINKS) =====
+https://checkbook.ohio.gov/
+https://das.ohio.gov/wps/portal/gov/das/about
+https://das.ohio.gov/wps/portal/gov/das/about/about-us
+https://das.ohio.gov/wps/portal/gov/das/about/administrative-support-division-site-area/administrative-support-division
+https://das.ohio.gov/wps/portal/gov/das/about/first-responder-comms-initiatives/first-responder-comms-initiatives
+https://das.ohio.gov/wps/portal/gov/das/about/general-services-division/general-services-division
+https://das.ohio.gov/wps/portal/gov/das/about/office-of-collective-bargaining/office-of-collective-bargaining-1
+https://das.ohio.gov/wps/portal/gov/das/about/office-of-information-technology
+https://das.ohio.gov/wps/portal/gov/das/about/state-human-resources-division/state-human-resources-division
+https://das.ohio.gov/wps/portal/gov/das/buying-and-selling
+https://das.ohio.gov/wps/portal/gov/das/employee-relations
+https://das.ohio.gov/wps/portal/gov/das/help-center
+https://das.ohio.gov/wps/portal/gov/das/help-center/accessibility/accessibility-
+https://das.ohio.gov/wps/portal/gov/das/help-center/privacy-notice-and-policies/privacy-notice-and-policies
+https://das.ohio.gov/wps/portal/gov/das/help-center/public-records-request-site-area/public-records-requests
+https://das.ohio.gov/wps/portal/gov/das/home
+https://das.ohio.gov/wps/portal/gov/das/home/media-center/all-events/all-events-landing-page
+https://das.ohio.gov/wps/portal/gov/das/home/media-center/all-news/all-news
+https://das.ohio.gov/wps/portal/gov/das/home/media-center/das-media-center
+https://das.ohio.gov/wps/portal/gov/das/home/ohio-mlk-holiday-commission/mlk-commission/mlk-holiday-commission
+https://das.ohio.gov/wps/portal/gov/das/home/policy-finder/filter-policy-finder
+https://das.ohio.gov/wps/portal/gov/das/property-services
+https://das.ohio.gov/wps/portal/gov/das/search
+https://das.ohio.gov/wps/portal/gov/das/technology-and-strategy
+https://das.ohio.gov/wps/portal/gov/das/technology-and-strategy/911-home-program-office
+https://das.ohio.gov/wps/portal/gov/das/technology-and-strategy/OGRIP
+https://das.ohio.gov/wps/portal/gov/das/technology-and-strategy/data-and-efficiency
+https://das.ohio.gov/wps/portal/gov/das/technology-and-strategy/data-and-efficiency/office-of-data-and-efficiency
+https://das.ohio.gov/wps/portal/gov/das/technology-and-strategy/information-security-privacy
+https://das.ohio.gov/wps/portal/gov/das/technology-and-strategy/innovateohio-platform-iop
+https://das.ohio.gov/wps/portal/gov/das/technology-and-strategy/it-enterprise-services
+https://das.ohio.gov/wps/portal/gov/das/technology-and-strategy/it-innovation-information-center
+https://das.ohio.gov/wps/portal/gov/das/technology-and-strategy/it-policy-glossary
+https://das.ohio.gov/wps/portal/gov/das/technology-and-strategy/it-strategic-investment-and-architecture
+https://das.ohio.gov/wps/portal/gov/das/technology-and-strategy/marcs
+https://das.ohio.gov/wps/portal/gov/das/technology-and-strategy/overview
+https://das.ohio.gov/wps/portal/gov/das/technology-and-strategy/policies
+https://das.ohio.gov/wps/portal/gov/das/technology-and-strategy/policies/2100-20-identity-proofing
+https://das.ohio.gov/wps/portal/gov/das/technology-and-strategy/policies/google.com
+https://das.ohio.gov/wps/wcm/connect/gov/0626cf42-3ce4-459d-a02f-5c21d7dc1cd1/2100-20+Identity+Proofing+Policy+.pdf?MOD=AJPERES&CONVERT_TO=url&CACHEID=ROOTWORKSPACE.Z18_JQGCH4S04P41206HNUKVF31000-0626cf42-3ce4-459d-a02f-5c21d7dc1cd1-pq1BoGv
+https://dasstateoh.taleo.net/careersection/oh_int/jobsearch.ftl
+https://twitter.com/ohiodas
+https://www.linkedin.com/company/ohiodas
+javascript:;
+tel:1-614-466-6511
+
+========== PDF CONTENT ==========
+PDF: https://das.ohio.gov/wps/wcm/connect/gov/0626cf42-3ce4-459d-a02f-5c21d7dc1cd1/2100-20+Identity+Proofing+Policy+.pdf?MOD=AJPERES&CONVERT_TO=url&CACHEID=ROOTWORKSPACE.Z18_JQGCH4S04P41206HNUKVF31000-0626cf42-3ce4-459d-a02f-5c21d7dc1cd1-pq1BoGv
+
+--- PDF Page 1 ---
+The Ohio Department of Administrative Services is the engine of state government, providing innovative solutions and 
+supporting the efficient operation of state agencies, boards, and commissions. 
+ 
+ 
+ 
+ 
+ 
+ 
+DAS Policy 
+ 
+Identity Proofing 
+ 
+No: 
+2100-20 
+Effective: 
+April 29, 2025 
+ 
+Approval:
+ 
+Katrina Flory, Assistant Director/State CIO 
+ 
+I. P urpose  
+The purpose of this policy is to provide guidance for the use of Identity Proofing  for Non-
+Organizational User s associated with the state’s Identity Management System . The first 
+occurrence of the word in the policy body outside of a title or heading is in bold, italic type, and is 
+hyperlinked to the definition in Section IV.   
+II. Sc ope  
+The scope of this policy includes all Non-Organizational User  accounts in the state’s Identity 
+Management System . This policy represents the minimum acceptable criteria governing the 
+automatic creation of all Non-Organizational User accounts.  
+III. P olicy  
+The Ohio Department of Administrative Services (DAS) Office of Information Technology (OIT) shall 
+provide Identity Proofing services, which meet the requirements outlined in this policy. 
+A. I dentity Proofing  Non-Organizational User Accounts: Each application owner shall 
+determine Identity Proofing  requirements based on the risk of harm associated with the 
+transactions processed in their respective application and based on the results of their data 
+classification. Potential harms include identity theft, fraud, unauthorized disclosure of 
+information, and account takeover. 
+ 
+1. Low Risk of Harm Transactions: Identity Proofing  of Non -Organizational User s is not 
+required when there is little or no risk of harm to the state, users, or others. For example, 
+giving the state funds or information is typically low risk.
+
+
+--- PDF Page 2 ---
+Ohio Department of Administrative Services Policy 
+Identity Proofing/2100-20  
+Page 2 of 6 
+ 
+The Ohio Department of Administrative Services is the engine of state government, providing innovative solutions and 
+supporting the efficient operation of state agencies, boards, and commissions. 
+2. Moderate or High Risk of Harm Transactions: Identity  Proofing of Non -Organizational 
+Users is required when there is a moderate or high risk of harm to the state, users, or 
+others. For example, transactions containing financial or Confidential Data.  
+3. Migration of Existing Users:  Non-Organizational Users of an application may be migrated 
+into the system and may not require additional Identity Proofing  to access that 
+application. However, these users may require Identity Proofing  to access additional 
+applications, as determined by each application owner. 
+4. Authorized Business Representatives: Businesses registered to use the identity system 
+shall be required to complete business Identity Proofing.   
+a) During this process, an Authorized Business Representative is identified and shall be 
+required to complete Identity Proofing. This person will have the ability to assign 
+and approve elevated privileges, and to create additional Privileged User s and 
+general users within their business accounts.  
+b) Any additional users associated with a business account shall also be required to 
+complete Identity Proofing before becoming Privileged Users. 
+ 
+B. Identity Re-Proofing: Citizens, businesses, and Authorized Business Representatives shall be 
+required to undergo identity re-proofing under the following circumstances: 
+ 
+1. Citizen Re-Proofing: Citizens shall be required to repeat Identity Proofing when their core 
+identity information changes, as it relates to the information used to provide assurance 
+of a citizen’s identity, such as: 
+a) First Name 
+b) Last Name 
+c) Date of Birth 
+d) Social Security Number or similar National Identification Number 
+2. Business Re -Proofing: Businesses shall be required to repeat Identity Proofing  when 
+there is a change to their core business identifiers, as it relates to the information used to 
+provide assurance of a business’ identity. For example, changes to the following: 
+a) Federal Employer Identification Number (FEIN) 
+b) Business name  
+c) Business address 
+3. Authorized Business Representatives Re-Proofing: Authorized Business Representatives 
+shall be required to repeat Identity Proofing when there is a change to their core identity 
+information, as it relates to information used to provide assurance of a business 
+representative’s identity, such as:  
+a) First Name 
+b) Last Name 
+c) Date of Birth
+
+
+--- PDF Page 3 ---
+Ohio Department of Administrative Services Policy 
+Identity Proofing/2100-20  
+Page 3 of 6 
+ 
+The Ohio Department of Administrative Services is the engine of state government, providing innovative solutions and 
+supporting the efficient operation of state agencies, boards, and commissions. 
+d) SSN or similar National Identification Number 
+4. Identity Re -Proofing for Identity Theft: Identity re -proofing shall be required when a 
+citizen or business representative’s identity is flagged as a victim of identity theft. 
+5. Business/Application Owner Identity Re -Proofing Requirements: Business/application 
+owners are authorized to require Identity Proofing frequencies or conditions for Identity 
+Proofing that are more stringent than the requirements of this policy. These decisions 
+shall be based upon the information contained in the application or the sensitivity of the 
+business transactions that are conducted through the use of the application. 
+ 
+C. Identity Validations: When high-risk financial transactions are involved , a business owner 
+requests validation based on their data classification results, or if a user wishes to opt in to 
+additional security measures. The exception process shall be followed whenever Identity 
+Validations are used in place of Identity Proofing.  
+ 
+Below are examples of Identity Validation s which can be used to ensure a registered user is 
+the person authorized to complete a specific transaction. 
+ 
+1. Re-authentication: A re -authentication process shall be available, which can be 
+employed to complete sensitive transactions. 
+2. Two-Step Authentication: A Two-Step Authentication process shall be available, which 
+can be employed to complete sensitive transactions. Examples of Two -Step 
+Authentication include: 
+a) Sending an authentication code to a mobile phone number on file. 
+b) Requiring the end-user to answer security questions on file. 
+ 
+D. Notification Messages: Notification messages, such as postal letters, emails, or notifications 
+at login, shall be available to inform a user when changes are made to their state profile. This 
+would include offering a means of redress in the event that their state identity was 
+compromised and used without their knowledge. 
+ 
+E. Identity Proofing Process: Identity Proofing shall be completed using an automated process, 
+a manual process, or a combination of automated and manual processes. 
+ 
+Alternative manual Identity Proofing  processes shall be established that meet a burden of 
+proof similar to that of an automated Identity Proofing process. In the event of a failure of an 
+automated Identity Proofing process (e.g., an issue with the information associated with the 
+individual completing the process), the application owner has discretion to approve 
+application access without completing an Identity Proofing  process. This approval does not
+
+
+--- PDF Page 4 ---
+Ohio Department of Administrative Services Policy 
+Identity Proofing/2100-20  
+Page 4 of 6 
+ 
+The Ohio Department of Administrative Services is the engine of state government, providing innovative solutions and 
+supporting the efficient operation of state agencies, boards, and commissions. 
+transfer to other state application owners but  shall be documented in the Identity 
+Management System. 
+ 
+F. Exception Process: To request an exception to one or more of the requirements outlined in 
+this policy, please complete an IT Security Exception Request form. 
+ 
+1. The form is located within the IT Enterprise Services Portal  under the “Services & 
+Products” category.  
+2. If you have any questions, please contact DAS OISP (refer to Section VII. Inquiries for 
+contact information). 
+ 
+IV. Definitions 
+  
+A. Authorized Business Representative. For the purposes of this policy, an individual who is 
+appointed by a business to initiate, modify or complete transactions with the state on behalf 
+of the business. This designation provides the person(s) with the ability to assign and approve 
+elevated privileges, and to create additional Privileged Users and general users within their 
+business accounts that also have the ability to initiate, modify or complete transactions with 
+the State of Ohio. 
+B. Confidential Data. This classification includes Data that is required to be protected by law or 
+regulation, is intended for confidential use, and may not be copied or removed from an 
+agency's operational control without authorized permission.  This classification includes Data 
+that, if compromised, may result in loss of life, serious injury, or other harm to an individual 
+or group, or disruption to critical agency operations. 
+C. Identity Management System. An Identity Management System is comprised of one or more 
+systems or applications that manage the identity verification, validation, and issuance 
+process.
+1 
+D. Identity Proofing . The process of providing sufficient information (e.g., identity history, 
+credentials, documents) to establish an identity.2 
+E. Identity Validation. Tests enabling an information system to authenticate users or resources.3 
+F. Non-Organizational User. A user who is not an Organizational User, which for the purposes of 
+this policy includes public users. 
+G. Organizational User. An Organizational User is anyone who is an employee of the state or  is 
+otherwise authorized to work on behalf of the State, and who has a need to access State of 
+ 
+1 “FIPS PUB 201-2, Personal Identity Verification (PIV) of Federal Employees and Contractors.” Federal Information 
+Processing Standards Publication (FIPS) August 2013. <https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.201-2.pdf>. 
+2 Ibid. 
+3 “CNSS Instruction No. 4009, National Information Assurance (IA) Glossary,” Committee on National Security Systems, April 
+2010 <https://www.hsdl.org/?abstract&did=7447>.
+
+
+--- PDF Page 5 ---
+Ohio Department of Administrative Services Policy 
+Identity Proofing/2100-20  
+Page 5 of 6 
+The Ohio Department of Administrative Services is the engine of state government, providing innovative solutions and 
+supporting the efficient operation of state agencies, boards, and commissions. 
+ 
+ 
+Ohio IT systems and has secured agency authorization for such access. The Organizational 
+User identifier will help to distinguish the individual during the authentication process. 
+Examples of resources that may fall into this category include full-time employees, part-time 
+employees, seasonal employees, temporary contract workers, independent contractors or 
+consultants, volunteers or unpaid interns. The Organizational User identifier category may 
+also include university and federal government resources. 
+H. Privileged User.  A user that is authorized (and, therefore, trusted) to perform security-relevant 
+functions that ordinary users are not authorized to perform.4 
+I. Two-Step Authentication. Requires the user to provide an additional layer of information to 
+authenticate to a system. In addition to a password (something users know), the user is 
+prompted to provide an additional piece of security information (something they have). For 
+example, sending an authentication code to a mobile phone number on file or requiring the 
+user to answer security questions on file. 
+V. A
+uthority  
+ 
+ORC 125.18 
+ 
+ 
+VI. Resources 
+Document Name Location 
+NIST Special Publication 800-53, Security 
+and Privacy Controls for Federal Information 
+Systems and Organizations 
+https://nvlpubs.nist.gov/nistpubs 
+/SpecialPublications /NIST.SP.800-53r4.pdf 
+NIST Special Publication (SP) 800-63-3, 
+Digital Identity Guidelines 
+https://csrc.nist.gov/publications/sp  
+Ohio IT Standard ITS-SEC-02 Security 
+Controls Framework 
+https://das.ohio.gov/technology-and-
+strategy/policies 
+Ohio Administrative Policy IT-13 Data 
+Classification 
+https://das.ohio.gov/technology-and-
+strategy/policies 
+DAS Policy 2100-01 Password Policy https://das.ohio.gov/technology-and-
+strategy/policies 
+DAS-ITS-2100-01-A, Password Standard for 
+Organizational Users 
+https://das.ohio.gov/technology-and-
+strategy/policies 
+ 
+4 “NIST Special Publication 800-53 Revision 4, Security and Privacy Controls for Federal Information Systems and 
+Organizations,” U.S. Department of Commerce National Institute of Standards and Technology, April 2013 
+<https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf>.
+
+
+--- PDF Page 6 ---
+Ohio Department of Administrative Services Policy 
+Identity Proofing/2100-20  
+Page 6 of 6 
+ 
+The Ohio Department of Administrative Services is the engine of state government, providing innovative solutions and 
+supporting the efficient operation of state agencies, boards, and commissions. 
+Document Name Location 
+DAS-ITS-2100-01-B, Password Standard for 
+Non-Organizational Users 
+https://das.ohio.gov/technology-and-
+stra tegy/policies 
+DAS Policy 2100-08 Risk Assessment https://das.ohio.gov/technology-and-
+strategy/policies 
+ 
+VII. I nquiries  
+ 
+Direct inquiries about this policy to: 
+ 
+Office of Information Security & Privacy  
+Office of Information Technology  
+Ohio Department of Administrative Services 
+30 East Broad Street, 39th Floor 
+Columbus, Ohio 43215 
+ 
+614-644-6860 | state.isp@das.ohio.gov 
+ 
+DAS Policies may be found online at  
+https://das.ohio.gov/technology-and-strategy/policies  
+ 
+VIII. Revision History 
+This policy shall be reviewed no less than every two years and updated as needed. 
+ 
+Date Description of Change 
+12/21/2018 Revised the policy to clarify information system backup requirements. 
+06/10/2020 Updated the policy template. 
+09/30/2021 Conducted routine maintenance review of citations and references. 
+03/05/2024 Updated the policy template. Added a revision history review frequency 
+statement. 
+04/29/2025 Replaced the term sensitive data, or sensitive information, with confidential 
+data.

@@ -7,6 +7,7 @@ from datetime import date, datetime
 from enum import Enum
 from typing import Any, Dict, Iterable, List, Optional
 
+import sqlalchemy as sa
 from sqlalchemy import (
 	Boolean,
 	CheckConstraint,
@@ -36,6 +37,17 @@ NAMING_CONVENTION = {
 
 class Base(DeclarativeBase):
 	metadata = MetaData(naming_convention=NAMING_CONVENTION)
+
+
+class Vector(sa.types.UserDefinedType):
+	cache_ok = True
+
+	def __init__(self, dimensions: int) -> None:
+		super().__init__()
+		self.dimensions = int(dimensions)
+
+	def get_col_spec(self, **kw) -> str:
+		return f"VECTOR({self.dimensions})"
 
 
 class PolicyStatus(str, Enum):
@@ -271,6 +283,11 @@ class PolicyVersion(Base):
 		passive_deletes=True,
 		order_by="PolicySection.section_index",
 	)
+	embeddings: Mapped[List[PolicyEmbedding]] = relationship(
+		back_populates="policy_version",
+		cascade="all, delete-orphan",
+		passive_deletes=True,
+	)
 	__table_args__ = (
 		UniqueConstraint("policy_id", "version_number", name="uq_policy_versions_policy_id_version_number"),
 		# Enforce an optional client-provided label to be unique per policy.
@@ -327,6 +344,11 @@ class PolicySection(Base):
 	created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), nullable=False, server_default=func.now())
 
 	policy_version: Mapped[PolicyVersion] = relationship(back_populates="sections")
+	embeddings: Mapped[List[PolicyEmbedding]] = relationship(
+		back_populates="policy_section",
+		cascade="all, delete-orphan",
+		passive_deletes=True,
+	)
 
 	__table_args__ = (
 		UniqueConstraint(
@@ -338,6 +360,38 @@ class PolicySection(Base):
 		Index("ix_policy_sections_content_sha256", "content_sha256"),
 		Index("ix_policy_sections_tenant_id", "tenant_id"),
 		CheckConstraint("section_index >= 0", name="section_index_gte_0"),
+	)
+
+
+class PolicyEmbedding(Base):
+	__tablename__ = "policy_embeddings"
+
+	id: Mapped[uuid.UUID] = mapped_column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
+	tenant_id: Mapped[uuid.UUID] = mapped_column(
+		UUID(as_uuid=True), ForeignKey("tenants.id", ondelete="CASCADE"), nullable=False
+	)
+	policy_version_id: Mapped[uuid.UUID] = mapped_column(
+		UUID(as_uuid=True), ForeignKey("policy_versions.id", ondelete="CASCADE"), nullable=False
+	)
+	policy_section_id: Mapped[uuid.UUID] = mapped_column(
+		UUID(as_uuid=True), ForeignKey("policy_sections.id", ondelete="CASCADE"), nullable=False
+	)
+	embedding_model: Mapped[str] = mapped_column(Text, nullable=False)
+	embedding: Mapped[Any] = mapped_column(Vector(3072), nullable=False)
+	content_sha256: Mapped[Optional[str]] = mapped_column(Text, nullable=True)
+	authority_level: Mapped[Optional[int]] = mapped_column(Integer, nullable=True)
+	department_scope: Mapped[Optional[str]] = mapped_column(Text, nullable=True)
+	policy_type: Mapped[Optional[str]] = mapped_column(Text, nullable=True)
+	effective_date: Mapped[Optional[date]] = mapped_column(Date, nullable=True)
+	created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), nullable=False, server_default=func.now())
+
+	policy_version: Mapped[PolicyVersion] = relationship(back_populates="embeddings")
+	policy_section: Mapped[PolicySection] = relationship(back_populates="embeddings")
+
+	__table_args__ = (
+		UniqueConstraint("policy_section_id", "embedding_model", name="uq_policy_embeddings_policy_section_id_embedding_model"),
+		Index("ix_policy_embeddings_tenant_id", "tenant_id"),
+		Index("ix_policy_embeddings_policy_version_id", "policy_version_id"),
 	)
 
 

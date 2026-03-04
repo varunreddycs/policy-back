@@ -1,0 +1,766 @@
+TITLE: MPP 15.1 Interoperability
+URL: https://das.ohio.gov/technology-and-strategy/marcs/mpp-15-1-nteroperability
+
+===== PAGE TEXT =====
+MPP 15.1 Interoperability
+
+IBM WebSphere Portal
+
+An official State of Ohio site.
+
+Here’s how you know
+
+Official websites use Ohio.gov
+
+An Ohio.gov website belongs to an official government organization in the State of Ohio.
+
+Secure .gov websites use HTTPS
+
+A lock
+ or https:// means you've safely connected to the .gov website. Share sensitive information only on official, secure websites.
+
+Trusted applications are secured by OHID
+
+When you log in with OHID, your privacy, data, and personal information are protected by federal and state digital security standards.
+
+Close
+
+learn-more
+
+        Skip to Navigation
+
+
+        Skip to Main Content
+
+
+Ohio Department
+
+Menu
+
+                        	Home
+
+                        	Buying & Selling
+
+                        	Property Services
+
+                        	Technology & Strategy
+
+                        	Employee Relations
+
+                        	About
+
+                        	Help
+
+                        	Search
+
+top-help
+
+odx-helplink-label
+
+top-search
+
+odx-searchbox-label
+
+Type in your search keywords and hit enter to submit or escape to close
+
+top-search
+
+top-close
+
+MPP 15.1 Interoperability
+
+{}
+
+Web Content Viewer
+
+Actions
+
+
+
+DAS
+
+Technology & Strategy
+
+MARCS
+
+                Overview
+
+
+                IT Innovation Information Center
+
+
+                IT Strategic Investment and Architecture
+
+
+                Information Security & Privacy
+
+
+                IT Enterprise Services
+
+
+                InnovateOhio Platform
+
+
+                Office of Data and Efficiency
+
+
+                Ohio 9-1-1 Program Office
+
+
+                MARCS
+
+
+                OGRIP
+
+
+                Policies
+
+
+                IT Policy Glossary
+
+
+                    MPP 15.1 Interoperability
+
+
+The purpose of this policy is to provide the means for all public safety and first responders to communicate with each other throughout the state.
+
+
+
+odx-attachment
+
+MARCS MPP-15 (2023) with attachment.pdf | 1.89 MB
+
+odx-download
+
+odx-download
+
+      Share this
+
+
+Expand All Sections
+
+
+
+Web Content Viewer
+
+Actions
+
+
+
+
+            About Us
+
+
+
+            Administrative Support Division
+
+
+
+            First Responder Communications Initiatives
+
+
+
+            General Services Division
+
+
+
+            Office of Collective Bargaining
+
+
+
+            Office of Data and Efficiency
+
+
+
+            Office of Information Technology
+
+
+
+            State Human Resources Division
+
+
+
+            Media Center
+
+
+
+            News
+
+
+
+            Events
+
+
+
+            Hidden
+
+
+
+            Hidden
+
+
+            Resources
+
+
+            Policy Finder
+
+
+
+            Careers
+
+
+
+            Public Records Requests
+
+
+
+            State MLK Holiday Commission
+
+
+
+            Hidden
+
+
+
+            Hidden
+
+
+Ohio Department of Administrative Services  | 30 E. Broad St., Columbus, Ohio 43215 |
+614-466-6511
+
+Powered by
+
+
+                    Privacy Notice and Policies
+
+
+
+
+
+
+
+                    Accessibility
+
+
+
+
+
+
+
+                    Ohio Checkbook
+
+
+
+
+
+
+linkedin icon
+
+x icon
+
+top-menu
+
+top-close
+
+top-help
+
+top-search
+
+
+odx-searchbox-label
+
+
+Submit your search
+
+Close
+
+
+
+Complementary Content
+
+${title}
+${badge}
+
+${loading}
+
+===== REFERENCES (ALL LINKS) =====
+https://checkbook.ohio.gov/
+https://das.ohio.gov/technology-and-strategy/marcs/google.com
+https://das.ohio.gov/technology-and-strategy/marcs/mpp-15-1-nteroperability
+https://das.ohio.gov/wps/portal/gov/das/about
+https://das.ohio.gov/wps/portal/gov/das/about/about-us
+https://das.ohio.gov/wps/portal/gov/das/about/administrative-support-division-site-area/administrative-support-division
+https://das.ohio.gov/wps/portal/gov/das/about/first-responder-comms-initiatives/first-responder-comms-initiatives
+https://das.ohio.gov/wps/portal/gov/das/about/general-services-division/general-services-division
+https://das.ohio.gov/wps/portal/gov/das/about/office-of-collective-bargaining/office-of-collective-bargaining-1
+https://das.ohio.gov/wps/portal/gov/das/about/office-of-information-technology
+https://das.ohio.gov/wps/portal/gov/das/about/state-human-resources-division/state-human-resources-division
+https://das.ohio.gov/wps/portal/gov/das/buying-and-selling
+https://das.ohio.gov/wps/portal/gov/das/employee-relations
+https://das.ohio.gov/wps/portal/gov/das/help-center
+https://das.ohio.gov/wps/portal/gov/das/help-center/accessibility/accessibility-
+https://das.ohio.gov/wps/portal/gov/das/help-center/privacy-notice-and-policies/privacy-notice-and-policies
+https://das.ohio.gov/wps/portal/gov/das/help-center/public-records-request-site-area/public-records-requests
+https://das.ohio.gov/wps/portal/gov/das/home
+https://das.ohio.gov/wps/portal/gov/das/home/media-center/all-events/all-events-landing-page
+https://das.ohio.gov/wps/portal/gov/das/home/media-center/all-news/all-news
+https://das.ohio.gov/wps/portal/gov/das/home/media-center/das-media-center
+https://das.ohio.gov/wps/portal/gov/das/home/ohio-mlk-holiday-commission/mlk-commission/mlk-holiday-commission
+https://das.ohio.gov/wps/portal/gov/das/home/policy-finder/filter-policy-finder
+https://das.ohio.gov/wps/portal/gov/das/property-services
+https://das.ohio.gov/wps/portal/gov/das/search
+https://das.ohio.gov/wps/portal/gov/das/technology-and-strategy
+https://das.ohio.gov/wps/portal/gov/das/technology-and-strategy/911-home-program-office
+https://das.ohio.gov/wps/portal/gov/das/technology-and-strategy/OGRIP
+https://das.ohio.gov/wps/portal/gov/das/technology-and-strategy/data-and-efficiency
+https://das.ohio.gov/wps/portal/gov/das/technology-and-strategy/data-and-efficiency/office-of-data-and-efficiency
+https://das.ohio.gov/wps/portal/gov/das/technology-and-strategy/information-security-privacy
+https://das.ohio.gov/wps/portal/gov/das/technology-and-strategy/innovateohio-platform-iop
+https://das.ohio.gov/wps/portal/gov/das/technology-and-strategy/it-enterprise-services
+https://das.ohio.gov/wps/portal/gov/das/technology-and-strategy/it-innovation-information-center
+https://das.ohio.gov/wps/portal/gov/das/technology-and-strategy/it-policy-glossary
+https://das.ohio.gov/wps/portal/gov/das/technology-and-strategy/it-strategic-investment-and-architecture
+https://das.ohio.gov/wps/portal/gov/das/technology-and-strategy/marcs
+https://das.ohio.gov/wps/portal/gov/das/technology-and-strategy/overview
+https://das.ohio.gov/wps/portal/gov/das/technology-and-strategy/policies
+https://das.ohio.gov/wps/wcm/connect/gov/dab486a0-e300-48f1-b8b0-5f63589743d2/MARCS+MPP-15+%282023%29+with+attachment.pdf?MOD=AJPERES&CONVERT_TO=url&CACHEID=ROOTWORKSPACE.Z18_79GCH8013HMOA06A2E16IV2082-dab486a0-e300-48f1-b8b0-5f63589743d2-pe8z--P
+https://dasstateoh.taleo.net/careersection/oh_int/jobsearch.ftl
+https://twitter.com/ohiodas
+https://www.linkedin.com/company/ohiodas
+javascript:;
+tel:1-614-466-6511
+
+
+
+========== PDF CONTENT ==========
+PDF: https://das.ohio.gov/wps/wcm/connect/gov/dab486a0-e300-48f1-b8b0-5f63589743d2/MARCS+MPP-15+%282023%29+with+attachment.pdf?MOD=AJPERES&CONVERT_TO=url&CACHEID=ROOTWORKSPACE.Z18_79GCH8013HMOA06A2E16IV2082-dab486a0-e300-48f1-b8b0-5f63589743d2-pe8z--P
+
+--- PDF Page 1 ---
+MARCS IT Policy 
+Statewide Interoperability Talkgroups 
+MMP-15.0 MARCS Statewide Interoperability Talkgroups 
+Page 1 of 4 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+MARCS IT Policy 
+Statewide Interoperability TalkGroups 
+  
+No: MPP-15.0 
+Effective: 7/19/04 
+Revised: 4/27/23 
+Issued By: 
+OIT MARCS 
+Published By: 
+MARCS Program Office 
+ 
+ 
+1.0 Purpose 
+ 
+To set forth the minimum set of interoperable talkgroups  to be required in all public safety and 
+public works radios that operate on the State of Ohio MARCS radio system. 
+ 
+2.0 Scope 
+ 
+Existing radios shall be brought into compliance at the next user schedul ed radio programming 
+change.  All new radios shall meet the minimum interoperability requirements upon being placed 
+in service.  All talkgroups shall follow the MARCS P25 Talkgroup numbering and naming policy. 
+ 
+3.0 Background 
+ 
+The Multi -Agency Radio Communication System (MARCS ) has developed a Statewide 
+Interoperability Template so that each radio on the system is able to communicate with all other 
+radios on the system in event of an emergency.  While it would be ideal to have all interoperability 
+talkgroups in all radios, that is not always possible or practical.  MARCS has taken a “Must Have”, 
+“Better”, and “Best” approach to the interoperability template.   
+ 
+4.0 Radio Capacity 
+ 
+Each zone of interoperability talkgroups will be ranked into groups and those talkgroups added 
+to the radio after the radio has met any local requirements (i.e., if the radio only has a 48 
+talkgroup/channel capacity and the local requirement takes 32 talkgroups/channels, the 
+remaining sixteen (16) shall be used for interoperability talkgroups/channels).  The location of 
+the interoperability zones in the radio are at the user agency’s discretion.
+
+
+--- PDF Page 2 ---
+MARCS IT Policy 
+Statewide Interoperability Talkgroups 
+MMP-15.0 MARCS Statewide Interoperability Talkgroups 
+Page 2 of 4 
+5.0 “Must Have” TalkGroups 
+ 
+At a minimum, all public safety radios shall have the following interoperability zone loaded in 
+their radios.  Usage of these talkgroups is controlled by the MARCS Help Desk at 1-866-646-
+2727. 
+ 
+XECOMM1 XECOMM5 XECOMM9 XECOMM13 
+XECOMM2 XECOMM6 XECOMM10 XECOMM14 
+XECOMM3 XECOMM7 XECOMM11 XECOMM15 
+XECOMM4 XECOMM8 XECOMM12 XECOMM16 
+ 
+ 
+ All public works radios shall have the following interoperability zone loaded in their radios. 
+ 
+ 
+ 
+ 
+ 
+6.0 Better TalkGroup Plan 
+ 
+If possible, all public safety radios should have the following “Better” list of interoperability zones 
+loaded in their radios.  The recommended order of importance to add them is from left to right 
+across the table as room permits. 
+ 
+XECOMM1 8CALL90D XECOMM17 XLECOMM1 This zone is for 
+XECOMM2 8TAC91D XECOMM18 XLECOMM2 your Counties 
+XECOMM3 8TAC92D XECOMM19 XLECOMM3 XSOXX talkgroup 
+XECOMM4 8TAC93D XECOMM20 XLECOMM4 and the Counties   
+XECOMM5 8TAC94D XECOMM21 XLECOMM5 that surround 
+XECOMM6 8CALL90 XECOMM22 XLECOMM6 your County or  
+XECOMM7 8TAC91 XECOMM23 XLECOMM7 Counties that you 
+XECOMM8 8TAC92 XECOMM24 XLECOMM8 regularly work  
+XECOMM9 8TAC93 XECOMM25 XLECOMM9 with. 
+XECOMM10 8TAC94 XECOMM26 XLECOMM10 XSO01 
+XECOMM11 8TAC94D XECOMM27 XLECOMM11 XSO02 
+XECOMM12 8TAC93D XECOMM28 XLECOMM12 XSO03 
+XECOMM13 8TAC92D XECOMM29 XLECOMM13 XSO04 
+XECOMM14 8TAC91D XECOMM30 XLECOMM14 XSO05 
+XECOMM15 8CALL90D XECOMM31 XLECOMM15 XSO06 
+XECOMM16   XECOMM32 XLECOMM16 XSO07 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+XMARCS1  XMARCS5 XMARCS9 XMARCS13 
+XMARCS2 XMARCS6 XMARCS10 XMARCS14 
+XMARCS3 XMARCS7 XMARCS11 XMARCS15 
+XMARCS4 XMARCS8 XMARCS12 XMARCS16
+
+
+--- PDF Page 3 ---
+MARCS IT Policy 
+Statewide Interoperability Talkgroups 
+MMP-15.0 MARCS Statewide Interoperability Talkgroups 
+Page 3 of 4 
+7.0 Best TalkGroup Plan 
+ 
+If room permits, the complete interoperability template can be loaded into all public safety radios.   
+The recommended order of importance to add them is from left to right across the tables as 
+room permits. 
+ 
+XECOMM1 8CALL90D XECOMM17 XLECOMM1 This zone is for 
+XECOMM2 8TAC91D XECOMM18 XLECOMM2 your Counties 
+XECOMM3 8TAC92D XECOMM19 XLECOMM3 XSOXX talkgroups 
+XECOMM4 8TAC93D XECOMM20 XLECOMM4 and the Counties   
+XECOMM5 8TAC94D XECOMM21 XLECOMM5 that surround 
+XECOMM6 8CALL90 XECOMM22 XLECOMM6 your County or  
+XECOMM7 8TAC91 XECOMM23 XLECOMM7 Counties that you 
+XECOMM8 8TAC92 XECOMM24 XLECOMM8 regularly work  
+XECOMM9 8TAC93 XECOMM25 XLECOMM9 with. 
+XECOMM10 8TAC94 XECOMM26 XLECOMM10 XSO01 
+XECOMM11 8TAC94D XECOMM27 XLECOMM11 XSO02 
+XECOMM12 8TAC93D XECOMM28 XLECOMM12 XSO03 
+XECOMM13 8TAC92D XECOMM29 XLECOMM13 XSO04 
+XECOMM14 8TAC91D XECOMM30 XLECOMM14 XSO05 
+XECOMM15 8CALL90D XECOMM31 XLECOMM15 XSO06 
+XECOMM16   XECOMM32 XLECOMM16 XSO07 
+ 
+XMARCS1  XSCOMM1 XSCOMM17 7CALL50 7CALL70 
+XMARCS2 XSCOMM2 XSCOMM18 7TAC51D 7TAC71D 
+XMARCS3 XSCOMM3 XSCOMM19 7TAC52D 7TAC72D 
+XMARCS4 XSCOMM4 XSCOMM20 7TAC53D 7TAC73D 
+XMARCS5 XSCOMM5 XSCOMM21 7TAC54D 7TAC74D 
+XMARCS6 XSCOMM6 XSCOMM22 7TAC55D 7TAC75D 
+XMARCS7 XSCOMM7 XSCOMM23 7TAC56D 7TAC76D 
+XMARCS8 XSCOMM8 XSCOMM24 7GTAC57D 7TAC77D 
+XMARCS9 XSCOMM9 XSCOMM25 7MOB59D 7MOB79D 
+XMARCS10 XSCOMM10 XSCOMM26 7LAW61D 7LAW81D 
+XMARCS11 XSCOMM11 XSCOMM27 7LAW62D 7LAW82D 
+XMARCS12 XSCOMM12 XSCOMM28 7FIRE63D 7FIRE83D 
+XMARCS13 XSCOMM13 XSCOMM29 7FIRE64D 7FIRE84D 
+XMARCS14 XSCOMM14 XSCOMM30 7MED65D 7MED86D 
+XMARCS15 XSCOMM15 XSCOMM31 7MED66D 7MED87D 
+XMARCS16 XSCOMM16 XSCOMM32 7MED66D 7MED87D
+
+
+--- PDF Page 4 ---
+MARCS IT Policy 
+Statewide Interoperability Talkgroups 
+MMP-15.0 MARCS Statewide Interoperability Talkgroups 
+Page 4 of 4 
+ 
+8.0 Optional Talkgroups 
+ 
+The following optional talkgroups are available to be included in public safety radios if 
+applicable. XPURSUIT talkgroups are for Law Enforcement radios only. 
+ 
+XPURSUIT1 XSFM-HQ RED EVT 
+XPURSUIT2 XSFM-OP1   
+XPURSUIT3 XSFM-OP2   
+XPURSUIT4 XSFM-OP3   
+XPURSUIT5 XSFM-OP4   
+XPURSUIT6 XSFM-OP5   
+XPURSUIT7 XOFCA-1   
+XPURSUIT8 XOFCA 2    XOSFA 1   
+ 
+ 
+9.0 Effective Date  
+ 
+The current version of this policy was approved and adopted by the MARCS Steering 
+Committee on May 9, 2023. 
+ 
+ 
+10.0 Revision History 
+ 
+DATE Description of Change 
+07/19/2004 Original Document 
+02/27/2019 Revised 
+04/27/2023 Updated for increased number of XECOMM & MARCS 
+talkgroups; added Minimum Interoperability Talkgroup 
+Requirements  
+ 
+ 
+ 
+11.0      Attachments   
+ 
+Multi-Agency Radio Communication System (MARCS) Statewide Interoperability Talkgroups 
+(maps and talkgroups lists) (4 pp.)
+
+
+--- PDF Page 5 ---
+Multi-Agency Radio Communication System (MARCS)
+Statewide Interoperability Talkgroups (MPP-15.0)
+Sheriff Offices
+ XMCALL & XMCOMM
+MARCS Program Office
+4200 Surface Road
+Columbus, Ohio  43228
+https://das.ohio.gov/MARCS
+614.995.0060 Telephone
+614.995.0067 Fax
+866.646.2727 Network Operations/Helpdesk
+
+
+--- PDF Page 6 ---
+• XMCALL 1 thru 4
+MARCS “Hailing Channel”, Zones 1-4 (see map titled “MARCS Zones”) Allows any user to call 
+for help from anywhere in the state. These talkgroups are monitored 24/7 by all OSHP Posts 
+within the physical limits of each Zone. The talkgroups are also monitored 24/7 by ODNR’s 
+Columbus Central Dispatch. (It is preferred the call be directed to the zone the call originates 
+from but is not required.)
+• XMCOMM 1 thru 4
+MARCS users generic talkgroups for any user to be able to talk to any other user. These 
+talkgroups are NOT monitored by MARCS base locations. Generally, a dispatcher would 
+direct you to “go to XMCOMM 1 to talk to Officer A,” etc. (While each XMCOMM has statewide 
+capability, the theoretical purpose is for “direct” communications in each geographic Zone.)
+• XECOMM 1 thru 32 
+MARCS users generic ”emergency” talkgroups. To be used to talk to any other user when 
+involved in a MARCS-coordinated emergency. At a multi-agency scene, Command/ 
+Communications/Control would steer responders to these talkgroups, based on functional 
+work groups. (E.g., A MARCS-equipped CCC would direct “All incoming traffic units go to 
+XECOMM 9”, “all incoming rescue units go to XECOMM 11”, “all incoming hot zone units go to 
+XECOMM12”, etc.) XECOMM 1-19 will be coordinated through the MARCS 24hr Help Desk 
+via XHELPDSK or (866)-646-2727. XECOMM 21-28 utilized for Homeland Security Regions 
+1-8 (HS Region 1 – use XECOMM21). XECOMM 20 is used for the Ohio Fire Chiefs 
+Emergency Response System & Homeland Security HAILING
+• XSCOMM 1 thru 16 – TOW 5A1
+These talkgroups are used with the standalone MARCS Tower on Wheels (TOW 5A1). To be 
+used to talk to any other user when involved in an emergency or event  only when the TOWS 
+are deployed. As with the ECOMMs, units would be “steered” to these talkgroups by state 
+personnel. 
+XSCOMM 17thru 32 – TOW 649
+These talkgroups are used with TOW 649.  See TOW 5A1 definition above,
+• XSO-01 thru XSO-88 
+Each Sheriff in the state is equipped with a MARCS base radio. These radios are placed in the 
+communication center of the sheriff’s choice. By calling the alpha-based two-digit county 
+number (e.g., “GPD Car 321 to SO 59”), you will be communicating with the Sheriff’s 
+Communication Center. Also, the OSHP post in a county monitors that county’s SO talkgroup 
+and those SO talkgroups of adjacent counties.
+• XSO Regions
+These talkgroups correspond with the geographic regions established by BSSA and MARCS 
+during the planning for the MARCS radio installations at each SO. They follow established 
+Ohio Homeland Security (OHS) boundaries – see attached map titled “Sheriff Offices”. Calling 
+on an SO regional talkgroup will result in all SO’s within that region being hailed. ODNR’s 
+central dispatch center in Columbus also monitors these talkgroups.
+• XLECOMM1 through XLECOMM16
+MARCS users “event/emergency” talkgroups – offers the ability to talk to any other  user when 
+involved in a planned event or emergency. (Prior to using, caller must announce intent to use 
+and determine if the talkgroup is already in use. These XLECOMM talkgroups are specifically 
+for “local” event/emergency situations). 
+• XHELPDSK
+This talkgroup is constantly monitored by the Ohio Office of Information Technology/MARCS-
+dedicated Helpdesk, located at the State of Ohio Computer Center in Columbus. The 
+Helpdesk’s primary purpose is to assist MARCS equipment users with problems encountered 
+with the MARCS voice or data systems statewide. It can also be used as the initial point of 
+contact for MARCS command staff. Helpdesk may also be reached 24/7 @ 1-866-OH-
+MARCS (1-866-646-2727).
+• National Interoperability Channels (i.e., 8CALL90,7CALL,7LAW)
+These are the Nationwide Public Safety Interoperable channels. All of these channels are 
+available for emergency communications.  These channels should not be used for daily 
+operations. Channels marked with “D” suffix are radio to radio direct (simplex).
+• XSFM-HQ, SFM-OPS 1-5, OFCA1-2, OSFA-1
+These are mutual aid talkgroups created by the State Fire Marshall and Ohio fire chiefs, 
+respectively for mutual aid purposes during emergencies. Although these are not regularly 
+monitored, they will be assigned by the Incident Commander on site during emergencies and 
+monitored at that time.
+• XMEDVAC1, XMEDFLT, XCAREFLT, XLF-TAC, XCC-AIR, XPTNOPS, XAIREVAC. 
+XMETROLZ, XMETRFCO
+These are talkgroups established for contacting “air ambulances” in Ohio. XMEDFLT 
+(MedFlight Columbus) is monitored by their respective Communications Centers. XMEDVAC1 
+(MedEvac-Cleveland ) and XCAREFLT (CareFlight-Dayton) are not monitored on a daily 
+basis, therefore, it is recommended contact be made via land line with each respective air 
+ambulance. 8TAC92D and 8TAC94D NPSPAC recommended by the helicopter entities as a 
+direct radio air to ground talkpath.
+XMARCS 1 thru 16
+These are talkgroups established for additional interoperability between MARCS users. They 
+may be used for state or local emergency coordination if desired.
+XMARCRPT1 and 2 – These are standalone repeater pairs that are usually patched to a 
+MARCS talkgroup via the BSSA trucks, or the MARCS owned portable repeaters (Battle 
+Packs).
+• XPursuit 1 thru 8 (XPRSUIT)
+Pursuit talkgroups provide the means for first responders to engage in multi-agency/multi-
+jurisdictional pursuits. These are available at any time without restriction during a pursuit 
+(programmed into Law Enforcement only radios).
+• Customer-Specific Talkgroups
+MARCS will work with each customer to design unique talkgroups to be used by the customer 
+for normal internal traffic. The number of talkgroups allowed is determined by agency scope, 
+size and service delivery.
+• Inter-Agency Talkgroups
+MARCS firmly advocates and aggressively pursues multi-agency sharing of agency specific 
+talkgroups. MARCS encourages agencies to share agency-specific talkgroups, in order to 
+promote user-friendly end-user applications. These become especially important and 
+beneficial in emergency situations, when stress levels are high, and first responders do not 
+have time to “get out the book” and search for little or never used “special” talkgroups. To this 
+end, MARCS encourages users to discuss inter-agency sharing of agency specific talkgroups 
+and the routine use of same!
+Multi-Agency Radio Communication System (MARCS)
+Statewide Interoperability Talkgroups (MPP-15.0)
+
+
+--- PDF Page 7 ---
+Minimum Interoperability talkgroup Requirements
+I. Purpose / Objective
+To set forth the minimum set of interoperable talkgroups to be required in all public safety 
+and public works radios that operate on the State of Ohio MARCS radio system.
+Existing radios shall be brought into compliance at the next user scheduled radio 
+programming change. 
+All new radios shall meet the minimum interoperability requirements upon being placed in 
+service.
+All talkgroup names shall follow the MARCS P25 talkgroup numbering and naming policy.
+II. Background
+The MARCS radio system has developed a Statewide Interoperability Template so that 
+each radio on the system is able to communicate with all other radios on the system in the 
+event of an emergency. While it would be ideal to have all interoperability talkgroups in all 
+radios, that is not always possible or practical.   MARCS has taken a “Must Have”, “Better”, 
+“Best” approach to the interoperability template. 
+III. Radio Capacity
+Each zone of Interoperability talkgroups will be ranked into groups and those talkgroups 
+added to the radio after the radio has met any local requirements (I.e., if the radio only has a 
+48 talkgroup / channel capacity and the local requirement takes 32 talkgroups / channels; 
+the remaining sixteen (16) shall be used for interoperability talkgroups / channels. The 
+location of the interoperability zones in the radio are at the user agencies discretion.
+IV. “Must Have” TalkGroups
+At a minimum, all public safety radios shall have the following interoperability zone loaded in 
+their radios.  Usage of these talkgroups is controlled by the MARCS Help Desk at 1-866-
+646-2727.
+All public works radios shall have the following interoperability zone loaded in their radios.
+V. Better TalkGroup Plan
+If possible, all public safety radios should have the following “Better” list of interoperability 
+zones loaded in their radios.  The recommended order of importance to add them is from 
+left to right across the table as room permits.
+Multi-Agency Radio Communication System (MARCS)
+Statewide Interoperability Talkgroups (MPP-15.0)
+XECOMM1 XECOMM5 XECOMM9 XECOMM13
+XECOMM2 XECOMM6 XECOMM10 XECOMM14
+XECOMM3 XECOMM7 XECOMM11 XECOMM15
+XECOMM4 XECOMM8 XECOMM12 XECOMM16
+XMARCS1 XMARCS5 XMARCS9 XMARCS13
+XMARCS2 XMARCS6 XMARCS10 XMARCS14
+XMARCS3 XMARCS7 XMARCS11 XMARCS15
+XMARCS4 XMARCS8 XMARCS12 XMARCS16
+XECOMM1 8CALL90D XECOMM17 XLECOMM1 This zone is for
+XECOMM2 8TAC91D XECOMM18 XLECOMM2 your Counties
+XECOMM3 8TAC92D XECOMM19 XLECOMM3 XSOXX talkgroup
+XECOMM4 8TAC93D XECOMM20 XLECOMM4 and the Counties  
+XECOMM5 8TAC94D XECOMM21 XLECOMM5 that surround
+XECOMM6 8CALL90 XECOMM22 XLECOMM6 your County or 
+XECOMM7 8TAC91 XECOMM23 XLECOMM7 Counties that you
+XECOMM8 8TAC92 XECOMM24 XLECOMM8 regularly work 
+XECOMM9 8TAC93 XECOMM25 XLECOMM9 with.
+XECOMM10 8TAC94 XECOMM26 XLECOMM10 XSO01
+XECOMM11 8TAC94D XECOMM27 XLECOMM11 XSO02
+XECOMM12 8TAC93D XECOMM28 XLECOMM12 XSO03
+XECOMM13 8TAC92D XECOMM29 XLECOMM13 XSO04
+XECOMM14 8TAC91D XECOMM30 XLECOMM14 XSO05
+XECOMM15 8CALL90D XECOMM31 XLECOMM15 XSO06
+XECOMM16 XECOMM32 XLECOMM16 XSO07
+
+
+--- PDF Page 8 ---
+Minimum Interoperability talkgroup Requirements
+VI. Best TalkGroup Plan
+If room permits, the complete interoperability template can be loaded into all public safety 
+radios.  The recommended order of importance to add them is from left to right across the 
+tables as room permits.
+VII. Optional talkgroups
+The following optional talkgroups are available to be included in public safety radios if 
+applicable. XPURSUIT talkgroups are for Law Enforcement radios only.
+Multi-Agency Radio Communication System (MARCS)
+Statewide Interoperability Talkgroups (MPP-15.0)
+XECOMM1 8CALL90D XECOMM17 XLECOMM1 This zone is for
+XECOMM2 8TAC91D XECOMM18 XLECOMM2 your Counties
+XECOMM3 8TAC92D XECOMM19 XLECOMM3 XSOXX talkgroup
+XECOMM4 8TAC93D XECOMM20 XLECOMM4 and the Counties  
+XECOMM5 8TAC94D XECOMM21 XLECOMM5 that surround
+XECOMM6 8CALL90 XECOMM22 XLECOMM6 your County or 
+XECOMM7 8TAC91 XECOMM23 XLECOMM7 Counties that you
+XECOMM8 8TAC92 XECOMM24 XLECOMM8 regularly work 
+XECOMM9 8TAC93 XECOMM25 XLECOMM9 with.
+XECOMM10 8TAC94 XECOMM26 XLECOMM10 XSO01
+XECOMM11 8TAC94D XECOMM27 XLECOMM11 XSO02
+XECOMM12 8TAC93D XECOMM28 XLECOMM12 XSO03
+XECOMM13 8TAC92D XECOMM29 XLECOMM13 XSO04
+XECOMM14 8TAC91D XECOMM30 XLECOMM14 XSO05
+XECOMM15 8CALL90D XECOMM31 XLECOMM15 XSO06
+XECOMM16 XECOMM32 XLECOMM16 XSO07
+XMARCS1 XSCOMM1 XSCOMM17 7CALL50 7CALL70
+XMARCS2 XSCOMM2 XSCOMM18 7TAC51D 7TAC71D
+XMARCS3 XSCOMM3 XSCOMM19 7TAC52D 7TAC72D
+XMARCS4 XSCOMM4 XSCOMM20 7TAC53D 7TAC73D
+XMARCS5 XSCOMM5 XSCOMM21 7TAC54D 7TAC74D
+XMARCS6 XSCOMM6 XSCOMM22 7TAC55D 7TAC75D
+XMARCS7 XSCOMM7 XSCOMM23 7TAC56D 7TAC76D
+XMARCS8 XSCOMM8 XSCOMM24 7GTAC57D 7TAC77D
+XMARCS9 XSCOMM9 XSCOMM25 7MOB59D 7MOB79D
+XMARCS10 XSCOMM10 XSCOMM26 7LAW61D 7LAW81D
+XMARCS11 XSCOMM11 XSCOMM27 7LAW62D 7LAW82D
+XMARCS12 XSCOMM12 XSCOMM28 7FIRE63D 7FIRE83D
+XMARCS13 XSCOMM13 XSCOMM29 7FIRE64D 7FIRE84D
+XMARCS14 XSCOMM14 XSCOMM30 7MED65D 7MED86D
+XMARCS15 XSCOMM15 XSCOMM31 7MED66D 7MED87D
+XMARCS16 XSCOMM16 XSCOMM32 7MED66D 7MED87D
+XPURSUIT1 XSFM-HQ RED EVT
+XPURSUIT2 XSFM-OP1
+XPURSUIT3 XSFM-OP2
+XPURSUIT4 XSFM-OP3
+XPURSUIT5 XSFM-OP4
+XPURSUIT6 XSFM-OP5
+XPURSUIT7 XOFCA-1
+XPURSUIT8 XOFCA 2
+XOSFA 1
+Revision History
+04/27/2023 Updated for increased number of XECOMM & XMARCS talkgroups; added Minimum Interoperability talkgroup Requirements.

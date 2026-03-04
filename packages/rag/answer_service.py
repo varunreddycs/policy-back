@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import os
 from datetime import datetime, timezone
 
 from packages.core.dtos import AnswerResponse, AskRequest
@@ -20,12 +21,18 @@ class AnswerService:
 			# Defensive: request must be tenant-scoped
 			user = user.model_copy(update={"tenant_id": request.tenant_id})  # type: ignore[attr-defined]
 
+		top_k = max(
+			10,
+			int(os.getenv("EMBEDDINGS_TOP_K", "40") or "40"),
+			int(os.getenv("FTS_TOP_K", "40") or "40"),
+		)
+
 		candidates = self._retriever.retrieve(
 			tenant_id=request.tenant_id,
 			query=request.question,
 			scope=request.scope,
 			user=user,
-			top_k=10,
+			top_k=top_k,
 		)
 		ranked = self._ranker.rank(candidates)
 		created_at = datetime.now(timezone.utc)

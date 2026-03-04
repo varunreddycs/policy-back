@@ -1,0 +1,448 @@
+TITLE: Skills Based Hiring (HR-43)
+URL: https://das.ohio.gov/wps/portal/gov/das/employee-relations/policies/skills-based-hiring
+
+===== PAGE TEXT =====
+Skills Based Hiring (HR-43)
+
+IBM WebSphere Portal
+
+An official State of Ohio site.
+
+Here’s how you know
+
+Official websites use Ohio.gov
+
+An Ohio.gov website belongs to an official government organization in the State of Ohio.
+
+Secure .gov websites use HTTPS
+
+A lock
+ or https:// means you've safely connected to the .gov website. Share sensitive information only on official, secure websites.
+
+Trusted applications are secured by OHID
+
+When you log in with OHID, your privacy, data, and personal information are protected by federal and state digital security standards.
+
+Close
+
+learn-more
+
+        Skip to Navigation
+
+
+        Skip to Main Content
+
+
+Ohio Department
+
+Menu
+
+                        	Home
+
+                        	Buying & Selling
+
+                        	Property Services
+
+                        	Technology & Strategy
+
+                        	Employee Relations
+
+                        	About
+
+                        	Help
+
+                        	Search
+
+top-help
+
+odx-helplink-label
+
+top-search
+
+odx-searchbox-label
+
+Type in your search keywords and hit enter to submit or escape to close
+
+top-search
+
+top-close
+
+Skills Based Hiring (HR-43)
+
+{}
+
+Web Content Viewer
+
+Actions
+
+
+
+DAS
+
+Employee Relations
+
+Policies
+
+                Overview
+
+
+                Benefits Administration
+
+
+                Collective Bargaining Services
+
+
+                Combined Charitable Campaign
+
+
+                Office of Opportunity and Accessibility
+
+
+                Human Resources Operations
+
+
+                Talent Management
+
+
+                Policies
+
+
+                  Skills Based Hiring (HR-43)
+
+
+November 03, 2023
+
+ |
+
+Agency
+
+State of Ohio Administrative Policy
+
+No: HR-43 -
+State Human Resources Division
+
+Effective:
+November 3, 2023
+
+Issued By:
+
+Kathleen C. Madden, Director
+
+Purpose
+
+The State of Ohio recognizes that the use of skills-based hiring enables the State to identify and engage with a broader range of talent and provide opportunities for those with varied educational backgrounds or practical experience to contribute to the State workforce. Accordingly, the purpose of this policy is to establish statewide standards and procedures to ensure the State of Ohio is a model employer for skills-based hiring practices as provided in Executive Order 2023-10D. The first occurrence of a defined term in the policy is in bold, italic type and is hyperlinked to the definition in Section IV.
+
+Scope
+
+This policy applies to all State agencies, boards, and commissions under the authority of the Governor (collectively referred to as Agency or Agencies).
+
+Policy
+
+Skills-Based Job Classifications
+
+Qualifications for State of Ohio jobs shall be stated in terms of skills, experience, training, specific coursework, or in such other terms as to meet the requirements of the position. Qualifications shall not be stated in terms of academic degrees, except where they are required by specific statutes or regulations.
+
+Classification Review: The Department of Administrative Services (DAS) will periodically review all classification specifications to ensure that academic degrees are not required for employment in State positions, unless the academic degree is required by law or regulation.
+
+DAS will review classification specifications for both
+Explicit Degree Requirements
+
+ and
+Implicit Degree Requirements
+.
+
+In instances where specific statutes or regulations require a degree, DAS will support Agencies in investigating if these requirements are still necessary.
+
+Order of Minimum Qualifications. On classification specifications and job postings, skill-based requirements must be listed ahead of educational requirements.
+
+Requests for New Classifications and Modifications to Existing Classifications. DAS will not develop a new classification, or approve a request to modify an existing classification, if the classification will require an academic degree unless the academic degree is required by law.
+
+Ongoing Monitoring and Compliance. DAS will conduct regular reviews and monitoring to ensure Agency compliance with this policy.
+
+An automated review of all job postings will take place every week.
+
+Job postings that do not comply with this policy will be removed from the
+Ohio Hiring Management System (OHMS)
+. Agencies will need to update the posting in accordance with this policy before the job posting will be reinstated to the website.
+
+Job Matching Tool
+
+DAS will develop and maintain a job matching tool within OHMS that is designed to simplify the State’s hiring process. The State’s job matching tool will utilize an applicant’s skills profile along with the skill profile for each open State position to provide the applicant with a personalized list of open roles that may suit the applicant’s skillset.
+
+Each open position posted to OHMS will feature a skills profile composed of three skill types.
+
+Primary Skill:
+ DAS’s Office of Talent Management (OTM) will assign one Primary Skill to each state job posting.
+
+Professional Skills:
+ When creating a job posting, Agency recruiters will identify between one and five Professional Skills that are essential for each position they post to OHMS.
+
+Technical Skills:
+ Agency recruiters will identify between one and five Technical Skills that are essential for each position they post to OHMS. The Primary Skill assigned to a state job posting by OTM will be a technical skill as well.
+
+Applicants will create their own skills profile within OHMS’s applicant portal.
+
+Applicants may select multiple skills to include in their profile. One skill is the minimum.
+
+Applicants can modify their profile as needed.
+
+Resources & Training on Skills-Based Hiring
+
+DAS will provide technical training on the Skills Based Hiring tools in OHMS.
+
+DAS will develop skills-based hiring resources for applicants and maintain these resources on the careers.ohio.gov Skills Based Hiring subpage.
+
+Definitions
+
+Explicit Degree Requirement:
+ When a degree is specifically mentioned in the minimum qualifications (e.g., Graduate of associate degree program approved by American Dietetic Association or Ohio Board of Dietetics per Section 4759.10(B) of the Ohio Revised Code (ORC)).
+
+Implicit Degree Requirement:
+ When a degree is not specifically mentioned in the minimum qualifications, but is required based on the required licensing, certifications, etc. (e.g., Admission to Ohio Bar pursuant to Section 4705.01 of Revised Code).
+
+Ohio Hiring Management System (OHMS):
+ The State’s online hiring management system that is accessible to applicants via careers.ohio.gov.
+
+Primary Skill:
+ This Technical Skill is the broadest skill rationally related to the essential function of a position. It is the driver for an applicant’s personalized job list.
+
+Professional Skills:
+ Professional Skills, also known as soft skills, are competencies and abilities associated with your personality and help build a good dynamic with others.
+
+Technical Skills:
+ Technical Skills, also known as hard skills, are measurable abilities and knowledge that come through learning and can be job or task specific.
+
+Authority
+
+Executive Order 2023-10D
+ORC 124.14
+
+Resources
+
+None.
+
+Inquiries
+
+Inquiries regarding Skills-Based Hiring may be directed to:
+
+SHRD-Talent Acquisition
+Ohio Department of Administrative Services
+30 East Broad Street, 40th Floor
+Columbus, Ohio 43215
+recruitonboard@das.ohio.gov
+
+Direct inquiries about this policy to:
+
+Labor Relations and Human Resources Policy
+Office of Collective Bargaining
+Ohio Department of Administrative Services
+4200 Surface Road
+Columbus, Ohio 43228
+614.752.5393 |
+DASHRD.HRPolicy@das.ohio.gov
+State of Ohio Administrative Policies may be found online at
+Policy Finder - Department of Administrative Services
+.
+
+Revision History
+
+Date
+
+Description of Change
+
+11/3/2023
+
+Initial issuance.
+
+      Share this
+
+
+Expand All Sections
+
+
+
+Web Content Viewer
+
+Actions
+
+
+
+
+            About Us
+
+
+
+            Administrative Support Division
+
+
+
+            First Responder Communications Initiatives
+
+
+
+            General Services Division
+
+
+
+            Office of Collective Bargaining
+
+
+
+            Office of Data and Efficiency
+
+
+
+            Office of Information Technology
+
+
+
+            State Human Resources Division
+
+
+
+            Media Center
+
+
+
+            News
+
+
+
+            Events
+
+
+
+            Hidden
+
+
+
+            Hidden
+
+
+            Resources
+
+
+            Policy Finder
+
+
+
+            Careers
+
+
+
+            Public Records Requests
+
+
+
+            State MLK Holiday Commission
+
+
+
+            Hidden
+
+
+
+            Hidden
+
+
+Ohio Department of Administrative Services  | 30 E. Broad St., Columbus, Ohio 43215 |
+614-466-6511
+
+Powered by
+
+
+                    Privacy Notice and Policies
+
+
+
+
+
+
+
+                    Accessibility
+
+
+
+
+
+
+
+                    Ohio Checkbook
+
+
+
+
+
+
+linkedin icon
+
+x icon
+
+top-menu
+
+top-close
+
+top-help
+
+top-search
+
+
+odx-searchbox-label
+
+
+Submit your search
+
+Close
+
+
+
+Complementary Content
+
+${title}
+${badge}
+
+${loading}
+
+===== REFERENCES (ALL LINKS) =====
+https://checkbook.ohio.gov/
+https://das.ohio.gov/home/policy-finder/filter-policy-finder
+https://das.ohio.gov/wps/portal/gov/das/about
+https://das.ohio.gov/wps/portal/gov/das/about/about-us
+https://das.ohio.gov/wps/portal/gov/das/about/administrative-support-division-site-area/administrative-support-division
+https://das.ohio.gov/wps/portal/gov/das/about/first-responder-comms-initiatives/first-responder-comms-initiatives
+https://das.ohio.gov/wps/portal/gov/das/about/general-services-division/general-services-division
+https://das.ohio.gov/wps/portal/gov/das/about/office-of-collective-bargaining/office-of-collective-bargaining-1
+https://das.ohio.gov/wps/portal/gov/das/about/office-of-information-technology
+https://das.ohio.gov/wps/portal/gov/das/about/state-human-resources-division/state-human-resources-division
+https://das.ohio.gov/wps/portal/gov/das/buying-and-selling
+https://das.ohio.gov/wps/portal/gov/das/employee-relations
+https://das.ohio.gov/wps/portal/gov/das/employee-relations/benefits-administration
+https://das.ohio.gov/wps/portal/gov/das/employee-relations/combined-charitable-campaign
+https://das.ohio.gov/wps/portal/gov/das/employee-relations/emloyee-relations-overview
+https://das.ohio.gov/wps/portal/gov/das/employee-relations/human-resources+-operations-site-area
+https://das.ohio.gov/wps/portal/gov/das/employee-relations/office-of-collective-bargaining
+https://das.ohio.gov/wps/portal/gov/das/employee-relations/office-of-opportunity-and-accessibility
+https://das.ohio.gov/wps/portal/gov/das/employee-relations/policies
+https://das.ohio.gov/wps/portal/gov/das/employee-relations/policies/google.com
+https://das.ohio.gov/wps/portal/gov/das/employee-relations/policies/skills-based-hiring
+https://das.ohio.gov/wps/portal/gov/das/employee-relations/talent-management
+https://das.ohio.gov/wps/portal/gov/das/help-center
+https://das.ohio.gov/wps/portal/gov/das/help-center/accessibility/accessibility-
+https://das.ohio.gov/wps/portal/gov/das/help-center/privacy-notice-and-policies/privacy-notice-and-policies
+https://das.ohio.gov/wps/portal/gov/das/help-center/public-records-request-site-area/public-records-requests
+https://das.ohio.gov/wps/portal/gov/das/home
+https://das.ohio.gov/wps/portal/gov/das/home/media-center/all-events/all-events-landing-page
+https://das.ohio.gov/wps/portal/gov/das/home/media-center/all-news/all-news
+https://das.ohio.gov/wps/portal/gov/das/home/media-center/das-media-center
+https://das.ohio.gov/wps/portal/gov/das/home/ohio-mlk-holiday-commission/mlk-commission/mlk-holiday-commission
+https://das.ohio.gov/wps/portal/gov/das/home/policy-finder/filter-policy-finder
+https://das.ohio.gov/wps/portal/gov/das/property-services
+https://das.ohio.gov/wps/portal/gov/das/search
+https://das.ohio.gov/wps/portal/gov/das/technology-and-strategy
+https://das.ohio.gov/wps/portal/gov/das/technology-and-strategy/data-and-efficiency/office-of-data-and-efficiency
+https://dasstateoh.taleo.net/careersection/oh_int/jobsearch.ftl
+https://twitter.com/ohiodas
+https://www.linkedin.com/company/ohiodas
+javascript:;
+mailto:DASHRD.HRPolicy@das.ohio.gov
+tel:1-614-466-6511

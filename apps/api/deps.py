@@ -8,7 +8,7 @@ from sqlalchemy.orm import Session
 from packages.db.session import get_db_session
 from packages.governance.audit_service import AuditService
 from packages.rag.ask_service import AskService
-from packages.retrieval.pgsql_fts import PgsqlFtsRetriever
+from packages.retrieval.factory import build_retriever
 from packages.db.policy_query_service import PolicyQueryService
 from packages.ingestion.ingestion_service import IngestionService
 from packages.queue.queue_service import QueueService
@@ -46,7 +46,7 @@ def get_policy_query_service(session: Session = Depends(get_db)) -> PolicyQueryS
 
 
 def get_ask_service(session: Session = Depends(get_db)) -> AskService:
-    retriever = PgsqlFtsRetriever(session=session)
+    retriever = build_retriever(session=session)
     return AskService(session=session, retriever=retriever)
 
 

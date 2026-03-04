@@ -20,6 +20,44 @@ Stack:
 - Pydantic models
 - Alembic for migrations
 
+Retrieval & Answering Architecture (Phase 2.5)
+
+Flow:
+- User Query
+	- Input arrives at `POST /v1/ask` with tenant, user context, and scope.
+- Azure OpenAI embedding
+	- Query text is embedded using configured Azure OpenAI deployment.
+	- Embedding is used for semantic nearest-neighbor retrieval.
+- pgvector similarity search
+	- Vector search runs against `policy_embeddings` in PostgreSQL/pgvector.
+	- Returns high semantic matches even when wording differs from policy text.
+- postgres FTS search
+	- PostgreSQL full-text search runs in parallel to catch lexical/keyword matches.
+	- Helps with exact terms, acronyms, and compliance-specific phrasing.
+- hybrid merge
+	- Vector and FTS results are merged into a single candidate set.
+	- De-duplication and score normalization keep recall high without noisy repeats.
+- department-first ranking
+	- Ranker prioritizes evidence from policies aligned to the user department.
+	- Current/effective policy scope is preserved before final selection.
+- answer + citations
+	- LLM answer is generated from top-ranked evidence chunks.
+	- Response includes citation handles and audit traceability (`audit_id`, evidence list).
+
+Compact pipeline view:
+- User Query
+	↓
+- Azure OpenAI embedding
+	↓
+- pgvector similarity search
+	├── postgres FTS search
+	↓
+- hybrid merge
+	↓
+- department-first ranking
+	↓
+- answer + citations
+
 Design Requirements:
 - Policy versions are immutable
 - Only one current version per policy

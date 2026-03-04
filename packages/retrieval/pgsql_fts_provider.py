@@ -18,8 +18,9 @@ from packages.retrieval.base import IVectorRetriever
 class PgsqlFtsRetriever(IVectorRetriever):
 	"""PostgreSQL full-text search retriever (Phase 2 scaffold)."""
 
-	def __init__(self, *, session: Session) -> None:
+	def __init__(self, *, session: Session, default_top_k: int | None = None) -> None:
 		self._session = session
+		self._default_top_k = max(1, int(default_top_k or 40))
 
 	def retrieve(
 		self,
@@ -58,6 +59,8 @@ class PgsqlFtsRetriever(IVectorRetriever):
 			or_query_str = " | ".join(_tokens)
 			or_tsquery = func.to_tsquery("english", or_query_str)
 
+		limit_value = max(1, int(top_k or self._default_top_k))
+
 		def _build_stmt(tsquery):
 			rank = func.ts_rank(tsv, tsquery)
 			stmt = (
@@ -86,7 +89,7 @@ class PgsqlFtsRetriever(IVectorRetriever):
 				.where(PolicyVersion.is_current.is_(True) if only_current else sa.true())
 				.where(tsv.op("@@")(tsquery))
 				.order_by(rank.desc())
-				.limit(top_k)
+				.limit(limit_value)
 			)
 
 			if policy_ids:

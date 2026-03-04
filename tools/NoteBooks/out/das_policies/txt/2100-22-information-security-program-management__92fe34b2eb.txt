@@ -1,0 +1,622 @@
+TITLE: 2100-22 Information Security Program Management
+URL: https://das.ohio.gov/wps/portal/gov/das/technology-and-strategy/policies/2100-22-information-security-program-management
+
+===== PAGE TEXT =====
+2100-22 Information Security Program Management
+
+IBM WebSphere Portal
+
+An official State of Ohio site.
+
+Here’s how you know
+
+Official websites use Ohio.gov
+
+An Ohio.gov website belongs to an official government organization in the State of Ohio.
+
+Secure .gov websites use HTTPS
+
+A lock
+ or https:// means you've safely connected to the .gov website. Share sensitive information only on official, secure websites.
+
+Trusted applications are secured by OHID
+
+When you log in with OHID, your privacy, data, and personal information are protected by federal and state digital security standards.
+
+Close
+
+learn-more
+
+        Skip to Navigation
+
+
+        Skip to Main Content
+
+
+Ohio Department
+
+Menu
+
+                        	Home
+
+                        	Buying & Selling
+
+                        	Property Services
+
+                        	Technology & Strategy
+
+                        	Employee Relations
+
+                        	About
+
+                        	Help
+
+                        	Search
+
+top-help
+
+odx-helplink-label
+
+top-search
+
+odx-searchbox-label
+
+Type in your search keywords and hit enter to submit or escape to close
+
+top-search
+
+top-close
+
+2100-22 Information Security Program Management
+
+{}
+
+Web Content Viewer
+
+Actions
+
+
+
+DAS
+
+Technology & Strategy
+
+Policies
+
+                Overview
+
+
+                IT Innovation Information Center
+
+
+                IT Strategic Investment and Architecture
+
+
+                Information Security & Privacy
+
+
+                IT Enterprise Services
+
+
+                InnovateOhio Platform
+
+
+                Office of Data and Efficiency
+
+
+                Ohio 9-1-1 Program Office
+
+
+                MARCS
+
+
+                OGRIP
+
+
+                Policies
+
+
+                IT Policy Glossary
+
+
+                    2100-22 Information Security Program Management
+
+
+This policy outlines the necessary components of a successful information security program. Effective adoption and implementation of the components outlined in this policy will provide the Ohio Department of Administrative Services (DAS) with a solid foundation on which to build the state’s information security program.
+
+odx-attachment
+
+2100-22 Information Security Program Management Policy.pdf | 252 KB
+
+odx-download
+
+odx-download
+
+      Share this
+
+
+Expand All Sections
+
+
+
+Web Content Viewer
+
+Actions
+
+
+
+
+            About Us
+
+
+
+            Administrative Support Division
+
+
+
+            First Responder Communications Initiatives
+
+
+
+            General Services Division
+
+
+
+            Office of Collective Bargaining
+
+
+
+            Office of Data and Efficiency
+
+
+
+            Office of Information Technology
+
+
+
+            State Human Resources Division
+
+
+
+            Media Center
+
+
+
+            News
+
+
+
+            Events
+
+
+
+            Hidden
+
+
+
+            Hidden
+
+
+            Resources
+
+
+            Policy Finder
+
+
+
+            Careers
+
+
+
+            Public Records Requests
+
+
+
+            State MLK Holiday Commission
+
+
+
+            Hidden
+
+
+
+            Hidden
+
+
+Ohio Department of Administrative Services  | 30 E. Broad St., Columbus, Ohio 43215 |
+614-466-6511
+
+Powered by
+
+
+                    Privacy Notice and Policies
+
+
+
+
+
+
+
+                    Accessibility
+
+
+
+
+
+
+
+                    Ohio Checkbook
+
+
+
+
+
+
+linkedin icon
+
+x icon
+
+top-menu
+
+top-close
+
+top-help
+
+top-search
+
+
+odx-searchbox-label
+
+
+Submit your search
+
+Close
+
+
+
+Complementary Content
+
+${title}
+${badge}
+
+${loading}
+
+===== REFERENCES (ALL LINKS) =====
+https://checkbook.ohio.gov/
+https://das.ohio.gov/wps/portal/gov/das/about
+https://das.ohio.gov/wps/portal/gov/das/about/about-us
+https://das.ohio.gov/wps/portal/gov/das/about/administrative-support-division-site-area/administrative-support-division
+https://das.ohio.gov/wps/portal/gov/das/about/first-responder-comms-initiatives/first-responder-comms-initiatives
+https://das.ohio.gov/wps/portal/gov/das/about/general-services-division/general-services-division
+https://das.ohio.gov/wps/portal/gov/das/about/office-of-collective-bargaining/office-of-collective-bargaining-1
+https://das.ohio.gov/wps/portal/gov/das/about/office-of-information-technology
+https://das.ohio.gov/wps/portal/gov/das/about/state-human-resources-division/state-human-resources-division
+https://das.ohio.gov/wps/portal/gov/das/buying-and-selling
+https://das.ohio.gov/wps/portal/gov/das/employee-relations
+https://das.ohio.gov/wps/portal/gov/das/help-center
+https://das.ohio.gov/wps/portal/gov/das/help-center/accessibility/accessibility-
+https://das.ohio.gov/wps/portal/gov/das/help-center/privacy-notice-and-policies/privacy-notice-and-policies
+https://das.ohio.gov/wps/portal/gov/das/help-center/public-records-request-site-area/public-records-requests
+https://das.ohio.gov/wps/portal/gov/das/home
+https://das.ohio.gov/wps/portal/gov/das/home/media-center/all-events/all-events-landing-page
+https://das.ohio.gov/wps/portal/gov/das/home/media-center/all-news/all-news
+https://das.ohio.gov/wps/portal/gov/das/home/media-center/das-media-center
+https://das.ohio.gov/wps/portal/gov/das/home/ohio-mlk-holiday-commission/mlk-commission/mlk-holiday-commission
+https://das.ohio.gov/wps/portal/gov/das/home/policy-finder/filter-policy-finder
+https://das.ohio.gov/wps/portal/gov/das/property-services
+https://das.ohio.gov/wps/portal/gov/das/search
+https://das.ohio.gov/wps/portal/gov/das/technology-and-strategy
+https://das.ohio.gov/wps/portal/gov/das/technology-and-strategy/911-home-program-office
+https://das.ohio.gov/wps/portal/gov/das/technology-and-strategy/OGRIP
+https://das.ohio.gov/wps/portal/gov/das/technology-and-strategy/data-and-efficiency
+https://das.ohio.gov/wps/portal/gov/das/technology-and-strategy/data-and-efficiency/office-of-data-and-efficiency
+https://das.ohio.gov/wps/portal/gov/das/technology-and-strategy/information-security-privacy
+https://das.ohio.gov/wps/portal/gov/das/technology-and-strategy/innovateohio-platform-iop
+https://das.ohio.gov/wps/portal/gov/das/technology-and-strategy/it-enterprise-services
+https://das.ohio.gov/wps/portal/gov/das/technology-and-strategy/it-innovation-information-center
+https://das.ohio.gov/wps/portal/gov/das/technology-and-strategy/it-policy-glossary
+https://das.ohio.gov/wps/portal/gov/das/technology-and-strategy/it-strategic-investment-and-architecture
+https://das.ohio.gov/wps/portal/gov/das/technology-and-strategy/marcs
+https://das.ohio.gov/wps/portal/gov/das/technology-and-strategy/overview
+https://das.ohio.gov/wps/portal/gov/das/technology-and-strategy/policies
+https://das.ohio.gov/wps/portal/gov/das/technology-and-strategy/policies/2100-22-information-security-program-management
+https://das.ohio.gov/wps/portal/gov/das/technology-and-strategy/policies/google.com
+https://das.ohio.gov/wps/wcm/connect/gov/f3cdca97-1b9e-4828-9512-71ffb6bcfad2/2100-22+Information+Security+Program+Management+Policy.pdf?MOD=AJPERES&CONVERT_TO=url&CACHEID=ROOTWORKSPACE.Z18_JQGCH4S04P41206HNUKVF31000-f3cdca97-1b9e-4828-9512-71ffb6bcfad2-pe7Afbn
+https://dasstateoh.taleo.net/careersection/oh_int/jobsearch.ftl
+https://twitter.com/ohiodas
+https://www.linkedin.com/company/ohiodas
+javascript:;
+tel:1-614-466-6511
+
+========== PDF CONTENT ==========
+PDF: https://das.ohio.gov/wps/wcm/connect/gov/f3cdca97-1b9e-4828-9512-71ffb6bcfad2/2100-22+Information+Security+Program+Management+Policy.pdf?MOD=AJPERES&CONVERT_TO=url&CACHEID=ROOTWORKSPACE.Z18_JQGCH4S04P41206HNUKVF31000-f3cdca97-1b9e-4828-9512-71ffb6bcfad2-pe7Afbn
+
+--- PDF Page 1 ---
+DAS Policy 
+ 
+Information Security  
+Program Management 
+ 
+No: 
+2100-22 
+Effective: 
+March 5, 2024 
+ 
+Approval: 
+ 
+Katrina Flory, Assistant Director/State CIO 
+I. Purpose 
+This policy outlines the necessary components of a successful information security program. 
+Effective adoption and implementation of the components outlined in this policy will provide the 
+Ohio Department of Administrative Services (DAS) with a solid foundation on which to build the 
+state’s information security program. 
+ 
+The first occurrence of a defined term in the policy is in bold, italic type, and is hyperlinked to the 
+definition in Section IV.  In addition, references to National Institute of Standards in Technology 
+(NIST) Special Publication (SP) 800 -53 family identifiers and control numbers are provided in 
+parentheticals next to requirement headers, where applicable. 
+ 
+II. Scope 
+The scope of this policy includes DAS-Managed Information Systems and Services, DAS-Managed 
+System Assets, and the DAS system and Service Owners who maintain them. 
+ 
+III. Policy 
+DAS is issuing this policy to protect DAS -Managed Information Systems and Services  as well as 
+DAS-Managed System Assets. DAS system and Service Owner s, as well as the DAS Office of 
+Information Security and Privacy (OISP), shall work together to ensure that appropriate security 
+controls are implemented. 
+  
+A. Senior Information Security Officer (PM-2): The DAS Office of Information Technology (OIT) 
+chief information security officer (CISO), appointed in accordance with Ohio Revised Code 
+Section 125.18 (B)(6), shall serve as the senior information security officer for the state. The 
+ 
+The Ohio Department of Administrative Services is the engine of state government, providing innovative solutions and 
+supporting the efficient operation of state agencies, boards, and commissions.
+
+
+--- PDF Page 2 ---
+Ohio Department of Administrative Services Policy 
+ Information Security Program Management/2100-22  
+Page 2 of 6 
+ 
+The Ohio Department of Administrative Services is the engine of state government, providing innovative solutions and 
+supporting the efficient operation of state agencies, boards, and commissions. 
+CISO shall have the mission and resources to coordinate, develop, implement, and maintain 
+a statewide information security program. 
+ 
+B. I
+nformation Security Resources (PM-3): Operating budget and capital budget requests shall 
+include the resources needed to implement the information security program, to the extent 
+feasible, given budgetary constraints. 
+ 
+Business cases to employ the security resources shall be documented; and information  
+security resources shall be available for expenditure as planned. 
+ 
+C. Remediation Plan (PM-4): DAS OISP shall implement a process for ensuring that remediation 
+plans for the security program and associated information systems are developed and 
+maintained. 
+ 
+1. R
+emedial information security actions shall be documented to adequately respond to the 
+Risk to operations and assets, individuals, and other organizations, as necessary. 
+2. Remediation plans shall be reviewed for consistency with DAS Risk management strategy 
+and statewide priorities for Risk response actions. 
+ 
+D
+. Information System Inventory (PM -5): An inventory of DAS -Managed Information Systems 
+and Services shall be developed and maintained by DAS OISP. 
+ 
+1. T
+he inventory shall be updated no less than annually.  
+2. The inventory shall track elements such as system owner, data owner, contact 
+information, platform basics (operating system, database, cloud, on -premises), vendor 
+information (if any), and Risk and data classification.  
+3. DAS-managed information system and Service Owners are responsible for providing this 
+information to DAS OISP. 
+ 
+E. I
+nformation Security Performance Measures (PM-6): DAS OISP shall develop, monitor, and 
+report on the results of information security performance measures. 
+ 
+F. E
+nterprise IT Security Architecture (PM-7): DAS OISP shall develop an enterprise IT security 
+architecture, with consideration for information security and the resulting Risk  to DAS 
+operations, assets, individuals, and other organizations. The DAS OIT Investment and 
+Governance Division shall provide IT strategy, policy, and standards development support for 
+enterprise IT security architecture efforts. 
+ 
+G
+. Critical Infrastructure Plan (PM -8): Upon request, DAS OISP shall work with the Ohio 
+Department of Public Safety Homeland Security on the development of a protection plan for 
+DAS-Managed Information Systems and Services and DAS-Managed System Assets identified 
+as critical infrastructure and Key Resources.
+
+
+--- PDF Page 3 ---
+Ohio Department of Administrative Services Policy 
+ Information Security Program Management/2100-22  
+Page 3 of 6 
+ 
+The Ohio Department of Administrative Services is the engine of state government, providing innovative solutions and 
+supporting the efficient operation of state agencies, boards, and commissions. 
+H. Risk Management Strategy (PM -9): DAS OISP shall develop a comprehensive Risk  
+management strategy associated with the operation and use of DAS-managed information 
+systems, which addresses Risk  to DAS operations and assets, individuals, and other 
+organizations. 
+ 
+The Risk management strategy shall be implemented consistently across DAS. The strategy 
+shall be updated annually, or as required, to address organizational changes. 
+I. Security Authorization Process (PM -10): DAS OISP shall manage the security state of DAS -
+managed information systems, and the environments in which those systems operate, 
+through a security authorization process as outlined in DAS Policy 2100 -19, “Security 
+Assessment and Authorization.” 
+ 
+1. I
+ndividuals shall be designated to fulfill specific roles and responsibilities within the Risk 
+management process. 
+2. The security authorization process shall be fully integrated into a DAS -wide Risk 
+management program. 
+ 
+J. M
+ission/Business Process Definition (PM -11): Through adherence to DAS policies 2100 -04, 
+“Data Classification,” 2100-08, “Risk Assessment,” and 2100 -19, “Security Assessment and 
+Authorization,” DAS divisions shall define their mission and business processes with 
+consideration for information security  and the possible Risk s to DAS operations, assets, 
+individuals, and other organizations. 
+ 
+If information security protection needs arise, DAS divisions shall work with DAS OISP to 
+modify their mission and business processes, as necessary, to achieve the necessary level of 
+protection. 
+ 
+K. Insider Threat Program (PM-12): DAS OISP shall implement an insider threat program that 
+includes a cross-discipline insider threat Incident Handling team. 
+ 
+L. I
+nformation Security Workforce (PM -13): DAS OISP shall establish an information security 
+workforce development and improvement program. 
+ 
+M. T
+esting, Training, and Monitoring (PM-14): DAS OISP plans for conducting security testing, 
+training, and monitoring activities associated with DAS -managed information systems shall 
+be implemented and routinely executed in a timely manner. 
+ 
+Testing, training and monitoring plans shall be reviewed for consistency with the DAS Risk 
+management strategy and statewide priorities for Risk response actions.
+
+
+--- PDF Page 4 ---
+Ohio Department of Administrative Services Policy 
+ Information Security Program Management/2100-22  
+Page 4 of 6 
+ 
+The Ohio Department of Administrative Services is the engine of state government, providing innovative solutions and 
+supporting the efficient operation of state agencies, boards, and commissions. 
+N. Security Group and Association Contacts (PM -15): DAS OISP shall establish and 
+institutionalize contact with selected groups and associations within the information security 
+community. 
+ 
+The resources provided by these groups shall be leveraged to facilitate ongoing security 
+education and training for organizational personnel; maintain currency with recommended 
+security practices, techniques, and technologies; and share current, security -related 
+information, including threats, vulnerabilities, and incidents. 
+ 
+O. Threat Awareness Program (PM-16): DAS OISP shall implement a threat awareness program 
+that includes a cross-organizational information-sharing capability. 
+ 
+I
+V. Definitions 
+ 
+A
+. Critical Infrastructure. System and assets, whether physical or virtual, so vital to the United 
+States that the incapacity or destruction of such systems and assets would have a debilitating 
+impact on security, national economic security, national public health or safety, or any 
+combination of those matters.
+1 
+B. DAS-Managed Information Systems and Services: A discrete set of information resources 
+organized for the collection, processing, maintenance, use, sharing, dissemination, or 
+disposition of information.
+2 This includes internal DAS information systems as well as 
+information systems and infrastructure (services) operated or managed by DAS for customer 
+agencies. For the purposes of this policy, primary responsibility for managing these systems 
+or services may be assigned to DAS OIT personnel or other outside entities. 
+C. DAS-Managed System Asset : Information, hardware, software and services required to 
+support state business, and identified during the Risk assessment process as assets that need 
+to be protected. Primary responsibility for managing these system assets may be assigned to 
+DAS OIT personnel or other outside entities. 
+D. Incident Handling . The mitigation of violations of security policies and recommended 
+practices.
+3 
+E. Key Resources. Publicly or privately controlled resources essential to the minimal operations 
+ 
+1 “NIST SP 800-30 Revision 1, Guide for Conducting Risk Assessments,” U.S. Department of Commerce National Institute of 
+Standards and Technology, September 2012 <https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-
+30r1.pdf>. 
+2 “NIST Special Publication 800-53 Revision 4, Security and Privacy Controls for Federal Information Systems and 
+Organizations,” U.S. Department of Commerce National Institute of Standards and Technology, April, 2013 
+<https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf>. 
+3 Cichonski, Paul, Tom Millar, Tim Grance, Karen Scarfone, “National Institute of Standards and Technology Special 
+Publication 800-61 Rev. 2 Computer Security Incident Handling Guide,” U.S. Department of Commerce National Institute of 
+Standards and Technology, August, 2012 <https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r2.pdf>.
+
+
+--- PDF Page 5 ---
+Ohio Department of Administrative Services Policy 
+ Information Security Program Management/2100-22  
+Page 5 of 6 
+ 
+The Ohio Department of Administrative Services is the engine of state government, providing innovative solutions and 
+supporting the efficient operation of state agencies, boards, and commissions. 
+of the economy and government.4  
+F. Risk. A measure of the extent to which an entity is threatened by a potential circumstance or 
+event, and typically a function of: (i) the adverse impacts that would arise if the circumstance 
+or event occurs; and (ii) the likelihood of occurrence.5 
+G. Service Owner . A Service Owner is responsible for the delivery (design, performance, 
+integration), continual improvement and management of assigned IT services. 
+ 
+V. Authority 
+ 
+O
+RC 125.18 
+ 
+VI
+. Resources 
+ 
+Document Name Location 
+NIST Special Publication 800-53, Security 
+and Privacy Controls for Federal Information 
+Systems and Organizations 
+https://nvlpubs.nist.gov/nistpubs 
+/SpecialPublications /NIST.SP.800-53r4.pdf 
+Ohio IT Standard ITS-SEC-02 Security 
+Controls Framework 
+https://das.ohio.gov/technology-and-
+strategy/policies 
+DAS Policy 2100-04 Data Classification https://das.ohio.gov/technology-and-
+strategy/policies 
+DAS Policy 2100-08 Risk Assessment https://das.ohio.gov/technology-and-
+strategy/policies 
+DAS Policy 2100-19, Security Assessment and 
+Authorization 
+https://das.ohio.gov/technology-and-
+strategy/policies  
+ 
+VII. Inquiries 
+ 
+D
+irect inquiries about this policy to: 
+ 
+Office of Information Security & Privacy  
+Office of Information Technology  
+Ohio Department of Administrative Services 
+ 
+4 Homeland Security Act of 2002 (Section 2(9)): Public Law 107–296, 107th Congress, H.R. 5005, November 25, 2002. 
+<https://www.dhs.gov/sites/default/files/publications/hr_5005_enr.pdf>.                              
+5 “NIST Special Publication 800-53 Revision 4, Security and Privacy Controls for Federal Information Systems and 
+Organizations,” U.S. Department of Commerce National Institute of Standards and Technology, April, 2013 
+<https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf>.
+
+
+--- PDF Page 6 ---
+Ohio Department of Administrative Services Policy 
+ Information Security Program Management/2100-22  
+Page 6 of 6 
+ 
+The Ohio Department of Administrative Services is the engine of state government, providing innovative solutions and 
+supporting the efficient operation of state agencies, boards, and commissions. 
+30 East Broad Street, 39th Floor 
+Columbus, Ohio 43215 
+ 
+614-644-6860 | state.isp@das.ohio.gov 
+ 
+DAS Policies may be found online at  
+https://das.ohio.gov/technology-and-strategy/policies  
+ 
+VIII. Revision History 
+This policy shall be reviewed no less than every two years and updated as needed. 
+ 
+Date Description of Change 
+01/19/2021 Original Policy. 
+08/02/2021 Conducted routine maintenance review of citations and references. 
+03/05/2024 Updated organizational references to align with the current structure . 
+Updated the policy template. Added a revision history review frequency 
+statement.

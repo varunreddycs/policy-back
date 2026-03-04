@@ -1,0 +1,881 @@
+TITLE: IT-08 Website Standardization
+URL: https://das.ohio.gov/wps/portal/gov/das/technology-and-strategy/policies/it-08
+
+===== PAGE TEXT =====
+IT-08 Website Standardization
+
+IBM WebSphere Portal
+
+An official State of Ohio site.
+
+Here’s how you know
+
+Official websites use Ohio.gov
+
+An Ohio.gov website belongs to an official government organization in the State of Ohio.
+
+Secure .gov websites use HTTPS
+
+A lock
+ or https:// means you've safely connected to the .gov website. Share sensitive information only on official, secure websites.
+
+Trusted applications are secured by OHID
+
+When you log in with OHID, your privacy, data, and personal information are protected by federal and state digital security standards.
+
+Close
+
+learn-more
+
+        Skip to Navigation
+
+
+        Skip to Main Content
+
+
+Ohio Department
+
+Menu
+
+                        	Home
+
+                        	Buying & Selling
+
+                        	Property Services
+
+                        	Technology & Strategy
+
+                        	Employee Relations
+
+                        	About
+
+                        	Help
+
+                        	Search
+
+top-help
+
+odx-helplink-label
+
+top-search
+
+odx-searchbox-label
+
+Type in your search keywords and hit enter to submit or escape to close
+
+top-search
+
+top-close
+
+IT-08 Website Standardization
+
+{}
+
+Web Content Viewer
+
+Actions
+
+
+
+DAS
+
+Technology & Strategy
+
+Policies
+
+                Overview
+
+
+                IT Innovation Information Center
+
+
+                IT Strategic Investment and Architecture
+
+
+                Information Security & Privacy
+
+
+                IT Enterprise Services
+
+
+                InnovateOhio Platform
+
+
+                Office of Data and Efficiency
+
+
+                Ohio 9-1-1 Program Office
+
+
+                MARCS
+
+
+                OGRIP
+
+
+                Policies
+
+
+                IT Policy Glossary
+
+
+                    IT-08 Website Standardization
+
+
+The purpose of this policy is to establish website standardization, content management, and security requirements for State agency, board, and commission (agency/agencies) websites. The intent of these requirements is to create a degree of consistency and predictability among public-facing web pages, while still providing the flexibility to design secure web pages that fit the unique needs of State agencies.
+
+odx-attachment
+
+IT-08.pdf | 482 KB
+
+odx-download
+
+odx-download
+
+      Share this
+
+
+Expand All Sections
+
+
+
+Web Content Viewer
+
+Actions
+
+
+
+
+            About Us
+
+
+
+            Administrative Support Division
+
+
+
+            First Responder Communications Initiatives
+
+
+
+            General Services Division
+
+
+
+            Office of Collective Bargaining
+
+
+
+            Office of Data and Efficiency
+
+
+
+            Office of Information Technology
+
+
+
+            State Human Resources Division
+
+
+
+            Media Center
+
+
+
+            News
+
+
+
+            Events
+
+
+
+            Hidden
+
+
+
+            Hidden
+
+
+            Resources
+
+
+            Policy Finder
+
+
+
+            Careers
+
+
+
+            Public Records Requests
+
+
+
+            State MLK Holiday Commission
+
+
+
+            Hidden
+
+
+
+            Hidden
+
+
+Ohio Department of Administrative Services  | 30 E. Broad St., Columbus, Ohio 43215 |
+614-466-6511
+
+Powered by
+
+
+                    Privacy Notice and Policies
+
+
+
+
+
+
+
+                    Accessibility
+
+
+
+
+
+
+
+                    Ohio Checkbook
+
+
+
+
+
+
+linkedin icon
+
+x icon
+
+top-menu
+
+top-close
+
+top-help
+
+top-search
+
+
+odx-searchbox-label
+
+
+Submit your search
+
+Close
+
+
+
+Complementary Content
+
+${title}
+${badge}
+
+${loading}
+
+===== REFERENCES (ALL LINKS) =====
+https://checkbook.ohio.gov/
+https://das.ohio.gov/wps/portal/gov/das/about
+https://das.ohio.gov/wps/portal/gov/das/about/about-us
+https://das.ohio.gov/wps/portal/gov/das/about/administrative-support-division-site-area/administrative-support-division
+https://das.ohio.gov/wps/portal/gov/das/about/first-responder-comms-initiatives/first-responder-comms-initiatives
+https://das.ohio.gov/wps/portal/gov/das/about/general-services-division/general-services-division
+https://das.ohio.gov/wps/portal/gov/das/about/office-of-collective-bargaining/office-of-collective-bargaining-1
+https://das.ohio.gov/wps/portal/gov/das/about/office-of-information-technology
+https://das.ohio.gov/wps/portal/gov/das/about/state-human-resources-division/state-human-resources-division
+https://das.ohio.gov/wps/portal/gov/das/buying-and-selling
+https://das.ohio.gov/wps/portal/gov/das/employee-relations
+https://das.ohio.gov/wps/portal/gov/das/help-center
+https://das.ohio.gov/wps/portal/gov/das/help-center/accessibility/accessibility-
+https://das.ohio.gov/wps/portal/gov/das/help-center/privacy-notice-and-policies/privacy-notice-and-policies
+https://das.ohio.gov/wps/portal/gov/das/help-center/public-records-request-site-area/public-records-requests
+https://das.ohio.gov/wps/portal/gov/das/home
+https://das.ohio.gov/wps/portal/gov/das/home/media-center/all-events/all-events-landing-page
+https://das.ohio.gov/wps/portal/gov/das/home/media-center/all-news/all-news
+https://das.ohio.gov/wps/portal/gov/das/home/media-center/das-media-center
+https://das.ohio.gov/wps/portal/gov/das/home/ohio-mlk-holiday-commission/mlk-commission/mlk-holiday-commission
+https://das.ohio.gov/wps/portal/gov/das/home/policy-finder/filter-policy-finder
+https://das.ohio.gov/wps/portal/gov/das/property-services
+https://das.ohio.gov/wps/portal/gov/das/search
+https://das.ohio.gov/wps/portal/gov/das/technology-and-strategy
+https://das.ohio.gov/wps/portal/gov/das/technology-and-strategy/911-home-program-office
+https://das.ohio.gov/wps/portal/gov/das/technology-and-strategy/OGRIP
+https://das.ohio.gov/wps/portal/gov/das/technology-and-strategy/data-and-efficiency
+https://das.ohio.gov/wps/portal/gov/das/technology-and-strategy/data-and-efficiency/office-of-data-and-efficiency
+https://das.ohio.gov/wps/portal/gov/das/technology-and-strategy/information-security-privacy
+https://das.ohio.gov/wps/portal/gov/das/technology-and-strategy/innovateohio-platform-iop
+https://das.ohio.gov/wps/portal/gov/das/technology-and-strategy/it-enterprise-services
+https://das.ohio.gov/wps/portal/gov/das/technology-and-strategy/it-innovation-information-center
+https://das.ohio.gov/wps/portal/gov/das/technology-and-strategy/it-policy-glossary
+https://das.ohio.gov/wps/portal/gov/das/technology-and-strategy/it-strategic-investment-and-architecture
+https://das.ohio.gov/wps/portal/gov/das/technology-and-strategy/marcs
+https://das.ohio.gov/wps/portal/gov/das/technology-and-strategy/overview
+https://das.ohio.gov/wps/portal/gov/das/technology-and-strategy/policies
+https://das.ohio.gov/wps/portal/gov/das/technology-and-strategy/policies/google.com
+https://das.ohio.gov/wps/portal/gov/das/technology-and-strategy/policies/it-08
+https://das.ohio.gov/wps/wcm/connect/gov/60c6dc03-4340-4e71-9772-7394bf8a3018/IT-08.pdf?MOD=AJPERES&CONVERT_TO=url&CACHEID=ROOTWORKSPACE.Z18_K9I401S01H7F40QBNJU3SO1F56-60c6dc03-4340-4e71-9772-7394bf8a3018-pq1wLZZ
+https://dasstateoh.taleo.net/careersection/oh_int/jobsearch.ftl
+https://twitter.com/ohiodas
+https://www.linkedin.com/company/ohiodas
+javascript:;
+tel:1-614-466-6511
+
+========== PDF CONTENT ==========
+PDF: https://das.ohio.gov/wps/wcm/connect/gov/60c6dc03-4340-4e71-9772-7394bf8a3018/IT-08.pdf?MOD=AJPERES&CONVERT_TO=url&CACHEID=ROOTWORKSPACE.Z18_K9I401S01H7F40QBNJU3SO1F56-60c6dc03-4340-4e71-9772-7394bf8a3018-pq1wLZZ
+
+--- PDF Page 1 ---
+The Ohio Department of Administrative Services is the engine of state government, providing innovative solutions 
+and supporting the efficient operation of state Agencies, boards, and commissions. 
+ 
+  
+ 
+ 
+ 
+State of Ohio 
+Administrative Policy 
+ 
+Website Standardization 
+ 
+No: IT-08 
+Information Technology  
+ 
+Effective: 
+April 29, 2025 
+ 
+Issued By: 
+ 
+Kathleen C. Madden, Director 
+I. Purpose 
+The purpose of this policy is to establish website standardization, content management, and 
+security requirements for Agency websites. The intent of these requirements is to create a degree 
+of consistency and predictability among Public -facing Web Page s, while still providing the 
+flexibility to design secure web pages that fit the unique needs of Agencies. The first occurrence of 
+a defined term in the policy body outside of a title or heading is in bold, italic type, and is 
+hyperlinked to the definition in Section IV. 
+II. Scope 
+This policy applies to all state agencies, boards, and commissions under the authority of the 
+Governor (collectively referred to as Agency or Agencies). The majority of the requirements 
+outlined within this policy apply only to Public-facing Web Pages. However, the following sections 
+apply to Public-facing Web Pages as well as Agency web-facing applications: Section III.K. Browser 
+Compatibility, Section II I.L. Transport Layer Security  (TLS) Certificates, Section III.P. 
+Identification and Authentication, and Section  III.Q. Website and Web -Facing Application 
+Security. 
+ 
+In accordance with Ohio Revised Code (ORC) Section 125.183, the requirements related to Covered 
+Applications outlined in Section III.C. of this policy apply to state agencies, which are defined as  
+every organized body, office, or agency established by the laws of this state for the exercise of any
+
+
+--- PDF Page 2 ---
+State of Ohio Administrative Policy 
+Website Standardization/IT-08 
+Page 2 of 12 
+ 
+ 
+ 
+The Ohio Department of Administrative Services is the engine of state government, providing innovative solutions and 
+supporting the efficient operation of state Agencies, boards, and commissions. 
+ 
+ 
+function of state government, other than any state-supported institution of higher education, the 
+courts, or any judicial agency. State agency  also includes the general  assembly, a ny legisl ative 
+agency, and the capitol square review  and advisory board (collectively referred to as Agency or 
+Agencies in section III.C.). 
+III. Policy 
+Agencies shall align with the website design and content management standards defined by the  
+InnovateOhio Platform  team when developing and maintaining Public -facing Web Page s on 
+State-controlled Websites. 
+ 
+A. User Experience Digital Toolkit : Agencies shall utilize the InnovateOhio Platform Use r 
+Experience Digital Toolkit  to design their public facing web pages. The toolkit includes the 
+following: 
+1. Style Guide (e.g., accessibility, color palette, typography, dependencies, etc.) 
+2. User Interface Controls (e.g., ads grid, accordions, arrows and popovers, badges, 
+breadcrumbs, buttons, card carousel, checkboxes, labels, left and main navigation, 
+maps, etc.)  
+3. Content Components (e.g., charts, icons, lists, tables, etc.) 
+4. Page Examples (e.g., form, landing, login, password reset, etc.) 
+5. Layout (e.g., cards, dividers, form, grid system, etc.) 
+6. Page Errors (e.g., 404-page, 500 page, etc.) 
+ 
+B. Branding: Each Agency shall have both Agency and Ohio.gov branding. This branding shall be 
+consistent on all Agency pages. 
+1. Branding shall comply with the style in effect on the Ohio.gov home page. 
+2. Agencies are permitted to use their own logos and branding. Agencies with subordinate 
+Agencies shall use the subordinate Agency brand in addition to a link to the Agency home 
+page. 
+3. Agency branding shall be linked to the home page of the Agency’s website. Subordinate 
+Agency branding shall link to the subordinate Agency home page. 
+ 
+ 
+C. Social Media: The use of Social Media shall align with the following requirements:
+
+
+--- PDF Page 3 ---
+State of Ohio Administrative Policy 
+Website Standardization/IT-08 
+Page 3 of 12 
+ 
+ 
+ 
+The Ohio Department of Administrative Services is the engine of state government, providing innovative solutions and 
+supporting the efficient operation of state Agencies, boards, and commissions. 
+ 
+1. A gencies shall only use State -approved Social Media, which includes, Facebook, Flickr, 
+GovDelivery, Instagram, LinkedIn, Pinterest, WordPress, YouTube, and X.  
+2. The download and/or use of any unauthorized social media , including Covered 
+Applications as defined in ORC Section 125.183, is prohibited. 
+a) All Covered Applications must be immediately removed from all S tate-Owned or 
+leased devices. 
+b) Exceptions to the Covered Applications prohibition shall only be considered for Law 
+Enforcement Purposes or Security Purposes  and must be authorized by the state 
+agency director and the state chief information security officer or their designees. For 
+any proposed uses, the agency must document the measures that will be taken to 
+mitigate against the security and privacy risks associated with the use of a Covered 
+Application. Examples of possible mitigation strategies include: 
+(i) Accessing the Covered Application from a secure device that does not connect 
+to the state’s network or wireless services. 
+(ii) Ensuring that the device that is used to access the Covered Application does not 
+store or transmit Confidential Data. 
+c) Any requests for exception shall be submitted to the Ohio Department of 
+Administrative Services (DAS) Office of Information Security and Privacy (OISP) via 
+the Security Exception Request  form. The form is located within the IT Enterprise 
+Services Portal under the “Services & Products/Security Services” category. 
+3. Agencies shall take measures to prevent the downloading , installation, or use of a 
+Covered Application. 
+4. Agencies shall monitor their use of Social Media  and State-Owned or leased devices to 
+ensure compliance with this policy. 
+5. Agencies’ Social Media content coordinators shall be reminded, at least annually, of the 
+requirements regarding prohibited and appropriate use as outlined within Ohio 
+Administrative Policy IT-04, “Use of Internet, E-mail and Other IT Resources.” 
+6. Third party tracking from Social Media links, for example, social network sharing buttons, 
+widgets or plug -ins, shall not be permitted unless explicitly approved by the Agency. If 
+Social Media links are authorized by the Agency to track user activities, then this shall be 
+disclosed in the website privacy statement. 
+7. Links to Social Media  shall appear in the Social Media  column of the State Directory, 
+https://ohio.gov/wps/portal/gov/site/help-center/state-directory/.
+
+
+--- PDF Page 4 ---
+State of Ohio Administrative Policy 
+Website Standardization/IT-08 
+Page 4 of 12 
+ 
+ 
+ 
+The Ohio Department of Administrative Services is the engine of state government, providing innovative solutions and 
+supporting the efficient operation of state Agencies, boards, and commissions. 
+ 
+D. S earch Feature : Each Agency shall have a search feature available and when technically 
+feasible, utilize the InnovateOhio Platform search engine. 
+ 
+1. The search feature shall have the capability to perform searches within the Agency  
+website. 
+2. The search bar appearance and functionality shall be consistent across all Agency  web 
+pages. 
+ 
+E. Navigation: Each Agency shall provide consistent navigation on each web page. 
+ 
+1. The primary navigation bar shall be implemented on all Agency web pages. 
+2. The primary navigation bar shall be populated with Agency- specific links and shall 
+remain consistent across all web pages of a division or department. 
+3. Primary and secondary navigation shall be text-based; images or other formats shall not 
+be used. 
+4. All images with hyperlink capability shall include an alternative text (alt text) description 
+that conveys the action that will be initiated when the user clicks on the link (e.g., 
+destination). 
+5. Navigation within self-contained or embedded content, such as interactive animations, 
+video, or data visualizations, is permitted but should only be used within the context of 
+the component. 
+ 
+F. Content Area Design: The layout and organization of each web page content area shall 
+remain primarily at the discretion of the Agency, department, or division; Agencies shall refer 
+to the InnovateOhio Platform User Experience Digital Toolkit web page for content and user 
+experience best practices. 
+ 
+G. Website Content: Agencies shall comply with the following website content requirements.  
+Each Agency shall maintain an accurate contact page containing the following information: 
+ 
+1. A general phone number that is answered by a person during business hours. 
+2. A media relations phone number (if available). 
+3. A general phone number that is answered by a person during business hours. 
+4. An e-mail address or submission form for general concerns.
+
+
+--- PDF Page 5 ---
+State of Ohio Administrative Policy 
+Website Standardization/IT-08 
+Page 5 of 12 
+ 
+ 
+ 
+The Ohio Department of Administrative Services is the engine of state government, providing innovative solutions and 
+supporting the efficient operation of state Agencies, boards, and commissions. 
+ 
+5. A  physical mailing address.  
+6. Contact pages shall be labeled "Contact." 
+ 
+H. Privacy Notice: Agency websites shall provide a hyperlink to a privacy notice on every web 
+page. At a minimum, the privacy notice shall include the following elements: 
+ 
+1. The privacy notice shall describe the types of personal information the Agency  collects 
+through the website and why it is necessary. 
+2. The privacy notice shall provide an explanation of how the user's personal information is 
+collected, including directly, such as through web applications and online forms, and 
+indirectly, such as through website usage analytical tools. 
+3. The privacy notic e shall disclose how the Agency uses personal information collected 
+through the website, including secondary uses and public record requirements. 
+4. Agencies shall inform website users that they may have rights under ORC sections 149.43, 
+1347.08, 1347.09, and 1347.15 with respect to inspecting, obtaining, correcting, and 
+disputing personal information the Agency collects or maintains through the website. 
+5. ORC Section 1347.15 requires each Agency to post on its’ website the policies adopted in 
+accordance with that law. The privacy notice shall have a section labeled “Confidential 
+Personal Information.” The section will include links to the Agency’s administrative rules, 
+policies and procedures issued in accordance with ORC 1347.15. If an Agency  does not 
+maintain any confidential personal information under ORC 1347.15, it shall include a 
+statement to that fact instead. 
+6. Agencies shall provide website users with an Agency  point of contact who addresses 
+privacy questions. The contact information shall include the mailing address and at least 
+one of the following: a telephone number, e-mail address or contact form. 
+7. The privacy notice shall be kept up to date to accurately reflect Agency  information 
+practices. The privacy notice shall display the latest revision date. 
+8. Privacy notices shall be consistent with all applicable laws that regulate the collection, 
+use and maintenance of personal information. 
+9. Each Agency's privacy notice link shall be labeled as "privacy" or "privacy notice." (Refer 
+to the footer on Ohio.gov for an example of labeling.) 
+ 
+I. Content Management : Agencies shall keep content up to date. Agencies shall develop a 
+process for selecting and training content coordinators who are responsible for maintaining
+
+
+--- PDF Page 6 ---
+State of Ohio Administrative Policy 
+Website Standardization/IT-08 
+Page 6 of 12 
+ 
+ 
+ 
+The Ohio Department of Administrative Services is the engine of state government, providing innovative solutions and 
+supporting the efficient operation of state Agencies, boards, and commissions. 
+ 
+Agency w ebsite content.  
+ 
+J. Mobile Ready : Agencies shall utilize InnovateOhio Platform templates and components, 
+available at ux.ohio.gov, to ensure a responsive user experience on any device (e.g., mobile 
+phones, tablets). 
+ 
+K. Browser Compatibility: Agency websites and web-facing applications shall render properly 
+in the current, supported version of Chrome, Edge, Firefox, and Safari. 
+ 
+L. Transport Layer Security (TLS) Certificates : All publicly accessible, State -controlled 
+Websites and web-facing applications shall only provide information and services through a 
+hypertext transfer protocol secure (https) connection, encrypted using TLS certificates.  
+ 
+1. TLS certificates may be obtained, renewed, and revoked using the DAS Office of 
+Information Technology (OIT) Digital Certificate Provisioning service. 
+2. TLS certificates may also be obtained from an approved vendor. 
+3. Website sessions shall be encrypted using current, supported TLS protocols.  
+ 
+M. Website Accessibility : Agency websites shall comply with the accessibility requirements 
+outlined in Ohio Administrative Policy IT-09, “Website Accessibility.” 
+ 
+N. Domain Name Standardization : Each Agency is required to have an Ohio.gov domain in 
+accordance with the requirements outlined in Ohio Administrative Policy IT -06, "Ohio.gov 
+Standardization & Registration of Domain Names." 
+ 
+O. Website Standardization Requirement Guidance : For additional website standardization 
+requirement guidance, Agencies  shall refer to the InnovateOhio Platform User Experience 
+Digital Toolkit web page, ux.ohio.gov. 
+ 
+P. Identification and Authentication: Where Identification and Authentication are required for 
+website functionality, Agencies shall leverage InnovateOhio Platform solutions. 
+ 
+Q. Website and Web -Facing Application Security : Agencies shall ensure that the following
+
+
+--- PDF Page 7 ---
+State of Ohio Administrative Policy 
+Website Standardization/IT-08 
+Page 7 of 12 
+ 
+ 
+ 
+The Ohio Department of Administrative Services is the engine of state government, providing innovative solutions and 
+supporting the efficient operation of state Agencies, boards, and commissions. 
+ 
+security requirements are satisfied when maintaining a public -fac ing website or web -facing 
+application: 
+ 
+1. Information collected from users shall be encrypted in transit and at rest.  
+2. Vulnerability scans shall be routinely conducted by the DAS Office of Information Security 
+and Privacy (OISP) and the results communicated to system and business owners. Critical 
+or high severity vulnerabilities shall be promptly remediated or mitigated.  
+3. All public -facing websites or web -facing applications shall generate and store audit 
+records. All audit records shall be stored for at least 30 days, longer if mandated by state 
+or federal regulation, and on a system separate from the web host system. 
+4. Where applicable, Agencies  shall ensure that public- facing websites and web -facing 
+applications comply with the security and privacy requirements provided by regulating 
+entities (e.g., Criminal Justice Information Services (CJIS), IRS Publication 1075, Family 
+Educational Rights and  Privacy Act (FERPA), Health Insurance Portability and 
+Accountability Act (HIPAA), etc.). 
+5. Where collecting payment information, ensure compliance with regulatory requirements 
+(e.g., Payment Card Industry (PCI), National Automated Clearing House Association 
+(NACHA), etc.).  
+ 
+R. InnovateOhio Platform Responsibilities: The InnovateOhio Platform team shall: 
+ 
+1. Oversee the State of Ohio’s digital presence and partner with Agencies to ensure their 
+websites align with statewide requirements; 
+2. Maintain digital toolkit standards and resources; 
+3. Support and provide Agencies with access to a website content management tool;  
+4. Communicate any substantive changes in website standards or content management to 
+Agencies and content coordinators in a timely manner; and  
+5. Work with the DAS OISP to institute denial of service protections. 
+ 
+IV. Definitions 
+ 
+A. Authentication. Verifying the identity of a user, process, or device, often as a prerequisite to
+
+
+--- PDF Page 8 ---
+State of Ohio Administrative Policy 
+Website Standardization/IT-08 
+Page 8 of 12 
+ 
+ 
+ 
+The Ohio Department of Administrative Services is the engine of state government, providing innovative solutions and 
+supporting the efficient operation of state Agencies, boards, and commissions. 
+ 
+allowing access to resources in an information system.1 
+B. Confidential Data. This classification includes Data that is required to be protected by law or 
+regulation, is intended for confidential use, and may not be copied or removed from an 
+agency's operational control without authorized permission.  This classification includes Data 
+that, if compromised, may result in loss of life, serious injury, or other harm to an individual 
+or group, or disruption to critical agency operations. 
+C. Covered Applications. As defined in ORC Section 125 183, a "Covered Application” means all 
+of the following: 
+1. The TikTok application and service or any successor application or service developed or 
+provided by ByteDance limited or an entity owned by ByteDance limited; 
+2. The WeChat application and service or any successor application or service developed 
+or provided by Tencent holdings limited or an entity owned by Tencent holdings 
+limited; 
+3. Any application or service owned by an entity located in China, including QQ 
+International (QQi), Qzone, Weibo, Xiaohongshu (Little Red Book), Zhihu, Meituan, 
+Toutiao, Alipay, Xiami Music, Tiantian Music, DingTalk/DingDing, Douban, Renren, 
+Youku/Tudou, and Zhihu. 
+D. Domain Names. A domain name is used to locate computers on the Internet and to allow users 
+to reach websites. Each domain name has at least two components, the top- level domain 
+(TLD) name and the secondary level domain (SLD) name. In terms of Ohio.gov, “.gov” is the 
+TLD and “Ohio” is the SLD. A third level domain may be added to further distinguish a SLD. For 
+the purposes of this policy, Agencies are required to have an Ohio.gov alias at the third level. 
+Structurally, the domain name would conform to the following format: [Agency 
+Name/Acronym].Ohio.gov. Refer to section O. , Domain Name Standardization, of this policy 
+for specific domain name requirements. 
+E. Identification. An act or process that presents an identifier to a system so that the system can 
+recognize a system entity (e.g., user, process, or device) and distinguish that entity from all 
+others.2  
+F. InnovateOhio Platform: The InnovateOhio Platform (IOP) was established as a result of 
+Governor Mike DeWine’s issuance of Executive Order 2019 -15D Modernizing  Information 
+ 
+1  “NIST Special Publication 800 -53 Revision 5 , Security and Privacy Controls for Federal Information Systems and 
+Organizations,” U.S. Department of Commerce National Institute of Standards and Technology, September 2020 
+<https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r5.pdf>. 
+2  “CNSS Instruction No. 4009, National Information Assurance (IA) Glossary,” Committee on National Security Systems, 
+April 2010 <https://www.hsdl.org/?abstract&did=7447>.
+
+
+--- PDF Page 9 ---
+State of Ohio Administrative Policy 
+Website Standardization/IT-08 
+Page 9 of 12 
+ 
+ 
+T
+he Ohio Department of Administrative Services is the engine of state government, providing innovative solutions and 
+supporting the efficient operation of state Agencies, boards, and commissions. 
+ 
+Technology Systems in Agencies . The IOP provides integrated and scalable capabilities that 
+enable Agencies to become more customer -centric and data -driven, delivering on Innovate 
+Ohio’s vision to better serve Ohioans. The platform creates an integrated customer experience 
+that brings higher-quality services to the public. 
+G. Security Purposes. As referenced in this policy, Covered Applications may be used for Security 
+Purposes, which may include, but are not limited to, activities such as investigations to limit 
+harm to individual, public, private, or the State of Ohio’s physical or digital infrastructure 
+through the identification of vulnerabilities, security weaknesses, or actionable threats.3 
+H. Law Enforcement Purposes.  As referenced in this policy, Covered Application s may be used 
+for Law Enforcement Purposes, which may include, but are not limited to, activities that are 
+performed by or in coordination with an agency that is part of the federal or state law 
+enforcement community, in response to a law enforcement emergency, or in the course of 
+investigating potential violations of federal or state statutes or regulations.4  
+I. Public-facing Web Page s. Public-facing Web Pages are web pages that are accessed via the 
+World Wide Web by any Internet user throughout the world. Public-facing Web Pages include 
+information available to the general public, but do not include intranets, extranets, e-mail, or 
+applications. 
+J. Social Media . Refers to an online environment or application  that facilitate s user 
+participation, networking, and collaboration through the submission of user generated 
+content. In general, this includes tools such as: blogs, wikis, microblogging sites, social 
+networks, video sharing sites, and bookmarking sites. 
+K. State-controlled Websites. Websites developed and maintained by Ohio Agencies , or under 
+contracts administered by Ohio Agencies. 
+L. State-Owned. Purchased with state funds or otherwise acquired by the state; property of the 
+State of Ohio. 
+M. Transport Layer Security (TLS). An Authentication and encryption protocol widely 
+implemented in browsers and Web servers. HTTP traffic transmitted using TLS is known as 
+HTTPS.
+5 
+ 
+ 
+3  Young, Shalanda, M-23-13 Memorandum for the Heads of Executive Departments and Agencies, Executive Office of the 
+President, Office of Management and Budget, 27 February 2023. 
+4  Ibid. 
+5  Regenscheid, Andrew, Geoff Beier. NIST Inter Agency or Internal Report 7711, “NIST Security Best Practices for the 
+Electronic Transmission of Election Materials for UOCAVA Voters,” U.S. Information Technology Laboratory National 
+Institute of Standards and Technology, September 2011 <https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir7711.pdf>.
+
+
+--- PDF Page 10 ---
+State of Ohio Administrative Policy 
+Website Standardization/IT-08 
+Page 10 of 12 
+ 
+ 
+ 
+The Ohio Department of Administrative Services is the engine of state government, providing innovative solutions and 
+supporting the efficient operation of state Agencies, boards, and commissions. 
+ 
+V. Authority 
+ 
+ORC 125.18, 125.183 
+ 
+VI. Resources 
+ 
+Document Name Location 
+Executive Order 2023-03D Prohibition of Certain 
+Applications, Platforms, and Websites on State-
+Owned and State-Leased Devices 
+https://governor.ohio.gov/wps/portal/gov/
+governor/media/executive-orders  
+Executive Order 2019-14D Creating 
+InnovateOhio Advisory Board 
+the https://governor.ohio.gov/wps/portal/gov/
+governor/media/executive-orders/2019-
+14d  
+Executive Order 2019-15D Modernizing 
+Information Technology Systems in Agencies 
+https://governor.ohio.gov/wps/portal/gov/
+governor/media/executive-orders/2019-
+15d  
+Additional Website standardization requirement 
+guidance 
+https://innovateohio.gov/ 
+https://ux.ohio.gov 
+and 
+ 
+VII. Inquiries 
+ 
+Direct inquiries regarding website design requirements to:  
+ 
+InnovateOhio Platform Team 
+Office of Information Technology 
+Ohio Department of Administrative Services  
+30 E Broad Street, 39
+th Floor 
+Columbus, Ohio 43215  
+ 
+Platform@InnovateOhio.gov 
+ 
+InnovateOhio Platform Team resources may be found online at  
+https://iop.ohio.gov and https://ux.ohio.gov.
+
+
+--- PDF Page 11 ---
+State of Ohio Administrative Policy 
+Website Standardization/IT-08 
+Page 11 of 12 
+ 
+ 
+ 
+The Ohio Department of Administrative Services is the engine of state government, providing innovative solutions and 
+supporting the efficient operation of state Agencies, boards, and commissions. 
+ 
+Direct inquiries about this policy to: 
+ 
+State IT Policy Manager 
+Office of Information Technology 
+Ohio Department of Administrative Services 
+30 East Broad Street, 39th Floor 
+Columbus, Ohio 43215  
+ 
+1-614-644-6860 | DAS.State.ITPolicy.Manager@das.ohio.gov 
+ 
+State of Ohio Administrative Policies may be found online at 
+https://das.ohio.gov/technology-and-strategy/policies  
+ 
+To obtain the Digital Certificate Provisioning Service, contact the: 
+ 
+Customer Service Center 
+Office of Information Technology 
+Ohio Department of Administrative Services 
+1320 Arthur E. Adams Drive, Room 310  
+Columbus, Ohio 43221-3595  
+ 
+614-644-6860 | 877-644-6860 | csc@ohio.gov  
+ 
+VIII. Revision History 
+ 
+This policy shall be reviewed no less than every two years and updated as needed. 
+Date Description of Change 
+03/03/2008 Original policy. 
+1/06/2012 Policy revised to reflect changes in Ohio’s website design requirements. 
+12/21/2012 Revised the policy to remove all Ohio.gov domain related requirements and 
+replaced them with a reference to Ohio Administrative Policy IT -06, 
+“Ohio.gov Standardization & Registration of Internet Domain Names.” This
+
+
+--- PDF Page 12 ---
+State of Ohio Administrative Policy 
+Website Standardization/IT-08 
+Page 12 of 12 
+ 
+ 
+ 
+The Ohio Department of Administrative Services is the engine of state government, providing innovative solutions and 
+supporting the efficient operation of state Agencies, boards, and commissions. 
+ 
+Date Description of Change 
+update transfers all Ohio.gov related requirements to one statewide policy. 
+Also, transferred the policy content into a new State of  Ohio Administrative 
+Policy Template. Re -numbered policy to IT -08 to be consistent with new 
+numbering format. 
+01/15/2020 Updated the policy to incorporate the InnovateOhio Platform tools, 
+standards, and format. The policy was also modified to reflect the change in 
+administration. 
+03/06/2020 Updated the navigation requirements to reflect the current InnovateOhio 
+Platform practice. 
+01/28/2021 Expanded the scope of the policy to all DAS OIT superintended Agencies. 
+Added TLS certificate requirements, website security requirements, and 
+modified privacy notice and content management requirements. Updated 
+the browser compatibility section. Updated the policy to align with current 
+terminology and processes. 
+10/14/2021 Conducted routine maintenance review of citations and references. 
+01/09/2023 Revised the Social Media requirements in section 2.3 to align with current, 
+approved practices. Included a reference to Executive Order 2023 -03D 
+Prohibition of Certain Applications, Platforms, and Websites on State -
+Owned and State-Leased Devices. Added revision history review frequency 
+statement and updated policy branding. 
+10/03/2023 Updated the Scope section in accordance with Ohio Revised Code Section 
+125.183. Aligned the policy with the requirements of Ohio Revised Code 
+Section 125.183. Added and modified policy definitions. Updated the policy 
+template. 
+04/29/2025 Replaced the term sensitive data, or 
+data. 
+sensitive information, with confidential

@@ -1,3 +1,5 @@
 from __future__ import annotations
 
-# Phase 2.5 placeholder.
+from packages.db.models.policy_models import PolicyEmbedding
+
+__all__ = ["PolicyEmbedding"]

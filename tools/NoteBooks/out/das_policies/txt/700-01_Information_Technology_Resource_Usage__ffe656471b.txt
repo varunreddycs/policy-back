@@ -1,0 +1,676 @@
+TITLE: 700-01 Information Technology Resource Usage
+URL: https://das.ohio.gov/wps/portal/gov/das/technology-and-strategy/policies/700-01+Information+Technology+Resource+Usage
+
+===== PAGE TEXT =====
+700-01 Information Technology Resource Usage
+
+IBM WebSphere Portal
+
+An official State of Ohio site.
+
+Here’s how you know
+
+Official websites use Ohio.gov
+
+An Ohio.gov website belongs to an official government organization in the State of Ohio.
+
+Secure .gov websites use HTTPS
+
+A lock
+ or https:// means you've safely connected to the .gov website. Share sensitive information only on official, secure websites.
+
+Trusted applications are secured by OHID
+
+When you log in with OHID, your privacy, data, and personal information are protected by federal and state digital security standards.
+
+Close
+
+learn-more
+
+        Skip to Navigation
+
+
+        Skip to Main Content
+
+
+Ohio Department
+
+Menu
+
+                        	Home
+
+                        	Buying & Selling
+
+                        	Property Services
+
+                        	Technology & Strategy
+
+                        	Employee Relations
+
+                        	About
+
+                        	Help
+
+                        	Search
+
+top-help
+
+odx-helplink-label
+
+top-search
+
+odx-searchbox-label
+
+Type in your search keywords and hit enter to submit or escape to close
+
+top-search
+
+top-close
+
+700-01 Information Technology Resource Usage
+
+{}
+
+Web Content Viewer
+
+Actions
+
+
+
+DAS
+
+Technology & Strategy
+
+Policies
+
+                Overview
+
+
+                IT Innovation Information Center
+
+
+                IT Strategic Investment and Architecture
+
+
+                Information Security & Privacy
+
+
+                IT Enterprise Services
+
+
+                InnovateOhio Platform
+
+
+                Office of Data and Efficiency
+
+
+                Ohio 9-1-1 Program Office
+
+
+                MARCS
+
+
+                OGRIP
+
+
+                Policies
+
+
+                IT Policy Glossary
+
+
+                    700-01 Information Technology Resource Usage
+
+
+DAS Policy
+
+No: 700-01
+
+
+Effective:
+ November 10, 2025
+
+Appointing Authority Approval:
+
+
+Kathleen C. Madden, Director
+
+Purpose
+
+The purpose of this policy is to minimize the risks and maximize the benefits of using Information Technology (IT) Resources and to maintain the Integrity and stability of computer and network hardware, software, data, and related services within the Ohio Department of Administrative Services (DAS). This policy addresses the acceptable use of IT Resources in the DAS workplace and/or for DAS business. All defined terms are capitalized and a link to the glossary of definitions is found in section IV.
+
+Scope
+
+This policy applies to IT Resources used by DAS employees, contractors, temporary personnel, and other agents authorized to perform work on behalf of DAS. This policy does not apply to external DAS customers.
+
+Policy
+
+The following policy statements outline DAS requirements for the use of state issued IT Resources. The policy requirements are intended to clarify the distinction between the acceptable and unacceptable use of IT Resources. In addition, the policy defines key privacy and security requirements. It is the expectation of DAS that its employees, contractors, temporary personnel, and other agents will comply with all of the components of this policy.
+
+Organizational User access to and use of DAS IT Resources is contingent upon the successful completion of all DAS information security and privacy awareness training requirements. The DAS Office of Information Security and Privacy will communicate requirements in accordance with Ohio Administrative Policy IT-15/Information Security and Privacy Awareness Training.
+
+Use of IT Resources
+
+Ownership and Privacy: All data, text, images, or other information created, stored, transmitted, received, or archived using DAS' IT Resources belong to DAS, except for those items whose ownership is protected by law, contract, license agreement, copyright, or other agreement. All data stored or transmitted on a DAS IT Resource may be subject to review, investigation, and public disclosure.
+
+
+When using DAS' IT Resources, the User shall have no expectation of privacy. Access and use of the Internet, including communication by e-mail and Instant Messaging (IM) and the content thereof, are not confidential, except in certain limited cases recognized by state or federal law.
+
+DAS reserves the right to monitor, access, and disclose all information generated and actions performed using DAS' IT Resources. Files, messages (including attachments), and logs may be retained and used as evidence in litigation, audits, and investigations. The User is responsible for all activity originating from his or her Username/account.
+
+In addition, DAS IT Resources are on loan to DAS employees, contractors, temporary personnel, and other agents so that essential job functions may be performed. Upon separation from DAS employment or contract termination, all DAS supplied IT Resources and the associated data shall be returned.
+
+Damaged, Stolen, Lost, or Potentially Compromised IT Resources: If an IT Resource is damaged, fails, or is believed to be stolen or lost, it shall immediately be reported to Management and to the Customer Service Center (Customer Service Center contact information can be found in Section VII). In addition, DAS employees, contractors, temporary personnel, and other agents shall also report instances in which they think an IT Resource may have been potentially compromised. For instance, a User may suspect that someone gained access to the data on their IT Resource, possibly viewing and/or downloading Confidential Data and/or Personally Identifiable Information (PII).
+
+Personal Use of DAS IT Resources: DAS IT Resources are provided for business use. However, incidental personal use of DAS IT Resources is allowed if the usage does not have an adverse impact on job performance, DAS IT Resources, or DAS business.
+
+
+Management may further restrict personal use of DAS IT Resources where appropriate.
+
+Excessive Personal Use of DAS IT Resources may result in discipline or termination.
+
+The User is responsible for understanding how his/her personal use may impact DAS IT Resources as well as DAS business activities, and for complying with all applicable laws, policies, rules, and license agreements.
+
+DAS is under no obligation to provide support for the personal use of DAS' IT Resources.
+
+System, Network, and Data Security:Users of DAS IT Resources, to include agency provided wireless access, shall comply with all applicable policies, procedures, and standards related to the security of those resources.
+
+
+Whenever Users of desktop or laptop computers leave their work areas, they shall use one or more of the following methods to prevent unauthorized access to their computers, software, and/or data:
+
+
+Log off all accounts, including their computer and/or network User account.
+
+Lock their computers by using an approved password protected screensaver.
+
+Lock their computers by using operating system level workstation locking.
+
+Shut their computers down.
+
+All files shall be stored on network file servers to facilitate back-up. Files maintained on the drives of desktop or laptop computers or on other mobile devices will not be centrally backed-up.
+
+Data may not be removed from state premises without Management authorization. Refer to section III.B.2.d of this policy for requirements regarding the transport of Confidential Data.
+
+Except for devices that are inherently mobile, such as laptops and smartphones, IT equipment may be physically relocated only with appropriate authorization. Requests to move IT Resources shall be made via the Customer Service Center (Customer Service Center contact information can be found in section VII of this policy.) The physical move of the IT Resource is to be performed by DAS IT Services staff only.
+
+Disposal of IT Resources shall be coordinated by IT Services and accomplished in accordance with Ohio IT policies and DAS policies and procedures.
+
+Unacceptable Use of IT Resources
+
+Any use of IT Resources that disrupts or interferes with DAS business, incurs an undue cost to the state, could potentially embarrass or harm the state, or has the appearance of impropriety is strictly prohibited.
+
+Prohibited Use: Use relating to any of the following is strictly prohibited:
+
+
+Violation of Law: Violating or supporting and encouraging the violation of local, state, or federal law.
+
+Illegal Copying: Downloading, duplicating, disseminating, printing, or otherwise using copyrighted materials, such as software, texts, music, and graphics in violation of copyright laws.
+
+Operating a Business: Operating a business, directly or indirectly, for personal gain.
+
+Accessing Personal Services: Accessing or participating in any type of personal advertisements or services, such as or similar to dating services, matchmaking services, companion finding services, pen pal services, escort services, or personal advertisements.
+
+Accessing Sexually Explicit Material: Downloading, displaying, transmitting, duplicating, storing, or printing sexually explicit material.
+
+Harassment: Downloading, displaying, transmitting, duplicating, storing, or printing material that is offensive, obscene, threatening or harassing.
+
+Gambling or Wagering: Organizing, wagering on, participating in, or observing any type of gambling event or activity.
+
+Impeding Access: Impeding the state’s ability to access, inspect, and monitor IT Resources (e.g., inappropriately encrypting or concealing the contents of files or electronic communications, inappropriately setting or manipulating passwords, physically concealing devices).
+
+Engaging in Unauthorized IT Related Activities: Engaging in IT related activities that are unauthorized and/or outside of one’s job duties and that could result in an Information Security and Privacy Incident (e.g., denial-of- service attacks, attempts to intercept/collect data, introduction of Malicious Code, network monitoring/scanning).
+
+Misrepresentation: Concealing or misrepresenting one’s name or affiliation to mask unauthorized, illegal, fraudulent, irresponsible, or offensive behavior in electronic communications.
+
+Federal Tax Information (FTI) Access and Sharing: Accessing Federal Tax Information (FTI) from non-agency owned devices and from sharing FTI visually or verbally via the use of collaboration tools, collaborative computing devices (e.g., networked white boards, cameras, microphones), desktop, or application sharing, and video content.
+
+Passwords: Disclosing your passwords to other parties, including internal staff, and leveraging Save Password Options. For Users who are assigned both User accounts and Privileged User Accounts, failing to maintain unique passwords for each account.
+
+Distributing Malicious Code: Distributing Malicious Code or circumventing Malicious Code security.
+
+Peer-to-Peer File Sharing: The personal use of Peer-to-Peer File Sharing from non-state computer systems.
+
+Mass E-mailing: Sending unsolicited e-mails or facsimiles in bulk or forwarding electronic chain letters in bulk to recipients inside or outside the state environment.
+
+DAS Wireless: Connecting Privately-Owned devices to the DAS employee wireless access point (OHPrivate). Privately-Owned devices must connect to the DAS guest wireless network (OHGuest) and the employee, contractor, temporary personnel, or other agent shall comply with all applicable policies, procedures, and standards related to the security of those resources.
+
+Use Prohibited without DAS Authorization: Use that is prohibited without documented DAS Management authorization includes, but is not limited to, the following:
+
+
+Solicitation: Soliciting for money or support, for example on behalf of charities, religious entities, or political causes.
+
+Unauthorized Installation or Use of Software: Installing or using software. (See also sections III.C.2.b) and III.D of this policy.)
+
+Unauthorized Installation or Use of Hardware: Installing, attaching, or connecting devices to DAS systems or networks.
+
+Accessing or Disseminating Confidential Data or PII: Accessing or disseminating Confidential Data or PII without authorization (e.g., external email, calendaring, or Social Media accounts).
+
+Data Transport: Transporting Confidential Data from one location to another and, when approval is provided, transporting without using a secured, encrypted method provided and approved by DAS IT Services. A request to transport Confidential Data should be made using the Customer Service Center. (Please find the Customer Service Center contact information in section VII of this policy.)
+
+Accessing Systems without Authorization: Accessing networks, files, systems, or an account of another person.
+
+Tampering with, circumventing, or removing security controls: Removing, tampering with, or circumventing security controls on IT Resources without the express written permission of the DAS IT Services Administrator.
+
+Passwords: For DAS employees, contractors, vendors, and agents, setting or manipulating a password to impede access to any state computer, program, file or electronic communication.
+
+Email and Calendar Forwarding: Configuring DAS provided email and calendaring solutions to automatically forward email or calendar appointments to external email, calendaring, messaging, or any other solution.
+
+Use of Privately-Owned E-mail Accounts to Conduct DAS or State Business: Using Privately-Owned e-mail accounts, including private Web-based e-mail accounts, to conduct DAS business. DAS is under no obligation to provide support for Privately-Owned e-mail accounts.
+
+Electronic Communications
+
+Professionalism: DAS employees, contractors, temporary personnel, and other agents shall use professional and appropriate language in all electronic communications. Sending abusive, harassing, threatening, menacing, discriminatory, pornographic, disrespectful, or otherwise offensive or embarrassing electronic communications is prohibited.
+
+Electronic Mail (E-mail)
+
+
+Use of DAS’ E-mail System: The DAS approved e-mail solution is Microsoft Outlook, which is provided as part of the Office 365 system. DAS employees, contractors, temporary personnel, and other agents shall comply with State of Ohio and DAS policies when using the DAS e-mail solution. Compliance is the User’s responsibility. DAS employees, contractors, temporary personnel, and other agents of the state shall avoid the appearance of impropriety and avoid the appearance of leveraging the stature of the state in the use of their assigned state e-mail address. State e-mail addresses shall not be used for personal communications in public forums such as or similar to listservs, discussion boards, discussion threads, Online Forums, or Blogs. Contractors shall not use their company email accounts to conduct state business, only state-issued accounts shall be authorized for use.
+
+Use of Personal, Consumer-Grade E-mail Systems
+
+Downloading, installing, and/or using personal, consumer-grade e-mail client software to conduct DAS business via the public Internet or for personal use involving DAS’ IT Resources is prohibited. If there is a business need for e-mail usage, the potential User shall request access to DAS’ e-mail system. When authorized by Management, using an external e-mail account for transmission/connectivity testing purposes is an exception to this provision.
+
+Access to personal e-mail directly via an Internet browser interface for personal use in the DAS workplace may be allowed if the usage does not have an adverse impact on job performance or IT Resources. The User is responsible for understanding how the personal e-mail system they are using functions and for compliance with this policy.
+
+Private, Web-based e-mail accounts shall not be used to conduct DAS business. In certain Management approved circumstances, use of a private Web-based e-mail account for DAS business may be acceptable. An example of such type of use may be to access information regarding professional association benefits (i.e., registered architects, licensed attorneys, etc.).
+
+Instant Messaging (IM) and Text Messaging
+
+Downloading, installing, and/or using personal, consumer-grade Instant Messaging (IM) client software is strictly prohibited. Only DAS supported IM solutions are permitted.
+
+IM and Text Messaging shall not be used to conduct official DAS business. To ensure that DAS is able to preserve public records, IM and Text Messaging shall not be used to record an official act of government. In addition, DAS employees, contractors, temporary personnel, and other agents must follow any applicable state policies, procedures, and standards.
+
+Personal use of DAS supported IM and Text Messaging is permitted as long as the usage does not have an adverse impact on job performance or IT Resources.
+
+Social Media
+
+Excessive Personal Use of the Internet, including Social Media platforms, during work hours may result in discipline or termination. Any personal use of Social Media shall be conducted in such a manner that a reader would not think that the DAS employee, contractor, temporary personnel, or other agent is speaking for or on behalf of DAS or the State of Ohio.
+
+DAS employees, contractors, temporary personnel, and other agents shall not include references or pointers to their personal Social Media accounts in official DAS or State of Ohio communications without express Management authorization. For example, providing Social Media account pointers within personal state e-mail signature lines.
+
+DAS employees, contractors, temporary personnel, and other agents are prohibited from creating or designing a Social Media channel that may appear to represent DAS or the State of Ohio without authorization from the DAS Division Deputy Director and the DAS Office of Communications.
+
+The download and/or use of any Social Media application, channel, and platform that is owned by an entity located in China is prohibited in accordance with Ohio Revised Code Section 125.183 and Executive Order 2023-03D, “Prohibition of Certain Applications, Platforms, and Websites on State-Owned and State-Leased Devices.” Ohio Administrative Policy IT-08/Website Standardization, identifies the State-approved Social Media channels.
+
+While engaged in personal or official state use, do not discuss information related to DAS or State of Ohio business that is not already considered public information. The discussion of Confidential Data or PII is strictly prohibited. This applies even in circumstances where passwords or other privacy controls are implemented. In addition, all of the requirements regarding prohibited and appropriate use outlined within this policy and Ohio Administrative Policy IT-04/Use of Internet, E-mail and Other IT Resources, also apply to authorized Social Media use.
+
+Use of such sites must be in compliance with relevant portions of DAS workplace policies, including its harassment, discrimination, privacy, and workplace violence policies, as well as with state ethics laws, federal copyright law, and other applicable policies, laws, and regulations. DAS employee policies are available online:
+Policies - myOhio
+.
+
+Cloud File Sharing Solutions
+
+Microsoft OneDrive for Business and SharePoint Online are the DAS approved cloud solutions for storing, sharing, and synchronizing State Data between multiple devices. The following restrictions apply to the use of the DAS Microsoft OneDrive for Business and SharePoint Online cloud solutions:
+
+Cloud File Sharing and Data: Only data related to state business shall be stored on the DAS Microsoft OneDrive for Business and SharePoint Online Cloud File Sharing Solutions.
+
+Confidential Data and Cloud File Sharing Solutions: Confidential Data shall only be stored in Microsoft OneDrive for Business or SharePoint Online if the DAS employee, contractor, temporary personnel, or other agent receives permission from management or a Contractor Sponsor and provides written acknowledgement of the expectations for protecting Confidential Data. Confidential State Data shall not be downloaded from Cloud File Sharing Solutions onto personal devices unless explicitly authorized, in writing, by management or the Contractor Sponsor.
+
+Use of Other Cloud Storage Solutions: The use of any other Cloud File Sharing Solutions for state business is strictly prohibited unless organized or approved by DAS.
+
+Public Records and eDiscovery
+
+Public Records and Record Retention: DAS employees, contractors, temporary personnel, and other agents shall understand that records created as a result of the use of state-provided IT Resources may be subject to disclosure under Ohio’s public records law and must be retained in accordance with DAS record retention schedules.
+
+
+The nature of the data or information determines if it is a public record, not the account, device, or method used to create, transmit or store the record.
+
+Management shall review public records and records retention requirements with each newly hired permanent or temporary DAS employee and with vendors, contractors, and other agents of DAS prior to allowing them to access DAS IT Resources.
+
+DAS employees, contractors, temporary personnel, and other agents must ensure that public information is disclosed or accessed in accordance with applicable rules and procedures.
+
+Discovery: Any records created using DAS IT Resources may also be subject to Discovery, including electronic Discovery. “Discovery” refers to the process of complying with legal obligations to produce relevant documents and information to opposing counsel in the course of civil litigation or to prosecutors or government investigators in criminal or regulatory proceedings.
+
+Procedures
+
+This policy shall be distributed to each newly hired DAS employee during orientation, in conjunction with other applicable policies and procedures, and the new employee shall sign an acknowledgement of receipt of this policy. Any new contractual agreements for vendors and contractors shall include a requirement to comply with this policy as well as Ohio Administrative Policy IT-04/Use of Internet, E-mail and Other IT Resources, prior to gaining access to DAS IT Resources.
+
+Compliance
+
+It is the responsibility of Management to implement and ensure compliance with the laws, rules, policies, procedures, standards, and license agreements applicable to the use of IT Resources within their functional areas.
+
+It is the responsibility of the User of IT Resources to ascertain, understand, and comply with the laws, rules, policies, procedures, standards, and license agreements applicable to their use of those resources.
+
+Violation of this policy by any User of IT Resources may result in loss of access to those resources.
+
+Any DAS employee found to have violated this policy may be subject to disciplinary action, up to and including termination of employment. In addition, employees may be subject to civil action or criminal prosecution as a result of inappropriate use or misuse of IT Resources.
+
+Any contractor, vendor, or other agent performing work for or on behalf of DAS found to have violated this policy may be subject to consequences specified in the contract or other agreement governing their engagement by DAS, up to and including termination of the contract. In addition, contractors may be subject to civil action or criminal prosecution as a result of inappropriate use or misuse of IT Resources.
+
+Definitions
+
+All defined terms are capitalized within the policy and the online glossary of definitions can be found at
+IT Policy Glossary - Department of Administrative Services
+.
+
+Authority
+
+Ohio IT Policy IT-04/Use of Internet, E-mail and Other IT Resources
+
+Resources
+
+DAS Policy 100-05 Charitable & Fund Raising Activities
+
+DAS Policy 100-08 Political Activity Policy
+
+DAS Policy 100-11 Protecting Privacy
+
+DAS Policy 100-14 State & Personal Property
+
+DAS Policy IT-04 Use of Internet, E-mail and Other IT Resources
+
+DAS Policy IT-08 Website Standardization
+
+DAS Policy IT-14 Data Encryption and Securing Confidential Data
+
+DAS Policy IT-15 Information Security and Privacy Awareness Training
+
+Executive Order 2023-03D Prohibition of Certain Applications, Platforms, and Websites on State-Owned and State-Leased Devices
+
+Inquiries
+
+Direct inquiries about this policy to:
+
+State IT Policy Manager
+
+	Office of Information Technology
+
+	Ohio Department of Administrative Services
+
+	30 East Broad Street, 39th Floor
+
+	Columbus, Ohio 43215
+
+	1-614-644-6860 |
+DAS.State.ITPolicy.Manager@das.ohio.gov
+
+DAS Policies may be found online at
+
+Policies - myOhio
+
+For damaged, stolen, lost or potentially compromised IT Resources, please immediately contact:
+
+Customer Service Center
+
+	Office of Information Technology
+
+	Ohio Department of Administrative Services
+
+	1-614-644-6860 or 1-877-644-6860 |
+csc@ohio.gov
+
+	Website:
+Service Portal - IT Enterprise Services
+
+Direct inquiries regarding Confidential Data and Cloud File Sharing Solutions to:
+
+Office of Information Security & Privacy
+
+	Office of Information Technology
+
+	Ohio Department of Administrative Services
+
+	30 East Broad Street, 39th Floor
+
+	Columbus, Ohio 43215
+
+	1-614-644-6860 |
+state.isp@das.ohio.gov
+
+	Website:
+Information Security & Privacy - Department of Administrative Services
+
+Revision History
+
+This policy shall be reviewed no less than every two years and updated as needed.
+
+Date
+
+Description of Change
+
+7/7/2008
+
+New policy to reconcile DAS policy dated 8/21/06 and OIT policy dated 6/29/07.
+
+4/23/2012
+
+Revised to reflect changes in technology and policy direction.
+
+5/4/2015
+
+Added requirements for the use of cloud storage solutions and eDiscovery as well as modified the public records and record retention section. Made minor modifications to align terminology with statewide policy.
+
+9/14/2017
+
+Revised the cloud storage solution requirements to align with current capabilities and procedures. The focus of the requirements is now on Cloud File Sharing Solutions. Updated to reflect the change in the DAS e-mail solution and to remove outdated DAS policy and procedure references. Added new password requirements regarding Save Password Options and maintaining unique passwords. Revised Social Media requirements.
+
+12/20/2018
+
+Added requirements that are specific to Federal Tax Information (FTI) to align with IRS Publication 1075 requirements. Also, incorporated more specific requirements regarding training and access to IT Resources, the use of Internet, email and calendaring functions as well as Social Media accounts.
+
+02/21/2020
+
+Updated the policy to clarify that FTI is prohibited from being accessed from non-agency owned devices. Updated the policy template to align with the current format.
+
+06/02/2021
+
+Conducted routine maintenance review of citations and references.
+
+01/09/2023
+
+Included a reference to Executive Order 2023-03D Prohibition of Certain Applications, Platforms, and Websites on State-Owned and State-Leased Devices and Ohio Administrative Policy IT-08, “Website Standardization,” State-approved Social Media channel requirements. Added revision history review frequency statement and updated policy branding.
+
+11/10/2025
+
+Replaced the term sensitive data, or sensitive information, with confidential data. Revised reference to Ohio Administrative Policy IT-14 to reflect the title change. Moved requirements to different sections for clarification purposes. Updated the terminology, references, resource links, and template.
+
+      Share this
+
+
+Expand All Sections
+
+
+
+Web Content Viewer
+
+Actions
+
+
+
+
+            About Us
+
+
+
+            Administrative Support Division
+
+
+
+            First Responder Communications Initiatives
+
+
+
+            General Services Division
+
+
+
+            Office of Collective Bargaining
+
+
+
+            Office of Data and Efficiency
+
+
+
+            Office of Information Technology
+
+
+
+            State Human Resources Division
+
+
+
+            Media Center
+
+
+
+            News
+
+
+
+            Events
+
+
+
+            Hidden
+
+
+
+            Hidden
+
+
+            Resources
+
+
+            Policy Finder
+
+
+
+            Careers
+
+
+
+            Public Records Requests
+
+
+
+            State MLK Holiday Commission
+
+
+
+            Hidden
+
+
+
+            Hidden
+
+
+Ohio Department of Administrative Services  | 30 E. Broad St., Columbus, Ohio 43215 |
+614-466-6511
+
+Powered by
+
+
+                    Privacy Notice and Policies
+
+
+
+
+
+
+
+                    Accessibility
+
+
+
+
+
+
+
+                    Ohio Checkbook
+
+
+
+
+
+
+linkedin icon
+
+x icon
+
+top-menu
+
+top-close
+
+top-help
+
+top-search
+
+
+odx-searchbox-label
+
+
+Submit your search
+
+Close
+
+
+
+Complementary Content
+
+${title}
+${badge}
+
+${loading}
+
+===== REFERENCES (ALL LINKS) =====
+https://checkbook.ohio.gov/
+https://das.ohio.gov/technology-and-strategy/information-security-privacy
+https://das.ohio.gov/technology-and-strategy/it-policy-glossary
+https://das.ohio.gov/technology-and-strategy/policies/it-04
+https://das.ohio.gov/technology-and-strategy/policies/it-08
+https://das.ohio.gov/technology-and-strategy/policies/it-14
+https://das.ohio.gov/technology-and-strategy/policies/it-15
+https://das.ohio.gov/wps/portal/gov/das/about
+https://das.ohio.gov/wps/portal/gov/das/about/about-us
+https://das.ohio.gov/wps/portal/gov/das/about/administrative-support-division-site-area/administrative-support-division
+https://das.ohio.gov/wps/portal/gov/das/about/first-responder-comms-initiatives/first-responder-comms-initiatives
+https://das.ohio.gov/wps/portal/gov/das/about/general-services-division/general-services-division
+https://das.ohio.gov/wps/portal/gov/das/about/office-of-collective-bargaining/office-of-collective-bargaining-1
+https://das.ohio.gov/wps/portal/gov/das/about/office-of-information-technology
+https://das.ohio.gov/wps/portal/gov/das/about/state-human-resources-division/state-human-resources-division
+https://das.ohio.gov/wps/portal/gov/das/buying-and-selling
+https://das.ohio.gov/wps/portal/gov/das/employee-relations
+https://das.ohio.gov/wps/portal/gov/das/help-center
+https://das.ohio.gov/wps/portal/gov/das/help-center/accessibility/accessibility-
+https://das.ohio.gov/wps/portal/gov/das/help-center/privacy-notice-and-policies/privacy-notice-and-policies
+https://das.ohio.gov/wps/portal/gov/das/help-center/public-records-request-site-area/public-records-requests
+https://das.ohio.gov/wps/portal/gov/das/home
+https://das.ohio.gov/wps/portal/gov/das/home/media-center/all-events/all-events-landing-page
+https://das.ohio.gov/wps/portal/gov/das/home/media-center/all-news/all-news
+https://das.ohio.gov/wps/portal/gov/das/home/media-center/das-media-center
+https://das.ohio.gov/wps/portal/gov/das/home/ohio-mlk-holiday-commission/mlk-commission/mlk-holiday-commission
+https://das.ohio.gov/wps/portal/gov/das/home/policy-finder/filter-policy-finder
+https://das.ohio.gov/wps/portal/gov/das/property-services
+https://das.ohio.gov/wps/portal/gov/das/search
+https://das.ohio.gov/wps/portal/gov/das/technology-and-strategy
+https://das.ohio.gov/wps/portal/gov/das/technology-and-strategy/911-home-program-office
+https://das.ohio.gov/wps/portal/gov/das/technology-and-strategy/OGRIP
+https://das.ohio.gov/wps/portal/gov/das/technology-and-strategy/data-and-efficiency
+https://das.ohio.gov/wps/portal/gov/das/technology-and-strategy/data-and-efficiency/office-of-data-and-efficiency
+https://das.ohio.gov/wps/portal/gov/das/technology-and-strategy/information-security-privacy
+https://das.ohio.gov/wps/portal/gov/das/technology-and-strategy/innovateohio-platform-iop
+https://das.ohio.gov/wps/portal/gov/das/technology-and-strategy/it-enterprise-services
+https://das.ohio.gov/wps/portal/gov/das/technology-and-strategy/it-innovation-information-center
+https://das.ohio.gov/wps/portal/gov/das/technology-and-strategy/it-policy-glossary
+https://das.ohio.gov/wps/portal/gov/das/technology-and-strategy/it-strategic-investment-and-architecture
+https://das.ohio.gov/wps/portal/gov/das/technology-and-strategy/marcs
+https://das.ohio.gov/wps/portal/gov/das/technology-and-strategy/overview
+https://das.ohio.gov/wps/portal/gov/das/technology-and-strategy/policies
+https://das.ohio.gov/wps/portal/gov/das/technology-and-strategy/policies/700-01+Information+Technology+Resource+Usage
+https://das.ohio.gov/wps/portal/gov/das/technology-and-strategy/policies/google.com
+https://dasstateoh.taleo.net/careersection/oh_int/jobsearch.ftl
+https://governor.ohio.gov/media/executive-orders/Executive-Order-2023-03D-01092023
+https://ohid.ohio.gov/wps/myportal/gov/myohio/my-agency/das/policies
+https://ohid.ohio.gov/wps/myportal/gov/myohio/my-agency/das/policies/100-05-charitable-and-fund-raising-activities
+https://ohid.ohio.gov/wps/myportal/gov/myohio/my-agency/das/policies/100-08-political-activity-policy
+https://ohid.ohio.gov/wps/myportal/gov/myohio/my-agency/das/policies/100-11-protecting-privacy
+https://ohid.ohio.gov/wps/myportal/gov/myohio/my-agency/das/policies/100-14-state-and-personal-property-policy
+https://stateofohiofed.servicenowservices.com/ess
+https://twitter.com/ohiodas
+https://www.linkedin.com/company/ohiodas
+javascript:;
+mailto:DAS.State.ITPolicy.Manager@das.ohio.gov
+mailto:csc@ohio.gov
+mailto:state.isp@das.ohio.gov
+tel:1-614-466-6511

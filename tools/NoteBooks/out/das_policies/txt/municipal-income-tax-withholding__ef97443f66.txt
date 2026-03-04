@@ -1,0 +1,748 @@
+TITLE: Municipal Income Tax Withholding  (HR-25)
+URL: https://das.ohio.gov/wps/portal/gov/das/employee-relations/policies/municipal-income-tax-withholding
+
+===== PAGE TEXT =====
+Municipal Income Tax Withholding  (HR-25)
+
+IBM WebSphere Portal
+
+An official State of Ohio site.
+
+Here’s how you know
+
+Official websites use Ohio.gov
+
+An Ohio.gov website belongs to an official government organization in the State of Ohio.
+
+Secure .gov websites use HTTPS
+
+A lock
+ or https:// means you've safely connected to the .gov website. Share sensitive information only on official, secure websites.
+
+Trusted applications are secured by OHID
+
+When you log in with OHID, your privacy, data, and personal information are protected by federal and state digital security standards.
+
+Close
+
+learn-more
+
+        Skip to Navigation
+
+
+        Skip to Main Content
+
+
+Ohio Department
+
+Menu
+
+                        	Home
+
+                        	Buying & Selling
+
+                        	Property Services
+
+                        	Technology & Strategy
+
+                        	Employee Relations
+
+                        	About
+
+                        	Help
+
+                        	Search
+
+top-help
+
+odx-helplink-label
+
+top-search
+
+odx-searchbox-label
+
+Type in your search keywords and hit enter to submit or escape to close
+
+top-search
+
+top-close
+
+Municipal Income Tax Withholding  (HR-25)
+
+{}
+
+Web Content Viewer
+
+Actions
+
+
+
+DAS
+
+Employee Relations
+
+Policies
+
+                Overview
+
+
+                Benefits Administration
+
+
+                Collective Bargaining Services
+
+
+                Combined Charitable Campaign
+
+
+                Office of Opportunity and Accessibility
+
+
+                Human Resources Operations
+
+
+                Talent Management
+
+
+                Policies
+
+
+                  Municipal Income Tax Withholding  (HR-25)
+
+
+August 30, 2023
+
+ |
+
+Agency
+
+State of Ohio Administrative Policy
+
+No: HR-25 -
+State Human Resources Division
+
+Effective:
+August 30, 2023
+
+Issued By:
+
+Kathleen C. Madden, Director
+
+Purpose
+
+To establish a uniform system for tax withholdings to aid State employees in meeting their obligations to pay income tax to the various municipal income taxing districts in which they work and live. The first occurrence of a defined term in the policy is in bold, italic type, and is hyperlinked to the definition in Section IV.
+
+Scope
+
+This policy applies to all state agencies, boards, and commissions under the authority of the Governor (collectively referred to as Agency or Agencies).
+
+Policy
+
+State of Ohio (State) employees are required to pay municipal income taxes on wages that are subject to such taxes. As an employer, the State of Ohio withholds and remits municipal income taxes owed on the wages of State employees that are subject to a municipal income tax. To perform this withholding function, all State employees are required to follow the standards established in this policy.
+
+Employee Wages Subject to Municipal Income Tax Withholding
+
+In general, a State employee’s wages may be subject to municipal income taxes based upon where the employee worked to earn those wages and/or where the State employee resides.
+
+Work Location: For employee wages that are subject to a municipal income tax because the employee worked in a taxing municipality to earn those wages, the State of Ohio will first withhold and remit the amount owed based on the full percentage-of-tax levied by the taxing municipality where the employee worked in accordance with Section III.B. below.
+
+Residential: For employee wages that are subject to municipal income tax because the employee resides in a municipality that applies an income tax to its residents, the State will withhold and remit the amount owed to the employee’s home municipality.
+
+However, the residential tax rate will take into account any credits or offsets to which the employee is entitled to as a result of having municipal income taxes withheld based on the employee’s work location.
+
+General Employee Responsibilities:
+
+Employees are responsible for making any applicable tax filings, including residential income tax filings, and paying any taxes or seeking any refunds that may be necessitated based on the actual hours worked at each work location.
+
+Employees must submit a Municipal Income Tax Withholding Form to their Agency payroll officer. Please see section VI below for the location of this form. Employees in Agencies that have developed their own form should use the Agency-specific form. All information provided by the employee on the Municipal Income Tax Withholding Form must be accurate and complete. Whenever an employee’s circumstances change in such a manner that the information previously provided by the employee is no longer accurate/complete, the employee must promptly submit an updated form to their Agency payroll officer.
+
+Employees should direct any individual tax questions to their personal tax specialist.
+
+Withholding Based on Employee Work Location
+
+The work performed by State employees varies significantly; as such, some State employees work from a single location, while others are required to perform their job duties in multiple locations within the State. Unless otherwise required by this policy, or applicable law, the State will withhold and remit municipal income taxes based on an employee’s
+Primary Work Location
+.
+
+OAKS and Kronos Users:
+
+Both OAKS and Kronos systems (collectively referred to as Automated Timekeeping Systems) contain functionality that allows users to record their work location(s) each day.
+[1]
+ All employees using an Automated Timekeeping System are assigned a
+Default Work Location
+ for municipal income tax purposes. Typically, the Primary Work Location should be used as the Default Work Location for these employees. Municipal income taxes will be withheld using the Default Work Location unless the employee selects a different work location when recording his/her time. Employees using an Automated Timekeeping System are not required to adjust the work location field on their timesheets until the 20-day rule becomes effective as described below.
+
+20-Day Rule: All employees—regardless of whether they ordinarily work from a single location or multiple locations—who use an Automated Timekeeping System to record their time must record their daily work location in accordance with this rule.
+
+20 Days or Less at a Work Location: In the work location field of an employee’s time sheet, the employee can use his/her Primary Work Location for:
+
+hours worked at that Primary Work Location; and
+
+hours worked at a different location, but only for the first 20 days that the employee works at that different location throughout the calendar year.
+
+More than 20 Days at a Work Location: If an employee works for 20 days
+[2]
+ in a calendar year at a location that differs from his/her Primary Work Location, the employee must ensure that the work location field on his/her timesheet corresponds to the different work location for any additional time worked at that different work location for the remainder of the calendar year. In other words, beginning on the 21st day that an employee works from a different location, the employee must start recording that different location whenever the employee works from there, as set forth in Section III.B.3 below.
+
+Employees with One Work Location:
+
+For employees who work from a single work location (e.g., a correction officer working at only one institution) and that work location is in a taxing municipality, the State will typically withhold and remit municipal income taxes owed to the municipality that contains the single work location.
+
+OAKS and Kronos Users with One Work Location:
+
+For Automated Timekeeping System users, their one work location is their Primary Work Location and it should be set as their Default Work Location within the system. As such, these employees typically will not have to adjust the work location field in their timesheets because their Default Work Location will automatically appear.
+
+20-Day Rule: However, if an employee who is an Automated Timekeeping System user does work from a different location for more than 20 days in a calendar year, the employee must follow the process described in Section III.B.3.b below.
+
+Employees with Multiple Work Locations:
+
+For employees with multiple work locations—such as, employees with Hybrid arrangements—the transient nature of their work assignments can make them subject to municipal income taxes in more than one municipal income taxing district. To ensure that the State has accurate information for withholding purposes, there are two primary methods to record work location information:
+
+use of an Automated Timekeeping System; or
+
+withholding based on pre-established schedules.
+
+As indicated earlier, Automated Timekeeping Systems may not be available to all employees. Employees must use the method selected by their Agency or their supervisor.
+
+Method 1 – Automated Timekeeping Systems:
+
+Subject to the 20-day rule discussed above in Section III.B.1.b, employees who use an Automated Timekeeping System to record their work hours are responsible for accurately reporting the corresponding location(s) where they worked during those hours.
+
+Employees who use an Automated Timekeeping System should check to ensure that their Primary Work Location is used as their Default Work Location. Unless the employee’s Agency has established a different process, employees must use the Municipality Tax Withholding Form to request any change to the Default Work Location.
+
+Method 2 – Withholding According to Pre-established Schedules:
+
+Employees who work in multiple locations, but do not use an Automated Timekeeping System, must work with their Agency payroll officer to establish their withholding as either Type 1 or Type 2, as explained below.
+
+Type 1: This type is reserved for employees who work a standard, pre-established percentage of their time at their Primary Work Location and a standard, pre-established percentage(s) of their time at another (other) set location(s).
+
+Type 2: This type is reserved for employees who work at various locations without a standard, pre-established work location schedule. All hours worked for Type 2 employees will be attributed to the employee’s
+Headquarter Location
+.
+
+Leave
+
+Taxes will be withheld according to the Default Work Location.
+
+Appointing Authority Responsibility
+
+Appointing Authorities are responsible for determining any Agency-specific deadlines or internal processes or procedures that may be necessary in order to come into compliance with this policy. Appointing Authorities should also ensure that all employees receive notification of this policy so that employees are put on notice of their potential municipal income tax withholding obligations.
+
+Failure to Comply with Policy
+
+The failure of a State employee to make a good faith effort to comply with this policy will subject the employee to discipline, up to and including termination.
+
+Headquarter County
+
+Changes to an employee’s municipal income tax location shall not be deemed to alter an employee’s
+Headquarter County
+.
+
+Definitions
+
+Default Work Location:
+ Means the default municipal income tax authority set by the appointing authority in OAKS or Kronos. The Default Work Location will pre-populate the “Work Location” field on employee timesheets. If an employee does not select a different location from the drop-down in the “Work Location” field on his or her timesheet, the State will withhold municipal income taxes according to the default location. Employees should ensure that their Primary Work Location is also used as their Default Work Location.
+
+Headquarter County:
+ Means the county which the appointing authority has determined and indicated, on the position description for each position or by other appropriate means, to be the Headquarter County. The determination shall be based on the status of the position as the primary location where the employee assigned to the position receives direction, performs the substantial duties of his/her position, or where the employee's workflow is centered.
+
+Headquarter Location:
+ For employees whose municipal income taxes are withheld according to Method 2, Type 2 (see Section III.B.3.c.iii), the Headquarter Location is typically the main location where the employee receives direction, performs the substantial duties of his/her position, or where the employee's workflow is centered.
+
+Primary Work Location:
+ Means the location at which the employee physically spends the greatest number of days in a calendar year performing services for or on behalf of the appointing authority. For example, an employee with a hybrid telework arrangement who works 60% of her/his time at Location A and 40% at location B would have a Primary Work Location of Location A. Every employee has a Primary Work Location.
+
+Authority
+
+ORC 9.41
+OAC 123:1-45-01
+
+Resources
+
+Municipal Income Tax Withholding form can be found in
+Department of Administrative Services - myOhio
+ or please see your Agency human resources staff for the form.
+
+Inquiries
+
+Direct inquiries about this policy to:
+
+Labor Relations and Human Resources Policy
+Office of Collective Bargaining
+Ohio Department of Administrative Services
+4200 Surface Road
+Columbus, Ohio 43228
+Or
+State Human Resources Division
+Ohio Department of Administrative Services
+30 East Broad Street, 40th Floor
+Columbus, Ohio 43215
+614.752.5393 |
+DASHRD.HRPolicy@das.ohio.gov
+
+State of Ohio Administrative Policies may be found online at
+Policy Finder - Department of Administrative Services
+
+Revision History
+
+Date
+
+Description of Change
+
+02/06/2009
+
+Original policy.
+
+02/11/2022
+
+Reissued for compliance with format and timekeeping updates.
+
+08/30/2023
+
+Housekeeping changes and policy reissued in new statewide policy template.
+
+Footnotes
+
+Back to content[1]
+ Both OAKS and Kronos have different versions, not all of which offer the functionality to record work location(s) daily. Unless otherwise specified, all references to OAKS, Kronos, or Automated Timekeeping Systems mean the versions of those systems that contain the functionality that allows users to record their work location(s) each day.
+
+Back to content[2]
+ For purposes of counting 20 days, the days worked at a location do not have to be consecutive.
+
+      Share this
+
+
+odx-more-information
+
+Additional Resources
+
+Timekeeping and Tax Municipalities FAQ (PDF)
+
+Municipal Income Tax Flow Chart (PDF)
+
+Expand All Sections
+
+
+
+Web Content Viewer
+
+Actions
+
+
+
+
+            About Us
+
+
+
+            Administrative Support Division
+
+
+
+            First Responder Communications Initiatives
+
+
+
+            General Services Division
+
+
+
+            Office of Collective Bargaining
+
+
+
+            Office of Data and Efficiency
+
+
+
+            Office of Information Technology
+
+
+
+            State Human Resources Division
+
+
+
+            Media Center
+
+
+
+            News
+
+
+
+            Events
+
+
+
+            Hidden
+
+
+
+            Hidden
+
+
+            Resources
+
+
+            Policy Finder
+
+
+
+            Careers
+
+
+
+            Public Records Requests
+
+
+
+            State MLK Holiday Commission
+
+
+
+            Hidden
+
+
+
+            Hidden
+
+
+Ohio Department of Administrative Services  | 30 E. Broad St., Columbus, Ohio 43215 |
+614-466-6511
+
+Powered by
+
+
+                    Privacy Notice and Policies
+
+
+
+
+
+
+
+                    Accessibility
+
+
+
+
+
+
+
+                    Ohio Checkbook
+
+
+
+
+
+
+linkedin icon
+
+x icon
+
+top-menu
+
+top-close
+
+top-help
+
+top-search
+
+
+odx-searchbox-label
+
+
+Submit your search
+
+Close
+
+
+
+Complementary Content
+
+${title}
+${badge}
+
+${loading}
+
+===== REFERENCES (ALL LINKS) =====
+https://checkbook.ohio.gov/
+https://das.ohio.gov/home/policy-finder/filter-policy-finder
+https://das.ohio.gov/static/employee-relations/policies/taxes/Muni Tax Flow Chart 3.15.22.pdf
+https://das.ohio.gov/static/employee-relations/policies/taxes/Timekeeping and Tax Municipalities FAQ.pdf
+https://das.ohio.gov/wps/portal/gov/das/about
+https://das.ohio.gov/wps/portal/gov/das/about/about-us
+https://das.ohio.gov/wps/portal/gov/das/about/administrative-support-division-site-area/administrative-support-division
+https://das.ohio.gov/wps/portal/gov/das/about/first-responder-comms-initiatives/first-responder-comms-initiatives
+https://das.ohio.gov/wps/portal/gov/das/about/general-services-division/general-services-division
+https://das.ohio.gov/wps/portal/gov/das/about/office-of-collective-bargaining/office-of-collective-bargaining-1
+https://das.ohio.gov/wps/portal/gov/das/about/office-of-information-technology
+https://das.ohio.gov/wps/portal/gov/das/about/state-human-resources-division/state-human-resources-division
+https://das.ohio.gov/wps/portal/gov/das/buying-and-selling
+https://das.ohio.gov/wps/portal/gov/das/employee-relations
+https://das.ohio.gov/wps/portal/gov/das/employee-relations/benefits-administration
+https://das.ohio.gov/wps/portal/gov/das/employee-relations/combined-charitable-campaign
+https://das.ohio.gov/wps/portal/gov/das/employee-relations/emloyee-relations-overview
+https://das.ohio.gov/wps/portal/gov/das/employee-relations/human-resources+-operations-site-area
+https://das.ohio.gov/wps/portal/gov/das/employee-relations/office-of-collective-bargaining
+https://das.ohio.gov/wps/portal/gov/das/employee-relations/office-of-opportunity-and-accessibility
+https://das.ohio.gov/wps/portal/gov/das/employee-relations/policies
+https://das.ohio.gov/wps/portal/gov/das/employee-relations/policies/google.com
+https://das.ohio.gov/wps/portal/gov/das/employee-relations/policies/municipal-income-tax-withholding
+https://das.ohio.gov/wps/portal/gov/das/employee-relations/talent-management
+https://das.ohio.gov/wps/portal/gov/das/help-center
+https://das.ohio.gov/wps/portal/gov/das/help-center/accessibility/accessibility-
+https://das.ohio.gov/wps/portal/gov/das/help-center/privacy-notice-and-policies/privacy-notice-and-policies
+https://das.ohio.gov/wps/portal/gov/das/help-center/public-records-request-site-area/public-records-requests
+https://das.ohio.gov/wps/portal/gov/das/home
+https://das.ohio.gov/wps/portal/gov/das/home/media-center/all-events/all-events-landing-page
+https://das.ohio.gov/wps/portal/gov/das/home/media-center/all-news/all-news
+https://das.ohio.gov/wps/portal/gov/das/home/media-center/das-media-center
+https://das.ohio.gov/wps/portal/gov/das/home/ohio-mlk-holiday-commission/mlk-commission/mlk-holiday-commission
+https://das.ohio.gov/wps/portal/gov/das/home/policy-finder/filter-policy-finder
+https://das.ohio.gov/wps/portal/gov/das/property-services
+https://das.ohio.gov/wps/portal/gov/das/search
+https://das.ohio.gov/wps/portal/gov/das/technology-and-strategy
+https://das.ohio.gov/wps/portal/gov/das/technology-and-strategy/data-and-efficiency/office-of-data-and-efficiency
+https://dasstateoh.taleo.net/careersection/oh_int/jobsearch.ftl
+https://ohid.ohio.gov/wps/myportal/gov/myohio/
+https://twitter.com/ohiodas
+https://www.linkedin.com/company/ohiodas
+javascript:;
+mailto:DASHRD.HRPolicy@das.ohio.gov
+tel:1-614-466-6511
+
+========== PDF CONTENT ==========
+PDF: https://das.ohio.gov/static/employee-relations/policies/taxes/Muni Tax Flow Chart 3.15.22.pdf
+
+--- PDF Page 1 ---
+This location is a taxing municipality and I worked at least 
+20 days in this location prior to today.
+This location is a non taxing locality.
+I WORKED IN ONE 
+LOCATION TODAY 
+AND IT WAS NOT MY 
+PRIMARY WORK 
+LOCATION
+Use the location where you worked today.
+Use the non taxing locality code (OH‐00000), regardless of how many days you 
+have worked there.
+I WORKED IN 
+MULTIPLE 
+LOCATIONS TODAY 
+AND ALL WERE IN A 
+TAXING 
+MUNICIPALITY
+I WORKED IN 
+MULTIPLE 
+LOCATIONS TODAY 
+AND SOME WERE IN 
+A NON TAXING 
+LOCALITY
+I have not worked at least 20 days in the location at 
+which I spent the most hours today. 
+I worked at least 20 days in the location at which I spent 
+the most hours today.
+Of the taxing municipalities where you worked at least 20 days, use the taxing 
+municipality where you spent the most hours working today. If you have not 
+worked at least 20 days in any of the taxing municipalities where you worked 
+today, use your primary work location.
+Use the taxing municipality where you spent the most hours working today.
+I WORKED IN 
+MULTIPLE 
+LOCATIONS TODAY 
+AND ALL WERE IN A 
+NON TAXING 
+LOCALITY
+Use the non taxing locality code (OH‐00000).
+This location is a taxing municipality and I did not work at 
+least 20 days in this location prior to today. Use your primary work location.
+I worked at least 20 days in at least one of the taxing 
+municipalities.
+Of the taxing municipalities where you worked at least 20 days, use the taxing 
+municipality where you spent the most hours working today.
+I have not worked at least 20 days in any of the taxing 
+municipalities.  Use your primary work location, even if it is a non taxing locality.
+I spent the most hours today working at my primary work 
+location.
+Use your primary work location.
+I WORKED IN ONE 
+LOCATION TODAY 
+AND IT WAS MY 
+PRIMARY WORK 
+LOCATION
+Use your primary work location.
+
+
+
+========== PDF CONTENT ==========
+PDF: https://das.ohio.gov/static/employee-relations/policies/taxes/Timekeeping and Tax Municipalities FAQ.pdf
+
+--- PDF Page 1 ---
+February 2022 
+  
+  
+State Human Resources Division 
+Timekeeping and Tax Municipalities 
+Frequently Asked Questions & Answers 
+ 
+TIMEKEEPING SYSTEM QUESTIONS 
+ 
+1. Where can I find job aids to assist with designating a work location in the timekeeping system? 
+Job Aids are available in the myOhio Help Directory, myTax Job Aids: 
+• From the myOhio homepage, click the four-square icon  at the top right corner of the page 
+• Under the Help category, click Help Directory 
+• Locate the desired Job Aid and click the Job Aid title 
+• To open the Job Aid, click the Download button in the top right corner of the page 
+ 
+2. Can I designate a work location if I enter time directly into OAKS? 
+Yes, this functionality is available in certain versions of Kronos and OAKS. 
+ 
+3. Will my tax information be backdated since Kronos functionality was not available January 1 through February 
+13? 
+No, tax information is processed (paid out) each pay period. If you believe incorrect taxes were withheld, 
+contact a tax specialist for advice on the correct steps to take to request a refund. 
+ 
+4. How do I record my time if I live in a non-taxing locality? 
+Non-taxing localities are identified in Kronos and OAKS as five zeroes - “00000.” 
+ 
+5. Do I need to designate a tax locality when entering leave? 
+No, when an employee uses leave it will automatically withhold from their default work location. Employees are 
+responsible for ensuring the default work location for municipal income tax liability reflects the employee’s 
+primary work location. Employees should work with their agency HR/Payroll office to make changes to their 
+default work location, if applicable.  
+ 
+6. How are holidays paid out? 
+Holidays automatically withhold from your default work location. Employees are responsible for ensuring the 
+default work location for municipal income tax liability reflects the employee’s primary work location. 
+Employees should work with their agency HR/Payroll office to make changes to their default work location, if 
+applicable. 
+ 
+7. Do I need to enter separate tax locations for the same working day? 
+No, an employee should only record one work location per day on his/her timesheet. To determine to 
+appropriate work location to record on your timesheet, please use the “Where did I Work?” flowchart. The 
+flowchart is being finalized and will be added to these FAQs when it is available.
+
+
+--- PDF Page 2 ---
+February 2022 
+  
+  
+State Human Resources Division 
+IMPORTANT NOTE: For employees who work from multiple locations on a single day, there is a distinction 
+between the work location that you record on your timesheet and the work location that the employee will 
+need to manually count/track for purposes of the 20-day rule.  For example—in a circumstance where an 
+employee hasn’t worked 20 days from his/her alternate work location—if the employee works most of the day 
+from an alternate work location and a small part of the day from the primary work location, the employee would 
+still record the primary work location on the timesheet, but manually count (i.e., outside of the timesheet) the 
+day towards the 20-day threshold of the 20-day rule.  The “Policy Questions” section below contains additional 
+discussion on this point. 
+ 
+POLICY QUESTIONS 
+ 
+8. Where can I find the updated Policy? 
+Municipal Income Tax Withholding Policy (HR-25) 
+ 
+9. Am I required to designate a work location when entering hours worked each day in a timekeeping system? 
+Employees who are subject to a municipal income tax because of their work location are required to authorize 
+their appointing authority to withhold the full municipal income tax percentage applicable to that particular 
+work location.  Many employees are now able to designate their work location on a daily basis in the 
+timekeeping system from a drop-down menu.  Municipal income taxes will be withheld from the employee’s 
+default work location for any hours that an employee does not designate the work location in the timekeeping 
+system. Employees working at a single work location (e.g., a correction officer working at only one institution) 
+will generally have no need to designate their work location. 
+ 
+10. What is the “20-day rule?” 
+The 20-day rule is provided for in statute and generally indicates that once an employee has reached the 21st 
+day of work, during the calendar year, at a location other than their primary work location (i.e., an alternate 
+work location), an employee will start owing municipal income tax to that alternate location. An employee who 
+has at least one alternate work location will need to manually track (i.e., outside of the timesheet) days that 
+he/she works (as explained below in Question 13) from each alternate work location. However, once an 
+employee has worked 20 days (during the calendar year) from an alternate work location, the employee will no 
+longer need to manually track subsequent workdays from this alternate work location for the remainder of the 
+calendar year.  Rather, the employee will switch over to using his/her timesheet to record any subsequent days 
+(i.e., day 21 and after) worked from this alternate work location for the remainder of the calendar year. It is 
+important to remember crediting days to an alternate work location for purposes of the 20-day rule is different 
+from the determination of which work location to record on your timesheet as explained above in Question 7 
+and the “Where did I Work?” flowchart. For the primary work location, taxes are withheld starting on day 1. 
+Which location is considered your primary location will be based on the information contained on your 
+Municipal Tax Withholding Form. 
+ 
+11. Does the 20-day rule apply separately to each location? For example, I travel to Dublin for 22 days, and Marion 
+for 25 days, and Toledo for 33 days. Do I have to count all three locations for the 20-day rule separately? Or 
+once I hit the 20-day rule for the first location, does it then apply for all locations for the rest of the year?
+
+
+--- PDF Page 3 ---
+February 2022 
+  
+  
+State Human Resources Division 
+Each location is treated separately for the 20-day rule; if you work 22 days in Dublin and 25 in Marion, you 
+would be responsible for 2 days of Dublin (days 21-22) and 5 days for Marion (days 21-25). 
+ 
+12. What is the difference between a Method 1 and Method 2 agency? 
+Method 1 agency: agencies that have the functionality to record the location of work through an Automated 
+Timekeeping System (such as Kronos and OAKS). 
+Method 2 agency: Agencies that do not have the functionality to record the location of work through an 
+Automated Timekeeping System. 
+ 
+13. What is considered a “day” for purposes of the 20-day rule? 
+When working from multiple locations on a single day, it can be difficult to determine which work location 
+should be credited with the “day” for purposes of counting under the 20-day rule.  In general, an employee 
+should credit (i.e., manually count the day towards the 20-day threshold for an alternate work location) the 
+workday to the alternate work location if the employee spent the most amount of time working from the 
+alternate work location on that particular day. When determining which location the employee spent the most 
+time working, it is important to remember that time spent traveling is considered to be performed at the 
+employee’s primary work location.   
+ 
+AGENCY HR/PAYROLL QUESTIONS 
+ 
+14. Are agencies required to “certify” on 2021 tax returns when an employee files for a tax refund from 
+municipalities? 
+Agencies are not required to do so. That decision should be made internally within an agency.  It will likely be a 
+case-by-case determination.  In general, there are three options.  First, agencies may choose to certify 
+information contained on the employee’s refund request where the agency is reasonably certain the 
+information on the form is accurate and the agency doesn’t have concerns with the conditions of the 
+certification, or any other language contained on the return/refund request form. Because different locality 
+refund forms contain different certification language, we suggest that agencies review each request, including 
+supporting documentation, to ensure its accuracy and seek review with the immediate supervisor if necessary. 
+We also suggest that agency legal counsel is consulted if there are concerns about the certification language.  
+Second, agencies may choose to provide a signed letter to the employee on agency letterhead certifying any 
+information that you believe to be accurate and appropriate (e.g., the number of days that you can verify the 
+employee worked from an office location).  Please note, each taxing municipality is different so we do not know 
+which, if any, will accept a letter in lieu of their form.  Third, the agency can decline to certify an employee’s 
+request and decline to provide a letter. 
+ 
+15. How do employees request to change their default work location for municipal income tax withholding? 
+Employees can submit a Municipal Income Tax Withholding Form to their agency Payroll/HR department. This 
+form was recently modified so that employees can designate the primary work location as their residence, if 
+applicable.
+
+
+--- PDF Page 4 ---
+February 2022 
+  
+  
+State Human Resources Division 
+16. On the new municipal income tax withholding form, is the "employment address" the same as the home address 
+if the employee is working from home the majority of the time? 
+If the employee works in the office at all, the employee should indicate the agency address. If the employee 
+never works from the office, that section can be left blank. Any employee who works the majority of time from 
+home should check the box indicating home address is the primary work location. 
+ 
+17. What should employees do if they think incorrect taxes were withheld? 
+Contact a tax specialist for advice on the correct steps to take to request a refund. 
+ 
+18. What happens if an employee accidentally enters the incorrect tax locality?  
+Once payroll closes, there isn't the ability to fix it. Employees are responsible for ensuring they are accurately 
+reflecting tax locality. 
+ 
+19. If an employee lives in a municipality with reciprocity, does he/she need to utilize the transfer functionality? 
+Yes.  
+ 
+20. For employees working hybrid schedules and who have the same tax locality for their residence and for their 
+office, do they need to utilize the transfer functionality? 
+If the tax locality is the same for all locations worked, the employee does not need to use the transfer 
+functionality.

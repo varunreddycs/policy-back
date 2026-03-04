@@ -1,0 +1,3389 @@
+TITLE: Copier Management RM-02
+URL: https://das.ohio.gov/wps/portal/gov/das/buying-and-selling/policies/copier-management-policy
+
+===== PAGE TEXT =====
+Copier Management RM-02
+
+IBM WebSphere Portal
+
+An official State of Ohio site.
+
+Here’s how you know
+
+Official websites use Ohio.gov
+
+An Ohio.gov website belongs to an official government organization in the State of Ohio.
+
+Secure .gov websites use HTTPS
+
+A lock
+ or https:// means you've safely connected to the .gov website. Share sensitive information only on official, secure websites.
+
+Trusted applications are secured by OHID
+
+When you log in with OHID, your privacy, data, and personal information are protected by federal and state digital security standards.
+
+Close
+
+learn-more
+
+        Skip to Navigation
+
+
+        Skip to Main Content
+
+
+Ohio Department
+
+Menu
+
+                        	Home
+
+                        	Buying & Selling
+
+                        	Property Services
+
+                        	Technology & Strategy
+
+                        	Employee Relations
+
+                        	About
+
+                        	Help
+
+                        	Search
+
+top-help
+
+odx-helplink-label
+
+top-search
+
+odx-searchbox-label
+
+Type in your search keywords and hit enter to submit or escape to close
+
+top-search
+
+top-close
+
+Copier Management RM-02
+
+{}
+
+Web Content Viewer
+
+Actions
+
+
+
+DAS
+
+Buying & Selling
+
+Policies
+
+                Overview
+
+
+                State and Federal Surplus Services
+
+
+                Procurement Services
+
+
+                Cooperative Purchasing Program
+
+
+                Procurement from Community Rehab Programs
+
+
+                IT Staff Augmentation
+
+
+                State Printing and Mail Services
+
+
+                Policies
+
+
+                  Copier Management RM-02
+
+
+September 05, 2023
+
+ |
+
+Agency
+
+State of Ohio Administrative Policy
+
+No: RM-02 -
+State Printing and Mail Services
+
+Effective:
+September 5, 2023
+
+Issued By:
+
+Kathleen C. Madden, Director
+
+Purpose
+
+This policy’s purpose is to eliminate unnecessary requisition of all types of copiers, including high-speed production and multifunction copiers in state government. Copiers falling into the category of high-speed production duplicators have very limited application and are expensive to own and operate. This policy addresses the acquisition of these devices in accordance with Ohio Revised Code (ORC) 125.31 and 125.45.
+
+Scope
+
+This policy applies to all state agencies, boards, and commissions under the authority of the Governor (collectively referred to as Agencies or Agency).
+
+Policy
+
+Convenience Copiers
+
+Guidelines for the acquisition of convenience copiers are provided in the State of Ohio Procurement Manual. The State Printing Cost Per Copy website provides assistance/guidance in the selection of the best size and features of copiers.
+
+A convenience copier is any reprographic device that produces fewer than 65 black and white copies per minute (CPM) or fewer than 20 color CPM. These devices may function as a networked or non-networked walk-up copier. A print device (computer printer) that can function only through a network environment and is not capable of printing other than from a computer command is not considered a convenience or multifunctional copier.
+
+The Department of Administrative Services’ (DAS) Office of State Printing and Mail Services (State Printing) will require, at a minimum, the following information be included with the request for pre-approval on all copiers:
+
+Volume histories
+
+Projected monthly volume
+
+Proposed outright purchase price (outright purchase price is required even if opting for lease or lease to purchase)
+
+Monthly lease or lease to purchase payment amount
+
+Contractor specification sheet on proposed copier
+
+Contractor’s maintenance pricing
+
+Agencies are encouraged to make conservative selections, seek pricing from multiple sources and use state term schedules where appropriate for procurement.
+
+State Printing will continue to review and approve the acquisition process for all convenience copiers. If the overall copier acquisition cost exceeds the costs of a comparable machine(s) in the cost-per-copy program, the acquisition request will be denied. Exceptions to this policy may be made by State Printing on a case-by-case basis. All exceptions granted shall be in the best interest of the state.
+
+All copier acquisitions, including multifunctional and high-speed machines, will be made through a DAS Office of Procurement Services or State Printing contract.
+
+Duplicators and Color Copiers
+
+Reprographic devices producing 65 black and white CPM or more and color devices producing 20 color CPM, or more are not considered convenience copiers. To avoid expensive and unnecessary redundancy in printing capacity, State Printing must approve the purchase or lease of any reprographic device with a production rating of 65 or more black and white CPM or 20 or more color CPM.
+
+Printing and Finishing Equipment
+
+Printing equipment such as printing presses, offset duplicators, electronic prepress devices, and finishing equipment used in a print production environment are very expensive machinery to acquire and maintain. The efficient operation of this type of equipment requires an extremely high production volume on a day-to-day basis. DAS operates a centralized production facility for offset printing and print finishing functions. The redundancy of this type of equipment and capability within various agencies is not cost efficient for state government. The State Printing Administrator must approve the purchase or lease of any printing or print finishing equipment as outlined in ORC 125.45.
+
+Procedure
+
+Procedures for the acquisition of any duplicators, high speed copiers, printing equipment and print finishing equipment should be directed to the State Printing Administrator. State Printing will work with the requesting agency and vendors as a consultant and partner to ensure that all reasonable options are explored, and the best possible solutions are selected.
+
+Definitions
+
+None
+
+Authority
+
+ORC 125.31, 125.45
+
+Resources
+
+State of Ohio Procurement Manual (PDF)
+
+Cost-Per-Copy | Department of Administrative Services
+
+Inquiries
+
+Direct inquiries about this policy to:
+
+Trisha Stephens, Administrator
+Office of State Printing and Mail Services
+General Services Division
+Ohio Department of Administrative Services
+4200 Surface Road
+Columbus, Ohio 43228
+614-644-6355 |
+Trisha.Stephens@das.ohio.gov
+
+State of Ohio Administrative Policies may be found online at
+Policy Finder - Department of Administrative Services
+
+Revision History
+
+Date
+
+Description of Change
+
+09/01/2009
+
+Original policy, published as GS-D-09.
+
+12/18/2015
+
+Reformatted and renumbered.
+
+12/18/2017
+
+Scheduled policy review.
+
+07/12/2021
+
+Reviewed and reformatted.
+
+06/01/2022
+
+Reviewed and reformatted.
+
+09/05/2023
+
+Updated to new policy template.
+
+      Share this
+
+
+Expand All Sections
+
+
+
+Web Content Viewer
+
+Actions
+
+
+
+
+            About Us
+
+
+
+            Administrative Support Division
+
+
+
+            First Responder Communications Initiatives
+
+
+
+            General Services Division
+
+
+
+            Office of Collective Bargaining
+
+
+
+            Office of Data and Efficiency
+
+
+
+            Office of Information Technology
+
+
+
+            State Human Resources Division
+
+
+
+            Media Center
+
+
+
+            News
+
+
+
+            Events
+
+
+
+            Hidden
+
+
+
+            Hidden
+
+
+            Resources
+
+
+            Policy Finder
+
+
+
+            Careers
+
+
+
+            Public Records Requests
+
+
+
+            State MLK Holiday Commission
+
+
+
+            Hidden
+
+
+
+            Hidden
+
+
+Ohio Department of Administrative Services  | 30 E. Broad St., Columbus, Ohio 43215 |
+614-466-6511
+
+Powered by
+
+
+                    Privacy Notice and Policies
+
+
+
+
+
+
+
+                    Accessibility
+
+
+
+
+
+
+
+                    Ohio Checkbook
+
+
+
+
+
+
+linkedin icon
+
+x icon
+
+top-menu
+
+top-close
+
+top-help
+
+top-search
+
+
+odx-searchbox-label
+
+
+Submit your search
+
+Close
+
+
+
+Complementary Content
+
+${title}
+${badge}
+
+${loading}
+
+===== REFERENCES (ALL LINKS) =====
+https://checkbook.ohio.gov/
+https://das.ohio.gov/buying-and-selling/state-printing-and-mail-services/copy-per-copy
+https://das.ohio.gov/home/policy-finder/filter-policy-finder
+https://das.ohio.gov/wps/portal/gov/das/about
+https://das.ohio.gov/wps/portal/gov/das/about/about-us
+https://das.ohio.gov/wps/portal/gov/das/about/administrative-support-division-site-area/administrative-support-division
+https://das.ohio.gov/wps/portal/gov/das/about/first-responder-comms-initiatives/first-responder-comms-initiatives
+https://das.ohio.gov/wps/portal/gov/das/about/general-services-division/general-services-division
+https://das.ohio.gov/wps/portal/gov/das/about/office-of-collective-bargaining/office-of-collective-bargaining-1
+https://das.ohio.gov/wps/portal/gov/das/about/office-of-information-technology
+https://das.ohio.gov/wps/portal/gov/das/about/state-human-resources-division/state-human-resources-division
+https://das.ohio.gov/wps/portal/gov/das/buying-and-selling
+https://das.ohio.gov/wps/portal/gov/das/buying-and-selling/cooperative-purchasing-program
+https://das.ohio.gov/wps/portal/gov/das/buying-and-selling/it-staff-augmentation
+https://das.ohio.gov/wps/portal/gov/das/buying-and-selling/overview
+https://das.ohio.gov/wps/portal/gov/das/buying-and-selling/policies
+https://das.ohio.gov/wps/portal/gov/das/buying-and-selling/policies/copier-management-policy
+https://das.ohio.gov/wps/portal/gov/das/buying-and-selling/policies/google.com
+https://das.ohio.gov/wps/portal/gov/das/buying-and-selling/procurement-from-community-rehab-programs
+https://das.ohio.gov/wps/portal/gov/das/buying-and-selling/procurement-services
+https://das.ohio.gov/wps/portal/gov/das/buying-and-selling/state-and-federal-surplus-services
+https://das.ohio.gov/wps/portal/gov/das/buying-and-selling/state-printing-and-mail-services
+https://das.ohio.gov/wps/portal/gov/das/employee-relations
+https://das.ohio.gov/wps/portal/gov/das/help-center
+https://das.ohio.gov/wps/portal/gov/das/help-center/accessibility/accessibility-
+https://das.ohio.gov/wps/portal/gov/das/help-center/privacy-notice-and-policies/privacy-notice-and-policies
+https://das.ohio.gov/wps/portal/gov/das/help-center/public-records-request-site-area/public-records-requests
+https://das.ohio.gov/wps/portal/gov/das/home
+https://das.ohio.gov/wps/portal/gov/das/home/media-center/all-events/all-events-landing-page
+https://das.ohio.gov/wps/portal/gov/das/home/media-center/all-news/all-news
+https://das.ohio.gov/wps/portal/gov/das/home/media-center/das-media-center
+https://das.ohio.gov/wps/portal/gov/das/home/ohio-mlk-holiday-commission/mlk-commission/mlk-holiday-commission
+https://das.ohio.gov/wps/portal/gov/das/home/policy-finder/filter-policy-finder
+https://das.ohio.gov/wps/portal/gov/das/property-services
+https://das.ohio.gov/wps/portal/gov/das/search
+https://das.ohio.gov/wps/portal/gov/das/technology-and-strategy
+https://das.ohio.gov/wps/portal/gov/das/technology-and-strategy/data-and-efficiency/office-of-data-and-efficiency
+https://das.ohio.gov/wps/wcm/connect/gov/ee83d462-3cac-46f0-965b-05c2940df454/State+of+Ohio+Procurement+Manual.pdf?MOD=AJPERES&CONVERT_TO=url&CACHEID=ROOTWORKSPACE.Z18_K9I401S01H7F40QBNJU3SO1F56-ee83d462-3cac-46f0-965b-05c2940df454-o0JNeWK
+https://dasstateoh.taleo.net/careersection/oh_int/jobsearch.ftl
+https://twitter.com/ohiodas
+https://www.linkedin.com/company/ohiodas
+javascript:;
+mailto:Trisha.Stephens@das.ohio.gov
+tel:1-614-466-6511
+
+========== PDF CONTENT ==========
+PDF: https://das.ohio.gov/wps/wcm/connect/gov/ee83d462-3cac-46f0-965b-05c2940df454/State+of+Ohio+Procurement+Manual.pdf?MOD=AJPERES&CONVERT_TO=url&CACHEID=ROOTWORKSPACE.Z18_K9I401S01H7F40QBNJU3SO1F56-ee83d462-3cac-46f0-965b-05c2940df454-o0JNeWK
+
+--- PDF Page 1 ---
+State of Ohio  
+Procurement Manual 
+Calendar Year 2023, Version 1.0 
+Publication Date:  
+March 17, 2023
+
+
+--- PDF Page 2 ---
+State of Ohio Procurement Manual CY23, Version 1.0       P a g e  | i 
+Publication Date: March 17, 2023 
+ 
+Table of Contents 
+ 
+Introduction ............................................................................................................................... 1 
+What is procurement? ................................ ................................ ................................ ...................... 1 
+Ohio’s Procurement Structure ................................ ................................ ................................ .......... 1 
+Ethical and Professional Conduct................................ ................................ ................................ ..... 2 
+Use of OhioBuys ................................ ................................ ................................ ..............................  2 
+ 
+Chapter 1 – Procurement Planning ......................................................................................... 4 
+Procurement Methods ................................ ................................ ................................ ...................... 4 
+Purchasing Thresholds ................................ ................................ ................................ .................. 10 
+Emergency Purchases ................................ ................................ ................................ ................... 12 
+Minority Business Enterprises ................................ ................................ ................................ ........ 14 
+Encouraging Diversity, Growth, and Equity Program ................................ ................................ ...... 15 
+Women-Owned Business Enterprise Program ................................ ................................ ............... 16 
+Veteran-Friendly Business Enterprise Program ................................ ................................ .............. 16 
+Purchasing Personal Protective Equipment ................................ ................................ ................... 16 
+Prior Approvals ................................ ................................ ................................ ..............................  16 
+Supplies/Services or Construction ................................ ................................ ................................ .. 19 
+ 
+Chapter 2 – Solicitation and Award....................................................................................... 21 
+Purchases of $5,000 or Less ................................ ................................ ................................ .......... 21 
+Purchases Exceeding $5,000 ................................ ................................ ................................ ......... 21 
+Sole and Single-Source Procurements ................................ ................................ .......................... 21 
+Creating a New State Contract ................................ ................................ ................................ ....... 22 
+Procurement Methods ................................ ................................ ................................ .................... 27 
+Reverse Auctions ................................ ................................ ................................ ........................... 32 
+Preferences ................................ ................................ ................................ ................................ ... 32 
+Standard Terms and Conditions ................................ ................................ ................................ ..... 33 
+Debarments ................................ ................................ ................................ ................................ ... 33 
+Findings for Recovery ................................ ................................ ................................ .................... 33 
+Affirmative Action Program Verification ................................ ................................ .......................... 33 
+ 
+Chapter 3 – Contract Administration .................................................................................... 34 
+What is a Contract? ................................ ................................ ................................ ....................... 34 
+Contract Administration Plan ................................ ................................ ................................ .......... 35 
+Contract Monitoring ................................ ................................ ................................ ........................ 35 
+Supplier Relationships ................................ ................................ ................................ ................... 35 
+Contract Compliance................................ ................................ ................................ ...................... 36 
+Supplier Payment ................................ ................................ ................................ ........................... 36 
+Determination and Recommendation ................................ ................................ ............................. 38 
+Contract Closeout ................................ ................................ ................................ .......................... 38 
+ 
+Glossary .................................................................................................................................. 40 
+ 
+Appendix A – Request to Purchase ...................................................................................... 46 
+Purchase Requisition vs. Request to Purchase ................................ ................................ .............. 46 
+Requesting Contract Amendments................................ ................................ ................................ . 47 
+Obtaining Release and Permit Before Controlling Board ................................ ................................  48
+
+
+--- PDF Page 3 ---
+State of Ohio Procurement Manual CY23, Version 1.0        P a g e  | ii 
+Publication Date: March 17, 2023  
+ 
+Revision History 
+ 
+Date Description 
+03/13/2019 State Procurement Manual published. 
+ 
+03/17/2023 • Document format revised in its entirety. Chapter numbers aligned with the Procurement 
+Life Cycle phases; section numbers removed ; sidenotes added to highlight important 
+information; document aligned with PM-01; content revised for conciseness throughout. 
+• OhioBuys information incorporated throughout. 
+• Requisite program contact information and descriptions updated (pgs. 4 – 7). 
+• State Contracts section revised for conciseness and contract descriptions updated (pgs. 7 
+– 10).  
+• The “Preference Programs” section replaced by separate sections for MBE, EDGE, VBE, 
+and WBE  (pgs. 14 – 16).  
+• A “Purchasing Personal Protective Equipment” section added (pg. 16) 
+• The “Motor Vehicles” section updated (pgs. 18 – 19). 
+• The previous “Buy Ohio and Buy American” section replaced by the “Preferences” section 
+and revised to include rule and policy changes implemented July 4, 2022 (pg. 32).  
+• Sections for “ Standard Terms and Conditions ,” “Debarments,” “Findings for Recovery,” 
+and “Affirmative Action Program Verification” added. (pg. 33). 
+• Threshold amounts for “Purchases of $2,500 or Less” and “Purchases Exceeding $2,500” 
+revised to reflect the new $5,000 threshold. 
+• Glossary terms updated. 
+• Appendix A, “Request to Purchase,” added.
+
+
+--- PDF Page 4 ---
+State of Ohio Procurement Manual CY23, Version 1.0 
+Publication Date: March 17, 2023        P a g e  | 1 
+ 
+               
+ 
+Introduction 
+ 
+The State of Ohio Procurement Manual is an authoritative source for guidance on the application of 
+consistent and sound procurement practices by State of Ohio executive branch agencies, boards, and 
+commissions (collectively referred to as “State agencies”).  
+ 
+The first occurrence of a term is in bold italics, with its definition being found in the “Glossary” section of 
+the manual. Throughout the document, links to important information have been incorporated. These 
+links provide readers with the most current and relevant information regarding Ohio’s procurement 
+processes.  
+ 
+This manual supplants neither statutory nor administrative requirements governing purchasing 
+established by the Ohio Revised Code (R.C.), Ohio Administrative Code (OAC), Executive Order, or  any 
+other Department of Administrative Services ( DAS)-issued State of Ohio Administrative Policies or 
+guidance.  
+ 
+Although a public-facing document, this manual’s primary audience are Agency Procurement Officers 
+(APO) and all other agency-level personnel interested or engaged in the State’s procurement activities. 
+Also, ot her State-level government organizations – specifically, those exempted from the authority 
+granted to the Department of Administrative Services (DAS) by R.C. 125.02 – are encouraged to leverage 
+this guide as a best practice. 
+ 
+ 
+What is procurement? 
+ 
+Procurement is the practice of purchasing products, 
+supplies, and services that begins with identifying a need, 
+completing a purchase, and ending with closeout of a 
+contract.  
+ 
+The Ohio Procurement Life  Cycle (Figure 1) organizes the 
+procurement process into a series of steps from the time a 
+purchase need is identified through contract award and 
+administration. 
+ 
+ 
+Ohio’s Procurement Structure 
+ 
+Non-IT and IT purchases are primarily governed by R.C. 125 and OAC 123:5-1. However, Executive 
+Orders issued by the Governor can also establish procurement requirements.  
+ 
+The procurement methods available to State agencies under R.C. 125 are direct purchase authority 
+(DPA); competitive selection, which includes  competitive sealed bidding ; competitive sealed 
+proposals; reverse auctions; and emergency purchases.  
+ 
+  
+Figure 1: Ohio Procurement Life Cycle
+
+
+--- PDF Page 5 ---
+State of Ohio Procurement Manual CY23, Version 1.0 
+Publication Date: March 17, 2023        P a g e  | 2 
+The State of Ohio has a center-led procurement structure, with the DAS 
+Office of Procurement Services as the central procurement authority. 
+DAS oversees and establishes non-IT and IT contracts and has the lead 
+role in:  
+ 
+1. Identifying and executing strategic procurement opportunities for 
+the State. 
+ 
+2. Conducting review and approval of IT purchases. 
+ 
+3. Supporting State agencies ’ use of the DPA afforded them by 
+R.C. 125.05  and collaborating with them for procurements 
+exceeding their DPA. 
+ 
+4. Providing guidance and training to State agencies on 
+procurement systems, best practices, policies, and procedures. 
+ 
+ 
+Ethical and Professional Conduct 
+ 
+State of Ohio employees involved in procurement have a responsibility to uphold Ohio ’s procurement 
+laws, rules, executive orders, directives, and policies . They must act in good faith to serve the best 
+interests of the State of Ohio and its taxpayers by conducting their activities in a manner above reproach, 
+with complete impartiality, and without preferential treatment.  
+ 
+To avoid any perception of or actual impropriety and maintain the public’s trust, State employees are 
+required to perform their daily activities in a professional and responsible manner. They may not take any 
+action in matters affecting themselves, their family members, or business associates. When confronted 
+with a conflict of interest, State employees must completely abstain or recuse themselves from making 
+decisions about or taking any actions that would influence how the matter is resolved. 
+ 
+State employees engaged in procurement activities are responsibl e for understanding and adhering to 
+Ohio Ethics law governed by R.C. 102, along with any Executive Orders and Ohio administrative policies 
+pertaining to ethical conduct.  
+ 
+ 
+Use of OhioBuys 
+ 
+State of Ohio Administrative Policy: Purchasing Procedures (PM -01)1 requires State agencies to adopt 
+and use the State of Ohio’s procurement solution, OhioBuys.  
+ 
+Agencies shall adopt OhioBuys based on a schedule established by DAS, designate one or more Agency 
+Administrators responsible for coordinating adoption and use of the system, and utilize OhioBuys to 
+perform all of their procurement-related activities including, but not limited to: 
+ 
+• Creating, submitting, and approving purchase requisitions 
+ 
+• Managing purchase orders 
+ 
+• Making purchases with a state payment card (Pcard), whenever practical 
+ 
+1 https://procure.ohio.gov/static/pdf/About_Procurement/Procurement_Policies/PM-01%20Purchasing%20Procedures.pdf.  
+DAS does not have the authority 
+to establish contracts for the 
+agencies, boards, institutions, 
+and government branches listed 
+in R.C. 125.02 (A)(1) – (6). 
+Unless stated otherwise, in this 
+manual “DAS” refers to “DAS 
+Office of Procurement Services.”
+
+
+--- PDF Page 6 ---
+State of Ohio Procurement Manual CY23, Version 1.0 
+Publication Date: March 17, 2023        P a g e  | 3 
+ 
+• Managing order receipts and returns 
+ 
+• Creating, managing, and awarding solicitations (including Quick Quotes) 
+ 
+• Creating and managing contracts 
+ 
+• Managing suppliers (specifically, using the Exceptions Module to track supplier performance) 
+ 
+State agencies that have not yet been on -boarded to OhioBuys shall utilize the system to the extent 
+possible, as prescribed by DAS. This includes, but is not limited to, posting solicitations and  awarded 
+contracts, as applicable, for purchases with an estimated total value of more than $25,000.
+
+
+--- PDF Page 7 ---
+State of Ohio Procurement Manual CY23, Version 1.0 
+Publication Date: March 17, 2023        P a g e  | 4 
+ 
+ 
+               
+ 
+Chapter 1 – Procurement Planning 
+  
+Procurement planning begins by identifying what is needed, when 
+it is needed, how much it may cost, and how much of it is needed. 
+This process is initiated by the ordering agency. Questions to 
+consider when determining the need include: 
+ 
+1. What items are being requested? 
+ 
+2. What is the time frame for completing the purchase? 
+ 
+3. Will the items be required beyond this purchase?  If so, how often? 
+ 
+4. Is there a possibility that other agencies have the same or similar need? 
+ 
+5. What is the estimated dollar value of the purchase? 
+ 
+After these questions are answered, the next steps are determining  the most appropriate procurement 
+method and evaluating procurement considerations that may affect how the procurement is conducted. 
+ 
+ 
+Procurement Methods 
+ 
+Unless an emergency purchase 2 is needed, procurement options must be considered in this order: 
+requisite procurement programs, State Contracts, direct purchase authority, and competitive purchases. 
+ 
+ 
+Requisite Procurement Programs 
+ 
+State agencies are required by R.C. 125.035 , R.C. 125.05 , and OAC 123:5 -1-17 to purchase from 
+requisite procurement programs prior to making purchases from another source.  
+ 
+State agencies may purchase from requisite procurement programs without dollar limitation. Purchases 
+made from requisite procurement programs are not counted against a State agency’s cumulative annual 
+Controlling Board threshold.  
+ 
+State agencies not yet fully utilizing OhioBuys must work directly 
+with the applicable requisite procurement program to make 
+purchases. If a purchase is potentially  valued at $25,000 or more, 
+a Request to Purchase (RTP) must be submitted to DAS. 3 
+However, an RTP is not required if the purchase: 
+ 
+ 
+2 See the “Emergency Purchases” section for additional information. 
+3 Additional information about submitting an RTP in OhioBuys can be found in Appendix A – Request to Purchase. 
+Involving DAS as early as possible in 
+new procurements avoids delays in 
+drafting specifications and determining 
+the best procurement method. 
+The OhioBuys RTP is accessed at 
+OhioBuys > Procurement > Create 
+Request to Purchase.
+
+
+--- PDF Page 8 ---
+State of Ohio Procurement Manual CY23, Version 1.0 
+Publication Date: March 17, 2023        P a g e  | 5 
+1. Can be made using a State Contract; or 
+ 
+2. Is covered by a non-IT blanket release and permit.  
+ 
+If a requisite procurement program can fulfill a State agency’s procurement need, then the agency is 
+required to make the purchase from that program. However, if the requisite procurement programs cannot 
+fulfill the procurement need, then the agency can purchase from a non-requisite source. Agencies should 
+refer to Appendix A for additional guidance on when to submit an RTP. 
+ 
+State agencies are required to determine whether the purchase can be made from  any of the requisite 
+procurement programs, in this order: 
+ 
+1. Ohio Penal Industries 
+ 
+Ohio Penal Industries (OPI),  a division of the Department of Rehabilitation and Correction, 
+teaches life skills and provides work -training programs to inmates. If OPI can meet  fulfill the 
+procurement need, then R.C. 5147.07 requires a State agency to purchase through OPI.  
+ 
+A list and description of items offered by OPI is available at: https://opi.ohio.gov/services. State 
+agencies can shop and make purchases from OPI using OhioBuys.  
+ 
+For more information, contact:  Ohio Department of Rehabilitation and Correction 
+Ohio Penal Industries 
+800-237-3454 
+https://opi.ohio.gov  
+ 
+2. Community Rehabilitation Program 
+ 
+The Community Rehabilitation Program (CRP) is comprised of nonprofit organization suppliers 
+who employ people with work-limiting disabilities. DAS contracts with these suppliers to provide 
+items such as office supplies, document destruction, janitorial services, and work apparel.  
+ 
+State agencies are required to purchase from a CRP supplier capable of meeting its needs  per 
+R.C. 125.60 to 125.6012 and OAC 123:5-3-1 to 123:5-3-12. Agencies may request a waiver from 
+DAS to purchase from a non-CRP source in the event of an emergency, special need, or when a 
+CRP supplier’s pricing is higher than fair market value. 
+ 
+Agencies can determine whether a CRP supplier can meet  their procurement needs by using 
+OhioBuys to search for contracts.4  
+ 
+For more information, contact:  Department of Administrative Services 
+Office of Procurement Services  
+Community Rehabilitation Program 
+ 614-466-2705  
+ https://procure.ohio.gov/state-and-local-
+agencies/resources/08-crp 
+ 
+  
+ 
+4 https://ohiobuys.ohio.gov/page.aspx/en/ctr/contract_browse_public. Once in OhioBuys, select “DAS-Community 
+Rehabilitation Program (CRP)” in the Contract Sub-Type field and then click the Search button.
+
+
+--- PDF Page 9 ---
+State of Ohio Procurement Manual CY23, Version 1.0 
+Publication Date: March 17, 2023        P a g e  | 6 
+3. Business Enterprise Program 
+ 
+Opportunities for Ohioans with Disabilities administers the Business Enterprise Program, which 
+assists people with visual disabilities by creating employment in food service areas. The Business 
+Enterprise Program  provide employment opportunities operat ing cafeterias, snack bars, 
+convenience stores, and vending locations.  
+ 
+State agencies5 wanting to provide vending or concession services in its facilities  must contact 
+the Business Enterprise Program to determine whether it can provide these services. 
+ 
+For more information, contact: Opportunities for Ohioans with Disabilities 
+Business Enterprise Program 
+800-282-4536 
+https://ood.ohio.gov/about-us/programs-and-
+partnerships/business-enterprise-program  
+ 
+4. Office of Information Technology 
+ 
+The Office of Information Technology (OIT ) provides information technology and 
+telecommunication services to State agencies, boards, and commissions.  
+ 
+State agencies wanting to make IT purchases can use the OhioBuys IT Enterprise Services Portal 
+hosted catalog to access the State of Ohio IT Service Catalog.  
+ 
+For more information, contact: Department of Administrative Services 
+Office of Procurement Services 
+Enterprise IT Procurement 
+ 614-466-2634 
+https://procure.ohio.gov/home  
+ 
+5. Office of State Printing and Mail Services  
+ 
+The Office of State Printing and Mail Services processes  or produces and procures printing 
+projects. State agencies are required by R.C. 125.035 to forward their printing needs to State 
+Printing, which includes paper and printing projects from term contracts and one-time bids.  
+ 
+State Printing also provides records management, digital 
+print equipment management, the cost per copy program,  
+and invoice verification and payment services of procured 
+printing jobs.   
+ 
+For more information, contact: Department of Administrative Services 
+Office of State Printing and Mail Services 
+614-644-6355 
+http://das.ohio.gov/printing 
+ 
+6. Ohio Pharmacy Services Center 
+ 
+The Ohio Department of Mental Health and Addiction Services’ Ohio's Pharmacy Service Center 
+provides pharmaceuticals, over-the-counter drugs, medical and laboratory supplies, and personal 
+care products to government and non -government organizations eligible under R.C. 5119.44. 
+ 
+5 Except for the Department of Rehabilitation and Corrections and the Department of Youth Services. 
+Purchases of digital print equipment 
+requires a waiver from State Printing.
+
+
+--- PDF Page 10 ---
+State of Ohio Procurement Manual CY23, Version 1.0 
+Publication Date: March 17, 2023        P a g e  | 7 
+Additional services  provided include responding to drug information requests , assisting with 
+development of drug utilization evaluation criteria, and providing in-service training on medication 
+issues. 
+ 
+For more information, contact: Ohio Department of Mental Health and Addiction Services 
+ Ohio Pharmacy Services 
+614-752-0116 
+https://mha.ohio.gov/pharmacy  
+ 
+7. Ohio Facilities Construction Commission 
+ 
+The Ohio Facilities Construction Commission (OFCC) guides capital construction projects for 
+State agencies and State-supported universities and community colleges. It has the authority to 
+approve, award, and administer design, construction, and other specialty contracts.  
+ 
+For more information, contact: Ohio Facilities Construction Commission 
+      614-466-6290 
+info@ofcc.ohio.gov 
+https://ofcc.ohio.gov  
+ 
+ 
+State Contracts 
+ 
+When the procurement need cannot be fulfilled by any of the 
+requisite procurement programs,  State agencies can browse 
+contracts in OhioBuys  to determine whether a relevant State 
+Contract exists. This must be done prior to making a purchase, 
+soliciting quotes, seeking Controlling Board approval, or working 
+with DAS to establish a contract. 
+ 
+DAS has designated some State Contract s as mandatory  use, 
+while others are optional. Additionally, State Contracts may be put 
+in place for use by one agency, several specific agencies, or any 
+State agency. 
+ 
+If a mandatory State Contract’s supplier is unable to fulfill a State 
+agency’s procurement needs, then DAS may grant a waiver to the 
+agency to purchase from another source.  
+ 
+Types of State Contracts are: 
+1. Enterprise Contracts 
+ 
+Enterprise Contracts are competitively bid term contracts with one or more contractor(s). These 
+contracts provide specific items routinely required by State agencies over an extended period of 
+time (e.g., vehicles, gasoline, clothing, security guards, waste removal, IT hardware, and 
+software). Enterprise Contracts  are made available to all State agencies  and, generally, all 
+Cooperative Purchasing Program members. 
+  
+A list of State Contracts can be 
+accessed at OhioBuys > Contracts > 
+Browse Contracts. 
+ 
+Purchases referencing a State Contract 
+as the purchase authority are not 
+counted against an agency’s cumulative 
+annual Controlling Board threshold.  
+ 
+State agencies can refer to the contract 
+in OhioBuys to determine whether it is 
+mandatory or optional, and what 
+agencies may use it for purchases.  
+ 
+Purchasing from another source prior to 
+a waiver being issued by DAS is 
+prohibited.
+
+
+--- PDF Page 11 ---
+State of Ohio Procurement Manual CY23, Version 1.0 
+Publication Date: March 17, 2023        P a g e  | 8 
+2. Multi-Agency Contracts 
+ 
+Multi-Agency Contracts are competitively bid term 
+contracts established with one or more contractor s to 
+provide specific items to the State agencies named in the 
+contract.  
+ 
+3. Master Maintenance Agreements (MMAs) 
+ 
+Master Maintenance Agreements are contracts  for 
+maintenance a nd service of equipment that is no longer 
+covered under a manufacturer’s warranty. MMAs are 
+available for computer hardware, software, copiers, 
+vending machines, and other equipment.  
+ 
+4. Single Agency Contracts 
+ 
+Single Agency Contracts address the particular product, supply, or service needs of a specific 
+agency (e.g., training services, call center services, and food services). Only this State agency 
+can make purchases from the contract.  
+ 
+5. Competitive Selection Two-Phase Contracts 
+ 
+DAS may award contracts to more than one supplier in the same geographic region that offer the 
+same item(s). . Before an order can be placed referencing these contracts, a secondary 
+solicitation must be completed. There are two types of these contracts: 
+ 
+a. Competitive Selection Two-Phase Quote: When purchasing from these contracts, a State 
+agency must solicit quotes from all pre-qualified suppliers.  
+ 
+b. Competitive Selection Two-Phase Pre-Qualification: When requesting services from these 
+contracts, a State agency must submit an RTP to DAS to conduct a secondary solicitation.  
+ 
+6. State Term Schedule (STS) Contracts 
+ 
+State Term Schedule Contracts are negotiated directly with 
+suppliers who agree to DAS-established terms and 
+conditions. Pricing is based on either U.S. General 
+Services Administration pricing schedules or a supplier's 
+most favored customer pricing schedule for a similarly 
+situated customer.  
+ 
+a. Quoting Requirements: Except for purchases being 
+made with a State Payment Card (Pcard) or debit 
+voucher, all purchases referencing STS Contracts 
+as the purchase authority require State agencies to 
+obtain a minimum of three or more quotes  or 
+proposals.  
+ 
+If fewer than three quotes or pro posals are 
+obtained, then State agencies  shall secure 
+Prices listed in MMAs are considered 
+“not-to-exceed” prices. State agencies 
+are encouraged to negotiate prices 
+downward as often as possible. 
+Agencies not receiving favorable pricing 
+should contact DAS for assistance. 
+ 
+Only State agencies named in a Limited 
+Distribution Contract can make 
+purchases from it. 
+All State agencies can purchase from 
+State Term Schedule Contracts.  
+ 
+Prices listed in the contracts are “not-to-
+exceed” prices. Agencies must contact 
+DAS for assistance with securing 
+additional discounts. 
+ 
+A “no response” or “no bid” does not 
+constitute receipt of a valid quote or 
+proposal.  
+ 
+Suppliers providing quotes do not have 
+to be STS Contract suppliers; however, 
+State agencies are encouraged to 
+exhaust all STS supplier quote options 
+before seeking quotes from non-STS 
+suppliers.
+
+
+--- PDF Page 12 ---
+State of Ohio Procurement Manual CY23, Version 1.0 
+Publication Date: March 17, 2023        P a g e  | 9 
+Controlling Board approval of a waiver for “no 
+competitive opportunity” prior to issuing a purchase 
+order.  
+ 
+State agencies  shall maintain written justification 
+documenting: 
+ 
+• The efforts made to find other responsive 
+contractors and a determination that none 
+were found;  
+ 
+• How a determination was made that the 
+anticipated cost would be fair and 
+reasonable and a description of the basis on 
+which the award was made (e.g., low est 
+price and/or best-value); and  
+ 
+• Any other information supporting the selection process. 
+ 
+A State agency may use its Direct Purchase Authority to make purchases from a State 
+Term Schedule  supplier without referencing the contract as the purchase authority. 
+However, the agency’s cumulative annual spend with the supplier is subject to Controlling 
+Board thresholds.  
+ 
+When an award is not made to the supplier offering the lowest price, State agencies should 
+maintain written justification documenting: 
+ 
+• How it was determined that the anticipated cost was fair and reasonable; and  
+ 
+• The basis on which the award was made (e.g., best-value). 
+ 
+b. Continuations of Previous Purchases: A purchase is a continuation when: 
+ 
+• There was an original stated term, and it is 
+within the original stated term of the 
+purchase (including renewals); or 
+ 
+• It is reasonably related to the original 
+project, scope of work, task, job, or effort. 
+ 
+State agencies do not have to obtain three or more 
+quotes or proposals for continuations provided that, 
+for the original procurement:  
+ 
+• Three or more quo tes or proposals were 
+obtained; or 
+ 
+• Fewer than three quotes or proposals were 
+obtained but the Controlling Board approved 
+of a waiver for “no competitive opportunity.”  
+After receiving a waiver, agencies must 
+reference the contract on the OhioBuys 
+requisition and either note Controlling 
+Board’s approval in the requisition 
+comments or attach documents 
+showing that the purchase was 
+approved. 
+ 
+As best practice, agencies should 
+attach all justification documents to the 
+OhioBuys requisition. 
+ 
+An STS Contract cannot be referenced 
+as the purchasing authority if the 
+selected supplier is not included on the 
+contract.  
+Pcard purchases are excluded from 
+these requirements. 
+ 
+When doing a continuation, State 
+agencies must set the “Continuation?” 
+flag to “Yes” on the OhioBuys 
+requisition. 
+ 
+If the previous purchase was made in 
+OhioBuys, users must search for the 
+PO number in the "Continuation Order" 
+field and select it from the drop-down 
+menu. Users should attach any 
+supporting documentation referencing 
+the original solicitation and/or purchase 
+in the Attachments section on the 
+purchase requisition header if the 
+original order/solicitation took place 
+outside OhioBuys.
+
+
+--- PDF Page 13 ---
+State of Ohio Procurement Manual CY23, Version 1.0 
+Publication Date: March 17, 2023        P a g e  | 10 
+c. System Requirements : For purchases referencing an STS Contract as the purchase 
+authority, State agencies requisitioning with OAKS must complete one of these Contract 
+Purchase Forms6 in the FIN eProcurement module: 
+ 
+• STS Contract Purchase – Requisition Form 
+ 
+• STS Contract Purchase – Interface PO Form 
+ 
+ 
+Direct Purchase Authority 
+ 
+If a purchasing need cannot be met by either a requisite 
+procurement program or a State Contract, agencies may be able 
+to use their direct purchase authority granted by R.C. 125.02.  
+ 
+Direct purchase authority enables agencies to make purchases  
+without using either a requisite program or State Contract , and 
+within established procurement -related laws, rule, policies, and 
+purchasing thresholds.  
+ 
+When a threshold could be exceeded, State agencies  should 
+involve DAS in the initial stages of preparing the purchase requests 
+to allow sufficient time to determine whether the purchase can be 
+made through DAS. 
+ 
+ 
+Purchasing Thresholds 
+ 
+Non-IT Purchases 
+ 
+State agencies  must use OhioBuys to submit a Request to 
+Purchase to DAS for non-IT purchases of $50,000 or more. 
+ 
+State agencies purchasing items identified in an individual non-IT 
+Release and Permit or a non-IT blanket Release and Permit are 
+subject to Controlling Board thresholds. Agencies shall list either 
+the individual non-IT release and permit or non-IT blanket release 
+and permit numbers provided by DAS on the Controlling Board 
+request (if applicable) and the requisition. 
+ 
+ 
+IT Purchases 
+ 
+Prior to receiving a release and permit , R.C. 125.18(D) requires IT purchases to be reviewed by OIT. 
+Agencies must submit an RTP to obtain a determination on the procurement approach for non -contract 
+purchases of $50,000 or more.  
+ 
+For IT purchases less than $25,000 per request, DAS issues an IT Blanket Release and Permit to each 
+State agency. State agencies using legacy release and permit (i.e., those that have not been on-boarded 
+ 
+6 These forms are not completed when purchasing through OhioBuys. 
+When using direct purchase authority, 
+purchases shall be made in a 
+competitive manner when multiple 
+suppliers exist in the market and the 
+need is not specialized or unique.  
+ 
+State agencies shall not split purchases 
+of like items to avoid purchasing 
+thresholds. 
+ 
+Making a purchase without a Release 
+and Permit is prohibited for IT 
+purchases of $25,000 or more and non-
+IT purchases of $50,000 or more.  
+ 
+Agencies must coordinate with OIT 
+when using their DPA to make IT 
+purchases of $25,000 or more. 
+The OhioBuys RTP is accessed at 
+OhioBuys > Procurement > Create a 
+Request to Purchase.  
+ 
+Agencies frequently using direct 
+purchasing or Controlling Board 
+authorities for routine, repeated 
+purchases should contact DAS to 
+discuss establishing a State Contract.
+
+
+--- PDF Page 14 ---
+State of Ohio Procurement Manual CY23, Version 1.0 
+Publication Date: March 17, 2023        P a g e  | 11 
+to OhioBuys) are not permitted to use their IT blanket release and permit for certain purchases regardless 
+of dollar amount.7 
+ 
+An individual IT Release and Permit request must be submitted to purchase one of the following:  
+ 
+1. Deliverables-based IT Services (DBITS) projects. 
+ 
+2. IT staff augmentation services. 
+ 
+3. IT equipment and licensing from enterprise standards -based contracts (e.g., ERP, IT service 
+management, document management, desktops, laptops, remote location servers).  
+ 
+4. Telecommunications supplies or services with a per unit cost of $1,000 or more. 
+ 
+5. Third party hosting or cloud-based solutions (XaaS). 
+ 
+6. Microsoft licenses.  
+ 
+7. Infrastructure equipment (e.g., storage, virtual servers, VoIP, routers, switches).  
+ 
+8. Any other enterprise standard, policy, or initiative established by DAS. 
+ 
+Requests for telecom munication purchases with a per unit cost of less than $1,000 can be submitted 
+through State of Ohio IT Service Catalog in OhioBuys. 
+ 
+State agencies using OhioBuys to purchase from pre-governed contracts are not required to obtain 
+quotes if there is establ ished contract pricing via a catalog unless it is an STS Contract. However, if a 
+pre-governed contract does not have a catalog, then a quote from the supplier must be provided. In these 
+cases, agencies shall use the OhioBuys solicitation module to obtain the quote. 
+ 
+ 
+Release and Permit/Controlling Board 
+ 
+Release and Permit 
+ 
+If DAS determines that it would not be advantageous to use a State 
+Contract for a purchase , then DAS may issue a Release and 
+Permit to the requesting State agency.  
+ 
+Whenever DAS grants a Release and Permit, a State agency must 
+make the purchase in a competitive manner (except in the case of 
+either sole- or single-source procurements) and with Controlling 
+Board approval (unless the Controlling Board determines that its 
+approval is not required or it grants a waiver o f competitive 
+selection). 
+ 
+Blanket Release and Permit s are issued for items that are not 
+advantageous for DAS to purchase. DAS publishes separate IT 
+and non-IT Blanket Release and Permits , which are provided to  
+Agency Procurement Officers  and Chief Financial Officers either 
+ 
+7 For purchases of $25,000 or more, State agencies that have not been on-boarded to OhioBuys must submit requests 
+through the legacy IT Release and Permit System (https://itrelease.ohio.gov/Default.aspx). 
+Making a purchase without a Release 
+and Permit is prohibited for IT 
+purchases of $25,000 or more and non-
+IT purchases of $50,000 or more.  
+ 
+Agencies must coordinate with OIT 
+when using their DPA to make IT 
+purchases of $25,000 or more. 
+ 
+Agencies should refrain from asking 
+DAS to expedite approval for Release 
+and Permit requests approval (e.g., 
+when the agency is trying to meet a 
+Controlling Board deadline). 
+ 
+Blanket Release and Permits do not 
+waive any reviews or approvals 
+required by laws, rules, and/or DAS 
+purchasing policies.
+
+
+--- PDF Page 15 ---
+State of Ohio Procurement Manual CY23, Version 1.0 
+Publication Date: March 17, 2023        P a g e  | 12 
+every two years ( for non-IT commodities and for IT commodities purchased through OhioBuys costing 
+less than $25,000 per request) or yearly (for IT commodities less than $25,000 per request not purchased 
+through OhioBuys). 
+ 
+Non-IT commodities covered by the Blanket Release and Permits are categorized by an Office of Budget 
+and Management expense account code . The Blanket Release and Permit should be used for all 
+requisitions utilizing these expense accounts.  
+ 
+Controlling Board 
+ 
+If Controlling Board approval is required due to an agency exceeding its cumulative annual Controlling 
+Board threshold for a particular supplier, then the agency must include the expense codes for the items 
+being purchased and the Release and Permi t Number on the Controlling Board request.  Controlling 
+Board staff will verify this information prior to scheduling any request.  
+ 
+If a purchase is not made through DAS and will cause a State agency’s cumulative annual spend with 
+one supplier to be $50,000 or more, the agency must seek approval from the Controlling Board prior to 
+making the purchase, unless the purchase is otherwise exempt from Controlling Board approval. 
+Cumulative annual spend includes the total of all disbursements and outstanding encumbrances with the 
+supplier in a fiscal year. 
+ 
+If the purchase, when combined with the cumulative annual spend, is less than $50,000 for a particular 
+supplier, then a State agency will not be required to seek approval from the Controlling Board unless the 
+funding source requires such approval (e.g., release of capital funds) or Controlling Board approval is 
+otherwise required pursuant to law. 
+ 
+More information about Controlling Board requirements can be found in the Controlling Board Manual.8 
+ 
+ 
+DAS Solicitations 
+ 
+When the amount of an agency’s direct purchase is expected to be $50,000 or more, State agencies are 
+required to submit a Request to Purchase to DAS. If DAS determines that it is more advantageous for a 
+State agency to make the purchase, a Release and Permit will be given to the agency. However, if DAS 
+determines using a State Contract to make the purchase would be most beneficial, either an Invitation 
+to Bid (ITB) or Request for Proposal (RFP) will be issued, or a reverse auction will be conducted.  
+ 
+ 
+Direct Purchases 
+ 
+If a direct purchase totals less than $50,000 with a particular supplier and will not cause a State agency 
+to exceed its cumulative annual Controlling Board threshold, then the  agency may make the purchase 
+using their direct purchase authority.  
+ 
+ 
+Emergency Purchases 
+ 
+Emergency purchases are governed by State of Ohio Administrative Policy Emergency Purchasing 
+Procedures (PM-02).9 Procurements must be made either due to an emergency or as a result of a state 
+ 
+8  https://ecb.ohio.gov/Public/Manual.aspx 
+9  https://procure.ohio.gov/static/pdf/About_Procurement/Procurement_Policies/PM-02%20Emergency%20%20Purchasing 
+%20Procedures%20signed.pdf
+
+
+--- PDF Page 16 ---
+State of Ohio Procurement Manual CY23, Version 1.0 
+Publication Date: March 17, 2023        P a g e  | 13 
+procurement emergency .10 These situations may requ ire a purchase to be  expedited, making it 
+impractical to follow standard procurement policies and procedures.  
+ 
+ 
+Preparing for Emergencies and State Procurement Emergencies 
+ 
+As part of their preparedness planning efforts, State agencies should:   
+ 
+1. Identify resources that could be needed or may potentially be exhausted during an emergency or 
+state procurement emergency. 
+ 
+2. Understand what current State Contracts are available from DAS. If a current State Contract may 
+be of assistance during an emergency or state procure ment emergency, then State agencies 
+should ensure they are familiar with the contract and how to contact the supplier when necessary. 
+ 
+3. Be aware if there are no current State Contracts available for a potential procurement need. In 
+this case, State agencies should evaluate the need for a State Contract and work with DAS to 
+determine if one can be established.  
+ 
+ 
+Emergencies  
+ 
+Upon a request to the Governor of Ohio or the President of the 
+United States for the declaration of an emergency, the Director of 
+Public Safety or the Executive Director of the Emergency 
+Management Agency shall concurrently submit a request to DAS 
+to suspend the purchasing and contracting requirements contained 
+within R.C. 125  and any requirement of R.C. 153  that would 
+otherwise apply to a State agency. The request submitted to DAS 
+shall include this information: 
+ 
+1. State agencies for which purchasing and contracting requirements should be suspended, due to 
+their participation in response and recovery activities; 
+ 
+2. Details of the emergency; and 
+ 
+3. A description of the purchase. 
+ 
+ 
+State Procurement Emergencies  
+ 
+In a state procurement emergency, the Director or administrative head of a State agency where the state 
+procurement emergency exists shall submit a request to DAS to suspend the purchasing and contracting 
+requirements contained in R.C. 125. The request shall include the following information: 
+ 
+1. Details of the state procurement emergency, including a description of the immediacy of the state 
+procurement emergency; and 
+ 
+2. A description of the items that cannot be purchased through normal procurement methods in a 
+timely manner. 
+ 
+10 A situation involving an injury or obstruction to any public works of the state is a public exigency. State agencies are to 
+contact OFCC when a public exigency occurs. 
+Purchases must be limited to only those 
+necessary to respond to the emergency 
+or state procurement emergency. 
+ 
+Requests to suspend purchasing and 
+contracting requirements are addressed 
+to the DAS Director but are sent to the 
+DAS Chief Procurement Officer (CPO).
+
+
+--- PDF Page 17 ---
+State of Ohio Procurement Manual CY23, Version 1.0 
+Publication Date: March 17, 2023        P a g e  | 14 
+The DAS Chief Procurement Officer reviews the request and, when a determination is made to either 
+approve or deny the suspension, the Director of DAS or the Director’s designee informs the requestor(s). 
+If the suspension is approved, the Director of DAS or the designee, pursuant to R.C. 125.061(D), notifies 
+the Director of OBM and the Controlling Board of the action being taken.  
+ 
+Upon approval of the request, a State agency granted a 
+suspension may make the necessary purchase(s). State agencies 
+shall obtain an eControlling Board Waiver number from the OBM 
+State Accounting Manager of Financial Services and include the 
+number in the Request to Purchase submitted to DAS.  
+ 
+ 
+After an Emergency or State Procurement Emergency 
+ 
+In lieu of sub mission of a Controlling Board Request , State 
+agencies making purchases under a suspension of the purchasing 
+and contracting requirements contained within R.C. 125  and/or 
+R.C. 153 must file a report with the Controlling Board President 
+within 90 days after the declaration or state procurement 
+emergency expires.  
+ 
+ 
+Minority Business Enterprises (MBEs) 
+ 
+State agencies are required by R.C. 125.081 to “set-aside a number of purchases…for competition by 
+minority business enterprises  only.” The aggregate value of these purchases must equal 
+“approximately 15% of the aggregate value of such purchases for the current fiscal year.”  These 
+purchases must be made from MBEs certified by the Director of the Department of Development in 
+accordance with R.C. 122.921.11 
+ 
+When conducting MBE set -aside solicitations, State agencies shall document the sheltered solicitation 
+process, solicit quotes from only MBEs certified by the Department of Development, and mark vouchers 
+in OAKS as MBE Set -Aside to receive set -aside credit. State agencies shall monitor their set -aside 
+expenditures quarterly and, as necessary, adjust their projection plans submitted to the Ohio Department 
+of Development’s Minority Business Development Division (MBDD) to meet or exceed the 15% set-aside 
+requirement. State agency purchases from contracts that have been set -aside, partially set -aside, or 
+contain an embedded MBE set-aside count towards the 15% requirement.  
+ 
+It is important for State agencies to evaluate the impact of their set-
+aside selections. For each contract to be an MBE set -aside, 
+agencies should consider the following:  
+ 
+1. An entire supplies/ser vices category should not repeatedly be selected year after year for set -
+aside (e.g., all of the contracts for the purchase of shoes). Consider various categories of 
+supplies/services and then alternate setting them aside. 
+ 
+2. The length of time a contract has been set-aside and/or held by an incumbent supplier. Consider 
+limiting the number of renewals on a contract to provide multiple suppliers with an opportunity to 
+compete for opportunities to do business with the State. 
+ 
+11 Additional MBE information is found at https://development.ohio.gov/business/minority-business/01-minority-business 
+Purchases made under a suspension of 
+the requirements of R.C. 125 and/or 
+R.C. 153 are exempt from the 
+procurement requirements prescribed 
+by R.C. 127.16. 
+The report shall describe all purchases 
+made to resolve the emergency or state 
+procurement emergency.  
+ 
+The report to the Controlling Board 
+President shall be in the same format 
+as shown in PM-02. 
+State agencies can exceed the 
+minimum set-aside requirement.
+
+
+--- PDF Page 18 ---
+State of Ohio Procurement Manual CY23, Version 1.0 
+Publication Date: March 17, 2023        P a g e  | 15 
+3. Contracts or purchases may be able to be split into smaller 
+contracts or multiple contracts to allow small businesses to 
+compete.  
+ 
+4. Prior to deciding whether a procurement will be set -aside, check progress against the agency’s 
+MBE projection plan for the current fiscal year. Modifications to the projection plan may be 
+necessary to meet the 15 % requirement, meaning unplanned procurement s or procurements 
+planned for the open market may need to be set-aside. 
+ 
+5. All contracts or purchases must be procured using a United Nations Standard Products and 
+Services commodity code (UNSPSC). When considering a set -aside procurement, all certified 
+MBE suppliers must have the same approved UNSPSC code on their MBE certification letter to 
+be considered for the solicitation. If a certified MBE supplier does not have the correct UNSPSC 
+code, then the supplier should be considered not responsive. 
+ 
+ 
+Encouraging Diversity, Growth, and Equity (EDGE) Program 
+ 
+State agencies are required by R.C. 122.922 to participate in the 
+Encouraging Diversity, Growth , and Equity Program by 
+awarding to EDGE participants a percentage of all IT as well as 
+construction, architecture, engineering, and professional services 
+contracts/purchases.12 State agencies are required to: 
+ 
+1. Take steps to foster, support, and encourage the participation of underutilized businesses and 
+encourage such businesses to compete for construction contracts by including a participation goal 
+for construction contracts and requests for proposals when subcontractors will be used. 
+ 
+2. Determine whether EDGE participation is feasible for the procurement based upon EDGE supplier 
+availability. When it is feasible, an EDGE participation goal set in accordance with OAC 123:2-
+14-13 shall be included in the solicitation. Each proposal evaluation process shall include 
+evaluation of EDGE participation . Each contract shall specify the EDGE goal for subcontracts 
+awarded to and purchases from EDGE business enterprises in order to meet the agency's overall 
+EDGE goal, in accordance with OAC 123:2-14-09. 
+ 
+3. Examine internal procurement policies, procedures,  and practices to remove those adversely 
+impacting economically and socially disadvantaged businesses, as described in R.C. 122.922. 
+ 
+4. Examine and elim inate all unnecessary barriers to equitable participation, including, but not 
+limited to : needless bonding and licensing requirements , excessive experience requirements , 
+massive procurements (unbundling contracts when practicable), use of proprietary specifications, 
+and other non-essential procurement-related requirements. 
+ 
+5. Set a goal, which meets or exceeds the goal annually set by the Director of the Ohio Department 
+of Development, of eligible direct expenditures that are awarded to EDGE program participants 
+for purchases of IT, construction, architecture, engineering, and professional services. 
+ 
+6. Provide MBDD with quarterly reports and annual projection plans on EDGE utilization using 
+templates it provides annually.  
+ 
+ 
+12 Additional EDGE information is found at: https://development.ohio.gov/business/minority-business/01-minority-business 
+The EDGE percentage is determined 
+annually by the Director of the Ohio 
+Department of Development. 
+State agencies shall not split purchases 
+of like items to avoid purchasing 
+thresholds.
+
+
+--- PDF Page 19 ---
+State of Ohio Procurement Manual CY23, Version 1.0 
+Publication Date: March 17, 2023        P a g e  | 16 
+Women-Owned Business Enterprise Program 
+ 
+The Women-owned Business Enterprise (WBE) program authorized by R.C. 122.924 assists women-
+owned business enterprises in obtaining contracts for goods , services, construction, architecture, 
+engineering, information technology, and professional services.13  
+ 
+The WBE program does not apply a procurement goal or set-aside target for State Contracts. The State 
+developed the program because it recognized the need to encourage, nurture, and support the growth of 
+women businesses to foster their development and increase the number of qualif ied competitors in the 
+marketplace. The regulations governing the program are found in OAC 123:2-14-02. 
+ 
+ 
+Veteran-Friendly Business Enterprise Program 
+ 
+The Veteran-Friendly Business Enterprise ( VBE) program authorized by R.C. 122.925 , assists 
+veteran-friendly business enterprises to become certified and compete for contracts, including 
+construction services. VBE does not apply a procurement goal or set-aside target for State Contracts.14 
+However, it does establish a procurement preference.15 
+ 
+Purchasing Personal Protective Equipment 
+ 
+Purchases of personal protective equipment (PPE) must adhere to the requirements of R.C. 125.05(E), 
+which include: 
+ 
+1. When the total cost of  purchases are less than $50,000, 
+agencies must first determine if the PPE being purchased 
+is available from a requisite procurement program. 
+ 
+2. If the purchase cannot be fulfilled by a requisite 
+procurement program, then State agencies and DAS must 
+work together to determine whether a State Contract  is 
+either available or can be established to purchase PPE. 
+ 
+3. If a State Contract is not or will not be available, then State agencies are required to apply the 
+Buy America and Buy Ohio preferences mandated by R.C. 125.09 and OAC 123:5-1-06. Direct 
+purchase and Controlling Board thresholds continue to apply. 
+ 
+ 
+Prior Approvals 
+ 
+DAS is able to superintend certain types of purchases (i.e., computers, software, telecommunications, 
+copiers, and vehicles) and is also responsible for making purchases above threshold limits unless DAS 
+determines that a State agency making the purchase would be more advantageous. 
+ 
+For purchases requiring prior approval, agencies must attach requests and supporting documentation to 
+their requisition in OhioBuys. These purchase requisitions will be routed to  the appropriate office for 
+ 
+13 Additional WBE information is found at: https://development.ohio.gov/business/minority-business/01-minority-business 
+14 Additional VBE information is found at: https://development.ohio.gov/business/minority-business/01-minority-business 
+15 Information about preferences is found on page 34 of this manual.  
+OhioBuys routes PPE purchases for 
+requisite review based on commodity 
+code.  
+ 
+Agencies can either “Browse Contracts” 
+or  “Browse Items” in OhioBuys to 
+determine if a State Contract is 
+available.
+
+
+--- PDF Page 20 ---
+State of Ohio Procurement Manual CY23, Version 1.0 
+Publication Date: March 17, 2023        P a g e  | 17 
+review and approval. Also, a Release and Permit is required when an agency  anticipates it will exceed 
+its direct purchase authority threshold and/or cumulative annual threshold.  
+ 
+ 
+Telecommunication Services and Equipment  
+ 
+Telecommunications and Network Contract Management Services procures voice, data, and video 
+services for State and local government and assists DAS in superintending service providers’ contracted 
+services under R.C. 125.04. 
+ 
+Requests for telecommunication purchases with a per unit cost of less than $1,000 can be submitted 
+through the State of Ohio IT Service Catalog in OhioBuys.  
+ 
+For more information, contact: Department of Administrative Services 
+Office of Information Technology 
+614-644-6446 
+ 
+ 
+Enterprise IT Contracting 
+ 
+State agencies are required to secure prior approval from DAS for IT purchases. (See the “IT Purchases” 
+section of this manual for additional information.)  
+ 
+ 
+Copy Machines 
+ 
+There are three procurement options for State agencies acquiring office copying machines: 
+ 
+1. Outright purchase 
+ 
+2. Lease for a period not exceeding 60 months 
+ 
+3. Cost-per-copy program 
+ 
+State agencies participating in the cost-per-copy (CPC) program should select equipment that best meets 
+their monthly copy volume, complete a Memorandum of Understanding (MOU), and forward it to State 
+Printing. CPC contract catalogs are available in OhioBuys. Additionally, the MOU, current CPC contract 
+brochure, and other CPC-related information can be found on State Printing’s website.16 
+ 
+For more information, contact: Department of Administrative Services  
+State Printing and Mail Services 
+Cost-Per-Copy Program 
+614-728-3719 
+https://das.ohio.gov/buying-and-selling/state-printing-and-mail-
+services/6-state-printing-and-mail-services  
+ 
+Motor Vehicles  
+ 
+Annually, State agencies that own or lease motor vehicles, or reimburse their employees for use of 
+personal motor vehicles on authorized state business, are required by R.C. 125.832(E) to provide the 
+ 
+16 Department of Administrative Services > Divisions > General Services > State Printing and Mail Services > Cost Per Copy 
+Program.
+
+
+--- PDF Page 21 ---
+State of Ohio Procurement Manual CY23, Version 1.0 
+Publication Date: March 17, 2023        P a g e  | 18 
+DAS Office of Fleet Management (OFM) with a Fleet Plan.17 Fleet plans describe an agency’s anticipated 
+motor vehicle needs and are reviewed and approved by OFM.  
+ 
+Motor vehicles are acquired through several methods: agency administration, leased from OFM, or off -
+the-lot purchases. 
+ 
+1. Agency Administration 
+ 
+Agency administration allows an agency to acquire its own motor vehicles if granted authority by 
+OFM.18 Agencies must use OhioBuys to submit purchase requisitions for vehicles that have been 
+approved as part of their Annual Fleet Plans. Purchase requests may require one or more the 
+following documents:  
+ 
+• A justification form if a vehicle is being replaced or is being added to the agency’s fleet. 
+ 
+• A memorandum signed by the agency’s director or the director’s designee when adding a 
+vehicle or changing vehicle type. 
+ 
+• A waiver from DAS when a vehicle is not being purchased from a State Contract.  
+ 
+OFM reviews the request based on the attached documents and approves purchases  when 
+requirements have been met.  
+ 
+2. Leased from OFM 
+ 
+Most state agencies fulfill their transportation needs by leasing motor vehicles from OFM. OFM 
+utilizes the DAS Fleet Master Lease Contract to procure vehicles that agencies requested in their 
+approved annual Fleet Plans. OFM uses OhioBuys to process payme nts to the Fleet Master 
+Lease Contract’s supplier. 
+ 
+3. Off-the-Lot Purchases 
+ 
+Off-the-lot purchases allow State agencies  to acquire their own motor vehicles if the vehicles  
+cannot be acquired through an existing State Contract or if the agency has an immediate need.  
+ 
+A State agency must first obtain a waiver from DAS before 
+submitting a purchase requisition. After receiving a waiver, 
+a purchase requisition for the off-the-lot purchase must be 
+submitted in OhioBuys and include:  
+ 
+• A justification form if a vehicle is being replaced or is being added to the agency’s fleet.  
+ 
+• A memorandum signed by the agency’s director or the director’s designee when adding a 
+vehicle or changing vehicle type. 
+ 
+ 
+17 Instructions for completing Fleet Plans can be found at https://das.ohio.gov/property-services/fleet-management/agency-
+fleet-plans. The agencies, boards, institutions, and government branches listed in R.C. 125.02 (A)(1) – (6) are not required 
+to submit Fleet Plans 
+18 The Bureau of Workers’ Compensation, the Environmental Protection Agency, the Department of Transportation, and the 
+Departments of Public Safety have been delegated authority to purchase motor vehicles, while the Department of Natural 
+Resources has been delegated limited authority.  
+The waiver must be approved by both 
+the DAS Office of Procurement 
+Services and the Office of Fleet 
+Management.
+
+
+--- PDF Page 22 ---
+State of Ohio Procurement Manual CY23, Version 1.0 
+Publication Date: March 17, 2023        P a g e  | 19 
+OFM reviews the request based on the attached documents and approves purchases when 
+requirements have been met.  
+ 
+For more information, contact:  Department of Administrative Services 
+Office of Fleet Management 
+ 614-466-6607 or 800-686-1521 
+https://das.ohio.gov/fleet  
+ 
+ 
+Supplies/Services or Construction 
+ 
+Professional Design Services 
+ 
+OFCC reviews all purchases of professional design services to determine if R.C. Chapter 153 applies, 
+which governs public improvements.  
+ 
+A State agency should review its project’s scope and budget to determine whether the project will require 
+professional design services, regardless of dollar amount. Professional design services can include, but 
+are not limited to, architectural and engineering design, surveying, and specialty consulting services.  
+ 
+The Decision Flow C hart for Professional Design Services (Figure 2) shows how a project’s 
+procurement/administration path is determined.
+
+
+--- PDF Page 23 ---
+State of Ohio Procurement Manual CY23, Version 1.0 
+Publication Date: March 17, 2023        P a g e  | 20 
+Prevailing Wages 
+ 
+For construction and some repair work, agencies must consider the requirements for payment of 
+prevailing wage ( R.C. 4115.03 – 4115.16) by the contractor. When DAS establishes a contract on 
+behalf of the agency, the agency must maintain the copies of the contractor’s payroll records to ensure 
+such wages are paid. 
+ 
+For more information, contact:  Ohio Facilities Construction Commission 
+ Telephone: 614-466-6290 
+ info@ofcc.ohio.gov 
+https://ofcc.ohio.gov
+
+
+--- PDF Page 24 ---
+State of Ohio Procurement Manual CY23, Version 1.0 
+Publication Date: March 17, 2023        P a g e  | 21 
+ 
+               
+ 
+Chapter 2 – Solicitation and Award 
+ 
+When purchasing from a source other than a requisite procurement program or a State Contract, State 
+agencies shall do so in a competitive manner when multiple suppliers exist in the market and the need is 
+not specialized or unique. State agencies should also: 
+ 
+1. Establish processes which ensure clear lines of authority and promote a separation between the 
+ability to request contract actions and those who have final authority to authorize and/or approve 
+the requested contract actions; 
+ 
+2. Exercise due diligence to ensure public funds are used appropriately; and   
+ 
+3. Maintain written records describing the selection process and the basis upon which the award 
+was made. 
+ 
+ 
+Purchases of $5,000 or Less 
+ 
+For purchases with a value of $ 5,000 or less made using either 
+direct purchase authority or an optional non-STS State Contract, 
+State agenc ies should solicit from multiple (i.e., two or more) 
+suppliers.  
+ 
+ 
+Purchases Exceeding $5,000 
+ 
+For purchases with a value of more than $5,000 made using 
+either direct purchase authority or an optional non-STS State 
+Contract, State agencies shall solicit from multiple (i.e., two or 
+more) suppliers, unless a single -source or sole -source 
+procurement is being made. 
+ 
+ 
+Sole and Single-Source Procurements 
+ 
+If a procurement need cannot be fulfilled in a competitive 
+manner, it may be possible to conduct or request a sole-source 
+or single-source procurement. State agencies must maintain 
+records to include written justification documenting the sole -
+source or single -source procurement . This includes the 
+following:  
+ 
+  
+R.C. 125.112 requires agencies to post 
+solicitations and awards for purchases 
+with an estimated total value of more than 
+$25,000 on OhioBuys. 
+State agencies are encouraged to adopt 
+their own written, PM-01 compliant policies 
+and procedures for authorizing purchases 
+costing $5,000 or less when it is not cost-
+effective or practical to solicit multiple 
+quotes.  
+In OhioBuys, purchase requisitions must 
+be flagged as single- or sole-source. 
+ 
+Documentation justifying single- or sole-
+source purchases must be attached to 
+either the requisition or the agency 
+administered contract the requisition is 
+referencing.
+
+
+--- PDF Page 25 ---
+State of Ohio Procurement Manual CY23, Version 1.0 
+Publication Date: March 17, 2023        P a g e  | 22 
+1. The efforts made to find other responsive suppliers and a determination that none were found  
+(suppliers are required to provide a letter stating they are a sole-source provider). 
+ 
+2. How a determination was made that the anticipated cost would be fair and reasonable.  
+ 
+3. The agency’s history with the supplier. 
+ 
+4. Any other facts supporting the selection process. 
+ 
+If a sole - or single -source procurement causes a State agency  to exceed purchasing thresholds , 
+Controlling Board approval is required and the following applies: 
+ 
+1. For non-IT procurements, all agencies submit an RTP through OhioBuys and flag it as sole - or 
+single-source. 
+ 
+2.  For IT procurements, agencies using OhioBuys submit a requisition through OhioBuys, while 
+agencies not on-boarded to OhioBuys use the IT Release and Permit system.19 
+ 
+ 
+Creating a New State Contract  
+ 
+The first step in creating a State Contract is for a State agency to submit an RTP to DAS. After receiving 
+the request, DAS discusses the purchasing need with a State agency and a determination is made  to 
+either solicit a State Contract or if the agency will be authorized to make the purchase.  
+ 
+ 
+Establish the Procurement Team 
+ 
+Once it is decided that a State Contract will be pursued, a DAS analyst is assigned to oversee the project 
+and work with the ordering agency to establish a Procurement Team. This team is comprised of subject 
+matter experts with an interest in the needed supplies or services. The Procurement Team is responsible 
+for developing a procurement strategy, which drives the effective execution and administration of the 
+purchase through the remainder of the procurement lifecycle. 
+ 
+In developing the procurement strategy, the Procurement Team meets to di scuss several key topics, 
+including, but not limited to: 
+ 
+1. Scope 
+ 
+2. Business, functional, and/or technical requirements and specifications 
+ 
+3. Procurement methods 
+ 
+4. The project’s schedule 
+ 
+5. Estimated cost, and budget 
+ 
+6. Anticipated benefits 
+ 
+7. Use of MBE, EDGE, WBE, VBE, and procurement preferences 
+ 
+19 https://itrelease.ohio.gov/
+
+
+--- PDF Page 26 ---
+State of Ohio Procurement Manual CY23, Version 1.0 
+Publication Date: March 17, 2023        P a g e  | 23 
+8. Performance measures 
+ 
+9. Constraints and risks 
+ 
+Developing a Solicitation 
+ 
+Scope 
+ 
+Defining a procurement’s scope is a matter of understanding and justifying why the purchase is 
+necessary, what features/functions are required, and how much work needs to be done to be able to 
+accomplish the desired result. Securing a solid justification and clearly defined product and project scope 
+is imperative. Otherwise, successfully completing a purchase will be difficult (if not impossible), and risks 
+increased costs, delays, and reduced quality. 
+ 
+Once defined, the procurement’s scope needs to be agreed upon by the team, the ordering agency, and 
+DAS. All changes to the proposed scope, the procurement’s final scope, and all agreements are 
+documented and included in the contract file by the DAS analyst for future reference. 
+ 
+Time 
+ 
+The time to complete a new State Contract depends upon a variety of factors, some anticipated (e.g., 
+staff availability, holidays, and procurement method) and others not (e.g., legislative or program changes; 
+loss of funding; and weather emergencies).  
+ 
+Procurement methods are a “known” factor once scope is established. DAS contracts are often created 
+through either an ITB ( competitive se aled bid), an RFP ( competitive sealed proposal), or a reverse 
+auction. These timelines are based on historical experience; however, they can vary depending on the 
+various factors affecting the procurement.  
+ 
+Quality  
+ 
+Define business requirements: Business requirements are those essential features and functions that 
+must be met by the purchase. The State agency beings the process of defining business requirements  
+by documenting its needs in the RTP being submitted to DAS. DAS then reviews the RTP, discusses the 
+requirements as needed with the State agency, and uses a State agency to provide the framework for 
+meetings with and decisions made by the Procurement Team.  
+ 
+Considerations when defining business requirements include, but are not limited to:  
+  
+1. Why is the procurement necessary (e.g., what is its purpose and who does it benefit)? 
+ 
+2. What factors will influence this purchase (e.g., budgets, approvals, timelines, MBE set-aside uses, 
+and purchasing preferences uses)? 
+ 
+3. Are there any requirements or specifications that need to be met (i.e., licenses/certifications , 
+quality standards, specific delivery or service requirements, technical specifications, etc.) 
+ 
+Develop detailed specifications: Specifications detail the required features and functions of the purchase. 
+A critical aspect of evaluating prospective suppliers is their ability to meet these specifications. 
+ 
+There are six types of specifications established by OAC 123:5-1-10. The Procurement Team determines 
+which of these is best suited for the purchase.
+
+
+--- PDF Page 27 ---
+State of Ohio Procurement Manual CY23, Version 1.0 
+Publication Date: March 17, 2023        P a g e  | 24 
+1. Design 
+ 
+Design specifications are used when it is necessary to prescriptively define the procurement need. 
+Therefore, these must include specific details of how items are to be manufactured. 
+ 
+2. Performance 
+ 
+A performance specification may be used to describe the general performance characteristics 
+required to achieve a result or desired outcome. A performance specification does not require the 
+Bidder or Offeror to comply with specific design requirements. 
+ 
+3. Combination 
+ 
+A combination specification may be used when it is necessary to incorporate  attributes of both 
+design and performance specifications to meet the procurement need. 
+ 
+4. Brand name or approved equal specifications 
+ 
+Brand name or approved equal speci fications establish the minimum requirements for the 
+purchase. It  may be used when it is not practicable or cost -effective to prepare a design, 
+performance, or combination specification. A minimum of two manufacturers capable of providing 
+a brand name or approved equal item that meets the procurement need is required to use this 
+specification type.  
+ 
+5. Qualified products list 
+ 
+A qualified products lists (QPL) identifies items that have been examined, tested, and determined 
+to have satisfied all applicable specifications and requirements. A QPL requires prior approval by 
+DAS and may be used when time does not permit development of a specification or when using 
+a QPL is in the State’s best interest. A minimum of two manufacturers of equivalent items must 
+be solicited for inclusion on a QPL. 
+ 
+6. Brand-specific 
+ 
+Brand-specific specifications require prior approval by DAS and are used when only a particular 
+brand can meet the procurement need. Brand-specific specifications may be used when: 
+ 
+a. The identified brand name is the only brand that is capable of satisfying the need; or  
+ 
+b. The identified brand name is a component of an existing item and it is not possible to use 
+an item from another manufacturer; or 
+ 
+c. A sufficient inventory of items of one manufacturer is maintained, and it is not cost-effective 
+to purchase and inventory equivalent items from different manufacturers; and 
+ 
+d. A minimum of  two qualified authorized distributors are available to provide the required 
+brand-specific product, supply, and/or service; otherwise, the purchase  must be 
+completed pursuant to R.C. 127.16. 
+ 
+Specifications, regardless of type, should be:
+
+
+--- PDF Page 28 ---
+State of Ohio Procurement Manual CY23, Version 1.0 
+Publication Date: March 17, 2023        P a g e  | 25 
+a. SMART   
+ 
+• Specific – clearly state what is required 
+ 
+• Measurable – confirm when the goal/need has been met 
+ 
+• Achievable – can be done and is technically possible 
+ 
+• Realistic – is reasonable and not cost prohibitive 
+ 
+• Timely – achievable within an acceptable timeframe 
+ 
+b. Simple: Unnecessary detail is avoided, but sufficient information is provided to ensure that 
+requirements satisfy their intended purpose.  
+ 
+c. Clear: Terminology that is understandable to a State agency , DAS, and potential Bidders or 
+Offerors is used. Eliminate confusion by using correct spelling and appropriate sentence structure 
+and avoid specialized language and jargon. 
+ 
+d. Accurate: Units of measure compatible with any industry standards are used. Other requirements, 
+such as quantities or packing/shipping requirements, are specified. Approximate values (e.g., for 
+weight, dimensions, and volume) can be used so the procurement meets its intended purpose. 
+However, if an approximation is used, an acceptable margin of error needs to be established and 
+specified in the solicitation (e.g., “The unit shall produce an oxygen concentration of approximately 
+93%, ±3%.”).  
+ 
+e. Competitive: Whenever possible (specifically, when developing an ITB), at least two  suppliers 
+capable of fulfilling the need are identified. Regardless of the procurement method, any “extras” 
+that could reduce or eliminate competition and/or increase costs are avoided.  
+ 
+f. Flexible: Specifications need to be flexible so consideration can be afforded to any offers 
+proposing alternatives, which may provide greater performance at equal or less cost.  
+ 
+ 
+Perform Market Research 
+ 
+The goal of market research is to identify potential sources 
+capable of meeting the need , not to conduct an  exhaustive 
+review of supply sources.  
+ 
+The DAS analyst is responsible for performing market research and providing findings to the Procurement 
+Team. Information gathered when conducting market research includes: 
+ 
+1. Whether a State or agency contract is already in place.  
+ 
+2. Major suppliers and if there is a choice of suppliers in the 
+market. 
+ 
+3. How other government agencies contract for the item(s) 
+and if there are any consortium contracts in place. 
+ 
+4. Determining if other agencies have the same needs. 
+Market research is essential to developing 
+a solicitation not biased in favor of a single 
+supplier or reduces the pool of suppliers 
+capable of filling the purchasing need. 
+In addition to knowledge that the DAS 
+analyst and the Procurement Team may 
+have of sources capable of meeting the 
+need, information from other resources 
+also must be sought out (e.g., other State 
+agencies, trade publications, and product 
+literature).
+
+
+--- PDF Page 29 ---
+State of Ohio Procurement Manual CY23, Version 1.0 
+Publication Date: March 17, 2023        P a g e  | 26 
+ 
+As potential sources of supply are identified, the DAS analyst may contact potential suppliers directly to 
+request information. The analyst’s contact with potential suppliers may occur informally, such as by 
+telephone or email, or a more formal methods such as a Request for Information (RFI) or a pre-solicitation 
+conference may be used.  
+ 
+1. Request for Information 
+ 
+A RFI is used to request information from suppliers who 
+are knowledgeable  about an industry or the purchase 
+need. RFIs are most often used when additional 
+information is needed to prepare a definitive purchase 
+description or when informal discussions with suppliers 
+have not been productive.  
+ 
+The RFI should detail the objective of the procurement 
+and include the following: 
+ 
+a. Description of the information being requested; 
+ 
+b. Method for receiving the requested information; 
+ 
+c. Description of initial specifications or statements 
+of work, along with a request for feedback 
+following review;  
+ 
+d. Statement that the response will be used to provide a State agency or DAS  with 
+recommendations that will serve to accomplish the work required by the procurement;  
+ 
+e. Statement that a State agency or DAS  reserves the right to incorporate in a n issued  
+solicitation, any recommendations presented in the response to the RFI;  
+ 
+f. Statement that information received will be publicly available; and 
+ 
+g. Statement that the RFI does not create an obligation for a State agency, DAS, and  the 
+responding supplier(s).  
+ 
+2. Pre-Solicitation Conference 
+ 
+A pre-solicitation conference can be used to present a planned, current, or future procurement to 
+a group of supplier community members. Whether to hold a pre-solicitation conference is 
+determined by the complexity of the procurement.  
+ 
+Pre-solicitation conference goals may include:  
+ 
+a. Ensuring collaboration between the agency and suppliers. 
+ 
+b. Incorporating supplier comments into the solicitation development process. 
+ 
+c. Communicating the program requirements and schedule. 
+ 
+d. Gaining a better understanding of industry or market developments. 
+RFIs are not a procurement method. It 
+neither satisfies competitive selection 
+requirements nor includes a pricing 
+component. 
+ 
+RFIs should only be used when seeking 
+input from the supplier community for the 
+solicitation. If the analyst does not intend 
+to incorporate the information and/or 
+feedback received, then an RFI should not 
+be utilized.  
+ 
+Suppliers are not required to respond to 
+an RFI, so non-response does not prohibit 
+suppliers from responding to any 
+solicitation resulting from a RFI.
+
+
+--- PDF Page 30 ---
+State of Ohio Procurement Manual CY23, Version 1.0 
+Publication Date: March 17, 2023        P a g e  | 27 
+ 
+e. Providing updates to suppliers on future program developments and acquisitions. 
+ 
+Pre-solicitation conferences afford advantages both to the State  and suppliers since this is an 
+opportunity to provide a detailed overview of the procurement need and receive feedback that 
+may be used for adjustments to the solicitation before it  is released. There are no specific time 
+limits; the conferences can last a few hours or even few days. Nor are there any specific formats; 
+they can be conducted face-to-face, by webinar, or by other means.  
+ 
+ 
+Procurement Methods 
+ 
+Competitive Sealed Bidding 
+ 
+Competitive Sealed Bidding, which is often referred to as the ITB process, is enabled by R.C. 125.07 and 
+is formal and pri ce-based. When conducting competitive sealed bid procurements , responses are 
+referred to as bids and respondents are referred to as Bidders. 
+ 
+For DAS-issued contracts, ITBs are used when requirements can be described in specific detail, the 
+contract will be awarded to the responsive and responsible Bidder with the lowest bid , competition is 
+readily available, and there is no need to negotiate with Bidders. 
+ 
+1. Develop the ITB 
+ 
+The DAS analyst and Procurement Team  develop the 
+specifications necessary for the purchase. These 
+specifications are then incorporated in to the ITB. A 
+standard ITB contains the following sections: 
+ 
+a. Instructions to Bidders. This section covers the 
+time and location for submission of bids.  It describes the process used in answering 
+Bidder questions, how to get DAS announcements regarding the I TB, and information 
+about ITB amendments. 
+ 
+b. Contract Terms and Conditions. This section contains the general legal provisions that will 
+govern the contract. (Additions or deviations from these general provisions are contained 
+in a separate Special Terms and Conditions section.) 
+ 
+c. General Overview. This section describes the nature of the purchase the State seeks 
+under the ITB. 
+ 
+d. Bid Certification. The Bidder certifies that the information contained in the bid is accurate 
+and complete, including several specific statements.  
+ 
+e. Special Terms and Conditions. This section contains special and specific legal provisions 
+that will govern the contract based upon the specific scope of work.  
+ 
+f. Specifications. This section gives a detailed description of what the selected Bidder must 
+provide the State under the contract.   
+ 
+g. Items/Item Grid. This section is used by all Bidders to clearly identify all costs the State 
+will have to pay as part of the purchase. 
+One-time bids follow the standard 
+OhioBuys RTP process. Specifically, the 
+agency submits an RTP, then DAS 
+completes the bid and sets up a contract 
+with a spend limit for the agency to make 
+the purchase.
+
+
+--- PDF Page 31 ---
+State of Ohio Procurement Manual CY23, Version 1.0 
+Publication Date: March 17, 2023        P a g e  | 28 
+h. Attachments: This section is optional. However, when used, attachments are included to 
+provide either additional information supporting the other ITB sections or relevant det ail 
+not covered elsewhere in the ITB. 
+ 
+2. Advertise the ITB 
+ 
+Once the ITB is completed and approved, it is advertised for approximately three weeks; however, 
+DAS and the ordering agency may agree to advertise for a shorter or longer period.  
+ 
+3. Pre-Bid Conference or Site Visit 
+ 
+ITBs may include a pre-bid conference or a site visit if the 
+Procurement Team believes it will be of value. Pre -bid 
+conferences or site visits must be specified in the ITB, 
+including date, time, and location of the event. Typically, 
+attendance by prospective Bidders is non -mandatory; 
+however, if mandatory attendance is a requirement to 
+submit a bid, it must be clearly and prominently stated in 
+the ITB and solicitation notice. 
+ 
+4. Inquiries 
+ 
+While the ITB is advertised, prospective suppliers cannot 
+contact any State employees regarding the opportun ity. 
+Instead, as directed in the ITB, during the inquiry period 
+questions must be submitted through OhioBuys, where 
+the questions and their answers will be posted. 
+ 
+Occasionally, inquiries may require an ITB to be modified. I n these instances, DAS issues an 
+amendment detailing the changes. Prospective suppliers are responsible for keeping current on 
+any amendments and considering if any changes need to be included in their bids.  
+ 
+5. Receive and Evaluate Bids 
+ 
+Responses are submitted to DAS through OhioBuys. They are evaluated to determine Bidders’ 
+compliance with all specifications and their ability to fulfill the purchase need . During the 
+evaluation period, Bidders cannot contact any State employee regarding the solicitation; however, 
+the DAS analyst may contact a Bidder if any portion of their bid needs clarif ication. During 
+evaluation, if proposed costs exceed the ordering agency’s planned budget, the DAS analyst 
+works with the agency to determine whether an award should be made or whether the ITB should 
+be rebid or cancelled. 
+ 
+6. Responsive and Responsible Bidder 
+ 
+Contracts must only be awarded to the lowest responsive and responsible Bidder, pursuant to 
+R.C. 125.11 and OAC 123:5-1-07(J) 
+ 
+Bidders are considered responsive if their proposals meet the solicitation requirements. Some 
+examples of circumstances that may result in a Bidder being considered unresponsive are when 
+the proposal:  
+ 
+a. Arrives after the date and time set for opening. 
+Pre-bid conferences are held at least 15 
+days prior to a bid’s submission date to 
+provide time to make any changes to the 
+ITB and for Bidders to incorporate 
+information learned at the conference into 
+their responses. 
+Modifying the ITB does not necessarily 
+extend its advertisement or inquiry 
+periods. Extension of these periods is 
+jointly determined by DAS and the 
+ordering agency.
+
+
+--- PDF Page 32 ---
+State of Ohio Procurement Manual CY23, Version 1.0 
+Publication Date: March 17, 2023        P a g e  | 29 
+ 
+b. Does not meet the minimum specifications. 
+ 
+c. Does not conform to the terms and conditions. 
+ 
+d. Is submitted without pricing or with qualified pricing (i.e., pricing is not firm but based on 
+certain criteria), or pricing is for less than the required quantity of purchase). 
+ 
+e. Cannot meet the delivery schedule required in the solicitation. 
+ 
+A Bidder is considered responsible by demonstrating the  ability to perform the requi red work. 
+Factors used to determine  whether a Bidder is responsible , as specified in R.C. 9.312 , are 
+experience, financial condition , conduct and performance on previous contracts , facilities, 
+management skills, and ability to properly execute the contract. 
+ 
+Decisions regarding responsibility require due diligence on the part of the DAS analyst. If the 
+analyst determines that the lowest responsive Bidder is not responsible, then the analyst works 
+with the agency and DAS legal counsel to determine the best means of moving forward. 
+ 
+7. Contract Award 
+ 
+After bids have been evaluated by the DAS analyst and the ordering agency, the DAS analyst 
+completes and submits the contract award  in OhioBuys. This recommendation  must be t o the 
+lowest responsive and responsible Bidder. Once the award is signed by the DAS Director or the 
+Director’s designee, the Bidder is awarded the contract.   
+ 
+ 
+Competitive Sealed Proposals 
+ 
+A competitive sealed proposal is often referred to as a Request for Proposals (RFP). Responses are 
+referred to as proposals, and respondents are referred to as Offerors. RFPs are used when:  
+ 
+1. The primary consideration in determining the award may not be price.  
+ 
+2. The specifications for the purchase cannot be sufficiently described in an ITB.  
+ 
+3. Discussions may need to be conducted with Offerors concerning technical and/or price aspects 
+of proposals.  
+ 
+4. Offerors may need to be afforded the opportunity to revise proposals, including pricing. 
+ 
+5. An award may need to be based upon a comparative evaluation of price, quality, and other 
+contractual factors to determine which proposal is the most advantageous to the State. 
+ 
+Competitive sealed proposals are a value-based process in which an award is made to the Offeror whose 
+proposal is determined to be most advantageous to the State, taking into consideration factors such as 
+price and the evaluation criteria set forth in the RFP.  
+ 
+1. Develop the RFP 
+ 
+Detailed specifications or a statement of work agreed upon by DAS and the ordering agency are 
+incorporated into the RFP. This information will be used by Offerors to adequate ly assess the
+
+
+--- PDF Page 33 ---
+State of Ohio Procurement Manual CY23, Version 1.0 
+Publication Date: March 17, 2023        P a g e  | 30 
+necessary work, potential costs, time requirements, and the conditions impacting their ability to 
+meet the procurement need. 
+ 
+2. Advertise the RFP 
+ 
+The purpose of a solicitation is to obtain supplies and services providing the State with the best-
+value. To accomplish this, the solicitation is advertised to the largest possible number of potential 
+suppliers to ensure the greatest level of competition.  
+ 
+Once the RFP is completed and approved, to maximize competition, DAS publicly advertises it to 
+potential Offerors in one of two ways: 
+ 
+a. Automatically through OhioBuys, which identifies registered suppliers having the same 
+product, supplies, and/or services to be purchased listed in their profiles, or 
+ 
+b. By referencing the OhioBuys public portal. 
+ 
+3. Pre-Proposal Conference or Site Visit 
+ 
+RFPs may include a pre-proposal conference or a site 
+visit if the Procurement Team believes the conference 
+will be of value. Pre-proposal conferences or site visits 
+must be specified in the RFP, including date, time , and 
+location of the event. Mandatory attendance by 
+prospective Offerors may also be required for submitting 
+proposals. If mandatory attendance is a requirement , it 
+must be clearly and prominently stated in the RFP and 
+solicitation notice. 
+ 
+4. Inquiries 
+ 
+While the RFP is advertised, prospective suppliers 
+cannot contact any State employees regarding the 
+opportunity. Instead, as directed in the RFP, their 
+questions must be submitted through OhioBuys within 
+the specified inquiry period.  
+ 
+Occasionally, inquiries require a n RFP to be modified. In these instances, DAS issues an 
+amendment detailing the changes. Prospective suppliers are responsible for keeping current on 
+any amendments and considering if any changes need to be included in their proposals.  
+ 
+5. Receive and Evaluate Proposals  
+ 
+Proposals are submitted to DAS through OhioBuys. Following receipt of RFP responses, the DAS 
+procurement analyst examines each proposal for general conformity with the requirements and 
+the terms of the procurement and may determine which proposals meet the Mandatory 
+Requirements (if applicable) and are able to be further evaluated. The DAS analyst may present 
+the Mandatory Requirements to the evaluation committee for review. For those proposals 
+determined acceptable for evaluation, the technical proposals will be provided to the evaluation 
+committee. Once the technical evaluation is completed and the proposal meets the minimum 
+requirements, it moves forward in the next phase of the evaluation, which includes review of cost 
+proposals. 
+Conferences are held at least 15 days 
+prior to the proposal submission date to 
+provide time to make any changes to the 
+RFP and for Offerors to incorporate 
+information learned at the conference into 
+their responses. 
+Modifying the RFP does not necessarily 
+extend its advertisement or inquiry 
+periods. Extension of these periods is 
+jointly determined by DAS and the 
+ordering agency.
+
+
+--- PDF Page 34 ---
+State of Ohio Procurement Manual CY23, Version 1.0 
+Publication Date: March 17, 2023        P a g e  | 31 
+The Evaluation Team  usually consists of the contract 
+analyst from DAS who facilitates the consensus meeting 
+and subject matter experts from agency. The team also 
+may include outside consultants and other people with 
+special expertise or with a particular interest in the 
+outcome of the project, such as the agency’s clients or 
+constituents. 
+ 
+The DAS analyst schedules an initial Evaluation Team 
+meeting where evaluators chosen to evaluate the RFP 
+are given a brief overview of the RFP evaluation process 
+and provided copies of the Technical Proposals. An 
+additional Evaluation Team  meeting to score the 
+proposals is scheduled after adequate time is allowed for 
+evaluators to review the proposals.  
+ 
+6. Negotiations and Clarifications 
+ 
+Negotiations or Clarifications are an exchange of information to promote understanding of the 
+agency's requirements and an Offeror's proposal . Negotiations  or clarifications are held  to 
+facilitate achieving a contract with the best-value to the State, taking into consideration the 
+evaluation factors set forth in the RFP. Although negotiations or clarifications are allowed in these 
+types of procurements, they are not required, and proposals may be accepted after evaluation 
+without further negotiation. 
+ 
+7. Best and Final Offers 
+ 
+A Best and Final Offer (BAFO) is used to request final cost 
+proposals from the Offerors after negotiations are 
+completed. A BAFO is a tool to ensure that  Offeror(s) are 
+accorded fair and equal treatment with respect to any 
+opportunity for negotiations and revisions of proposals.  
+ 
+When the need for a BAFO arises, the DAS analyst provides a written BAFO document to the 
+Offeror(s), which includes:  
+ 
+1. Describing the specific clarification, change, or cost proposal request. 
+  
+2. Stating a date and time to submit responses.  
+ 
+3. Notification that if an Offeror does not submit a notice of withdrawal or another best and 
+final offer, then the Offeror’s immediate previous offer will be construed as the BAFO.  
+ 
+8. Contract Award 
+ 
+Once the Evaluation Team has determined the award, DAS completes a contract and notifies all 
+Offerors of the outcome. The ordering agency is also notified so the agency can process a 
+purchase order for the selected supplier. Once the purchase order is provided to the supplier, the 
+supplier may begin fulfilling the procurement need. 
+ 
+ 
+The evaluation team uses the evaluation 
+criteria and process defined in the RFP 
+to recommend an award. 
+ 
+During evaluation, Offerors may not 
+initiate any communication with the 
+evaluation team.  
+ 
+DAS may initiate discussions with 
+Offerors to further assess their 
+responsiveness. However, evaluators 
+may not discuss with Offerors the 
+evaluation process or any information or 
+tentative conclusions on the relative 
+merits of proposals. 
+ 
+ 
+After best and final offers are received, 
+final evaluations are conducted.
+
+
+--- PDF Page 35 ---
+State of Ohio Procurement Manual CY23, Version 1.0 
+Publication Date: March 17, 2023        P a g e  | 32 
+Reverse Auctions 
+ 
+A reverse auction i s a purchasing process in which Offerors submit  competing bids in an open 
+environment via OhioBuys. Reverse auctions are a competitive selection process authorized under R.C. 
+125.072. DAS may conduct reverse auctions at its discretion when it is determined to be advantageous 
+to the State. The auction is an invitation-only, timed event that is open to pre-qualified Bidders.  
+ 
+ 
+Preferences 
+ 
+For solicitations issued prior to July 4, 2022, in which preferences are being considered, the preferences 
+shall be applied in accordance with the versions of OAC 123:5-1-06 and 123:5-1-16 that were in place 
+prior to this date. However, for solicitations issued on or after July 4, 2022, preferences will be applied in 
+the following manner, prior to contract award: 
+ 
+1. All bids and offers will be considered for preferences, with Bidders and Offerors being able to 
+qualify for any number of preferences (i.e., Buy American, Buy Ohio, and VBE).  
+ 
+2. Five-percent (5%) will be assigned to the first preference and 2% each will be assigned to the 
+second and /or third preferences. All the percentages will be summed and applied as a total 
+percentage for purposes of evaluating a bid or offer, up to a maximum of 9%. For ITBs and reverse 
+auctions, preference percentages will be deducted from the Bidder’s total cost. For RFPs, 
+preference percentages will be added to the Offeror’s total score.  
+ 
+3. Preferences will be applied only when there is at least one Bidder or Offeror who does not qualify 
+for that particular preference. For purposes of qualifying for a particular preference, Bidders and 
+Offerors who do not complete the certification for each preference will be deemed as not having 
+qualified for that preference.  
+ 
+4. For bids containing multiple line items or multiple products, when considering Buy American or 
+the products portion of Buy Ohio, preferences will be applied per line item or only for that particular 
+product.   
+ 
+5. For RFPs, when an Offeror is claiming the Buy American and Buy Ohio preferences based on the 
+product(s) offered, the Offeror is only eligible to receive the preference if the cost of the product(s) 
+offered exceeds 50% of the total offered cost for products and services. A Buy Ohio supplier is 
+eligible to receive the Buy Ohio preference based solely on its significant Ohio economic 
+presence or a border state regardless of the origin of any product offered. 
+ 
+6. After the preferences have been applied, the lowest bid or highest scoring offer will be considered 
+for award, unless doing so is not in the best interest of the State. Additionally, the evaluation and 
+final determination of the award will be made under OAC 123:5-1-07 and OAC 123:5-1-08. 
+ 
+State agencies shall apply preferences using above rules, as applicable, and pursuant to these statutes: 
+ 
+1. R.C. 122.925(B) , which requires State agencies to give preference to Bidders and Offerors 
+certified as a VBE by the Ohio Department of Development.  
+ 
+2. R.C. 125.05(E) , when purchasing personal protective equipment from a source other than a 
+requisite procurement program or a State Contract.
+
+
+--- PDF Page 36 ---
+State of Ohio Procurement Manual CY23, Version 1.0 
+Publication Date: March 17, 2023        P a g e  | 33 
+Standard Terms and Conditions 
+ 
+Every contract issu ed by DAS includes standard terms and 
+conditions, which protect the interests of both the State and the 
+supplier. State agencies are encouraged to adopt the most current 
+DAS terms and conditions for inclusion in their direct purchases.20  
+ 
+ 
+Debarments 
+ 
+Respectively, R.C. 125.25 , 153.02, and 5513.06 give supplier 
+debarment authority to DAS, OFCC, and ODOT. Suppliers can be 
+debarred for reasons specified in these statutes, which can be 
+encountered during any phase of the Procurement Life Cycle.  
+ 
+R.C. 9.242  prohibits a debarred supplier from participating  (i.e., 
+doing any work in any capacity) in all contracts issued by State agencies until the supplier’s debarment 
+period expires. Further, State agencies are required to exclude debarred vendors from participating in 
+any other contracts during the debarment period. 
+ 
+When conducting procurements, State agencies are required to use the statewide debarment list jointly 
+maintained by DAS, OFCC, and ODOT . Additionally, agencies should refer to the Ohio Secretary of 
+State’s list of businesses that have been debarred from conducting business in the State and the System 
+for Award Management (SAM) , which lists suppliers who are prohibited from doing business with the 
+federal government.21  
+ 
+ 
+Findings for Recovery  
+ 
+Pursuant to R.C. 9.24, no State agency shall award a contract for goods, services, or construction, paid 
+for in whole or in part with State funds, to a person against whom a finding or recovery has been issued 
+by the Auditor of State, if the finding for recovery is unresolved.    
+ 
+When conducting procurements, State agencies are required to search the Auditor of State’s Findings 
+for Recovery D atabase.22 Anyone having unresolved findings for recovery is prohibited from receiving 
+public contracts.  
+ 
+ 
+Affirmative Action Program Verification 
+ 
+State agencies are required to verify an affirmative action plan is in place before making a contract award. 
+Per the OBM Written Contracts Policy, all suppliers are required to complete an affirmative action plan, 
+or accept the State's plan and affirm being in compliance with the requirements of R.C. 125.111, prior to 
+being awarded a contract.   
+ 
+20 Standard Terms and Conditions can be found in either the OhioBuys Solicitation Document Library or procure.ohio.gov at 
+https://procure.ohio.gov/state-and-local-agencies/resources/04_Resources_Forms.  
+21 These resources are available at https://procure.ohio.gov/Bidders-and-suppliers/08_debarment-csv-list and 
+https://procure.ohio.gov/about/04_policies/05_debarment-policy. Also, a supplier’s debarment status can also be looked-up 
+in OhioBuys by opening a supplier record and reviewing the Debarment tab 
+22 https://ohioauditor.gov/findings.html#unresolved_findings  
+State agencies are prohibited from 
+awarding contracts funded in whole or 
+in part with federal and/or State funds to 
+suppliers who appear on any 
+debarment list.    
+Invalid terms and conditions identified in 
+R.C. 9.27 cannot be included in any 
+contracts entered into on or after 
+September 30, 2021.
+
+
+--- PDF Page 37 ---
+State of Ohio Procurement Manual CY23, Version 1.0 
+Publication Date: March 17, 2023        P a g e  | 34 
+ 
+               
+ 
+Chapter 3 – Contract Administration 
+ 
+During the contract administration phase of the procurement life cycle, contracts are monitored to ensure 
+compliance with terms and conditions, correct supplier invoices, performance measures are being met, 
+and payments to suppliers are made timely.  
+ 
+Contract administration is a team effort between an ordering agency and DAS, with each having particular 
+roles and responsibilities. Specifically, the DAS analyst is the primary person handling the contract’s daily 
+administration, while the ordering agency ensures the contract’s requirements are being met and the 
+supplier complies with the contract’s provisions. When issues cannot be readily resolved, or if a contract 
+needs to be changed for any reason (e.g., due to legislative mandates, revised program objectives, or 
+renewals), the agency and the analyst work together to execute a formal change to the contract. 
+ 
+ 
+What is a Contract? 
+ 
+A contract is an agreement between two or more parties that creates an obligation to do (or not do) a 
+particular thing (or things). Six elements are needed for a contract to exist and be legally binding:  
+ 
+1. Offer and Acceptance : Simply stated, one party offers to provide something to another party . 
+Certain terms and conditions are attached to what is being provided, which the parties can choose 
+to accept – or not. Their acceptance demonstrates a willingness to be bound by the contract’s 
+terms and conditions. 
+ 
+2. Capacity: The parties are of legal age, sound mind, and not under the influence of drugs or 
+alcohol. 
+ 
+3. Consideration: Anything of value promised from one party to the other for performance under the 
+contract (i.e., the State promises money to suppliers in exchange for their promise to provide 
+supplies or services). 
+ 
+4. Legality of Purpose: To be valid and enforceable, a contract must comply with federal, state, and 
+local laws as well as public policy. 
+ 
+5. Mutuality of Obligation: All parties to an agreement must be obliga ted or none of the parties are 
+obligated. Furthermore, all parties must supply consideration to the others. 
+ 
+6. Definiteness: The important or material terms of an agreement must be specifically expressed for 
+the agreement to be enforceable. Important terms include, but are not limited to, subject matter, 
+price, payment terms, quantity, quality, duration, and the scope of work to be done.
+
+
+--- PDF Page 38 ---
+State of Ohio Procurement Manual CY23, Version 1.0 
+Publication Date: March 17, 2023        P a g e  | 35 
+Contract Administration Plan 
+ 
+A Contract Administration Plan (CAP) defines how a contract will be administered. It provides a 
+mechanism to reconcile the various contract documents and the order of precedence into a management 
+tool that can be used to focus and govern implementation activities.  
+ 
+Not every contract needs a CAP; rather, they are most often used for high -risk or highly complex 
+procurements. Although plans vary from contract-to-contract, all should focus on the “who, what, when, 
+where, and how” of how a contract is to be administered. Items included in a CAP may include:  
+ 
+• Description 
+ 
+• Performance period  
+• Roles and responsibilities 
+ 
+• Schedules and meetings 
+• Data and deliverables 
+ 
+• Inspection and acceptance 
+• Critical milestones 
+ 
+• Critical path items  
+• Personnel requirements 
+ 
+• Testing 
+• Warranty provisions 
+ 
+• Watch list items 
+• Special terms and conditions 
+ 
+• Delivery dates 
+ 
+Contract Monitoring 
+ 
+Contract monitoring is the process of identifying and tracking key aspects of the contract to ensure it is 
+completed successfully. Steps for effective contract monitoring include: 
+ 
+• Gathering the contract and all pertinent contract documents. 
+ 
+• Deciding what will be monitored and who will be monitoring it. 
+ 
+• Gathering and analyzing information/data. 
+ 
+• Acting in cases of non-compliance. 
+ 
+ 
+Supplier Relationships 
+ 
+Maintaining good relationships with suppliers is a win-win situation. The State’s public image is a valuable 
+asset. Suppliers who are treated equitably and professionally are likely to continue doing business with 
+the State and promote future business by communicating its positive experiences with other businesses.  
+ 
+Actions that State agencies can take to encourage successful supplier relations include: 
+ 
+• Knowing the contract 
+ 
+• Setting expectations 
+• Being fair, honest, ethical 
+ 
+• Treating the supplier as a partner
+
+
+--- PDF Page 39 ---
+State of Ohio Procurement Manual CY23, Version 1.0 
+Publication Date: March 17, 2023        P a g e  | 36 
+• Building relationships 
+ 
+• Communicating regularly 
+• Documenting everything • Paying invoices on time 
+ 
+ 
+Contract Compliance  
+ 
+A contract is awarded with the expectation that both the supplier and the State  have entered into the 
+agreement in good faith, and both parties will perform their respective duties and obligations in 
+accordance with the contract specifications, terms, and conditions, and at the stated price. Occasionally, 
+situations do arise when the supplier does not perform as expected. Typical non -performance issues 
+include, but are not limited to:  
+ 
+• Missing delivery dates/times 
+ 
+• Altering contract pricing 
+• Providing inferior items • Providing unauthorized substitutions 
+or non-contracted items  
+ 
+• Assigning inadequate or unqualified 
+staff 
+ 
+• Unauthorized assignment of the 
+contract to another entity 
+ 
+• Using unauthorized subcontractors • Shipping damaged items 
+ 
+The terms and conditions in a contract specify the remedies available to State agencies and DAS for 
+resolving non-performance issues. It is important to note that the State Agency and/or DAS cannot 
+exercise these remedies unless the supplier has been provided with an opportunity to cure the deficiency. 
+ 
+When an issue occurs, or is believed to have occurred, a State agency  should review the contract to 
+ensure that it includes the requirement the supplier is believed to  have not met. When an issue does 
+exist, a State agency should contact the supplier, discuss the reasons for the issue, and establish a date 
+by which the issue needs to be resolved.  
+ 
+ 
+Exceptions 
+ 
+If an issue cannot be resolved between a State agency and a supplier, the agency submits an Exception 
+to DAS using OhioBuys.23 After receiving an exception, DAS evaluates the situation and works to resolve 
+the compliance issues on behalf of a State agency.  
+ 
+Exceptions may be used by DAS when evaluating whether the supplier qualifies for a future award and, 
+possibly, even debarring the supplier. Due to these potential consequences, it is important a State agency 
+provide complete and accurate details of the supplier’s non-performance. 
+ 
+ 
+Supplier Payment 
+ 
+State agencies are responsible for ensuring that suppliers are paid timely. However, this responsibility 
+does not begin until the agency receives  what was purchased  free of defect s and a proper invoice is 
+submitted by the supplier. If a supplier does not comply with a contract’s delivery terms and conditions, 
+ 
+23 Instructions for creating an Exception are available at: das.ohio.gov > Divisions > General Services > Procurement Services 
+> OhioBuys Information > Training > Agency Training > Supplier Management Job Aids > Create an Exception
+
+
+--- PDF Page 40 ---
+State of Ohio Procurement Manual CY23, Version 1.0 
+Publication Date: March 17, 2023        P a g e  | 37 
+then a State agency is responsible for documenting the issues and 
+working with the supplier. If the deficiency impacts payment, then 
+this must be communicated to the supplier.  
+ 
+R.C. 125.01(B) specifies that proper invoices include all of the 
+following:  
+ 
+1. The purchase date or date of service. 
+ 
+2. An itemization of what was done, materials supplied, or 
+labor furnished. 
+ 
+3. The sum due pursuant to the contract or obligation. 
+ 
+ 
+Additionally, agencies may determine that an invoice needs additional information to determine whether 
+it can be paid. Examples of information that may be needed include: 
+ 
+• Purchase order number 
+ 
+• Contract number 
+• Agency name 
+ 
+• Billing and delivery addresses 
+• Supplier name 
+ 
+• Supplier remittance address 
+• Invoice number • Shipping, delivery, or service dates 
+ 
+If an improper invoice is received, then a State agency  must 
+postpone payment and, within 15 days of receiving the invoice, 
+send a written notice  to the supplier describing the information 
+needed to correct the defect(s). However, when the agency fails to 
+provide this notice within 15 days of receiving the  invoice, the 
+required payment date cannot be postponed. 
+ 
+Payment can be made to the supplier 30 days after a corrected invoice is received and accepted by the 
+agency.  Payment methods include: 
+ 
+1. Single Payment Vouchers 
+ 
+Single payment vouchers are used to make one -time, small dollar payments to suppliers not in 
+Ohio’s supplier database. Payments made using these vouchers are not considered in calculating 
+an agency’s direct spend authority. 
+ 
+2. Payment Card  
+ 
+The payment card (Pcard) is a method for both ordering 
+and payment, regardless of whether the purchase is from a 
+DAS contract. Pcards have an individual purchase limit of 
+$5,000 and a standard monthly spending limit of $15,000.   
+ 
+The OBM Statewide Payment Card Administrator manages the statewide program and 
+authorizes, in writing, the issuance of Pcards. The executive staff of each State agency  
+Purchases made with federal funds 
+must meet requirements set forth by the 
+federal grantor. 
+ 
+For invoices containing defects or 
+improprieties, R.C. 126.30(B) and OAC 
+126-3-01(B)(4)(b) specify steps State 
+agencies must take to have suppliers 
+provide proper invoices. 
+ 
+Prior to authorizing payments, State 
+agencies must ensure any issues are 
+resolved and charges are accurate. 
+State agencies are not authorized to 
+alter supplier invoices for anything 
+except for removal of sales or excise 
+taxes, erroneous freight charges, past 
+due balances, and contract penalties.    
+Pcard purchases shall not be 
+intentionally split with the intent of 
+processing two transactions totaling 
+more than the $5,000 Pcard limit.
+
+
+--- PDF Page 41 ---
+State of Ohio Procurement Manual CY23, Version 1.0 
+Publication Date: March 17, 2023        P a g e  | 38 
+determines the level of participation in the program and the number of cards issued. Each 
+participating State agency has a Payment Card Administrator to manage its Pcards.  
+ 
+Policies governing Pcard use be found in OBM’s State Accounting Fiscal Essentials (SAFE) 
+Manual.24 As with any purchase, when using a Pcard, State agencies are required to follow all 
+laws, rules, and policies governing purchasing. 
+ 
+3. Electronic Data Interchange 
+ 
+Electronic Data Interchange (EDI) is an electronic invoicing and payment method established with 
+the supplier prior to the ordering process. EDI invoicing and payments are only for suppliers who 
+have been pre -approved through OBM. When making a purchase for the State using EDI, 
+employees must follow the procedures set forth in the SAFE Manual.  
+ 
+For additional EDI information, including FAQs, new account forms, agency points of contact, and 
+a list of EDI supplier contacts, refer to OBM’s website.25 
+ 
+ 
+Determination and Recommendation 
+ 
+A Determination and Recommendation (D&R) is comprised of questions used to determine the sourcing 
+strategy for expiring contracts (i.e., contract renewal, contract expiration, or a new solicitation). DAS uses 
+OhioBuys to send D&R’s to State agencies prior to contract expiration.  
+ 
+OhioBuys is used to return a completed D&R to the DAS analyst. After reviewing the agency feedback 
+and filling out the DAS portion of the D&R, the DAS analyst along with their manager, decides to either 
+renew the contract or allow it to expire and, if allowing it to expire, whether it needs re-solicited. 
+ 
+ 
+Contract Closeout 
+ 
+Contracts are complete when all obligations have been met by the parties  or when the contract term 
+expires. Closeout involves finalizing all legal, administrative, and managerial tasks. As a best practice, it 
+is helpful to complete a contract closeout checklist before the contract’s final acceptance to verify:  
+ 
+• All contractual obligations have 
+been completed  
+ 
+• The supplier has closed any 
+subcontracts 
+ 
+• Any required audits have been 
+performed  
+ 
+• There are no unresolved issues 
+ 
+• Any inspections and tests have 
+been completed and accepted 
+ 
+• Completing a formal notice of 
+contract completion 
+• State-furnished property, materials, 
+security badges, etc. have been 
+returned 
+• Contractor invoices have been 
+submitted and paid (except the final 
+invoice) 
+ 
+ 
+24 http://finsource.ohio.gov/#mergedProjects/safe_ manual/welcome_to_the_safe_manual.htm 
+25 http://obm.ohio.gov/ SectionPages/ElectronicCommerce/default.aspx
+
+
+--- PDF Page 42 ---
+State of Ohio Procurement Manual CY23, Version 1.0 
+Publication Date: March 17, 2023        P a g e  | 39 
+• Supplier performance evaluations 
+have been completed 
+• Scheduled debriefs with the supplier 
+have been completed 
+ 
+Once any remaining tasks have been completed and all purchases have been received and formally 
+accepted, final payment can be made to the supplier. Once payment has been made, the contract is 
+complete.  
+ 
+ 
+Records Retention 
+ 
+State agencies must retain records to support their procurement 
+activities, regardless of their dollar value.  Documents to retain 
+include, but are not limited to:  
+ 
+1. Solicitations and contracts 
+ 
+2. Technical evaluations 
+ 
+3. Cost/price analysis reports 
+ 
+4. Approved or disapproved subcontracting plans 
+ 
+5. Records of negotiations 
+ 
+6. Financial and legal approvals 
+ 
+7. Award, non-award, or disqualification correspondence 
+ 
+8. Other supporting documentation , such as  audits, procurement action summaries, winning 
+proposals and revisions, non-winning proposals, and supplier correspondence 
+ 
+9. Contract administration information (i.e., invoicing, shipments, cost forecasting, status reports, fee 
+documentation, general correspondence, and contract closeout documentation). 
+  
+All documents must be retained in 
+accordance with State and 
+departmental records retention policies.
+
+
+--- PDF Page 43 ---
+State of Ohio Procurement Manual CY23, Version 1.0 
+Publication Date: March 17, 2023        P a g e  | 40 
+ 
+               
+ 
+Glossary 
+ 
+Agency Procurement Officer (APO) 
+The primary point of contact and coordinator for an agency’s procurement-related activities. Each State 
+agency is required to appoint an APO. 
+ 
+Bidders 
+A person or firm that submits a bid response to an invitation to bid. 
+ 
+Bids 
+Responses submitted by Bidders in response to an invitation to bid. 
+ 
+Business Enterprise Program (BEP) 
+A program through the Opportunities for Ohioans with Disabilities – Bureau of Services for the Visually 
+Impaired (BSVI) that assists people who are blind or have a visual impairment b y creating employment 
+in food service areas, such as opportunities to operate cafeterias, snack bars, convenience stores, and 
+vending locations. 
+ 
+Buy Ohio Supplier 
+A supplier submitting a bid or offer offering Buy Ohio products or demonstrating significant economic 
+presence in Ohio or a border state.  
+ 
+Community Rehabilitation Program (CRP) 
+The Community Rehabilitation Program consists of non-profit organizations employing people with work-
+limiting disabilities. CRP suppliers are State Contract holders offering quality, on -time items at a fair 
+market price while providing much-needed job opportunities. 
+ 
+Competitive Sealed Bidding 
+A purchasing method in which an award is made to the lowest responsive bid and responsible Bidder, 
+based solely on the response to the criteria set forth in the Invitation  to Bid. Competitive sealed bidding 
+does not include discussions or negotiations with Bidders. 
+ 
+Competitive Sealed Proposals 
+A purchasing method used to solicit proposals from potential suppliers. Price is usually not a primary 
+evaluation factor. Provides for the negotiation of all terms, including price, prior to contract award. May 
+include a provision for the negotiation of best and final offers. May be a single-step or multi-step process. 
+ 
+Competitive Selection 
+Any of the following procedures for making purchases: (1) competitive sealed bidding under R.C. 125.07, 
+(2) competitive sealed proposals under R.C. 125.071, or (3) reverse auctions under R.C. 125.072. 
+ 
+Controlling Board 
+The Controlling Board is a mechanism for handling necessary adjustments to the State budget. The 
+Controlling Board is established by R.C. 127.12 and consists of seven members: the Director of the Office 
+of Budget and Management or an employee of the Office of Budget and Management designated by the 
+Director, the Chair or Vice Chair of the Senate and House Finance Committees, a majority member
+
+
+--- PDF Page 44 ---
+State of Ohio Procurement Manual CY23, Version 1.0 
+Publication Date: March 17, 2023        P a g e  | 41 
+appointed from both the Senate and the House, and a minority member appointed from both the Senate 
+and the House. 
+ 
+Cooperative Purchasing Program 
+A DAS administered program offering Ohio counties, townships, municipalities, school districts, public 
+libraries, regional park districts and other political subdivisions the benefits and costs savings of buying 
+goods and services through state contracts. 
+ 
+Direct Purchase Authority 
+The authority by which State agencies may make purchases under their own authority without using a 
+contract established by the Ohio Department of Administrative Services, though still using a competitive 
+process and sound evaluation practices and procedures. This authority is granted to agencies by R.C. 
+125.02. 
+ 
+Eligible Purchases 
+Refers to those purchases which are analyzed to determine whether a State agency has met its 15 % 
+MBE set-aside requirement. Factors considered to determine whether a purchase is included in this 
+calculation are the OBM expense account code referenced by the voucher as well as whether the supplier 
+was a sole source. 
+ 
+Emergency 
+Any period of time when an emergency has been declared or proclaimed by either the Congress of the 
+United States, the President of the United States, and/or the Governor of Ohio.  
+ 
+Emergency Purchases 
+A purchase made as the result of an unexpected and urgent request where health and safety or the 
+conservation of public resources is at risk.  
+ 
+Encouraging Diversity, Growth, & Equity (EDGE) 
+A business owned and controlled by a United States citizen who is a resident of Ohio  and qualifies for 
+EDGE certification if its owner is both socially and economically disadvantaged , or if the business is 
+located in a qualified census tract and the owner is economically disadvantaged. In addition, the business 
+must have been in business for at least one year prior to applying and be at least 51% owned by socially 
+and economically disadvantaged individuals. Economic disadvantage is based primarily on the owner’s 
+personal net worth. Social disadvantages for the EDGE program are race or ethnic origin; female gender; 
+chronic physical or mental disability; and/or the business owner’s long-term residence in an environment 
+isolated from the mainstream of American society. 
+ 
+Invitation to Bid (ITB) 
+Refers to all documents, whether attached or incorporated by reference, utilized for soliciting bids. 
+ 
+IT Blanket Release and Permit 
+Each fiscal year, DAS issues IT blanket release and permits to each State agency  to facilitate IT 
+purchases under $25,000 per transaction. IT commodities are identified by OBM’s expense account 
+codes. The OBM expense account code will indicate when an IT release and permit is required. DAS 
+may issue guidance limiting the use of the blanket for certain purchases. 
+ 
+IT Release and Permit 
+A required type of prior approval for IT purchases that is issued by DAS when it is not possible or 
+advantageous to make the purchase through DAS. DAS issues a unique IT release and permit per 
+purchase request by fiscal year, typically provided for transactions that are $25,000 or more. IT
+
+
+--- PDF Page 45 ---
+State of Ohio Procurement Manual CY23, Version 1.0 
+Publication Date: March 17, 2023        P a g e  | 42 
+commodities are identified by OBM’s expense account codes. The OBM expense account code indicates 
+when an IT release and permit is required. 
+ 
+Mandatory Requirements 
+A condition that may apply to Request for Proposals (RFP) and Invitation for Bids (IFB) that is established 
+in the scope of work/specifications that must be met without alteration. A mandatory requirement should 
+be clearly identified. Not meeting a mandatory requirement may be grounds for the disqualification of a 
+bid or proposal. 
+ 
+Minority Business Enterprise (MBE) 
+A business owned and controlled by a United States citizen who is a resident of Ohio and a member of 
+one or more of the following minority groups: Blacks or African Americans, American Indians, Hispanics 
+or Latinos, and Asians. In addition, the business must have been in business for at least one year prior 
+to applying and be at least 51 percent minority owned. 
+ 
+Non-IT Blanket Release and Permit 
+Each biennium, DAS issues non-IT blanket release and permits for all purchases of certain types of 
+general supplies, and services, categorized by OBM expense account code, which authorizes State 
+agencies to make such purchases without the involvement of DAS. 
+ 
+Non-IT Release and Permit 
+A required type of prior approval issued by DAS allowing State agencies to make purchases exceeding 
+the agency’s direct purchase authority. A non -IT release and permit is issued when it is not possible or 
+advantageous to make the purchase on behalf of a State agency. 
+ 
+Offerors 
+A person or firm who submits a proposal in response to a request for proposals. 
+ 
+Office of Information Technology (OIT) 
+The DAS Office of Information Technology delivers statewide information technology and 
+telecommunication services to State government agencies, boards, and commissions as well as policy 
+and standards development, lifecycle investment planning, and privacy and security management. 
+ 
+Office of Procurement Services 
+The DAS Office of Procurement Services is responsible for procurement of non-IT and IT products, 
+supplies, and services. 
+ 
+Office of State Printing and Mail Services 
+The DAS Office of State Printing and Mail Services offers a full range of commercial procurement services 
+with contract printers throughout the State, records and forms management, mail services, mainframe 
+printing, fulfillment services, and a network of copy centers. 
+ 
+Ohio Administrative Knowledge System (OAKS) 
+The enterprise resource planning system used by State of Ohio employees to manage purchasing, 
+general ledger, accounts receivable, accounts payable, eProcurement, and budget and planning. 
+ 
+OhioBuys 
+The State of Ohio’s online purchasing solution. 
+ 
+Ohio Facilities Construction Commission 
+The Ohio Facilities Construction Commission (OFCC) is responsible for guiding capital projects for State 
+agencies; State-supported universities and community colleges, including Ohio’s comprehensive public
+
+
+--- PDF Page 46 ---
+State of Ohio Procurement Manual CY23, Version 1.0 
+Publication Date: March 17, 2023        P a g e  | 43 
+K-12 school construction and renovation program; and managing the grants process for cultural facilities 
+and school security programs. 
+ 
+Ohio Penal Industries (OPI) 
+A division of th e Department of Rehabilitation and Correction ( ODRC) that provides valuable work 
+opportunities to inmates and produces quality, cost-efficient products, and services. State agencies are 
+required by R.C. 5147.07 to purchase through OPI if it can meet the agency’s needs. 
+ 
+Ohio Pharmacy Services 
+The Ohio Department of Mental Health and Addiction Services’ Ohio's Pharmacy Service Center provides 
+prescription and over-the counter medical, personal care, and pharmaceutical products and supplies to 
+government and non-government organizations eligible under R.C. 5119.44. Additionally, OPSC provider 
+services include: responding to drug information requests; providing requested medical journal articles; 
+distributing newslet ters addressing issues of interest to health care professionals; assisting in the 
+development of drug utilization evaluation criteria, and providing in-service training on medication issues. 
+ 
+Participate 
+As defined in R.C. 9.242(A)(3), to respond to any solicitation or procurement issued by a State agency 
+or the recipient of an award of a State Contract, or to provide any goods or services to any State agency. 
+ 
+Personal Protective Equipment (PPE)  
+As defined in R.C. 125.05(E) , personal protective equipment means equipment worn to minimize 
+exposure to hazards that cause workplace injuries and illnesses. 
+ 
+Pre-Governed Contracts 
+IT contracts not requiring OIT to review/approve requisitions to complete the approval workflow process 
+within OhioBuys.  
+ 
+Products 
+Materials, manufacturer's supplies, merchandise, goods, wares, and foodstuffs. 
+ 
+Proposals 
+All documents, whether attached or incorporated by reference, supplied by an Offeror in response to a 
+request for proposal. 
+ 
+Public Exigency 
+As defined in R.C. 123.10, an injury or obstruction that occurs in any public works of the State and that 
+materially impairs its immediate use or places in jeopardy property adjacent to it; an immediate danger 
+of such an injury or obstruction; or an injury or obstruction, or an immediate danger of an injury or 
+obstruction, that occurs in any public works of the State and that materially impairs its immediate use or 
+places in jeopardy property adjacent to it. 
+ 
+Purchase 
+To buy, rent, lease, lease purchase, or otherwise acquire supplies or services. "Purchase" also includes 
+all functions that pertain to the obtaining of supplies or services, including description of requirements, 
+selection and solicitation of sources, preparation and award of contracts, all phases of contract 
+administration, and receipt and acceptance of the supplies and services and payment for them. 
+ 
+Recovery 
+Those activities required and necessary to return an area to its former condition to the extent possible 
+following the occurrence of any hazard.
+
+
+--- PDF Page 47 ---
+State of Ohio Procurement Manual CY23, Version 1.0 
+Publication Date: March 17, 2023        P a g e  | 44 
+Release and Permit (R&P) 
+A Release and Permit is issued by  DAS to State agencies when purchasing limits exceed the agency's 
+direct purchase authority and when it has been determined that the product or service cannot be procured 
+by DAS through the competitive selection process. An  OIT R&P is issued to State agencies when 
+purchasing goods falling under defined IT commodity codes. 
+ 
+Request for Proposal (RFP) 
+A process used to solicit competitive sealed proposals from suppliers for more complex goods and 
+services such as information technology systems and services, medical equipment, etc. Also refers to all 
+documents used for soliciting proposals from Offerors. 
+ 
+Response 
+All those activities that occur after any hazard and that provide emergency assistance from the effects of 
+any such hazard, reduce the probability of further injury, damage, or destruction, and are designed or 
+undertaken to speed recovery operations. 
+ 
+Responsible  
+Criteria by which State agencies may be required to evaluate Bidders when awarding contracts.  Factors 
+that must be considered to determine responsibility include the Bidder’s experience, Bidder's financial 
+condition, conduct and performance on previous contracts, facilities, management skills, and ability to 
+execute the contract properly. 
+ 
+Responsive 
+Criteria that State agencies may be required to evaluate Bidders by when awarding contracts. Bids must 
+be considered responsive if the Bidder's proposal responds to bid specifications in all material respects 
+and contains no irregularities or deviations from the specifications that would affect the amount of the bid 
+or otherwise give the Bidder a competitive advantage. 
+ 
+Reverse Auctions 
+An online auction in which sellers bid against each other to win a buyer's business. Typically used to 
+purchase commodities from multiple pre-qualified providers.  
+ 
+Services 
+The furnishing of labor, time, or effort by a person, not involving the delivery of a specific product other 
+than a report which, if provided, is merely incidental to the required performance. "Services" does not 
+include services furnished pursuant to employment agreements or collective bargaining agreements. 
+ 
+Significant Ohio Economic Presence 
+Business or ganizations that (1) pay required taxes to the State or applicable border state; (2) are 
+registered and licensed to do business in the State by the Secretary of State’s Office or as required by 
+applicable border state; and (3) either have ten or more employees based in Ohio or the applicable border 
+state, or 75% or more of their employees based in Ohio or the applicable border state.  
+ 
+Single-Source Procurement 
+A procurement from one selected supplier, even though there are other suppliers who may provide similar 
+supplies or services. A single-source procurement decision must be justified based on strategic factors, 
+such as continuity of services, standardization, specialized capabilities, warranty, etc., even though other 
+competitive sources may be available. 
+ 
+Sole-Source Procurement 
+A procurement from one selected supplier that can be substantiated because a requirement involves a 
+supply or service provided by only one supplier or contractor having exclusive rights (e.g., rights to data,
+
+
+--- PDF Page 48 ---
+State of Ohio Procurement Manual CY23, Version 1.0 
+Publication Date: March 17, 2023        P a g e  | 45 
+patent or copy rights, proprietary interests, i ntellectual property, or secret processes) to provide the 
+supply or service. A sole -source procurement differs from a single -source procurement because the 
+supply or service is unique. 
+ 
+State Agencies 
+Every organized body, office, or agency established by the laws of the State for the exercise of any 
+function of State government. It does not include elected State officials, the General Assembly or any 
+legislative agency, a court or any judicial agency, or a State institution of higher education.  
+ 
+State Contracts 
+A contract established by DAS through competitive selection or made available in conjunction with 
+spending authority granted by a waiver of competitive selection from the Controlling Board. The contract 
+types in the waiver include STS Contracts, master maintenance agreements, master license agreements, 
+master service agreements, and master cloud service agreements. 
+ 
+State Procurement Emergency  
+A situation that creates all of the following: (1) a threat to public health, safety, or welfare; (2) an immediate 
+and serious need for supplies or services that cannot be met through the normal procurement methods 
+required by State law; and (3) a serious threat of harm to the functioning of State government, the 
+preservation or protection of property, or the health or safety of any person. 
+ 
+State Term Schedule (STS) 
+Contracts negotiated directly with a manufacturer or service provider who must agree to terms and 
+conditions prepared by the DAS. Pricing is either based upon General Services Administration pricing 
+schedules or a manufacturer's most favored customer pricing schedule for a similarly situated customer. 
+The manufacturer or service provider may name any number of authorized distributors wh o will provide 
+the products or services to the agencies on their behalf. 
+ 
+Supplies 
+All property, including but not limited to equipment, materials, other tangible assets , and insurance, but 
+excluding real property or an interest in real property. 
+ 
+Technical Proposals 
+A response to a solicitation that describes in detail what an Offeror proposes to do, furnish, and the 
+method of delivery with no mention of price.  
+ 
+Veteran-friendly business enterprise (VBE) 
+A sole proprietorship, association, partnership, corporation, limited liability company, or joint venture that 
+meets veteran employment standards established by the Directors of the Department of Development 
+and the Department of Transportation.  
+ 
+Waiver 
+An exemption that permits a State agency to not purchase from either a requisite procurement program 
+or an established mandatory State Contract.  
+ 
+Women-owned Business Enterprise  
+A business owned and controlled by women who are United State citizens and are residents of either 
+Ohio or a reciprocal state. In addition, the business must have been in business for at least one year prior 
+to applying and be at least 51% women-owned.
+
+
+--- PDF Page 49 ---
+State of Ohio Procurement Manual CY23, Version 1.0 
+Publication Date: March 17, 2023        P a g e  | 46 
+ 
+               
+ 
+Appendix A – Request to Purchase 
+ 
+ 
+Purchase Requisition vs. Request to Purchase 
+ 
+One of the most common questions from OhioBuys users is when they should create a request to 
+purchase and when they should create a purchase requisition (PR). 
+ 
+An RTP should be created to place IT and non-IT sourcing and contracting requests with DAS. However, 
+a PR is used when purchasing from either a Requisi te Procurement Program or an existing  State 
+contract.26  
+ 
+ 
+Non-IT Purchases 
+ 
+If a purchase is being made that  does not reference an existing State contract,  then the total dollar 
+amount of the purchase need must be considered.  A PR can be created if the total value of the purchase 
+need is:  
+ 
+1. Less than $25,000; or 
+ 
+2. Less than $50,000 (when the PR is going to be submitted in OhioBuys). 
+ 
+If the purchase does not reference a State contract and its total value is above these thresholds, then an 
+RTP must be submitted to DAS. Additionally, an RTP is required if the purchase’s total value would result 
+in the agency’s Direct Purchase Authority (DPA) being exceeded with a particular supplier.  
+ 
+However, an RTP is not required if the purchase is covered by an existing non -IT Blanket Release & 
+Permit or if the purchase is statutorily exempt from DAS authority.  
+ 
+IT Purchases 
+ 
+If an IT purchase does not reference an existing State contract and an IT R&P  is needed, the following 
+needs to be considered: 
+ 
+1. For sole or single source purchases, either a PR referencing an IT account code or  an agency-
+administered contract can be created.27 
+ 
+ 
+26 Except for services being requested under the Third-Party Administrator (TPA) for Facility Maintenance and Repair Projects 
+contract (Index # GDC160 Contract #CSP905120-1) and competitive selection two phase prequal contracts, in which case 
+an RTP is required.  
+27 When creating an agency-administered contract, the IT checkbox in OhioBuys is used to identify the contract as IT.
+
+
+--- PDF Page 50 ---
+State of Ohio Procurement Manual CY23, Version 1.0 
+Publication Date: March 17, 2023        P a g e  | 47 
+Attach supporting documentation and include the draft Controlling Board  request if using 
+Controlling Board purchase authority, or documentation demonstrating compliance with PM-01 if 
+using Direct Purchase Authority. 
+ 
+2. To create and a gency-administered contract in OhioBuys, flag it as an IT contract using the IT  
+checkbox and populate the Contract Not to Exceed field on the  Negotiated Terms tab of the 
+contract.  
+ 
+If biennium Controlling Board approval is being requested as part of this contract, select the 
+Biennium Fiscal Year 1 and Biennium Fiscal  Year 2 and then enter the Biennium Fiscal Year 
+Amount for each fiscal year.  
+ 
+Once your contract is submitted, it is automatically routed for the necessary approvals (e.g., IT 
+SIM, IT SME, EITC Analysts, etc.). After IT has completed their review, an IT R&P number will be 
+generated and will be linked on the Release & Permit field on  the header of the contract. The 
+Contract Responsible user receives an email notification once the necessary approvals have 
+been received. 
+ 
+ 3.  If you have a procurement need that is not on a DAS contract or is not provided  via a sole or 
+single source provider over $50,000.00,  then an  RTP must be submitted to determine the 
+appropriate procurement method. 
+ 
+ 
+PR vs. RTP Flowchart 
+ 
+Please reference this flowchart to help determine whether a RTP is necessary for your purchase:  
+ 
+ 
+ 
+ 
+Requesting Contract Amendments  
+ 
+Request for Amendment is an option in the  OhioBuys request type drop down menu. When submitting 
+this type of RTP, agencies identify the contract for which they are requesting the contract amendment,
+
+
+--- PDF Page 51 ---
+State of Ohio Procurement Manual CY23, Version 1.0 
+Publication Date: March 17, 2023        P a g e  | 48 
+provide a description of the requested change , and attach any drafts and justification documentation.  
+This request for amendment feature should be used for any required change to a contract needed by an 
+agency including amendments resulting from change requests, Interim Deliverable Agreement (IDA’s), 
+scope changes, additional statements of work, or change orders.  
+ 
+After submitting a RTP request for a change, the RTP will be reviewed and assigned to a DAS contract 
+analyst. The submitting user will receive a notification that their amendment request has been received 
+and they will be contacted by the contract analyst.   
+ 
+ 
+Obtaining Release and Permit Before Controlling Board 
+ 
+State agencies often ask about scenarios in which they need to obtain a Release and Permit when they 
+also need to obtain a Controlling Board number. To answer these questions, agencies should refer to the 
+“Purchase Requisition vs. Request to Purchase ” section of this Appendix to determine the appropriate 
+vehicle for obtaining a Release and Permit. 
+ 
+When a PR is used, it routes through the appropriate requisition workflow and is assigned a Release and 
+Permit number. The requisition subsequently follows the “DAS Released Requisition” step pictured below 
+in the workflow.  Agencies can add the Controlling Board Number while the requisition is at this step, 
+before submitting it to the Final Approver step. 
+ 
+ 
+OhioBuys Purchasing Requisition Workflow 
+ 
+ 
+ 
+ 
+Agencies creating RTPs or IT agency-administered contracts to obtain the release and permit can create 
+requisitions at any time and reference either their IT agency -administered contract or their assigned 
+Release and Permit and Controlling Board number s (once the Controlling Board number is available in 
+OhioBuys).   
+ 
+Agencies having an IT agency administered contract with an IT R&P can reference the contract on their 
+line item and OhioBuys automatically retrieves the R&P and bypasses EITC reviews. In cases where the 
+Controlling Board number is entered before reaching the “DAS Released Requisition” step, the workflow 
+bypasses this step and the requisition routes to the Final Approver.
