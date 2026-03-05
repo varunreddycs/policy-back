@@ -1,0 +1,59 @@
+name: azure-dev
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  id-token: write
+  contents: read
+
+env:
+  AZURE_ENV_NAME: dev
+  AZURE_LOCATION: eastus2
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup azd
+        uses: Azure/setup-azd@v1.0.0
+
+      - name: Azure login (OIDC)
+        uses: azure/login@v2
+        with:
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+
+      - name: azd auth login
+        run: azd auth login --client-id "${{ secrets.AZURE_CLIENT_ID }}" --federated-credential-provider github
+
+      - name: Select or create azd env
+        working-directory: .
+        run: |
+          azd env select "${AZURE_ENV_NAME}" || azd env new "${AZURE_ENV_NAME}"
+          azd env set AZURE_LOCATION "${AZURE_LOCATION}"
+          azd env set environmentName "${AZURE_ENV_NAME}"
+          azd env set appEnvironment "${AZURE_ENV_NAME}"
+          azd env set apiImageTag "${GITHUB_SHA}"
+          azd env set workerImageTag "${GITHUB_SHA}"
+
+      - name: Set required runtime values
+        working-directory: .
+        run: |
+          azd env set azureOpenAiEndpoint "${{ vars.AZURE_OPENAI_ENDPOINT }}"
+          azd env set azureOpenAiEmbeddingsDeployment "${{ vars.AZURE_OPENAI_EMBEDDINGS_DEPLOYMENT }}"
+          azd env set azureOpenAiApiVersion "${{ vars.AZURE_OPENAI_API_VERSION }}"
+          azd env secret set postgresAdminPassword "${{ secrets.POSTGRES_ADMIN_PASSWORD }}"
+          azd env secret set azureOpenAiApiKey "${{ secrets.AZURE_OPENAI_API_KEY }}"
+
+      - name: Deploy with azd up
+        working-directory: .
+        run: azd up --no-prompt

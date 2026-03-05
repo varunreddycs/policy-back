@@ -1,0 +1,42 @@
+name: mistrv-policy-platform
+metadata:
+  template: mistrv-policy-platform@1.0.0
+
+infra:
+  provider: bicep
+  path: infra
+  module: main
+
+services:
+  api:
+    project: .
+    host: containerapp
+    language: python
+    docker:
+      path: apps/api/Dockerfile
+
+  worker:
+    project: .
+    host: containerapp
+    language: python
+    docker:
+      path: apps/worker/Dockerfile
+
+  web:
+    project: apps/web
+    dist: dist
+    host: staticwebapp
+    language: js
+    hooks:
+      prepackage:
+        windows:
+          shell: pwsh
+          run: |
+            if (-not $env:API_URL) {
+              Write-Error "API_URL is not available. Run 'azd provision' first or ensure infra outputs were applied to this environment."
+              exit 1
+            }
+            $servicePath = if ($env:AZD_SERVICE_PATH) { $env:AZD_SERVICE_PATH } else { (Get-Location).Path }
+            $envFile = Join-Path $servicePath ".env.production"
+            "VITE_API_BASE_URL=$($env:API_URL)" | Out-File -FilePath $envFile -Encoding utf8
+            Write-Host "Wrote VITE_API_BASE_URL to $envFile"
