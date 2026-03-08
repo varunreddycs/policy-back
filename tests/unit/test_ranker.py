@@ -40,29 +40,29 @@ def test_policy_ranker_bucket_first_department_override() -> None:
 	ranker = PolicyRanker()
 
 	policy_id = uuid4()
-	claims_v = uuid4()
-	enterprise_v = uuid4()
+	dept_v = uuid4()
+	org_v = uuid4()
 
-	claims = EvidenceCandidate(
+	dept = EvidenceCandidate(
 		policy_id=policy_id,
-		policy_version_id=claims_v,
+		policy_version_id=dept_v,
 		section_id=None,
-		text="Claims SOP says appeal deadline is 90 days",
+		text="Department SOP says submission deadline is 90 days",
 		score=0.2,
 		source="test",
 		metadata={
-			"department_scope": "claims_ops",
+			"department_scope": "operations",
 			"authority_level": 10,
 			"effective_date": "2026-02-01",
 			"is_current": True,
 		},
 	)
 
-	enterprise = EvidenceCandidate(
+	organization = EvidenceCandidate(
 		policy_id=policy_id,
-		policy_version_id=enterprise_v,
+		policy_version_id=org_v,
 		section_id=None,
-		text="Enterprise policy says appeal deadline is 60 days",
+		text="Organization guidance says submission deadline is 60 days",
 		score=0.9,
 		source="test",
 		metadata={
@@ -73,18 +73,18 @@ def test_policy_ranker_bucket_first_department_override() -> None:
 		},
 	)
 
-	# claims_ops: department bucket A exists, so it must win even if enterprise scores higher.
-	claims_ops = [
-		claims.model_copy(update={"metadata": {**claims.metadata, "user_department": "claims_ops"}}),
-		enterprise.model_copy(update={"metadata": {**enterprise.metadata, "user_department": "claims_ops"}}),
+	# operations: department bucket A exists, so it must win even if organization scores higher.
+	operations = [
+		dept.model_copy(update={"metadata": {**dept.metadata, "user_department": "operations"}}),
+		organization.model_copy(update={"metadata": {**organization.metadata, "user_department": "operations"}}),
 	]
-	ranked_claims = ranker.rank(claims_ops)
-	assert "90 days" in ranked_claims[0].text
+	ranked_operations = ranker.rank(operations)
+	assert "90 days" in ranked_operations[0].text
 
-	# privacy_office: no matching dept-scoped evidence, so fall back to 'all'.
-	privacy = [
-		claims.model_copy(update={"metadata": {**claims.metadata, "user_department": "privacy_office"}}),
-		enterprise.model_copy(update={"metadata": {**enterprise.metadata, "user_department": "privacy_office"}}),
+	# compliance: no matching dept-scoped evidence, so fall back to 'all'.
+	compliance = [
+		dept.model_copy(update={"metadata": {**dept.metadata, "user_department": "compliance"}}),
+		organization.model_copy(update={"metadata": {**organization.metadata, "user_department": "compliance"}}),
 	]
-	ranked_privacy = ranker.rank(privacy)
-	assert "60 days" in ranked_privacy[0].text
+	ranked_compliance = ranker.rank(compliance)
+	assert "60 days" in ranked_compliance[0].text

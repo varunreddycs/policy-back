@@ -5,12 +5,9 @@ import logging
 import os
 import time
 import uuid
-import io
-import zipfile
 from dataclasses import dataclass
 from datetime import datetime, timezone
 from typing import Any
-from xml.etree import ElementTree
 
 from azure.core.credentials import AzureNamedKeyCredential
 from azure.identity import DefaultAzureCredential
@@ -29,6 +26,7 @@ from packages.db.models.policy_models import (
 	sha256_hex,
 )
 from packages.db.session import get_sessionmaker
+from packages.extraction.extractor import extract_sections
 from packages.storage.blob_service import BlobService
 
 
@@ -40,59 +38,6 @@ def _strip_nul(text: str) -> str:
 	return (text or "").replace("\x00", "")
 
 
-def _extract_text_from_txt(source_bytes: bytes) -> str:
-	# UTF-8 first, then fall back to replacement.
-	try:
-		return source_bytes.decode("utf-8-sig")
-	except Exception:
-		return source_bytes.decode("utf-8", errors="replace")
-
-
-def _extract_text_from_docx(source_bytes: bytes) -> str:
-	# Minimal DOCX text extractor without external deps.
-	# DOCX is a ZIP; main content is in word/document.xml
-	with zipfile.ZipFile(io.BytesIO(source_bytes)) as zf:
-		xml_bytes = zf.read("word/document.xml")
-	root = ElementTree.fromstring(xml_bytes)
-	ns = {"w": "http://schemas.openxmlformats.org/wordprocessingml/2006/main"}
-	paragraphs: list[str] = []
-	for p in root.findall(".//w:p", ns):
-		parts = []
-		for t in p.findall(".//w:t", ns):
-			if t.text:
-				parts.append(t.text)
-		para = "".join(parts).strip()
-		if para:
-			paragraphs.append(para)
-	return "\n".join(paragraphs)
-
-
-def _extract_text_from_pdf(source_bytes: bytes) -> str:
-	try:
-		from pypdf import PdfReader  # type: ignore
-	except Exception as exc:  # pragma: no cover
-		raise RuntimeError("PDF extraction requires 'pypdf' dependency") from exc
-
-	reader = PdfReader(io.BytesIO(source_bytes))
-	pages_text: list[str] = []
-	for page in reader.pages:
-		try:
-			pages_text.append(page.extract_text() or "")
-		except Exception:
-			pages_text.append("")
-	return "\n".join([t for t in pages_text if t])
-
-
-def _extract_text_from_blob(*, blob_name: str, source_bytes: bytes) -> str:
-	ext = os.path.splitext(blob_name or "")[1].lower()
-	if ext in {".txt", ".md"}:
-		return _extract_text_from_txt(source_bytes)
-	if ext == ".docx":
-		return _extract_text_from_docx(source_bytes)
-	if ext == ".pdf":
-		return _extract_text_from_pdf(source_bytes)
-	# Default: try to decode as UTF-8 but don't pretend it is safe for binary formats.
-	return _extract_text_from_txt(source_bytes)
 
 
 def _load_dotenv_if_present() -> None:
@@ -173,35 +118,19 @@ def _parse_queue_payload(raw: str) -> dict[str, Any]:
 	raise ValueError("Invalid payload shape")
 
 
-def _extract_sections_stub(text: str) -> list[dict[str, Any]]:
-	clean = _strip_nul(text).strip()
-	if not clean:
-		return [
-			{
-				"section_key": "main",
-				"title": "Main",
-				"start_offset": 0,
-				"end_offset": 0,
-				"text": "",
-				"metadata": {},
-			}
-		]
-
-	chunk_size = 4000
-	sections: list[dict[str, Any]] = []
-	for idx, start in enumerate(range(0, len(clean), chunk_size), start=1):
-		end = min(len(clean), start + chunk_size)
-		sections.append(
-			{
-				"section_key": f"chunk-{idx}",
-				"title": f"Chunk {idx}",
-				"start_offset": start,
-				"end_offset": end,
-				"text": clean[start:end],
-				"metadata": {"extractor": "stub", "chunk_size": chunk_size},
-			}
-		)
-	return sections
+def _extract_sections_for_blob(*, blob_name: str, source_bytes: bytes) -> list[dict[str, Any]]:
+	sections = extract_sections(filename=blob_name, content_bytes=source_bytes)
+	return [
+		{
+			"section_key": section.section_key,
+			"title": section.title,
+			"start_offset": section.start_offset,
+			"end_offset": section.end_offset,
+			"text": _strip_nul(section.text),
+			"metadata": section.metadata,
+		}
+		for section in sections
+	]
 
 
 def _mark_policy_version_failed(
@@ -325,9 +254,7 @@ def _process_one_message(
 
 	try:
 		source_bytes = blob_service.download_blob_bytes(version.blob_container, version.blob_name)
-		source_text = _extract_text_from_blob(blob_name=version.blob_name, source_bytes=source_bytes)
-
-		sections_payload = _extract_sections_stub(source_text)
+		sections_payload = _extract_sections_for_blob(blob_name=version.blob_name, source_bytes=source_bytes)
 		extracted_doc = {
 			"policy_version_id": str(version.id),
 			"policy_id": str(policy.id),

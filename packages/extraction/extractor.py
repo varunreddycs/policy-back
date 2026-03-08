@@ -1,8 +1,11 @@
 from __future__ import annotations
 
+import os
 from dataclasses import dataclass
 from typing import Any, Dict, List
 
+from packages.extraction.parsers.docx_parser import parse_docx
+from packages.extraction.parsers.pdf_parser import parse_pdf
 from packages.extraction.parsers.txt_parser import parse_txt
 
 
@@ -17,8 +20,16 @@ class ExtractedSection:
 
 
 def extract_sections(*, filename: str, content_bytes: bytes) -> List[ExtractedSection]:
-    # Phase 1: only TXT parsing is implemented; other formats are stubs.
-    text = parse_txt(content_bytes)
+    ext = os.path.splitext(filename or "")[1].lower()
+    if ext in {".txt", ".md", ".csv", ".json", ".html", ".htm"}:
+        text = parse_txt(content_bytes)
+    elif ext == ".docx":
+        text = parse_docx(content_bytes)
+    elif ext == ".pdf":
+        text = parse_pdf(content_bytes)
+    else:
+        # Best-effort fallback for unknown formats.
+        text = parse_txt(content_bytes)
     if not text.strip():
         return [ExtractedSection(section_key="main", title="Main", start_offset=0, end_offset=0, text="", metadata={})]
 
@@ -34,7 +45,7 @@ def extract_sections(*, filename: str, content_bytes: bytes) -> List[ExtractedSe
                 start_offset=start,
                 end_offset=end,
                 text=clean[start:end],
-                metadata={"extractor": "stub", "chunk_size": chunk_size},
+                metadata={"extractor": f"ext:{ext or 'unknown'}", "chunk_size": chunk_size},
             )
         )
     return results

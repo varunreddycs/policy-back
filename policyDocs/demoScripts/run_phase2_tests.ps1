@@ -311,7 +311,7 @@ function Invoke-Ask {
 
 # Test 1: Golden path
 Write-Host "T1) Golden path - should return citations"
-$r1 = Invoke-Ask -Question "What is the deadline to file an appeal?" -Department "claims_ops" -PolicyTypes @("claims") -OnlyCurrent $true
+$r1 = Invoke-Ask -Question "What is the submission deadline for standard requests?" -Department "operations" -PolicyTypes @("general") -OnlyCurrent $true
 
 $cit1 = $r1.citations
 $audit1 = Get-FirstNonNull -Obj $r1 -Keys @("audit_id","auditId")
@@ -337,8 +337,8 @@ Assert-True -Condition ($null -ne $rep) -Message "Replay returns payload"
 
 # Test 4: Conflict/department behavior (expect either different citations OR warning behavior)
 Write-Host "T4) Department variation"
-$rClaims = Invoke-Ask -Question "What is the deadline to file an appeal?" -Department "claims_ops" -OnlyCurrent $true
-$rPriv   = Invoke-Ask -Question "What is the deadline to file an appeal?" -Department "privacy_office" -OnlyCurrent $true
+$rClaims = Invoke-Ask -Question "What is the submission deadline for standard requests?" -Department "operations" -OnlyCurrent $true
+$rPriv   = Invoke-Ask -Question "What is the submission deadline for standard requests?" -Department "compliance" -OnlyCurrent $true
 
 $claimsCiteFirst = $null
 $privCiteFirst = $null
@@ -355,7 +355,7 @@ if ($claimsCiteFirst -and $privCiteFirst -and ($claimsCiteFirst -ne $privCiteFir
 
 # Test 5: Refusal path (should refuse with insufficient evidence)
 Write-Host "T5) Refusal path"
-$r5 = Invoke-Ask -Question "What is the dental reimbursement cap for 2027?" -Department "claims_ops" -OnlyCurrent $true
+$r5 = Invoke-Ask -Question "What is the spacecraft reimbursement cap for 2027?" -Department "operations" -OnlyCurrent $true
 Assert-True -Condition ($r5.refusal_reason -ne $null -and $r5.refusal_reason -ne "") -Message "Refusal_reason returned for unsupported question"
 Assert-True -Condition ($r5.citations -eq $null -or $r5.citations.Count -eq 0) -Message "Refusal returns 0 citations"
 Write-Host ("Refusal: {0}" -f $r5.refusal_reason)

@@ -1,7 +1,7 @@
 {
   "tenantId": "local",
-  "question": "What is the deadline to file an appeal?",
+  "question": "What is the deadline to submit a request?",
   "mode": "strict",
-  "user": { "email": "dev@local", "role": "user", "department": "privacy_office" },
+  "user": { "email": "dev@local", "role": "user", "department": "compliance" },
   "policyScope": { "onlyCurrent": true }
 }

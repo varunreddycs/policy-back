@@ -12,17 +12,17 @@ import EvidenceDrawer from "../components/EvidenceDrawer";
 import QuickReplyChips from "../components/QuickReplyChips";
 
 const QUICK_REPLIES = [
-  "Appeal deadline?",
-  "Expedited appeals timeline",
-  "Retention requirements",
-  "PHI sharing rules",
-  "Encryption required?"
+  "Summarize the current requirements",
+  "What changed in the latest version?",
+  "What are the approval steps?",
+  "List retention and archival rules",
+  "What controls are mandatory?"
 ];
 
 const TENANT_ID = import.meta.env.VITE_TENANT_ID || "00000000-0000-0000-0000-000000000001";
 const DEFAULT_EMAIL = import.meta.env.VITE_DEFAULT_EMAIL || "dev@local";
 const DEFAULT_ROLE = import.meta.env.VITE_DEFAULT_ROLE || "user";
-const DEFAULT_DEPARTMENT = import.meta.env.VITE_DEFAULT_DEPARTMENT || "claims_ops";
+const DEFAULT_DEPARTMENT = import.meta.env.VITE_DEFAULT_DEPARTMENT || "operations";
 
 export default function ConsolePage() {
   const navigate = useNavigate();

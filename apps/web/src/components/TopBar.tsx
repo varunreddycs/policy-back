@@ -29,6 +29,14 @@ export default function TopBar() {
           >
             Audit
           </Button>
+          <Button
+            component={NavLink}
+            to="/ingest"
+            variant={location.pathname.startsWith("/ingest") ? "contained" : "outlined"}
+            size="small"
+          >
+            Ingest
+          </Button>
         </Box>
       </Toolbar>
     </AppBar>

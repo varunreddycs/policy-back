@@ -8,7 +8,7 @@ $RAW_CONTAINER = "policy-raw"
 
 # This script lives in policyDocs/demoScripts, but the input file lives in policyDocs/
 $policyDocsRoot = Split-Path -Parent $PSScriptRoot
-$FilePath = Join-Path $policyDocsRoot "enterprise_appeals_60days.txt"
+$FilePath = Join-Path $policyDocsRoot "sample_text_v1.txt"
 if (-not (Test-Path -LiteralPath $FilePath)) { throw "Missing file: $FilePath" }
 Write-Host "Using file: $FilePath"
 
@@ -59,7 +59,7 @@ function Find-PolicyVersionIdByLabel {
 }
 
 # If policy/version already exists, do not create new blobs/versions.
-$EXTERNAL_ID = "enterprise-appeals-policy"
+$EXTERNAL_ID = "sample-conflict-doc"
 $VERSION_LABEL = "v1"
 
 $existingPolicy = Find-PolicyByExternalId -ExternalId $EXTERNAL_ID
@@ -77,13 +77,13 @@ if ($existingPolicy -and $existingPolicy.id) {
 
 if (-not $policyId -or -not $policyVersionId) {
   # 1) Create batch
-  $batchBody = (@{ tenant_id=$TENANT_ID; source_system="conflict-test"; correlation_id="conflict-ent-60days" } | ConvertTo-Json)
+  $batchBody = (@{ tenant_id=$TENANT_ID; source_system="conflict-test"; correlation_id="conflict-sample-v1" } | ConvertTo-Json)
   $batch = Invoke-RestMethod -Method Post -Uri "$BASE_URL/v1/ingest/batches" -Headers $Headers -Body $batchBody
   $batchId = $batch.id
   Write-Host "Batch: $batchId"
 
   # 2) Get SAS URL (use a stable blob path so reruns don't generate new files)
-  $blobPath = "policies/conflict/enterprise_appeals_60days.txt"
+  $blobPath = "documents/conflict/sample_text_v1.txt"
   $uploadBody = (@{ container_name=$RAW_CONTAINER; blob_path=$blobPath; content_type="text/plain"; expires_in_minutes=30 } | ConvertTo-Json)
   $upload = Invoke-RestMethod -Method Post -Uri "$BASE_URL/v1/ingest/batches/$batchId/upload-urls?tenant_id=$TENANT_ID" -Headers $Headers -Body $uploadBody
   Write-Host "Uploading to: $($upload.blob_uri)"
@@ -99,15 +99,15 @@ if (-not $policyId -or -not $policyVersionId) {
     container_name=$RAW_CONTAINER
     blob_path=$blobPath
     policy_external_id=$EXTERNAL_ID
-    policy_name="Enterprise Appeals Policy"
+    policy_name="Sample Conflict Reference"
     version_label=$VERSION_LABEL
     effective_date="2026-03-03"
-    title="Enterprise Appeals Policy v1"
-    correlation_id="conflict-ent-60days"
+    title="Sample Conflict Reference v1"
+    correlation_id="conflict-sample-v1"
     metadata=@{
       authority_level=80
       department_scope="all"
-      policy_type="claims"
+      policy_type="general"
       test_case="conflict_selection"
     }
   } | ConvertTo-Json -Depth 10
@@ -166,4 +166,4 @@ $sections = Invoke-RestMethod -Method Get -Uri "$BASE_URL/v1/policy-versions/$po
 $match = $sections | Where-Object { $_.text -match "60 days" } | Select-Object -First 1
 if (-not $match) { throw "No '60 days' section found." }
 
-Write-Host "[PASS] Enterprise 60-days policy ingested and extracted."
+Write-Host "[PASS] Sample reference document ingested and extracted."

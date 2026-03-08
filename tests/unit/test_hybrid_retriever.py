@@ -58,7 +58,7 @@ def test_hybrid_retriever_merges_fts_and_vector_results() -> None:
         fts_retriever=_StaticRetriever(fts_results),
     )
 
-    merged = retriever.retrieve(tenant_id=uuid4(), query="appeal deadline", top_k=10)
+    merged = retriever.retrieve(tenant_id=uuid4(), query="submission deadline", top_k=10)
 
     assert len(merged) == 2
     sources = {item.metadata.get("retriever_source") for item in merged}

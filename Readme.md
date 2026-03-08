@@ -131,7 +131,7 @@ All requests below use a tenant UUID. For local demos, you can reuse any UUID (e
 
 2) Get an upload SAS URL:
 - `POST /v1/ingest/batches/{batch_id}/upload-urls`
-	- body: `{ "container_name": "policy-raw", "blob_path": "policies/hipaa/v1.pdf", "content_type": "application/pdf" }`
+	- body: `{ "container_name": "policy-raw", "blob_path": "documents/sample/v1.pdf", "content_type": "application/pdf" }`
 
 3) Upload the file using the SAS URL (PowerShell example):
 - `Invoke-WebRequest -Uri <upload_sas_url> -Method Put -InFile .\your.pdf -Headers @{"x-ms-blob-type"="BlockBlob";"Content-Type"="application/pdf"}`
@@ -141,11 +141,11 @@ All requests below use a tenant UUID. For local demos, you can reuse any UUID (e
 	- body:
 		`{
 			"container_name": "policy-raw",
-			"blob_path": "policies/hipaa/v1.pdf",
-			"policy_external_id": "HIPAA",
-			"policy_name": "HIPAA Privacy Rule",
+			"blob_path": "documents/sample/v1.pdf",
+			"policy_external_id": "DOC_SET_A",
+			"policy_name": "Sample Governance Document",
 			"version_label": "v1",
-			"metadata": {"department":"Compliance","sensitivity":"high","type":"regulatory"}
+			"metadata": {"department":"operations","sensitivity":"internal","type":"general"}
 		}`
 
 5) Watch status & results:

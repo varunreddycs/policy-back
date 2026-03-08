@@ -1,0 +1,285 @@
+import CloudUploadRoundedIcon from "@mui/icons-material/CloudUploadRounded";
+import LinkRoundedIcon from "@mui/icons-material/LinkRounded";
+import {
+  Alert,
+  Divider,
+  Box,
+  Button,
+  Card,
+  CardContent,
+  Chip,
+  LinearProgress,
+  Stack,
+  TextField,
+  Typography
+} from "@mui/material";
+import { useMemo, useState } from "react";
+import { ApiError } from "../api/client";
+import { policyApi } from "../api/policyApi";
+
+const TENANT_ID = import.meta.env.VITE_TENANT_ID || "00000000-0000-0000-0000-000000000001";
+const DEFAULT_CONTAINER = import.meta.env.VITE_INGEST_CONTAINER || "policy-raw";
+const DEFAULT_SOURCE_SYSTEM = import.meta.env.VITE_INGEST_SOURCE_SYSTEM || "web-upload";
+
+function slugify(input: string) {
+  return input
+    .trim()
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "")
+    .slice(0, 96);
+}
+
+function randomId() {
+  return Math.random().toString(36).slice(2, 10);
+}
+
+export default function IngestPage() {
+  const [file, setFile] = useState<File | null>(null);
+  const [crawlUrl, setCrawlUrl] = useState("");
+  const [policyName, setPolicyName] = useState("");
+  const [policyExternalId, setPolicyExternalId] = useState("");
+  const [containerName, setContainerName] = useState(DEFAULT_CONTAINER);
+  const [sourceSystem, setSourceSystem] = useState(DEFAULT_SOURCE_SYSTEM);
+  const [versionLabel, setVersionLabel] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [result, setResult] = useState<{
+    batchId: string;
+    policyId: string;
+    policyVersionId: string;
+    parseStatus: string;
+    blobPath: string;
+  } | null>(null);
+
+  const suggestedExternalId = useMemo(() => {
+    if (!policyName.trim()) {
+      return "";
+    }
+    return `web-${slugify(policyName)}`;
+  }, [policyName]);
+
+  const effectiveExternalId = policyExternalId.trim() || suggestedExternalId;
+
+  const canSubmit = !!file && !!policyName.trim() && !!effectiveExternalId && !!containerName.trim();
+  const canCrawlSubmit = !!crawlUrl.trim() && !!policyName.trim() && !!effectiveExternalId && !!containerName.trim();
+
+  const handleUpload = async () => {
+    if (!file) {
+      return;
+    }
+
+    setLoading(true);
+    setError(null);
+    setResult(null);
+
+    try {
+      const batch = await policyApi.createIngestionBatch({
+        tenant_id: TENANT_ID,
+        source_system: sourceSystem.trim() || DEFAULT_SOURCE_SYSTEM
+      });
+
+      const now = new Date().toISOString().replace(/[-:.TZ]/g, "").slice(0, 14);
+      const cleanName = file.name.replace(/\s+/g, "-");
+      const blobPath = `web/${TENANT_ID}/${now}-${randomId()}-${cleanName}`;
+
+      const formData = new FormData();
+      formData.append("file", file);
+      formData.append("container_name", containerName.trim());
+      formData.append("blob_path", blobPath);
+      formData.append("policy_external_id", effectiveExternalId);
+      formData.append("policy_name", policyName.trim());
+      formData.append("title", policyName.trim());
+      if (versionLabel.trim()) {
+        formData.append("version_label", versionLabel.trim());
+      }
+      formData.append(
+        "metadata_json",
+        JSON.stringify({
+          upload_channel: "web-ui",
+          original_filename: file.name
+        })
+      );
+
+      const registration = await policyApi.uploadAndRegisterDocument(batch.id, TENANT_ID, formData);
+
+      setResult({
+        batchId: batch.id,
+        policyId: registration.policy_id,
+        policyVersionId: registration.policy_version_id,
+        parseStatus: registration.parse_status,
+        blobPath
+      });
+    } catch (err) {
+      const message =
+        err instanceof ApiError
+          ? `Request failed (${err.status}): ${err.message}${err.body ? ` — ${JSON.stringify(err.body)}` : ""}`
+          : err instanceof Error
+            ? err.message
+            : "Upload failed.";
+      setError(message);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleCrawl = async () => {
+    setLoading(true);
+    setError(null);
+    setResult(null);
+
+    try {
+      const batch = await policyApi.createIngestionBatch({
+        tenant_id: TENANT_ID,
+        source_system: sourceSystem.trim() || "url-crawl"
+      });
+
+      const registration = await policyApi.crawlUrlAndRegisterDocument(batch.id, TENANT_ID, {
+        url: crawlUrl.trim(),
+        container_name: containerName.trim(),
+        policy_external_id: effectiveExternalId,
+        policy_name: policyName.trim(),
+        version_label: versionLabel.trim() || null,
+        metadata: {
+          upload_channel: "web-url-crawl",
+          source_url: crawlUrl.trim(),
+          public_url: crawlUrl.trim()
+        },
+        title: policyName.trim()
+      });
+
+      setResult({
+        batchId: batch.id,
+        policyId: registration.policy_id,
+        policyVersionId: registration.policy_version_id,
+        parseStatus: registration.parse_status,
+        blobPath: "(generated by server from URL crawl)"
+      });
+    } catch (err) {
+      const message =
+        err instanceof ApiError
+          ? `Request failed (${err.status}): ${err.message}${err.body ? ` — ${JSON.stringify(err.body)}` : ""}`
+          : err instanceof Error
+            ? err.message
+            : "URL crawl ingestion failed.";
+      setError(message);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  return (
+    <Stack spacing={2}>
+      <Typography variant="h5">Ingest Policy File</Typography>
+      <Typography variant="body2" color="text.secondary">
+        Upload a document directly from the web app, then register it into the ingestion pipeline.
+      </Typography>
+
+      <Card>
+        <CardContent>
+          <Stack spacing={2}>
+            <Button component="label" variant="outlined" startIcon={<CloudUploadRoundedIcon />}>
+              {file ? `Selected: ${file.name}` : "Choose File"}
+              <input
+                hidden
+                type="file"
+                accept=".pdf,.doc,.docx,.txt,.md,.html"
+                onChange={(event) => {
+                  const selected = event.target.files?.[0] || null;
+                  setFile(selected);
+                }}
+              />
+            </Button>
+
+            <TextField
+              label="Policy Name"
+              value={policyName}
+              onChange={(event) => setPolicyName(event.target.value)}
+              required
+              fullWidth
+            />
+
+            <TextField
+              label="Policy External ID"
+              value={policyExternalId}
+              onChange={(event) => setPolicyExternalId(event.target.value)}
+              helperText={suggestedExternalId ? `Leave blank to use: ${suggestedExternalId}` : "Required"}
+              fullWidth
+            />
+
+            <Stack direction={{ xs: "column", md: "row" }} spacing={2}>
+              <TextField
+                label="Blob Container"
+                value={containerName}
+                onChange={(event) => setContainerName(event.target.value)}
+                fullWidth
+              />
+              <TextField
+                label="Source System"
+                value={sourceSystem}
+                onChange={(event) => setSourceSystem(event.target.value)}
+                fullWidth
+              />
+            </Stack>
+
+            <TextField
+              label="Version Label (optional)"
+              value={versionLabel}
+              onChange={(event) => setVersionLabel(event.target.value)}
+              fullWidth
+            />
+
+            <Box>
+              <Button variant="contained" disabled={!canSubmit || loading} onClick={handleUpload}>
+                Upload And Ingest
+              </Button>
+            </Box>
+
+            <Divider />
+
+            <Typography variant="subtitle2">Or ingest from URL (crawl)</Typography>
+
+            <TextField
+              label="Document URL"
+              value={crawlUrl}
+              onChange={(event) => setCrawlUrl(event.target.value)}
+              placeholder="https://example.com/policies/file.pdf"
+              fullWidth
+            />
+
+            <Box>
+              <Button
+                variant="outlined"
+                startIcon={<LinkRoundedIcon />}
+                disabled={!canCrawlSubmit || loading}
+                onClick={handleCrawl}
+              >
+                Crawl URL And Ingest
+              </Button>
+            </Box>
+          </Stack>
+        </CardContent>
+      </Card>
+
+      {loading && <LinearProgress />}
+      {error && <Alert severity="error">{error}</Alert>}
+
+      {result && (
+        <Alert severity="success">
+          <Stack spacing={1}>
+            <Typography variant="body2">File registered successfully.</Typography>
+            <Stack direction="row" spacing={1} flexWrap="wrap">
+              <Chip size="small" label={`batch ${result.batchId.slice(0, 8)}`} />
+              <Chip size="small" label={`policy ${result.policyId.slice(0, 8)}`} />
+              <Chip size="small" label={`version ${result.policyVersionId.slice(0, 8)}`} />
+              <Chip size="small" label={`parse ${result.parseStatus}`} color="success" />
+            </Stack>
+            <Typography variant="caption" color="text.secondary">
+              Blob path: {result.blobPath}
+            </Typography>
+          </Stack>
+        </Alert>
+      )}
+    </Stack>
+  );
+}

@@ -15,11 +15,11 @@ class _StaticRetriever:
         return self._items
 
 
-def _make_request(department: str = "claims_ops") -> AskRequest:
+def _make_request(department: str = "operations") -> AskRequest:
     tenant_id = uuid4()
     return AskRequest(
         tenant_id=tenant_id,
-        question="What is the appeal timeline?",
+        question="What is the submission timeline?",
         mode="strict",
         user=UserContext(
             tenant_id=tenant_id,
@@ -42,17 +42,17 @@ def test_answer_service_returns_rich_citation_and_decision_fields() -> None:
             policy_id=tenant_policy,
             policy_version_id=dept_version,
             section_id=dept_section,
-            text="Department policy requires appeal filing within 30 days.",
+            text="Department guidance requires submission within 30 days.",
             score=0.91,
             source="hybrid",
             metadata={
-                "department_scope": "claims_ops",
-                "user_department": "claims_ops",
+                "department_scope": "operations",
+                "user_department": "operations",
                 "authority_level": 80,
-                "title": "Appeals",
-                "section_path": "Appeals/Deadlines",
-                "policy_name": "Claims Appeals Policy",
-                "public_url": "https://example.org/claims/appeals",
+                "title": "Submission Rules",
+                "section_path": "Process/Deadlines",
+                "policy_name": "Department Guidance",
+                "public_url": "https://example.org/department/guidance",
                 "effective_date": "2026-03-01",
                 "is_current": True,
             },
@@ -61,17 +61,17 @@ def test_answer_service_returns_rich_citation_and_decision_fields() -> None:
             policy_id=tenant_policy,
             policy_version_id=org_version,
             section_id=org_section,
-            text="Org policy allows appeal filing within 60 days.",
+            text="Organization guidance allows submission within 60 days.",
             score=0.88,
             source="hybrid",
             metadata={
                 "department_scope": "all",
-                "user_department": "claims_ops",
+                "user_department": "operations",
                 "authority_level": 60,
-                "title": "General Appeals",
-                "section_path": "General/Appeals",
-                "policy_name": "Org Appeals Policy",
-                "public_url": "https://example.org/org/appeals",
+                "title": "General Guidance",
+                "section_path": "General/Process",
+                "policy_name": "Organization Guidance",
+                "public_url": "https://example.org/org/guidance",
                 "effective_date": "2026-01-01",
                 "is_current": True,
             },
@@ -88,10 +88,10 @@ def test_answer_service_returns_rich_citation_and_decision_fields() -> None:
     assert response.decision.secondary_candidates == 1
 
     assert response.citation_items
-    assert response.citation_items[0].policy_name == "Claims Appeals Policy"
-    assert response.citation_items[0].public_url == "https://example.org/claims/appeals"
+    assert response.citation_items[0].policy_name == "Department Guidance"
+    assert response.citation_items[0].public_url == "https://example.org/department/guidance"
     assert response.secondary_evidence
-    assert response.secondary_evidence[0].policy_name == "Org Appeals Policy"
+    assert response.secondary_evidence[0].policy_name == "Organization Guidance"
     assert response.created_at <= datetime.now(timezone.utc)
 
 
