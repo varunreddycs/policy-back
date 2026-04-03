@@ -4,6 +4,7 @@ import os
 from dataclasses import dataclass
 from typing import Any, Dict, List
 
+from packages.extraction.cleaner import clean_section_text
 from packages.extraction.parsers.docx_parser import parse_docx
 from packages.extraction.parsers.pdf_parser import parse_pdf
 from packages.extraction.parsers.txt_parser import parse_txt
@@ -30,12 +31,12 @@ def extract_sections(*, filename: str, content_bytes: bytes) -> List[ExtractedSe
     else:
         # Best-effort fallback for unknown formats.
         text = parse_txt(content_bytes)
-    if not text.strip():
+    clean = clean_section_text(text)
+    if not clean.strip():
         return [ExtractedSection(section_key="main", title="Main", start_offset=0, end_offset=0, text="", metadata={})]
 
     chunk_size = 4000
     results: List[ExtractedSection] = []
-    clean = text.strip()
     for idx, start in enumerate(range(0, len(clean), chunk_size), start=1):
         end = min(len(clean), start + chunk_size)
         results.append(

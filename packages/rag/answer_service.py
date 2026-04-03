@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import logging
 import os
 from datetime import datetime, timezone
 from typing import List, Tuple
@@ -7,6 +8,9 @@ from typing import List, Tuple
 from packages.core.dtos import AnswerResponse, AskRequest, CitationItem, DecisionInfo, EvidenceCandidate, SecondaryEvidenceItem
 from packages.ranking.ranker import PolicyRanker
 from packages.retrieval.base import IVectorRetriever
+
+
+logger = logging.getLogger(__name__)
 
 
 class AnswerService:
@@ -78,6 +82,8 @@ class AnswerService:
 			user=user,
 			top_k=top_k,
 		)
+		# Hybrid retrieval returns top 15 candidates before policy-aware bucket ranking.
+		candidates = candidates[:15]
 		user_department = self._extract_user_department(candidates)
 		primary_pool, secondary_pool, selected_bucket, reason = self._bucket_candidates(candidates, user_department)
 		ranked_primary = self._ranker.rank(primary_pool)
@@ -95,6 +101,19 @@ class AnswerService:
 			)
 
 		best = ranked_primary[0]
+
+		hybrid_debug = (best.metadata or {})
+		logger.info(
+			"retrieval.summary",
+			extra={
+				"fts_candidates": int(hybrid_debug.get("hybrid_fts_candidates") or 0),
+				"vector_candidates": int(hybrid_debug.get("hybrid_vector_candidates") or 0),
+				"merged_candidates": int(hybrid_debug.get("hybrid_merged_candidates") or len(candidates)),
+				"selected_bucket": selected_bucket,
+				"primary_score": float(best.score or 0.0),
+			},
+		)
+
 		excerpt = (best.text or "").strip().replace("\n", " ")
 		if len(excerpt) > 600:
 			excerpt = excerpt[:600].rstrip() + "…"
@@ -120,6 +139,20 @@ class AnswerService:
 			f"[policy_version_id={item.policy_version_id} section_id={item.section_id}]"
 			for item in ranked_primary[:3]
 		]
+		primary_department = self._norm_dept((best.metadata or {}).get("department_scope"))
+		primary_score = float(best.score or 0.0)
+		secondary_threshold = primary_score * 0.8
+		secondary_filtered: List[EvidenceCandidate] = []
+		for item in ranked_secondary:
+			item_dept = self._norm_dept((item.metadata or {}).get("department_scope"))
+			if item_dept == primary_department:
+				continue
+			if float(item.score or 0.0) < secondary_threshold:
+				continue
+			secondary_filtered.append(item)
+			if len(secondary_filtered) >= 3:
+				break
+
 		secondary_evidence = [
 			SecondaryEvidenceItem(
 				policy_version_id=item.policy_version_id,
@@ -130,7 +163,7 @@ class AnswerService:
 				department_scope=(item.metadata or {}).get("department_scope"),
 				public_url=(item.metadata or {}).get("public_url"),
 			)
-			for item in ranked_secondary[:3]
+			for item in secondary_filtered
 		]
 		decision = DecisionInfo(
 			selected_bucket=selected_bucket,

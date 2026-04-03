@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from datetime import date, datetime, timezone
+from datetime import date, datetime
 from typing import List
 from uuid import UUID
 
@@ -69,24 +69,15 @@ class PolicyRanker:
 
 		def final_key(c: EvidenceCandidate) -> tuple:
 			md = c.metadata or {}
-			base = float(c.score or 0.0) * float(self._weights.base_relevance)
+			# Phase 2.7: candidate.score is already a fused score from hybrid retrieval.
+			base = float(c.score or 0.0)
 			authority_level = float(md.get("authority_level") or 0.0)
-			# Keep authority influence bounded.
-			authority = (authority_level / 100.0) * float(self._weights.authority)
 			is_current = 1.0 if bool(md.get("is_current")) else 0.0
-			current_boost = 0.5 * is_current
 
 			eff_dt = _parse_effective_date(md)
-			recency_score = 0.0
-			if eff_dt is not None:
-				days_ago = max(0.0, (datetime.now(timezone.utc) - eff_dt).total_seconds() / 86400.0)
-				recency_score = 1.0 / (1.0 + (days_ago / 30.0))
-			recency = recency_score * float(self._weights.recency)
-
-			total = base + authority + current_boost + recency
 			# Deterministic tie-breakers.
 			return (
-				total,
+				base,
 				float(c.score or 0.0),
 				is_current,
 				authority_level,

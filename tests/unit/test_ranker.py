@@ -88,3 +88,32 @@ def test_policy_ranker_bucket_first_department_override() -> None:
 	]
 	ranked_compliance = ranker.rank(compliance)
 	assert "60 days" in ranked_compliance[0].text
+
+
+def test_policy_ranker_sorts_by_final_score_within_bucket() -> None:
+	ranker = PolicyRanker()
+
+	policy_id = uuid4()
+	version_id = uuid4()
+
+	low = EvidenceCandidate(
+		policy_id=policy_id,
+		policy_version_id=version_id,
+		section_id=None,
+		text="lower score",
+		score=0.20,
+		source="hybrid",
+		metadata={"department_scope": "operations", "user_department": "operations", "authority_level": 50, "is_current": True},
+	)
+	high = EvidenceCandidate(
+		policy_id=policy_id,
+		policy_version_id=version_id,
+		section_id=None,
+		text="higher score",
+		score=0.95,
+		source="hybrid",
+		metadata={"department_scope": "operations", "user_department": "operations", "authority_level": 10, "is_current": False},
+	)
+
+	ranked = ranker.rank([low, high])
+	assert ranked[0].text == "higher score"
