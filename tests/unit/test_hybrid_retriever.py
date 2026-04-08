@@ -123,7 +123,8 @@ def test_hybrid_retriever_filters_low_similarity_and_low_fts(monkeypatch) -> Non
     assert "good fts" in texts
 
 
-def test_hybrid_retriever_caps_three_candidates_per_policy_version() -> None:
+def test_hybrid_retriever_caps_two_candidates_per_policy_id() -> None:
+    """Phase 2.7 spec: max 2 sections per policy_id (not per version)."""
     policy_id = uuid4()
     version_id = uuid4()
 
@@ -143,8 +144,8 @@ def test_hybrid_retriever_caps_three_candidates_per_policy_version() -> None:
     retriever = HybridRetriever(vector_retriever=_StaticRetriever(vector_results), fts_retriever=_StaticRetriever([]))
     merged = retriever.retrieve(tenant_id=uuid4(), query="submission", top_k=15)
 
-    assert len(merged) == 3
-    assert len({str(item.policy_version_id) for item in merged}) == 1
+    assert len(merged) == 2
+    assert len({str(item.policy_id) for item in merged}) == 1
 
 
 def test_hybrid_retriever_final_score_orders_by_fused_components(monkeypatch) -> None:
@@ -206,4 +207,30 @@ def test_hybrid_retriever_final_score_orders_by_fused_components(monkeypatch) ->
 
     assert len(merged) == 2
     assert merged[0].text == "fts strong"
+
+
+def test_hybrid_retriever_respects_top_k_above_15() -> None:
+    """Phase 2.7: hard cap removed — top_k=40 should surface more than 15 results."""
+
+    # 20 unique sections across 20 different policies (no per-policy cap triggered)
+    vector_results = [
+        EvidenceCandidate(
+            policy_id=uuid4(),
+            policy_version_id=uuid4(),
+            section_id=uuid4(),
+            text=f"section-{i}",
+            score=0.80 - (i * 0.005),
+            source="pgvector",
+            metadata={"department_scope": "all", "authority_level": 50},
+        )
+        for i in range(20)
+    ]
+
+    retriever = HybridRetriever(
+        vector_retriever=_StaticRetriever(vector_results),
+        fts_retriever=_StaticRetriever([]),
+    )
+    merged = retriever.retrieve(tenant_id=uuid4(), query="policy", top_k=40)
+
+    assert len(merged) == 20, f"Expected 20 results with top_k=40, got {len(merged)}"
 

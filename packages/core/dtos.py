@@ -78,6 +78,7 @@ class AnswerResponse(BaseModel):
 	citations: List[str] = Field(default_factory=list)
 	citation_items: List[CitationItem] = Field(default_factory=list)
 	decision: Optional[DecisionInfo] = None
+	retrieval_log: Optional[Dict[str, Any]] = None
 	secondary_evidence: List[SecondaryEvidenceItem] = Field(default_factory=list)
 	confidence: Optional[float] = None
 	refusal_reason: Optional[str] = None

@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from datetime import date, datetime
+from datetime import date, datetime, timezone
 from typing import List
 from uuid import UUID
 
@@ -35,16 +35,19 @@ class PolicyRanker:
 		user_department = _get_user_department()
 
 		# Rule B: bucket selection happens BEFORE scoring.
-		bucket_a: list[EvidenceCandidate] = []
-		bucket_b: list[EvidenceCandidate] = []
+		bucket_a: list[EvidenceCandidate] = []  # user's dept-specific
+		bucket_b: list[EvidenceCandidate] = []  # org-wide ("all")
+		bucket_c: list[EvidenceCandidate] = []  # other dept-specific (cross-dept fallback)
 		for c in candidates:
 			policy_dept = _norm_dept((c.metadata or {}).get("department_scope"))
 			if user_department and policy_dept == user_department:
 				bucket_a.append(c)
 			elif policy_dept == "all":
 				bucket_b.append(c)
+			else:
+				bucket_c.append(c)
 
-		selected = bucket_a if bucket_a else bucket_b
+		selected = bucket_a or bucket_b or bucket_c
 		if not selected:
 			return []
 
@@ -72,14 +75,20 @@ class PolicyRanker:
 			# Phase 2.7: candidate.score is already a fused score from hybrid retrieval.
 			base = float(c.score or 0.0)
 			authority_level = float(md.get("authority_level") or 0.0)
-			is_current = 1.0 if bool(md.get("is_current")) else 0.0
+			is_current = bool(md.get("is_current"))
 
 			eff_dt = _parse_effective_date(md)
-			# Deterministic tie-breakers.
+			# Governance penalty: non-current policies have their effective score
+			# discounted by 30% so that a modestly lower-scoring current policy
+			# wins, while a significantly higher-scoring non-current policy can still
+			# surface (e.g. 0.4 non-current vs 0.3 current → 0.28 < 0.30 → current
+			# wins; 0.95 non-current vs 0.20 current → 0.665 > 0.20 → non-current
+			# wins).
+			_CURRENCY_DISCOUNT = 0.70
+			effective_score = base if is_current else base * _CURRENCY_DISCOUNT
 			return (
+				effective_score,
 				base,
-				float(c.score or 0.0),
-				is_current,
 				authority_level,
 				_ts(eff_dt),
 				_id_text(c.policy_version_id),

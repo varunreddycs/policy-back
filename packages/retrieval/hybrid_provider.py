@@ -145,22 +145,24 @@ class HybridRetriever(IVectorRetriever):
         return final
 
     @staticmethod
-    def _cap_per_policy_version(candidates: List[EvidenceCandidate], max_per_policy_version: int = 3) -> List[EvidenceCandidate]:
-        if max_per_policy_version < 1:
+    def _cap_per_policy(candidates: List[EvidenceCandidate], max_per_policy: int = 2) -> List[EvidenceCandidate]:
+        """Phase 2.7 spec: cap to N sections per policy_id (not per version)."""
+        if max_per_policy < 1:
             return candidates
         kept: List[EvidenceCandidate] = []
         counts: Dict[str, int] = {}
         for candidate in candidates:
-            key = str(candidate.policy_version_id)
+            key = str(candidate.policy_id)
             current = counts.get(key, 0)
-            if current >= max_per_policy_version:
+            if current >= max_per_policy:
                 continue
             counts[key] = current + 1
             kept.append(candidate)
         return kept
 
     def retrieve(self, *, tenant_id, query: str, scope=None, user=None, top_k: int = 10) -> List[EvidenceCandidate]:
-        source_top_k = 20
+        # Per-source fetch count: spec calls for top 20 FTS + top 20 vector; configurable.
+        source_top_k = max(1, int(os.getenv("HYBRID_SOURCE_TOP_K", "20") or "20"))
         vector_min_similarity = self._env_float("HYBRID_VECTOR_MIN_SIMILARITY", 0.65)
         fts_min_score = self._env_float("HYBRID_FTS_MIN_SCORE", 0.05)
 
@@ -186,13 +188,15 @@ class HybridRetriever(IVectorRetriever):
 
         final = self._compute_final_scores(merged=merged, vector_norm=vector_norm, fts_norm=fts_norm)
         final.sort(key=lambda item: float(item.score or 0.0), reverse=True)
-        final = self._cap_per_policy_version(final, max_per_policy_version=3)
+        before_cap = len(final)
+        final = self._cap_per_policy(final, max_per_policy=2)
 
-        selected = final[: min(15, max(1, int(top_k)))]
+        selected = final[: max(1, int(top_k))]
         debug_meta = {
             "hybrid_vector_candidates": len(vector_results),
             "hybrid_fts_candidates": len(fts_results),
             "hybrid_merged_candidates": len(merged),
+            "hybrid_filtered_candidates": before_cap,
         }
         for item in selected:
             md = dict(item.metadata or {})
