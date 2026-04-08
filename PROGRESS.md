@@ -89,7 +89,61 @@ tests/unit/test_section_cleaner.py ............................ 2 PASSED
 ```
 
 ## Step 8: Docker Verification
-Status: ⚠️ BLOCKED — Docker Desktop daemon not running on host
+Status: ✅ COMPLETE (after Docker Desktop was started)
+
+### Stack
+```
+$ docker-compose ps
+policy-platform-api        policy-back-api          Up (0.0.0.0:8000->8000)
+policy-platform-azurite    azurite:3.33.0           Up (10000-10002)
+policy-platform-postgres   pgvector/pgvector:pg16   Up (0.0.0.0:5433->5432)
+policy-platform-worker     policy-back-worker       Up
+```
+
+### Build fix required
+The multi-stage Dockerfile builds the React frontend before the Python image. Two
+TS7006 implicit-`any` errors in `apps/web/src/components/DepartmentSelect.tsx`
+blocked the rebuild — fixed by adding explicit `string` annotations on the
+`VITE_DEPARTMENT_OPTIONS` parse. Unrelated to Phase 2.7 but it would have
+silently masked the new code: `docker-compose up -d` reuses the cached image,
+so the first run returned a stale `retrieval_log: null`. Always rebuild after
+backend changes (`docker-compose up -d --build api worker`).
+
+### Live `/v1/ask` response (against real Postgres + ingested policy data)
+```json
+{
+  "audit_id": "69b7e578-45ab-446e-ba26-840ce68a867c",
+  "confidence": 0.5,
+  "refusal_reason": null,
+  "decision": {
+    "selected_bucket": "org_wide",
+    "reason": "no department matches; fell back to org-wide bucket",
+    "user_department": "das",
+    "primary_candidates": 16,
+    "secondary_candidates": 0
+  },
+  "retrieval_log": {
+    "fts_candidates": 20,
+    "vector_candidates": 0,
+    "merged": 20,
+    "filtered": 20,
+    "selected_bucket": "org_wide",
+    "primary_score": 0.5
+  },
+  "citation_items": [/* 5 items */],
+  "evidence": [/* 16 items */],
+  "secondary_evidence": []
+}
+```
+
+All Phase 2.7 spec fields present and correctly populated end-to-end.
+
+### Observation worth flagging
+`vector_candidates: 0` — the Azure OpenAI embeddings deployment is unset in
+local `.env`, so the live stack runs FTS-only. Hybrid fusion plumbing works
+(graceful degradation as designed), but to exercise the full vector path locally
+you need to set `AZURE_OPENAI_EMBEDDINGS_DEPLOYMENT` and ensure the
+`policy_embeddings` table is backfilled.
 
 ```
 $ docker info
@@ -158,9 +212,11 @@ Status: ✅ COMPLETE (modulo Docker manual verification)
 | Env vars in .env.example | ✅ all spec vars present |
 
 ### Remaining items (not in scope of this run)
-- Docker live-stack smoke test (blocked: Docker Desktop not running)
 - P2 fixed-width 4000-char chunking — flagged for future work
 - API-layer tenant auth — flagged for Phase 3
+- Local Azure OpenAI embeddings deployment unset → live stack runs FTS-only;
+  hybrid fusion path is exercised by unit tests but should also be smoke-tested
+  in a fully-configured environment
 
 
 

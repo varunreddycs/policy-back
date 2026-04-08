@@ -1,8 +1,8 @@
 import { FormControl, InputLabel, MenuItem, Select, Stack, TextField } from "@mui/material";
 
-const DEPARTMENTS = (import.meta.env.VITE_DEPARTMENT_OPTIONS || "operations,compliance,finance,hr,it")
+const DEPARTMENTS: string[] = ((import.meta.env.VITE_DEPARTMENT_OPTIONS as string | undefined) || "operations,compliance,finance,hr,it")
   .split(",")
-  .map((item) => item.trim())
+  .map((item: string) => item.trim())
   .filter(Boolean);
 
 interface DepartmentSelectProps {
