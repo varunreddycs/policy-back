@@ -83,6 +83,35 @@ export interface SecondaryEvidenceItem {
   public_url: string | null;
 }
 
+export type ReferenceType = "internal_section" | "cross_policy" | "external_authority";
+export type ReferenceResolutionStatus = "resolved" | "unresolved" | "external";
+
+export interface PolicyReferenceItem {
+  id: string;
+  reference_type: ReferenceType;
+  resolution_status: ReferenceResolutionStatus;
+  matched_text: string;
+  match_offset: number | null;
+  confidence: number;
+  extractor_version: string;
+  source_section_id: string;
+  source_policy_version_id: string;
+  target_section_id: string | null;
+  target_policy_id: string | null;
+  target_section_title: string | null;
+  target_section_path: string | null;
+  target_policy_name: string | null;
+  target_external_uri: string | null;
+  target_external_label: string | null;
+  created_at: string;
+}
+
+export interface SectionReferencesResponse {
+  section_id: string;
+  outbound: PolicyReferenceItem[];
+  inbound: PolicyReferenceItem[];
+}
+
 export interface PolicySectionDetailResponse {
   section_id: string;
   tenant_id: string;

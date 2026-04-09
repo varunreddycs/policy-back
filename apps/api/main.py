@@ -9,7 +9,7 @@ from fastapi.staticfiles import StaticFiles
 from apps.api.config import ApiConfig
 from apps.api.logging_config import configure_logging
 from apps.api.middleware import RequestContextMiddleware
-from apps.api.routers import ask, audit, health, ingest, policies, sections
+from apps.api.routers import ask, audit, health, ingest, policies, references, sections
 
 
 def create_app() -> FastAPI:
@@ -29,6 +29,7 @@ def create_app() -> FastAPI:
     app.include_router(ingest.router)
     app.include_router(policies.router)
     app.include_router(sections.router)
+    app.include_router(references.router)
     app.include_router(ask.router)
     app.include_router(audit.router)
 

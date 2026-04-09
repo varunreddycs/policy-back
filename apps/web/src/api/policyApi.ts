@@ -8,6 +8,7 @@ import type {
   PolicySectionDetailResponse,
   RegisterDocumentRequest,
   RegisterDocumentResponse,
+  SectionReferencesResponse,
   UploadUrlRequest,
   UploadUrlResponse
 } from "./types";
@@ -24,6 +25,13 @@ export const policyApi = {
     const params = new URLSearchParams({ tenant_id: tenantId });
     return apiRequest<PolicySectionDetailResponse>(
       `/v1/policy-sections/${encodeURIComponent(sectionId)}?${params.toString()}`
+    );
+  },
+
+  getSectionReferences(sectionId: string, tenantId: string) {
+    const params = new URLSearchParams({ tenant_id: tenantId });
+    return apiRequest<SectionReferencesResponse>(
+      `/v1/policy-sections/${encodeURIComponent(sectionId)}/references?${params.toString()}`
     );
   },
 

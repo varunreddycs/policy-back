@@ -2,6 +2,9 @@ import AutoAwesomeRoundedIcon from "@mui/icons-material/AutoAwesomeRounded";
 import { Box, Chip, Drawer, Stack, Typography, useMediaQuery, useTheme } from "@mui/material";
 import type { AskResponse, EvidenceItem } from "../api/types";
 import EvidenceTable from "./EvidenceTable";
+import ReferencesPanel from "./ReferencesPanel";
+
+const TENANT_ID = import.meta.env.VITE_TENANT_ID || "00000000-0000-0000-0000-000000000001";
 
 interface EvidenceDrawerProps {
   open: boolean;
@@ -57,6 +60,8 @@ export default function EvidenceDrawer({ open, onClose, answer, onCopy }: Eviden
             </Typography>
           </Box>
         )}
+
+        {top ? <ReferencesPanel sectionId={top.section_id ?? null} tenantId={TENANT_ID} /> : null}
 
         <EvidenceTable evidence={evidence} onCopy={onCopy} />
       </Box>

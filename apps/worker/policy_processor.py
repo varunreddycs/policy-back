@@ -27,6 +27,7 @@ from packages.db.models.policy_models import (
 )
 from packages.db.session import get_sessionmaker
 from packages.extraction.extractor import extract_sections
+from packages.extraction.reference_resolver import extract_and_resolve_for_version
 from packages.storage.blob_service import BlobService
 
 
@@ -348,6 +349,38 @@ def _process_one_message(
 				"correlation_id": correlation_id,
 			},
 		)
+
+		# Phase 3.1 — extract cross-references from the freshly persisted sections.
+		# This is advisory: a failure here must not regress ingestion. Run in its
+		# own try/except with an independent commit so a partial/failed reference
+		# pass leaves the policy version intact and READY.
+		try:
+			from packages.db.repositories import references_repo
+
+			references_repo.delete_for_policy_version(db, policy_version_id=version.id)
+			ref_rows = extract_and_resolve_for_version(db, policy_version=version)
+			references_repo.bulk_insert(db, ref_rows)
+			db.commit()
+			logger.info(
+				"worker.references_extracted",
+				extra={
+					"policy_version_id": str(version.id),
+					"reference_count": len(ref_rows),
+					"correlation_id": correlation_id,
+				},
+			)
+		except Exception:
+			logger.exception(
+				"worker.reference_extraction_failed",
+				extra={
+					"policy_version_id": str(version.id),
+					"correlation_id": correlation_id,
+				},
+			)
+			try:
+				db.rollback()
+			except SQLAlchemyError:
+				pass
 	except Exception as exc:
 		logger.exception(
 			"worker.persistence_failed",

@@ -13,6 +13,7 @@ from sqlalchemy import (
 	CheckConstraint,
 	Date,
 	DateTime,
+	Float,
 	ForeignKey,
 	Index,
 	Integer,
@@ -349,6 +350,12 @@ class PolicySection(Base):
 		cascade="all, delete-orphan",
 		passive_deletes=True,
 	)
+	references_out: Mapped[List[PolicyReference]] = relationship(
+		back_populates="source_section",
+		cascade="all, delete-orphan",
+		passive_deletes=True,
+		foreign_keys="PolicyReference.source_section_id",
+	)
 
 	__table_args__ = (
 		UniqueConstraint(
@@ -392,6 +399,86 @@ class PolicyEmbedding(Base):
 		UniqueConstraint("policy_section_id", "embedding_model", name="uq_policy_embeddings_policy_section_id_embedding_model"),
 		Index("ix_policy_embeddings_tenant_id", "tenant_id"),
 		Index("ix_policy_embeddings_policy_version_id", "policy_version_id"),
+	)
+
+
+class ReferenceType(str, Enum):
+	INTERNAL_SECTION = "internal_section"
+	CROSS_POLICY = "cross_policy"
+	EXTERNAL_AUTHORITY = "external_authority"
+
+
+class ReferenceResolutionStatus(str, Enum):
+	RESOLVED = "resolved"
+	UNRESOLVED = "unresolved"
+	EXTERNAL = "external"
+
+
+class PolicyReference(Base):
+	"""Phase 3.1 — cross-references extracted from a section's text.
+
+	One row per extracted reference. The source is always a section; the target
+	may be another section, another policy, or an external authority/URL. See
+	migrations/versions/007_policy_references.py for column semantics.
+	"""
+
+	__tablename__ = "policy_references"
+
+	id: Mapped[uuid.UUID] = mapped_column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
+	tenant_id: Mapped[uuid.UUID] = mapped_column(
+		UUID(as_uuid=True), ForeignKey("tenants.id", ondelete="CASCADE"), nullable=False
+	)
+
+	source_section_id: Mapped[uuid.UUID] = mapped_column(
+		UUID(as_uuid=True), ForeignKey("policy_sections.id", ondelete="CASCADE"), nullable=False
+	)
+	source_policy_version_id: Mapped[uuid.UUID] = mapped_column(
+		UUID(as_uuid=True), ForeignKey("policy_versions.id", ondelete="CASCADE"), nullable=False
+	)
+
+	reference_type: Mapped[str] = mapped_column(Text, nullable=False)
+	resolution_status: Mapped[str] = mapped_column(Text, nullable=False)
+
+	target_section_id: Mapped[Optional[uuid.UUID]] = mapped_column(
+		UUID(as_uuid=True), ForeignKey("policy_sections.id", ondelete="SET NULL"), nullable=True
+	)
+	target_policy_id: Mapped[Optional[uuid.UUID]] = mapped_column(
+		UUID(as_uuid=True), ForeignKey("policies.id", ondelete="SET NULL"), nullable=True
+	)
+	target_external_uri: Mapped[Optional[str]] = mapped_column(Text, nullable=True)
+	target_external_label: Mapped[Optional[str]] = mapped_column(Text, nullable=True)
+
+	matched_text: Mapped[str] = mapped_column(Text, nullable=False)
+	match_offset: Mapped[Optional[int]] = mapped_column(Integer, nullable=True)
+	extractor_version: Mapped[str] = mapped_column(Text, nullable=False)
+	confidence: Mapped[float] = mapped_column(Float, nullable=False, default=1.0)
+
+	created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), nullable=False, server_default=func.now())
+
+	source_section: Mapped[PolicySection] = relationship(
+		back_populates="references_out",
+		foreign_keys=[source_section_id],
+	)
+	target_section: Mapped[Optional[PolicySection]] = relationship(
+		foreign_keys=[target_section_id],
+	)
+	target_policy: Mapped[Optional[Policy]] = relationship(
+		foreign_keys=[target_policy_id],
+	)
+
+	__table_args__ = (
+		CheckConstraint(
+			"reference_type in ('internal_section','cross_policy','external_authority')",
+			name="ck_policy_references_reference_type",
+		),
+		CheckConstraint(
+			"resolution_status in ('resolved','unresolved','external')",
+			name="ck_policy_references_resolution_status",
+		),
+		Index("ix_policy_references_tenant_id", "tenant_id"),
+		Index("ix_policy_references_source_section_id", "source_section_id"),
+		Index("ix_policy_references_source_policy_version_id", "source_policy_version_id"),
+		Index("ix_policy_references_reference_type", "reference_type"),
 	)
 
 
