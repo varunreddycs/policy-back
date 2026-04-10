@@ -3,12 +3,9 @@ from __future__ import annotations
 import uuid
 from typing import Any, Dict
 
-from sqlalchemy import select
-from sqlalchemy.orm import Session
-
 from packages.core.dtos import AnswerResponse, AskRequest
 from packages.core.errors import DomainError
-from packages.db.models.governance import AuditLog
+from packages.db.repositories.base import IAuditRepository
 
 
 class AuditNotFound(DomainError):
@@ -17,14 +14,25 @@ class AuditNotFound(DomainError):
 
 
 class AuditService:
-    def __init__(self, *, session: Session) -> None:
-        self._session = session
+    """Accepts either an IAuditRepository (new path) or a raw Session (backward compat)."""
+
+    def __init__(self, *, audit_repo: IAuditRepository | None = None, session: Any = None) -> None:
+        if audit_repo is not None:
+            self._repo = audit_repo
+        elif session is not None:
+            from packages.db.repositories.audit_repo import PgAuditRepository
+
+            self._repo = PgAuditRepository(session)
+        else:
+            raise ValueError("AuditService requires either audit_repo or session")
 
     def write(self, *, tenant_id: uuid.UUID, event_type: str, correlation_id: str | None, payload: Dict[str, Any]) -> uuid.UUID:
-        row = AuditLog(tenant_id=tenant_id, event_type=event_type, correlation_id=correlation_id, payload_json=payload)
-        self._session.add(row)
-        self._session.commit()
-        return row.id
+        return self._repo.write(
+            tenant_id=tenant_id,
+            event_type=event_type,
+            correlation_id=correlation_id,
+            payload=payload,
+        )
 
     def write_ask(self, *, request: AskRequest, response: AnswerResponse) -> uuid.UUID:
         payload = {
@@ -39,19 +47,18 @@ class AuditService:
         )
 
     def get(self, *, audit_id: uuid.UUID) -> Dict[str, Any]:
-        row = self._session.execute(select(AuditLog).where(AuditLog.id == audit_id)).scalar_one_or_none()
-        if row is None:
+        dto = self._repo.get_by_id(audit_id=audit_id)
+        if dto is None:
             raise AuditNotFound(audit_id)
-        payload = dict(row.payload_json or {})
         return {
-            "id": row.id,
-            "tenant_id": row.tenant_id,
-            "correlation_id": row.correlation_id,
-            "event_type": row.event_type,
-            "created_at": row.created_at,
-            "request": payload.get("request"),
-            "response": payload.get("response"),
-            "payload": payload,
+            "id": dto.id,
+            "tenant_id": dto.tenant_id,
+            "correlation_id": dto.correlation_id,
+            "event_type": dto.event_type,
+            "created_at": dto.created_at,
+            "request": dto.payload.get("request"),
+            "response": dto.payload.get("response"),
+            "payload": dto.payload,
         }
 
     def replay(self, *, audit_id: uuid.UUID, ask_service: Any) -> Dict[str, Any]:
@@ -63,7 +70,6 @@ class AuditService:
         request = AskRequest.model_validate(request_payload)  # type: ignore[attr-defined]
         response = ask_service.ask(request)
         if not response.audit_id:
-            # Defensive fallback in case caller bypassed AskService.
             response = response.model_copy(update={"audit_id": self.write_ask(request=request, response=response)})  # type: ignore[attr-defined]
 
         return {"replay_audit_id": response.audit_id, "response": response}
