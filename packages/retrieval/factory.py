@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import os
+from typing import Any
 
 from sqlalchemy.orm import Session
 
@@ -37,7 +38,36 @@ def _has_embedding_config() -> bool:
     return all(bool(item and str(item).strip()) for item in required)
 
 
-def build_retriever(*, session: Session) -> IVectorRetriever:
+def build_retriever(
+    *,
+    session: "Session | None" = None,
+    cosmos_containers: "Any | None" = None,
+) -> IVectorRetriever:
+    db_backend = os.getenv("DB_BACKEND", "postgresql").strip().lower()
+
+    # Cosmos DB NoSQL backend
+    if db_backend == "cosmos":
+        from packages.retrieval.cosmos_vector_provider import CosmosVectorRetriever
+
+        if cosmos_containers is None:
+            from packages.db.repositories.cosmos.cosmos_client_factory import (
+                create_cosmos_client,
+                get_or_create_containers,
+            )
+            client = create_cosmos_client()
+            cosmos_containers = get_or_create_containers(
+                client, os.getenv("COSMOS_DATABASE", "policydb")
+            )
+        return CosmosVectorRetriever(
+            embeddings_container=cosmos_containers.embeddings,
+            policies_container=cosmos_containers.policies,
+            default_top_k=max(1, _env_int("EMBEDDINGS_TOP_K", 40)),
+        )
+
+    # PostgreSQL backend (default)
+    if session is None:
+        raise ValueError("PostgreSQL retriever backend requires a SQLAlchemy session")
+
     backend = os.getenv("RETRIEVER_BACKEND", "pgsql_fts").strip().lower()
     embeddings_enabled = _env_bool("EMBEDDINGS_ENABLED", True)
     if embeddings_enabled and not _has_embedding_config():
