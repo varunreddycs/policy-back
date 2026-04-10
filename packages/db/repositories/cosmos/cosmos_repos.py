@@ -325,7 +325,6 @@ class CosmosPolicyVersionRepository(IPolicyVersionRepository):
             "created_at": _now_iso(),
             "created_by_user_id": _uuid_str(fields.get("created_by_user_id")) or None,
             "correlation_id": fields.get("correlation_id"),
-            "sections": [],
         }
         doc.setdefault("versions", []).append(version_doc)
         self._c.upsert_item(doc)
@@ -380,112 +379,109 @@ class CosmosPolicyVersionRepository(IPolicyVersionRepository):
 
 
 class CosmosPolicySectionRepository(IPolicySectionRepository):
-    """Sections are nested inside version subdocuments within the policy container."""
+    """Sections are standalone documents in the 'sections' container.
 
-    def __init__(self, container: Any) -> None:
-        self._c = container
+    Avoids Cosmos 2MB doc limit for policies with many large sections.
+    """
+
+    def __init__(self, sections_container: Any, policies_container: Any) -> None:
+        self._c = sections_container
+        self._policies = policies_container
 
     def list_for_version(self, *, tenant_id: uuid.UUID, policy_version_id: uuid.UUID,
                          limit: int = 20, offset: int = 0) -> List[PolicySectionDTO]:
-        query = "SELECT * FROM c WHERE ARRAY_CONTAINS(c.versions, {'id': @vid}, true) AND c.tenant_id = @tid"
+        query = ("SELECT * FROM c WHERE c.tenant_id = @tid AND c.policy_version_id = @pvid "
+                 "ORDER BY c.section_index ASC OFFSET @off LIMIT @lim")
         params = [
-            {"name": "@vid", "value": str(policy_version_id)},
+            {"name": "@tid", "value": str(tenant_id)},
+            {"name": "@pvid", "value": str(policy_version_id)},
+            {"name": "@off", "value": offset},
+            {"name": "@lim", "value": limit},
+        ]
+        items = list(self._c.query_items(query=query, parameters=params, partition_key=str(tenant_id)))
+        return [_section_dict_to_dto(s, tenant_id, policy_version_id) for s in items]
+
+    def get_detail(self, *, tenant_id: uuid.UUID, section_id: uuid.UUID) -> Optional[SectionDetailDTO]:
+        # Get the section
+        query = "SELECT * FROM c WHERE c.id = @sid AND c.tenant_id = @tid"
+        params = [
+            {"name": "@sid", "value": str(section_id)},
             {"name": "@tid", "value": str(tenant_id)},
         ]
         items = list(self._c.query_items(query=query, parameters=params, partition_key=str(tenant_id)))
         if not items:
-            return []
-        doc = items[0]
-        for v in doc.get("versions", []):
-            if v["id"] == str(policy_version_id):
-                sections = sorted(v.get("sections", []), key=lambda s: s.get("section_index", 0))
-                return [_section_dict_to_dto(s, tenant_id, policy_version_id) for s in sections[offset:offset + limit]]
-        return []
+            return None
+        s = items[0]
+        pv_id = s["policy_version_id"]
 
-    def get_detail(self, *, tenant_id: uuid.UUID, section_id: uuid.UUID) -> Optional[SectionDetailDTO]:
-        # Scan all policies for this tenant to find the section
-        query = "SELECT * FROM c WHERE c.tenant_id = @tid"
-        params = [{"name": "@tid", "value": str(tenant_id)}]
-        for doc in self._c.query_items(query=query, parameters=params, partition_key=str(tenant_id)):
-            for v in doc.get("versions", []):
-                for s in v.get("sections", []):
-                    if s["id"] == str(section_id):
-                        metadata = v.get("metadata_json", {})
-                        public_url = metadata.get("source_url") or metadata.get("public_url") or metadata.get("url")
-                        return SectionDetailDTO(
-                            section_id=uuid.UUID(s["id"]),
-                            tenant_id=tenant_id,
-                            policy_id=uuid.UUID(doc["id"]),
-                            policy_version_id=uuid.UUID(v["id"]),
-                            policy_name=doc["name"],
-                            section_index=s["section_index"],
-                            section_path=s.get("section_path"),
-                            section_title=s.get("title"),
-                            text=s["text"],
-                            effective_date=_parse_date(v.get("effective_date")),
-                            is_current=v.get("is_current", False),
-                            public_url=public_url,
-                            metadata=metadata,
-                        )
-        return None
+        # Find the parent policy+version
+        pquery = "SELECT * FROM c WHERE c.tenant_id = @tid AND ARRAY_CONTAINS(c.versions, {'id': @vid}, true)"
+        pparams = [
+            {"name": "@tid", "value": str(tenant_id)},
+            {"name": "@vid", "value": pv_id},
+        ]
+        pdocs = list(self._policies.query_items(query=pquery, parameters=pparams, partition_key=str(tenant_id)))
+        if not pdocs:
+            return None
+        doc = pdocs[0]
+        v_data = next((v for v in doc.get("versions", []) if v["id"] == pv_id), {})
+        metadata = v_data.get("metadata_json", {})
+        public_url = metadata.get("source_url") or metadata.get("public_url") or metadata.get("url")
+
+        return SectionDetailDTO(
+            section_id=uuid.UUID(s["id"]),
+            tenant_id=tenant_id,
+            policy_id=uuid.UUID(doc["id"]),
+            policy_version_id=uuid.UUID(pv_id),
+            policy_name=doc["name"],
+            section_index=s["section_index"],
+            section_path=s.get("section_path"),
+            section_title=s.get("title"),
+            text=s["text"],
+            effective_date=_parse_date(v_data.get("effective_date")),
+            is_current=v_data.get("is_current", False),
+            public_url=public_url,
+            metadata=metadata,
+        )
 
     def bulk_insert(self, sections: List[Dict[str, Any]]) -> int:
-        """Append sections to the appropriate version subdocument."""
-        if not sections:
-            return 0
-        # All sections should belong to the same policy_version_id
-        pv_id = str(sections[0].get("policy_version_id", ""))
-        tid = str(sections[0].get("tenant_id", ""))
-        query = "SELECT * FROM c WHERE ARRAY_CONTAINS(c.versions, {'id': @vid}, true) AND c.tenant_id = @tid"
-        params = [
-            {"name": "@vid", "value": pv_id},
-            {"name": "@tid", "value": tid},
-        ]
-        items = list(self._c.query_items(query=query, parameters=params, partition_key=tid))
-        if not items:
-            return 0
-        doc = items[0]
         count = 0
-        for v in doc.get("versions", []):
-            if v["id"] == pv_id:
-                for s in sections:
-                    section_doc = {
-                        "id": str(s.get("id", uuid.uuid4())),
-                        "section_index": s["section_index"],
-                        "section_path": s.get("section_path"),
-                        "title": s.get("title"),
-                        "text": s["text"],
-                        "start_offset": s.get("start_offset"),
-                        "end_offset": s.get("end_offset"),
-                        "content_sha256": s.get("content_sha256", ""),
-                        "rag_document_id": s.get("rag_document_id"),
-                        "rag_node_id": s.get("rag_node_id"),
-                        "created_at": _now_iso(),
-                    }
-                    v.setdefault("sections", []).append(section_doc)
-                    count += 1
-                break
-        self._c.upsert_item(doc)
+        for s in sections:
+            doc = {
+                "id": str(s.get("id", uuid.uuid4())),
+                "tenant_id": str(s["tenant_id"]),
+                "policy_version_id": str(s["policy_version_id"]),
+                "section_index": s["section_index"],
+                "section_path": s.get("section_path"),
+                "title": s.get("title"),
+                "text": s["text"],
+                "start_offset": s.get("start_offset"),
+                "end_offset": s.get("end_offset"),
+                "content_sha256": s.get("content_sha256", ""),
+                "rag_document_id": s.get("rag_document_id"),
+                "rag_node_id": s.get("rag_node_id"),
+                "created_at": _now_iso(),
+            }
+            self._c.upsert_item(doc)
+            count += 1
         return count
 
     def delete_for_version(self, *, policy_version_id: uuid.UUID) -> int:
-        query = "SELECT * FROM c WHERE ARRAY_CONTAINS(c.versions, {'id': @vid}, true)"
-        params = [{"name": "@vid", "value": str(policy_version_id)}]
+        query = "SELECT c.id, c.tenant_id FROM c WHERE c.policy_version_id = @pvid"
+        params = [{"name": "@pvid", "value": str(policy_version_id)}]
         items = list(self._c.query_items(query=query, parameters=params, enable_cross_partition_query=True))
-        if not items:
-            return 0
-        doc = items[0]
-        count = 0
-        for v in doc.get("versions", []):
-            if v["id"] == str(policy_version_id):
-                count = len(v.get("sections", []))
-                v["sections"] = []
-                break
-        self._c.upsert_item(doc)
-        return count
+        for item in items:
+            self._c.delete_item(item=item["id"], partition_key=item["tenant_id"])
+        return len(items)
 
     def exists_for_tenant(self, *, tenant_id: uuid.UUID, section_id: uuid.UUID) -> bool:
-        return self.get_detail(tenant_id=tenant_id, section_id=section_id) is not None
+        query = "SELECT c.id FROM c WHERE c.id = @sid AND c.tenant_id = @tid"
+        params = [
+            {"name": "@sid", "value": str(section_id)},
+            {"name": "@tid", "value": str(tenant_id)},
+        ]
+        items = list(self._c.query_items(query=query, parameters=params, partition_key=str(tenant_id)))
+        return len(items) > 0
 
 
 # ---------------------------------------------------------------------------
@@ -737,9 +733,10 @@ class CosmosIngestItemRepository(IIngestItemRepository):
 
 
 class CosmosReferenceRepository(IReferenceRepository):
-    def __init__(self, container: Any, policies_container: Any) -> None:
+    def __init__(self, container: Any, policies_container: Any, sections_container: Any = None) -> None:
         self._c = container
         self._policies = policies_container
+        self._sections = sections_container
 
     def bulk_insert(self, refs: List[Dict[str, Any]]) -> int:
         count = 0
@@ -840,14 +837,14 @@ class CosmosReferenceRepository(IReferenceRepository):
         return [self._to_ref_dto(d) for d in items]
 
     def section_exists_for_tenant(self, *, tenant_id: uuid.UUID, section_id: uuid.UUID) -> bool:
-        # Check in the policies container (sections are nested)
-        query = "SELECT * FROM c WHERE c.tenant_id = @tid"
-        params = [{"name": "@tid", "value": str(tenant_id)}]
-        for doc in self._policies.query_items(query=query, parameters=params, partition_key=str(tenant_id)):
-            for v in doc.get("versions", []):
-                for s in v.get("sections", []):
-                    if s["id"] == str(section_id):
-                        return True
+        if self._sections is not None:
+            query = "SELECT c.id FROM c WHERE c.id = @sid AND c.tenant_id = @tid"
+            params = [
+                {"name": "@sid", "value": str(section_id)},
+                {"name": "@tid", "value": str(tenant_id)},
+            ]
+            items = list(self._sections.query_items(query=query, parameters=params, partition_key=str(tenant_id)))
+            return len(items) > 0
         return False
 
     def policy_version_exists_for_tenant(self, *, tenant_id: uuid.UUID, policy_version_id: uuid.UUID) -> bool:
@@ -873,10 +870,10 @@ def build_cosmos_repos(*, cosmos_client: Any, database_name: str) -> "Repository
     return RepositorySet(
         policies=CosmosPolicyRepository(containers.policies),
         versions=CosmosPolicyVersionRepository(containers.policies),
-        sections=CosmosPolicySectionRepository(containers.policies),
+        sections=CosmosPolicySectionRepository(containers.sections, containers.policies),
         embeddings=CosmosEmbeddingRepository(containers.embeddings),
         audit=CosmosAuditRepository(containers.audit_logs),
         ingest_batches=CosmosIngestBatchRepository(containers.ingest_batches),
         ingest_items=CosmosIngestItemRepository(containers.ingest_batches),
-        references=CosmosReferenceRepository(containers.references, containers.policies),
+        references=CosmosReferenceRepository(containers.references, containers.policies, containers.sections),
     )

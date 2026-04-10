@@ -13,6 +13,7 @@ from typing import Any, Optional
 
 CONTAINER_DEFS = {
     "policies": {"partition_key": "/tenant_id"},
+    "sections": {"partition_key": "/tenant_id"},
     "audit_logs": {"partition_key": "/tenant_id"},
     "embeddings": {
         "partition_key": "/tenant_id",
@@ -40,6 +41,7 @@ CONTAINER_DEFS = {
 @dataclass(frozen=True, slots=True)
 class CosmosContainers:
     policies: Any
+    sections: Any
     audit_logs: Any
     embeddings: Any
     references: Any
@@ -84,6 +86,7 @@ def get_or_create_containers(
 
     return CosmosContainers(
         policies=containers["policies"],
+        sections=containers["sections"],
         audit_logs=containers["audit_logs"],
         embeddings=containers["embeddings"],
         references=containers["references"],
