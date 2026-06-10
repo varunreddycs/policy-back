@@ -1,17 +1,18 @@
-"""Worker entrypoint (Phase 2 scaffold).
+"""Worker entrypoint.
 
-Provides a stable import path for running the background worker:
-`python -m apps.worker.main`
-
-Currently delegates to the existing Phase-1 worker implementation.
+Run with: `python -m apps.worker.main`
 """
 
-from worker.policy_processor import run_worker_forever
+from __future__ import annotations
+
+from apps.worker.logging_config import configure_logging
+from apps.worker.policy_processor import run_worker_forever
 
 
 def main() -> None:
-	run_worker_forever()
+    configure_logging()
+    run_worker_forever()
 
 
 if __name__ == "__main__":
-	main()
+    main()

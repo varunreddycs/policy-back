@@ -20,6 +20,44 @@ Stack:
 - Pydantic models
 - Alembic for migrations
 
+Retrieval & Answering Architecture (Phase 2.5)
+
+Flow:
+- User Query
+	- Input arrives at `POST /v1/ask` with tenant, user context, and scope.
+- Azure OpenAI embedding
+	- Query text is embedded using configured Azure OpenAI deployment.
+	- Embedding is used for semantic nearest-neighbor retrieval.
+- pgvector similarity search
+	- Vector search runs against `policy_embeddings` in PostgreSQL/pgvector.
+	- Returns high semantic matches even when wording differs from policy text.
+- postgres FTS search
+	- PostgreSQL full-text search runs in parallel to catch lexical/keyword matches.
+	- Helps with exact terms, acronyms, and compliance-specific phrasing.
+- hybrid merge
+	- Vector and FTS results are merged into a single candidate set.
+	- De-duplication and score normalization keep recall high without noisy repeats.
+- department-first ranking
+	- Ranker prioritizes evidence from policies aligned to the user department.
+	- Current/effective policy scope is preserved before final selection.
+- answer + citations
+	- LLM answer is generated from top-ranked evidence chunks.
+	- Response includes citation handles and audit traceability (`audit_id`, evidence list).
+
+Compact pipeline view:
+- User Query
+	↓
+- Azure OpenAI embedding
+	↓
+- pgvector similarity search
+	├── postgres FTS search
+	↓
+- hybrid merge
+	↓
+- department-first ranking
+	↓
+- answer + citations
+
 Design Requirements:
 - Policy versions are immutable
 - Only one current version per policy
@@ -30,7 +68,8 @@ Design Requirements:
 - Enterprise-grade logging and error handling
 
 Running the API:
-- `uvicorn app:app --host 0.0.0.0 --port 8000`
+- Back-compat entrypoint (still works): `uvicorn app:app --host 0.0.0.0 --port 8000`
+- New canonical entrypoint: `uvicorn apps.api.main:app --host 0.0.0.0 --port 8000`
 
 Local dev (Phase 1 end-to-end): Postgres + Azurite
 
@@ -73,7 +112,13 @@ Swagger UI:
 
 4) Run API + Worker:
 - API (VS Code launch config or CLI): `uvicorn app:app --reload --env-file .env`
-- Worker (VS Code launch config or CLI): `python -m worker.policy_processor`
+- Worker (back-compat): `python -m worker.policy_processor`
+- Worker (new canonical): `python -m apps.worker.main`
+
+Phase 2 endpoints:
+- `POST /v1/ask`
+- `GET /v1/audit/{audit_id}`
+- `POST /v1/audit/{audit_id}/replay`
 
 Phase 1 demo flow (Swagger UI or Postman)
 
@@ -86,7 +131,7 @@ All requests below use a tenant UUID. For local demos, you can reuse any UUID (e
 
 2) Get an upload SAS URL:
 - `POST /v1/ingest/batches/{batch_id}/upload-urls`
-	- body: `{ "container_name": "policy-raw", "blob_path": "policies/hipaa/v1.pdf", "content_type": "application/pdf" }`
+	- body: `{ "container_name": "policy-raw", "blob_path": "documents/sample/v1.pdf", "content_type": "application/pdf" }`
 
 3) Upload the file using the SAS URL (PowerShell example):
 - `Invoke-WebRequest -Uri <upload_sas_url> -Method Put -InFile .\your.pdf -Headers @{"x-ms-blob-type"="BlockBlob";"Content-Type"="application/pdf"}`
@@ -96,11 +141,11 @@ All requests below use a tenant UUID. For local demos, you can reuse any UUID (e
 	- body:
 		`{
 			"container_name": "policy-raw",
-			"blob_path": "policies/hipaa/v1.pdf",
-			"policy_external_id": "HIPAA",
-			"policy_name": "HIPAA Privacy Rule",
+			"blob_path": "documents/sample/v1.pdf",
+			"policy_external_id": "DOC_SET_A",
+			"policy_name": "Sample Governance Document",
 			"version_label": "v1",
-			"metadata": {"department":"Compliance","sensitivity":"high","type":"regulatory"}
+			"metadata": {"department":"operations","sensitivity":"internal","type":"general"}
 		}`
 
 5) Watch status & results:

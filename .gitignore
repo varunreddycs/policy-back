@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Environments
+.venv/
+venv/
+.env
+
+# VS Code
+.vscode/
+
+# Node.js
+node_modules/
+**/node_modules/
+apps/web/dist/
+*.tsbuildinfo
+
+# Local state
+__blobstorage__/
+__azurite_db_blob__.json
+__azurite_db_blob_extent__.json

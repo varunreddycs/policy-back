@@ -1,0 +1,76 @@
+{
+  "documents": {
+    "policies-d73369dae1b8:af0f33429ffa127f214268601fc2f87d4742c4bc6d7d80133410358b0e94d32e": {
+      "status": "registered",
+      "blob_path": "external/das/policies-d73369dae1b8/af0f33429ffa.html",
+      "policy_version_id": "b40306d4-7a85-4c6b-8a67-c08cdee9dc1e",
+      "source_url": "https://das.ohio.gov/wps/portal/gov/das/employee-relations/policies",
+      "updated_at": "2026-03-04T17:17:38.963764Z",
+      "batch_id": "362be0c1-d91b-48cf-88b0-d39f3964b5bf",
+      "run_id": "20260304T171738Z-49f34940"
+    },
+    "here-s-how-you-know-6dc0a457fb32:af0f33429ffa127f214268601fc2f87d4742c4bc6d7d80133410358b0e94d32e": {
+      "status": "registered",
+      "blob_path": "external/das/here-s-how-you-know-6dc0a457fb32/af0f33429ffa.html",
+      "policy_version_id": "aa778f4d-a754-4242-8742-f1647cbf9446",
+      "source_url": "https://das.ohio.gov/employee-relations/policies",
+      "updated_at": "2026-03-04T17:17:38.963764Z",
+      "batch_id": "362be0c1-d91b-48cf-88b0-d39f3964b5bf",
+      "run_id": "20260304T171738Z-49f34940"
+    },
+    "here-s-how-you-know-3ddaae7b194b:af0f33429ffa127f214268601fc2f87d4742c4bc6d7d80133410358b0e94d32e": {
+      "status": "registered",
+      "blob_path": "external/das/here-s-how-you-know-3ddaae7b194b/af0f33429ffa.html",
+      "policy_version_id": "76ee173a-54ca-416b-b8b1-a8249f58654c",
+      "source_url": "https://das.ohio.gov/home/policy-finder/filter-policy-finder",
+      "updated_at": "2026-03-04T17:17:39.041565Z",
+      "batch_id": "362be0c1-d91b-48cf-88b0-d39f3964b5bf",
+      "run_id": "20260304T171738Z-49f34940"
+    },
+    "policy-finder-6df433e46496:af0f33429ffa127f214268601fc2f87d4742c4bc6d7d80133410358b0e94d32e": {
+      "status": "registered",
+      "blob_path": "external/das/policy-finder-6df433e46496/af0f33429ffa.html",
+      "policy_version_id": "97b32f74-d264-47a7-9861-98d70dfc7425",
+      "source_url": "https://das.ohio.gov/wps/portal/gov/das/home/policy-finder/filter-policy-finder",
+      "updated_at": "2026-03-04T17:17:39.042565Z",
+      "batch_id": "362be0c1-d91b-48cf-88b0-d39f3964b5bf",
+      "run_id": "20260304T171738Z-49f34940"
+    },
+    "policy-finder-de82f52c88e0:af0f33429ffa127f214268601fc2f87d4742c4bc6d7d80133410358b0e94d32e": {
+      "status": "registered",
+      "blob_path": "external/das/policy-finder-de82f52c88e0/af0f33429ffa.html",
+      "policy_version_id": "4c78eb04-2783-4827-b30f-f0754d5839fe",
+      "source_url": "https://das.ohio.gov/wps/portal/gov/das/home/policy-finder",
+      "updated_at": "2026-03-04T17:17:39.121148Z",
+      "batch_id": "362be0c1-d91b-48cf-88b0-d39f3964b5bf",
+      "run_id": "20260304T171738Z-49f34940"
+    },
+    "here-s-how-you-know-f8415a835501:af0f33429ffa127f214268601fc2f87d4742c4bc6d7d80133410358b0e94d32e": {
+      "status": "registered",
+      "blob_path": "external/das/here-s-how-you-know-f8415a835501/af0f33429ffa.html",
+      "policy_version_id": "a2f687be-ef3e-4b54-ae85-7768f3ffa44a",
+      "source_url": "https://das.ohio.gov/employee-relations/policies/admin-leave",
+      "updated_at": "2026-03-04T17:17:39.122866Z",
+      "batch_id": "362be0c1-d91b-48cf-88b0-d39f3964b5bf",
+      "run_id": "20260304T171738Z-49f34940"
+    },
+    "hidden-4d98d595bf20:af0f33429ffa127f214268601fc2f87d4742c4bc6d7d80133410358b0e94d32e": {
+      "status": "registered",
+      "blob_path": "external/das/hidden-4d98d595bf20/af0f33429ffa.html",
+      "policy_version_id": "c7cc05c4-f3ef-4d8f-a560-ea201c832e7d",
+      "source_url": "https://das.ohio.gov/employee-relations/policies/google.com",
+      "updated_at": "2026-03-04T17:17:39.195781Z",
+      "batch_id": "362be0c1-d91b-48cf-88b0-d39f3964b5bf",
+      "run_id": "20260304T171738Z-49f34940"
+    },
+    "miscellaneous-letters-and-templates-department-o-2f8d6eec4293:af0f33429ffa127f214268601fc2f87d4742c4bc6d7d80133410358b0e94d32e": {
+      "status": "registered",
+      "blob_path": "external/das/miscellaneous-letters-and-templates-department-o-2f8d6eec4293/af0f33429ffa.html",
+      "policy_version_id": "2b17340a-dcce-474c-a31a-a43913350a8e",
+      "source_url": "https://das.ohio.gov/employee-relations/office-of-collective-bargaining/labor-relations-and-human-resources-policy/miscellaneous-letters-and-templates",
+      "updated_at": "2026-03-04T17:17:39.204990Z",
+      "batch_id": "362be0c1-d91b-48cf-88b0-d39f3964b5bf",
+      "run_id": "20260304T171738Z-49f34940"
+    }
+  }
+}

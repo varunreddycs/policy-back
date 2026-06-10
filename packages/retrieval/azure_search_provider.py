@@ -10,5 +10,5 @@ from packages.retrieval.base import IVectorRetriever
 class AzureSearchRetriever(IVectorRetriever):
 	"""Azure AI Search retriever (Phase 2 scaffold)."""
 
-	def retrieve(self, *, tenant_id: UUID, query: str, limit: int = 10) -> List[EvidenceCandidate]:
+	def retrieve(self, *, tenant_id: UUID, query: str, scope=None, user=None, top_k: int = 10) -> List[EvidenceCandidate]:
 		return []

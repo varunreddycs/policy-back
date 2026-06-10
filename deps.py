@@ -5,9 +5,12 @@ from functools import lru_cache
 from fastapi import Depends
 from sqlalchemy.orm import Session
 
-from db.session import get_db_session
-from services import BlobService, IngestionService, QueueService
-from services.policy_query_service import PolicyQueryService
+from packages.db.policy_query_service import PolicyQueryService
+from packages.db.repositories.factory import RepositorySet, build_repositories
+from packages.db.session import get_db_session
+from packages.ingestion.ingestion_service import IngestionService
+from packages.queue.queue_service import QueueService
+from packages.storage.blob_service import BlobService
 
 
 def db_session_dep() -> Session:
@@ -29,6 +32,10 @@ def get_queue_service() -> QueueService:
     return QueueService.from_env()
 
 
+def get_repositories(session: Session = Depends(get_db)) -> RepositorySet:
+    return build_repositories(session=session)
+
+
 def get_ingestion_service(
     session: Session = Depends(get_db),
     blob_service: BlobService = Depends(get_blob_service),
@@ -37,5 +44,5 @@ def get_ingestion_service(
     return IngestionService(session=session, blob_service=blob_service, queue_service=queue_service)
 
 
-def get_policy_query_service(session: Session = Depends(get_db)) -> PolicyQueryService:
-    return PolicyQueryService(session=session)
+def get_policy_query_service(repos: RepositorySet = Depends(get_repositories)) -> PolicyQueryService:
+    return PolicyQueryService(repos=repos)

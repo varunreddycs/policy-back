@@ -1,6 +1,6 @@
 services:
   postgres:
-    image: postgres:16
+    image: pgvector/pgvector:pg16
     container_name: policy-platform-postgres
     environment:
       POSTGRES_USER: policy
@@ -43,6 +43,15 @@ services:
       # ...but the API should still generate host-accessible SAS URLs.
       AZURE_STORAGE_ACCOUNT_URL: http://127.0.0.1:10000/devstoreaccount1
       AZURE_STORAGE_QUEUE_ACCOUNT_URL: http://127.0.0.1:10001/devstoreaccount1
+      AZURE_OPENAI_ENDPOINT: ${AZURE_OPENAI_ENDPOINT:-}
+      AZURE_OPENAI_API_KEY: ${AZURE_OPENAI_API_KEY:-}
+      AZURE_OPENAI_API_VERSION: ${AZURE_OPENAI_API_VERSION:-2024-02-15-preview}
+      AZURE_OPENAI_EMBEDDINGS_DEPLOYMENT: ${AZURE_OPENAI_EMBEDDINGS_DEPLOYMENT:-}
+      EMBEDDING_DIM: ${EMBEDDING_DIM:-3072}
+      RETRIEVER_BACKEND: ${RETRIEVER_BACKEND:-hybrid}
+      EMBEDDINGS_ENABLED: ${EMBEDDINGS_ENABLED:-true}
+      EMBEDDINGS_TOP_K: ${EMBEDDINGS_TOP_K:-40}
+      FTS_TOP_K: ${FTS_TOP_K:-40}
     ports:
       - "8000:8000"
     depends_on:
@@ -52,7 +61,7 @@ services:
   worker:
     build: .
     container_name: policy-platform-worker
-    command: ["python", "-m", "worker.policy_processor"]
+    command: ["python", "-m", "apps.worker.main"]
     env_file:
       - .env
     environment:
@@ -61,6 +70,15 @@ services:
       AZURE_STORAGE_QUEUE_ACCOUNT_URL_INTERNAL: http://azurite:10001/devstoreaccount1
       AZURE_STORAGE_ACCOUNT_URL: http://127.0.0.1:10000/devstoreaccount1
       AZURE_STORAGE_QUEUE_ACCOUNT_URL: http://127.0.0.1:10001/devstoreaccount1
+      AZURE_OPENAI_ENDPOINT: ${AZURE_OPENAI_ENDPOINT:-}
+      AZURE_OPENAI_API_KEY: ${AZURE_OPENAI_API_KEY:-}
+      AZURE_OPENAI_API_VERSION: ${AZURE_OPENAI_API_VERSION:-2024-02-15-preview}
+      AZURE_OPENAI_EMBEDDINGS_DEPLOYMENT: ${AZURE_OPENAI_EMBEDDINGS_DEPLOYMENT:-}
+      EMBEDDING_DIM: ${EMBEDDING_DIM:-3072}
+      RETRIEVER_BACKEND: ${RETRIEVER_BACKEND:-hybrid}
+      EMBEDDINGS_ENABLED: ${EMBEDDINGS_ENABLED:-true}
+      EMBEDDINGS_TOP_K: ${EMBEDDINGS_TOP_K:-40}
+      FTS_TOP_K: ${FTS_TOP_K:-40}
     depends_on:
       - postgres
       - azurite

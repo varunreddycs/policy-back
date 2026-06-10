@@ -1,0 +1,1 @@
+"""Queue-driven background worker."""

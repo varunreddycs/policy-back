@@ -22,7 +22,7 @@ def _load_dotenv_if_present() -> None:
 from alembic import context
 from sqlalchemy import engine_from_config, pool
 
-from models import Base
+from packages.db.base import Base
 
 
 config = context.config

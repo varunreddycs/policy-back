@@ -1,0 +1,83 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "location": {
+      "value": "eastus2"
+    },
+    "environmentName": {
+      "value": "dev"
+    },
+    "resourceGroupName": {
+      "value": ""
+    },
+    "acrSku": {
+      "value": "Basic"
+    },
+    "staticWebAppSku": {
+      "value": "Standard"
+    },
+    "postgresSkuName": {
+      "value": "Standard_D2s_v3"
+    },
+    "postgresSkuTier": {
+      "value": "GeneralPurpose"
+    },
+    "postgresStorageSizeGb": {
+      "value": 128
+    },
+    "postgresDatabaseName": {
+      "value": "policy_platform"
+    },
+    "postgresAdminLogin": {
+      "value": "policy"
+    },
+    "azureOpenAiApiVersion": {
+      "value": "2024-02-15-preview"
+    },
+    "apiImageTag": {
+      "value": "latest"
+    },
+    "workerImageTag": {
+      "value": "latest"
+    },
+    "apiMinReplicas": {
+      "value": 1
+    },
+    "apiMaxReplicas": {
+      "value": 3
+    },
+    "workerMinReplicas": {
+      "value": 1
+    },
+    "workerMaxReplicas": {
+      "value": 2
+    },
+    "rawBlobContainerName": {
+      "value": "policy-raw"
+    },
+    "extractedBlobContainerName": {
+      "value": "policy-extracted"
+    },
+    "queueName": {
+      "value": "policy-extraction"
+    },
+    "embeddingDim": {
+      "value": 3072
+    },
+    "retrieverBackend": {
+      "value": "hybrid"
+    },
+    "enableApiDocs": {
+      "value": false
+    },
+    "appEnvironment": {
+      "value": "cloud"
+    },
+    "tags": {
+      "value": {
+        "owner": "platform-team"
+      }
+    }
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "documents": {
+    "https://das.ohio.gov/employee-relations/policies": {
+      "current_sha256": "af0f33429ffa127f214268601fc2f87d4742c4bc6d7d80133410358b0e94d32e",
+      "current_path": "C:\\VarunProjects\\2026\\MistrV\\PolicyPlatform\\policy-back\\tools\\ohio_docs_ingestor\\out\\downloads\\das\\here-s-how-you-know-6dc0a457fb32.html",
+      "content_type": "text/html",
+      "content_length": 5265,
+      "sha_to_path": {
+        "af0f33429ffa127f214268601fc2f87d4742c4bc6d7d80133410358b0e94d32e": "C:\\VarunProjects\\2026\\MistrV\\PolicyPlatform\\policy-back\\tools\\ohio_docs_ingestor\\out\\downloads\\das\\here-s-how-you-know-6dc0a457fb32.html"
+      }
+    },
+    "https://das.ohio.gov/wps/portal/gov/das/employee-relations/policies": {
+      "current_sha256": "af0f33429ffa127f214268601fc2f87d4742c4bc6d7d80133410358b0e94d32e",
+      "current_path": "C:\\VarunProjects\\2026\\MistrV\\PolicyPlatform\\policy-back\\tools\\ohio_docs_ingestor\\out\\downloads\\das\\policies-d73369dae1b8.html",
+      "content_type": "text/html",
+      "content_length": 5265,
+      "sha_to_path": {
+        "af0f33429ffa127f214268601fc2f87d4742c4bc6d7d80133410358b0e94d32e": "C:\\VarunProjects\\2026\\MistrV\\PolicyPlatform\\policy-back\\tools\\ohio_docs_ingestor\\out\\downloads\\das\\policies-d73369dae1b8.html"
+      }
+    },
+    "https://das.ohio.gov/wps/portal/gov/das/home/policy-finder/filter-policy-finder": {
+      "current_sha256": "af0f33429ffa127f214268601fc2f87d4742c4bc6d7d80133410358b0e94d32e",
+      "current_path": "C:\\VarunProjects\\2026\\MistrV\\PolicyPlatform\\policy-back\\tools\\ohio_docs_ingestor\\out\\downloads\\das\\policy-finder-6df433e46496.html",
+      "content_type": "text/html",
+      "content_length": 5265,
+      "sha_to_path": {
+        "af0f33429ffa127f214268601fc2f87d4742c4bc6d7d80133410358b0e94d32e": "C:\\VarunProjects\\2026\\MistrV\\PolicyPlatform\\policy-back\\tools\\ohio_docs_ingestor\\out\\downloads\\das\\policy-finder-6df433e46496.html"
+      }
+    },
+    "https://das.ohio.gov/home/policy-finder/filter-policy-finder": {
+      "current_sha256": "af0f33429ffa127f214268601fc2f87d4742c4bc6d7d80133410358b0e94d32e",
+      "current_path": "C:\\VarunProjects\\2026\\MistrV\\PolicyPlatform\\policy-back\\tools\\ohio_docs_ingestor\\out\\downloads\\das\\here-s-how-you-know-3ddaae7b194b.html",
+      "content_type": "text/html",
+      "content_length": 5265,
+      "sha_to_path": {
+        "af0f33429ffa127f214268601fc2f87d4742c4bc6d7d80133410358b0e94d32e": "C:\\VarunProjects\\2026\\MistrV\\PolicyPlatform\\policy-back\\tools\\ohio_docs_ingestor\\out\\downloads\\das\\here-s-how-you-know-3ddaae7b194b.html"
+      }
+    },
+    "https://das.ohio.gov/wps/portal/gov/das/home/policy-finder": {
+      "current_sha256": "af0f33429ffa127f214268601fc2f87d4742c4bc6d7d80133410358b0e94d32e",
+      "current_path": "C:\\VarunProjects\\2026\\MistrV\\PolicyPlatform\\policy-back\\tools\\ohio_docs_ingestor\\out\\downloads\\das\\policy-finder-de82f52c88e0.html",
+      "content_type": "text/html",
+      "content_length": 5265,
+      "sha_to_path": {
+        "af0f33429ffa127f214268601fc2f87d4742c4bc6d7d80133410358b0e94d32e": "C:\\VarunProjects\\2026\\MistrV\\PolicyPlatform\\policy-back\\tools\\ohio_docs_ingestor\\out\\downloads\\das\\policy-finder-de82f52c88e0.html"
+      }
+    },
+    "https://das.ohio.gov/employee-relations/policies/admin-leave": {
+      "current_sha256": "af0f33429ffa127f214268601fc2f87d4742c4bc6d7d80133410358b0e94d32e",
+      "current_path": "C:\\VarunProjects\\2026\\MistrV\\PolicyPlatform\\policy-back\\tools\\ohio_docs_ingestor\\out\\downloads\\das\\here-s-how-you-know-f8415a835501.html",
+      "content_type": "text/html",
+      "content_length": 5265,
+      "sha_to_path": {
+        "af0f33429ffa127f214268601fc2f87d4742c4bc6d7d80133410358b0e94d32e": "C:\\VarunProjects\\2026\\MistrV\\PolicyPlatform\\policy-back\\tools\\ohio_docs_ingestor\\out\\downloads\\das\\here-s-how-you-know-f8415a835501.html"
+      }
+    },
+    "https://das.ohio.gov/employee-relations/office-of-collective-bargaining/labor-relations-and-human-resources-policy/miscellaneous-letters-and-templates": {
+      "current_sha256": "af0f33429ffa127f214268601fc2f87d4742c4bc6d7d80133410358b0e94d32e",
+      "current_path": "C:\\VarunProjects\\2026\\MistrV\\PolicyPlatform\\policy-back\\tools\\ohio_docs_ingestor\\out\\downloads\\das\\miscellaneous-letters-and-templates-department-o-2f8d6eec4293.html",
+      "content_type": "text/html",
+      "content_length": 5265,
+      "sha_to_path": {
+        "af0f33429ffa127f214268601fc2f87d4742c4bc6d7d80133410358b0e94d32e": "C:\\VarunProjects\\2026\\MistrV\\PolicyPlatform\\policy-back\\tools\\ohio_docs_ingestor\\out\\downloads\\das\\miscellaneous-letters-and-templates-department-o-2f8d6eec4293.html"
+      }
+    },
+    "https://das.ohio.gov/employee-relations/policies/google.com": {
+      "current_sha256": "af0f33429ffa127f214268601fc2f87d4742c4bc6d7d80133410358b0e94d32e",
+      "current_path": "C:\\VarunProjects\\2026\\MistrV\\PolicyPlatform\\policy-back\\tools\\ohio_docs_ingestor\\out\\downloads\\das\\hidden-4d98d595bf20.html",
+      "content_type": "text/html",
+      "content_length": 5265,
+      "sha_to_path": {
+        "af0f33429ffa127f214268601fc2f87d4742c4bc6d7d80133410358b0e94d32e": "C:\\VarunProjects\\2026\\MistrV\\PolicyPlatform\\policy-back\\tools\\ohio_docs_ingestor\\out\\downloads\\das\\hidden-4d98d595bf20.html"
+      }
+    }
+  }
+}

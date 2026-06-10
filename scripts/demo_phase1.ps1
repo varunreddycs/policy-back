@@ -2,11 +2,11 @@ param(
     [string]$BaseUrl = "http://localhost:8000",
     [string]$TenantId = "00000000-0000-0000-0000-000000000001",
 
-    [string]$PolicyExternalId = "HIPAA",
-    [string]$PolicyName = "HIPAA Privacy Rule (Demo)",
+    [string]$PolicyExternalId = "DOC_SET_A",
+    [string]$PolicyName = "Sample Governance Document (Demo)",
     [string]$VersionLabel = "v1",
 
-    [hashtable]$Metadata = @{ department = "Compliance"; sensitivity = "high"; type = "regulatory" },
+    [hashtable]$Metadata = @{ department = "operations"; sensitivity = "internal"; type = "general" },
 
     [int]$PollSeconds = 2,
     [int]$PollMaxTries = 30,
@@ -50,11 +50,11 @@ RunId: $RunId
 This is a demo policy used to exercise the pipeline.
 
 2. Scope
-Applies to all staff handling PHI.
+Applies to all staff handling internal documentation.
 
 3. Controls
 - Access logging
-- Minimum necessary use
+- Controlled usage and retention
 "@
 }
 

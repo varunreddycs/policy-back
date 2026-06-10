@@ -1,0 +1,15 @@
+{
+  "tenant_id": "00000000-0000-0000-0000-000000000001",
+  "question": "What is the deadline to submit a request?",
+  "mode": "strict",
+  "user": {
+    "tenant_id": "00000000-0000-0000-0000-000000000001",
+    "email": "dev@local",
+    "role": "user",
+    "department": "operations"
+  },
+  "scope": {
+    "only_current": true,
+    "policy_types": ["general"]
+  }
+}
