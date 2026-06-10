@@ -46,6 +46,12 @@ param azureOpenAiApiVersion string = '2024-02-15-preview'
 @description('Azure OpenAI embeddings deployment name.')
 param azureOpenAiEmbeddingsDeployment string = ''
 
+@description('Azure OpenAI chat deployment name (LLM answer synthesis).')
+param azureOpenAiChatDeployment string = ''
+
+@description('Minimum primary-evidence similarity before the API answers (else refuses).')
+param answerRefusalMinScore string = '0.40'
+
 @description('Azure OpenAI API key.')
 @secure()
 param azureOpenAiApiKey string
@@ -183,6 +189,8 @@ module containerApps 'modules/containerapps.bicep' = {
     azureOpenAiEndpoint: azureOpenAiEndpoint
     azureOpenAiApiVersion: azureOpenAiApiVersion
     azureOpenAiEmbeddingsDeployment: azureOpenAiEmbeddingsDeployment
+    azureOpenAiChatDeployment: azureOpenAiChatDeployment
+    answerRefusalMinScore: answerRefusalMinScore
     appEnvironment: appEnvironment
     enableDocs: enableApiDocs
     apiMinReplicas: apiMinReplicas

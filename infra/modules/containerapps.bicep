@@ -61,6 +61,12 @@ param azureOpenAiApiVersion string
 @description('Azure OpenAI embeddings deployment name.')
 param azureOpenAiEmbeddingsDeployment string
 
+@description('Azure OpenAI chat deployment name (LLM answer synthesis).')
+param azureOpenAiChatDeployment string = ''
+
+@description('Minimum primary-evidence similarity required before the API answers (else it refuses).')
+param answerRefusalMinScore string = '0.40'
+
 @description('Runtime environment label surfaced to app.')
 param appEnvironment string = 'cloud'
 
@@ -280,6 +286,14 @@ resource apiApp 'Microsoft.App/containerApps@2024-03-01' = {
             {
               name: 'EMBEDDINGS_TOP_K'
               value: '40'
+            }
+            {
+              name: 'AZURE_OPENAI_CHAT_DEPLOYMENT'
+              value: azureOpenAiChatDeployment
+            }
+            {
+              name: 'ANSWER_REFUSAL_MIN_SCORE'
+              value: answerRefusalMinScore
             }
           ]
           probes: [

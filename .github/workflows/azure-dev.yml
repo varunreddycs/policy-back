@@ -46,6 +46,8 @@ jobs:
           azd env set workerImageTag "${{ github.sha }}"
           azd env set azureOpenAiEndpoint "${{ vars.AZURE_OPENAI_ENDPOINT }}"
           azd env set azureOpenAiEmbeddingsDeployment "${{ vars.AZURE_OPENAI_EMBEDDINGS_DEPLOYMENT }}"
+          azd env set azureOpenAiChatDeployment "${{ vars.AZURE_OPENAI_CHAT_DEPLOYMENT }}"
+          azd env set answerRefusalMinScore "${{ vars.ANSWER_REFUSAL_MIN_SCORE }}"
           azd env set azureOpenAiApiVersion "${{ vars.AZURE_OPENAI_API_VERSION }}"
           azd env set cosmosEndpoint "${{ vars.COSMOS_ENDPOINT }}"
           azd env set cosmosDatabase "${{ vars.COSMOS_DATABASE }}"
