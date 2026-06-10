@@ -27,29 +27,15 @@ param acrSku string = 'Basic'
 ])
 param staticWebAppSku string = 'Standard'
 
-@description('PostgreSQL compute SKU.')
-param postgresSkuName string = 'Standard_D2s_v3'
+@description('Azure Cosmos DB NoSQL account endpoint.')
+param cosmosEndpoint string
 
-@description('PostgreSQL tier.')
-@allowed([
-  'Burstable'
-  'GeneralPurpose'
-  'MemoryOptimized'
-])
-param postgresSkuTier string = 'GeneralPurpose'
-
-@description('PostgreSQL storage size in GB.')
-param postgresStorageSizeGb int = 128
-
-@description('PostgreSQL database name.')
-param postgresDatabaseName string = 'policy_platform'
-
-@description('PostgreSQL admin username; set to policy by default for app compatibility.')
-param postgresAdminLogin string = 'policy'
-
-@description('PostgreSQL admin password.')
+@description('Azure Cosmos DB NoSQL account key.')
 @secure()
-param postgresAdminPassword string
+param cosmosKey string
+
+@description('Cosmos DB database name.')
+param cosmosDatabase string = 'policydb'
 
 @description('Azure OpenAI endpoint URL.')
 param azureOpenAiEndpoint string = ''
@@ -91,11 +77,8 @@ param extractedBlobContainerName string = 'policy-extracted'
 @description('Queue name for extraction jobs.')
 param queueName string = 'policy-extraction'
 
-@description('Embedding vector dimension expected by schema.')
+@description('Embedding vector dimension.')
 param embeddingDim int = 3072
-
-@description('Retriever backend mode.')
-param retrieverBackend string = 'hybrid'
 
 @description('Enable FastAPI /docs in deployed API.')
 param enableApiDocs bool = false
@@ -115,7 +98,6 @@ var mergedTags = union(tags, {
 
 var acrName = toLower('acr${take(nameSuffix, 18)}')
 var storageAccountName = toLower('st${take(nameSuffix, 22)}')
-var postgresServerName = toLower('pg-${take(nameSuffix, 24)}')
 var keyVaultName = toLower('kv-${take(nameSuffix, 21)}')
 var containerAppsEnvironmentName = toLower('cae-${shortEnv}-${take(nameSuffix, 8)}')
 var apiContainerAppName = toLower('policy-api-${shortEnv}')
@@ -144,21 +126,6 @@ module storage 'modules/storage.bicep' = {
   }
 }
 
-module postgres 'modules/postgres.bicep' = {
-  name: 'postgresDeploy'
-  params: {
-    location: location
-    serverName: postgresServerName
-    databaseName: postgresDatabaseName
-    administratorLogin: postgresAdminLogin
-    administratorPassword: postgresAdminPassword
-    skuName: postgresSkuName
-    skuTier: postgresSkuTier
-    storageSizeGb: postgresStorageSizeGb
-    tags: mergedTags
-  }
-}
-
 module keyvault 'modules/keyvault.bicep' = {
   name: 'keyVaultDeploy'
   params: {
@@ -168,15 +135,17 @@ module keyvault 'modules/keyvault.bicep' = {
   }
 }
 
-resource postgresPasswordSecret 'Microsoft.KeyVault/vaults/secrets@2023-07-01' = {
-  name: '${keyVaultName}/postgres-admin-password'
+resource cosmosKeySecret 'Microsoft.KeyVault/vaults/secrets@2023-07-01' = {
+  name: '${keyVaultName}/cosmos-key'
+  dependsOn: [keyvault]
   properties: {
-    value: postgresAdminPassword
+    value: cosmosKey
   }
 }
 
 resource openAiApiKeySecret 'Microsoft.KeyVault/vaults/secrets@2023-07-01' = {
   name: '${keyVaultName}/azure-openai-api-key'
+  dependsOn: [keyvault]
   properties: {
     value: azureOpenAiApiKey
   }
@@ -184,15 +153,9 @@ resource openAiApiKeySecret 'Microsoft.KeyVault/vaults/secrets@2023-07-01' = {
 
 resource storageConnectionStringSecret 'Microsoft.KeyVault/vaults/secrets@2023-07-01' = {
   name: '${keyVaultName}/storage-connection-string'
+  dependsOn: [keyvault]
   properties: {
     value: storage.outputs.connectionString
-  }
-}
-
-resource databaseUrlSecret 'Microsoft.KeyVault/vaults/secrets@2023-07-01' = {
-  name: '${keyVaultName}/database-url'
-  properties: {
-    value: 'postgresql+psycopg://${postgres.outputs.administratorLogin}:${postgresAdminPassword}@${postgres.outputs.host}:5432/${postgres.outputs.databaseName}?sslmode=require'
   }
 }
 
@@ -215,6 +178,8 @@ module containerApps 'modules/containerapps.bicep' = {
     rawContainerName: storage.outputs.rawContainerName
     extractedContainerName: storage.outputs.extractedContainerName
     queueName: storage.outputs.queueName
+    cosmosEndpoint: cosmosEndpoint
+    cosmosDatabase: cosmosDatabase
     azureOpenAiEndpoint: azureOpenAiEndpoint
     azureOpenAiApiVersion: azureOpenAiApiVersion
     azureOpenAiEmbeddingsDeployment: azureOpenAiEmbeddingsDeployment
@@ -225,13 +190,11 @@ module containerApps 'modules/containerapps.bicep' = {
     workerMinReplicas: workerMinReplicas
     workerMaxReplicas: workerMaxReplicas
     embeddingDim: embeddingDim
-    retrieverBackend: retrieverBackend
   }
   dependsOn: [
-    postgresPasswordSecret
+    cosmosKeySecret
     openAiApiKeySecret
     storageConnectionStringSecret
-    databaseUrlSecret
   ]
 }
 
@@ -251,7 +214,6 @@ output apiUrl string = containerApps.outputs.apiUrl
 output webUrl string = staticwebapp.outputs.webUrl
 output storageAccountName string = storage.outputs.name
 output queueName string = storage.outputs.queueName
-output postgresHost string = postgres.outputs.host
 output keyVaultName string = keyvault.outputs.name
 output acrLoginServer string = acr.outputs.loginServer
 
@@ -260,5 +222,4 @@ output AZURE_CONTAINER_REGISTRY_NAME string = acr.outputs.name
 output API_URL string = containerApps.outputs.apiUrl
 output WEB_URL string = staticwebapp.outputs.webUrl
 output STORAGE_ACCOUNT_NAME string = storage.outputs.name
-output POSTGRES_HOST string = postgres.outputs.host
 output KEY_VAULT_NAME string = keyvault.outputs.name

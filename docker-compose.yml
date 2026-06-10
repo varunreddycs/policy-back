@@ -53,7 +53,7 @@ services:
       EMBEDDINGS_TOP_K: ${EMBEDDINGS_TOP_K:-40}
       FTS_TOP_K: ${FTS_TOP_K:-40}
     ports:
-      - "8000:8000"
+      - "8001:8000"
     depends_on:
       - postgres
       - azurite

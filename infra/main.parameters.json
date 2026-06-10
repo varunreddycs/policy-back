@@ -17,20 +17,11 @@
     "staticWebAppSku": {
       "value": "Standard"
     },
-    "postgresSkuName": {
-      "value": "Standard_D2s_v3"
+    "cosmosEndpoint": {
+      "value": ""
     },
-    "postgresSkuTier": {
-      "value": "GeneralPurpose"
-    },
-    "postgresStorageSizeGb": {
-      "value": 128
-    },
-    "postgresDatabaseName": {
-      "value": "policy_platform"
-    },
-    "postgresAdminLogin": {
-      "value": "policy"
+    "cosmosDatabase": {
+      "value": "policydb"
     },
     "azureOpenAiApiVersion": {
       "value": "2024-02-15-preview"
@@ -64,9 +55,6 @@
     },
     "embeddingDim": {
       "value": 3072
-    },
-    "retrieverBackend": {
-      "value": "hybrid"
     },
     "enableApiDocs": {
       "value": false

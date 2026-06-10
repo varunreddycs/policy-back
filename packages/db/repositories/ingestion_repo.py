@@ -5,7 +5,7 @@ from __future__ import annotations
 import uuid
 from typing import Any, List, Optional
 
-from sqlalchemy import func, select
+from sqlalchemy import func, select, update
 from sqlalchemy.exc import IntegrityError
 from sqlalchemy.orm import Session
 
@@ -101,6 +101,26 @@ class PgIngestItemRepository(IIngestItemRepository):
         item.error_message = error_message
         if result_policy_version_id is not None:
             item.result_policy_version_id = result_policy_version_id
+        self._session.flush()
+
+    def set_status_by_result_version(
+        self,
+        *,
+        policy_version_id: uuid.UUID,
+        status: str,
+        error_code: Optional[str] = None,
+        error_message: Optional[str] = None,
+    ) -> None:
+        self._session.execute(
+            update(IngestItem)
+            .where(IngestItem.result_policy_version_id == policy_version_id)
+            .values(
+                status=status,
+                error_code=error_code,
+                error_message=error_message,
+                updated_at=func.now(),
+            )
+        )
         self._session.flush()
 
     def count_active_for_batch(self, *, batch_id: uuid.UUID) -> int:
