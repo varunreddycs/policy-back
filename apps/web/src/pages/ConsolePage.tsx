@@ -12,11 +12,14 @@ import EvidenceDrawer from "../components/EvidenceDrawer";
 import QuickReplyChips from "../components/QuickReplyChips";
 
 const QUICK_REPLIES = [
-  "Summarize the current requirements",
-  "What changed in the latest version?",
-  "What are the approval steps?",
-  "List retention and archival rules",
-  "What controls are mandatory?"
+  "What does access control AC-2 require for account management?",
+  "What are the requirements for incident response?",
+  "What controls cover authenticator and password management?",
+  "How should we handle a vendor data breach?",
+  "An employee was just terminated — which access-related controls apply?",
+  "What are the requirements for multi-factor authentication (IA-2)?",
+  "How do we prepare for and respond to a ransomware incident?",
+  "What controls address supply chain risk management?"
 ];
 
 const TENANT_ID = import.meta.env.VITE_TENANT_ID || "00000000-0000-0000-0000-000000000001";
