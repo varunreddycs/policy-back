@@ -93,6 +93,10 @@ resource keyVault 'Microsoft.KeyVault/vaults@2023-07-01' existing = {
   name: keyVaultName
 }
 
+resource storageAccount 'Microsoft.Storage/storageAccounts@2023-01-01' existing = {
+  name: storageAccountName
+}
+
 resource workspace 'Microsoft.OperationalInsights/workspaces@2022-10-01' = {
   name: '${containerAppsEnvironmentName}-logs'
   location: location
@@ -181,6 +185,10 @@ resource apiApp 'Microsoft.App/containerApps@2024-03-01' = {
           keyVaultUrl: '${keyVaultUri}secrets/storage-connection-string'
           identity: 'system'
         }
+        {
+          name: 'storage-account-key'
+          value: storageAccount.listKeys().keys[0].value
+        }
       ]
     }
     template: {
@@ -220,6 +228,10 @@ resource apiApp 'Microsoft.App/containerApps@2024-03-01' = {
             {
               name: 'AZURE_STORAGE_ACCOUNT_NAME'
               value: storageAccountName
+            }
+            {
+              name: 'AZURE_STORAGE_ACCOUNT_KEY'
+              secretRef: 'storage-account-key'
             }
             {
               name: 'AZURE_STORAGE_ACCOUNT_URL'
@@ -342,6 +354,10 @@ resource workerApp 'Microsoft.App/containerApps@2024-03-01' = {
           keyVaultUrl: '${keyVaultUri}secrets/storage-connection-string'
           identity: 'system'
         }
+        {
+          name: 'storage-account-key'
+          value: storageAccount.listKeys().keys[0].value
+        }
       ]
     }
     template: {
@@ -377,6 +393,10 @@ resource workerApp 'Microsoft.App/containerApps@2024-03-01' = {
             {
               name: 'AZURE_STORAGE_ACCOUNT_NAME'
               value: storageAccountName
+            }
+            {
+              name: 'AZURE_STORAGE_ACCOUNT_KEY'
+              secretRef: 'storage-account-key'
             }
             {
               name: 'AZURE_STORAGE_ACCOUNT_URL'
