@@ -48,13 +48,14 @@ class LlmClient:
             f"{self._endpoint.rstrip('/')}/openai/deployments/{self._deployment}/chat/completions"
         )
         headers = {"api-key": self._api_key, "Content-Type": "application/json"}
+        # Newer Azure OpenAI models (gpt-5.x) require ``max_completion_tokens`` and
+        # only support the default temperature, so we omit ``temperature`` and ``max_tokens``.
         body = {
             "messages": [
                 {"role": "system", "content": system_prompt},
                 {"role": "user", "content": user_message},
             ],
-            "temperature": 0.0,
-            "max_tokens": 1024,
+            "max_completion_tokens": 1024,
         }
 
         resp = requests.post(

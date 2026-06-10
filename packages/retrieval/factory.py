@@ -61,6 +61,7 @@ def build_retriever(
         return CosmosVectorRetriever(
             embeddings_container=cosmos_containers.embeddings,
             policies_container=cosmos_containers.policies,
+            sections_container=cosmos_containers.sections,
             default_top_k=max(1, _env_int("EMBEDDINGS_TOP_K", 40)),
         )
 
