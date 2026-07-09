@@ -51,6 +51,8 @@ jobs:
           azd env set azureOpenAiApiVersion "${{ vars.AZURE_OPENAI_API_VERSION }}"
           azd env set cosmosEndpoint "${{ vars.COSMOS_ENDPOINT }}"
           azd env set cosmosDatabase "${{ vars.COSMOS_DATABASE }}"
+          azd env set AZURE_SUBSCRIPTION_ID "${{ secrets.AZURE_SUBSCRIPTION_ID }}"
+          azd env set AZURE_TENANT_ID "${{ secrets.AZURE_TENANT_ID }}"
           azd env set azureOpenAiApiKey "${{ secrets.AZURE_OPENAI_API_KEY }}"
           azd env set cosmosKey "${{ secrets.COSMOS_KEY }}"
 
