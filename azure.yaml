@@ -40,3 +40,13 @@ services:
             $envFile = Join-Path $servicePath ".env.production"
             "VITE_API_BASE_URL=$($env:API_URL)" | Out-File -FilePath $envFile -Encoding utf8
             Write-Host "Wrote VITE_API_BASE_URL to $envFile"
+        posix:
+          shell: sh
+          run: |
+            if [ -z "$API_URL" ]; then
+              echo "ERROR: API_URL is not available. Run 'azd provision' first." >&2
+              exit 1
+            fi
+            service_path="${AZD_SERVICE_PATH:-$(pwd)}"
+            echo "VITE_API_BASE_URL=$API_URL" > "$service_path/.env.production"
+            echo "Wrote VITE_API_BASE_URL to $service_path/.env.production"
