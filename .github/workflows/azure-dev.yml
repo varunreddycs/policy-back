@@ -38,23 +38,27 @@ jobs:
       - name: Configure azd env
         run: |
           azd env select "${{ vars.AZURE_ENV_NAME }}" || azd env new "${{ vars.AZURE_ENV_NAME }}"
-          azd env set AZURE_LOCATION "${{ vars.AZURE_LOCATION }}"
-          azd env set AZURE_RESOURCE_GROUP "${{ vars.AZURE_RESOURCE_GROUP }}"
-          azd env set environmentName "${{ vars.AZURE_ENV_NAME }}"
-          azd env set appEnvironment "${{ vars.AZURE_ENV_NAME }}"
-          azd env set apiImageTag "${{ github.sha }}"
-          azd env set workerImageTag "${{ github.sha }}"
-          azd env set azureOpenAiEndpoint "${{ vars.AZURE_OPENAI_ENDPOINT }}"
-          azd env set azureOpenAiEmbeddingsDeployment "${{ vars.AZURE_OPENAI_EMBEDDINGS_DEPLOYMENT }}"
-          azd env set azureOpenAiChatDeployment "${{ vars.AZURE_OPENAI_CHAT_DEPLOYMENT }}"
-          azd env set answerRefusalMinScore "${{ vars.ANSWER_REFUSAL_MIN_SCORE }}"
-          azd env set azureOpenAiApiVersion "${{ vars.AZURE_OPENAI_API_VERSION }}"
-          azd env set cosmosEndpoint "${{ vars.COSMOS_ENDPOINT }}"
-          azd env set cosmosDatabase "${{ vars.COSMOS_DATABASE }}"
+
+          # azd infrastructure variables (subscription, location, RG)
           azd env set AZURE_SUBSCRIPTION_ID "${{ secrets.AZURE_SUBSCRIPTION_ID }}"
           azd env set AZURE_TENANT_ID "${{ secrets.AZURE_TENANT_ID }}"
-          azd env set azureOpenAiApiKey "${{ secrets.AZURE_OPENAI_API_KEY }}"
-          azd env set cosmosKey "${{ secrets.COSMOS_KEY }}"
+          azd env set AZURE_LOCATION "${{ vars.AZURE_LOCATION }}"
+          azd env set AZURE_RESOURCE_GROUP "${{ vars.AZURE_RESOURCE_GROUP }}"
+
+          # Bicep parameters — use infra.parameters.* so azd resolves them without prompting
+          azd env config set infra.parameters.environmentName "${{ vars.AZURE_ENV_NAME }}"
+          azd env config set infra.parameters.appEnvironment "${{ vars.AZURE_ENV_NAME }}"
+          azd env config set infra.parameters.apiImageTag "${{ github.sha }}"
+          azd env config set infra.parameters.workerImageTag "${{ github.sha }}"
+          azd env config set infra.parameters.azureOpenAiEndpoint "${{ vars.AZURE_OPENAI_ENDPOINT }}"
+          azd env config set infra.parameters.azureOpenAiEmbeddingsDeployment "${{ vars.AZURE_OPENAI_EMBEDDINGS_DEPLOYMENT }}"
+          azd env config set infra.parameters.azureOpenAiChatDeployment "${{ vars.AZURE_OPENAI_CHAT_DEPLOYMENT }}"
+          azd env config set infra.parameters.answerRefusalMinScore "${{ vars.ANSWER_REFUSAL_MIN_SCORE }}"
+          azd env config set infra.parameters.azureOpenAiApiVersion "${{ vars.AZURE_OPENAI_API_VERSION }}"
+          azd env config set infra.parameters.cosmosEndpoint "${{ vars.COSMOS_ENDPOINT }}"
+          azd env config set infra.parameters.cosmosDatabase "${{ vars.COSMOS_DATABASE }}"
+          azd env config set infra.parameters.azureOpenAiApiKey "${{ secrets.AZURE_OPENAI_API_KEY }}"
+          azd env config set infra.parameters.cosmosKey "${{ secrets.COSMOS_KEY }}"
 
       - name: Deploy
         run: azd up --no-prompt
