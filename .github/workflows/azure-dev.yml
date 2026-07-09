@@ -10,10 +10,6 @@ permissions:
   id-token: write
   contents: read
 
-env:
-  AZURE_ENV_NAME: dev
-  AZURE_LOCATION: eastus2
-
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -28,32 +24,35 @@ jobs:
       - name: Azure login (OIDC)
         uses: azure/login@v2
         with:
-          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          client-id: ${{ vars.AZURE_CLIENT_ID }}
           tenant-id: ${{ secrets.AZURE_TENANT_ID }}
           subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
 
       - name: azd auth login
-        run: azd auth login --client-id "${{ secrets.AZURE_CLIENT_ID }}" --federated-credential-provider github
-
-      - name: Select or create azd env
-        working-directory: .
         run: |
-          azd env select "${AZURE_ENV_NAME}" || azd env new "${AZURE_ENV_NAME}"
-          azd env set AZURE_LOCATION "${AZURE_LOCATION}"
-          azd env set environmentName "${AZURE_ENV_NAME}"
-          azd env set appEnvironment "${AZURE_ENV_NAME}"
-          azd env set apiImageTag "${GITHUB_SHA}"
-          azd env set workerImageTag "${GITHUB_SHA}"
+          azd auth login \
+            --client-id "${{ vars.AZURE_CLIENT_ID }}" \
+            --federated-credential-provider github \
+            --tenant-id "${{ secrets.AZURE_TENANT_ID }}"
 
-      - name: Set required runtime values
-        working-directory: .
+      - name: Configure azd env
         run: |
+          azd env select "${{ vars.AZURE_ENV_NAME }}" || azd env new "${{ vars.AZURE_ENV_NAME }}"
+          azd env set AZURE_LOCATION "${{ vars.AZURE_LOCATION }}"
+          azd env set AZURE_RESOURCE_GROUP "${{ vars.AZURE_RESOURCE_GROUP }}"
+          azd env set environmentName "${{ vars.AZURE_ENV_NAME }}"
+          azd env set appEnvironment "${{ vars.AZURE_ENV_NAME }}"
+          azd env set apiImageTag "${{ github.sha }}"
+          azd env set workerImageTag "${{ github.sha }}"
           azd env set azureOpenAiEndpoint "${{ vars.AZURE_OPENAI_ENDPOINT }}"
           azd env set azureOpenAiEmbeddingsDeployment "${{ vars.AZURE_OPENAI_EMBEDDINGS_DEPLOYMENT }}"
+          azd env set azureOpenAiChatDeployment "${{ vars.AZURE_OPENAI_CHAT_DEPLOYMENT }}"
+          azd env set answerRefusalMinScore "${{ vars.ANSWER_REFUSAL_MIN_SCORE }}"
           azd env set azureOpenAiApiVersion "${{ vars.AZURE_OPENAI_API_VERSION }}"
-          azd env secret set postgresAdminPassword "${{ secrets.POSTGRES_ADMIN_PASSWORD }}"
-          azd env secret set azureOpenAiApiKey "${{ secrets.AZURE_OPENAI_API_KEY }}"
+          azd env set cosmosEndpoint "${{ vars.COSMOS_ENDPOINT }}"
+          azd env set cosmosDatabase "${{ vars.COSMOS_DATABASE }}"
+          azd env set azureOpenAiApiKey "${{ secrets.AZURE_OPENAI_API_KEY }}"
+          azd env set cosmosKey "${{ secrets.COSMOS_KEY }}"
 
-      - name: Deploy with azd up
-        working-directory: .
+      - name: Deploy
         run: azd up --no-prompt

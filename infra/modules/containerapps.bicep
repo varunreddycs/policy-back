@@ -46,6 +46,12 @@ param extractedContainerName string
 @description('Storage queue name for extraction jobs.')
 param queueName string
 
+@description('Azure Cosmos DB NoSQL endpoint.')
+param cosmosEndpoint string
+
+@description('Cosmos DB database name.')
+param cosmosDatabase string = 'policydb'
+
 @description('Azure OpenAI endpoint.')
 param azureOpenAiEndpoint string
 
@@ -54,6 +60,12 @@ param azureOpenAiApiVersion string
 
 @description('Azure OpenAI embeddings deployment name.')
 param azureOpenAiEmbeddingsDeployment string
+
+@description('Azure OpenAI chat deployment name (LLM answer synthesis).')
+param azureOpenAiChatDeployment string = ''
+
+@description('Minimum primary-evidence similarity required before the API answers (else it refuses).')
+param answerRefusalMinScore string = '0.40'
 
 @description('Runtime environment label surfaced to app.')
 param appEnvironment string = 'cloud'
@@ -73,11 +85,8 @@ param workerMinReplicas int = 1
 @description('Worker max replicas.')
 param workerMaxReplicas int = 2
 
-@description('Embedding dimension expected by pgvector schema.')
+@description('Embedding dimension.')
 param embeddingDim int = 3072
-
-@description('Retriever backend mode.')
-param retrieverBackend string = 'hybrid'
 
 var acrPullRoleDefinitionId = subscriptionResourceId('Microsoft.Authorization/roleDefinitions', '7f951dda-4ed3-4680-a7ca-43fe172d538d')
 var keyVaultSecretsUserRoleDefinitionId = subscriptionResourceId('Microsoft.Authorization/roleDefinitions', '4633458b-17de-408a-b874-0445c86b69e6')
@@ -88,6 +97,10 @@ resource acr 'Microsoft.ContainerRegistry/registries@2023-11-01-preview' existin
 
 resource keyVault 'Microsoft.KeyVault/vaults@2023-07-01' existing = {
   name: keyVaultName
+}
+
+resource storageAccount 'Microsoft.Storage/storageAccounts@2023-01-01' existing = {
+  name: storageAccountName
 }
 
 resource workspace 'Microsoft.OperationalInsights/workspaces@2022-10-01' = {
@@ -111,7 +124,7 @@ resource managedEnvironment 'Microsoft.App/managedEnvironments@2024-03-01' = {
       destination: 'log-analytics'
       logAnalyticsConfiguration: {
         customerId: workspace.properties.customerId
-        sharedKey: listKeys(workspace.id, workspace.apiVersion).primarySharedKey
+        sharedKey: workspace.listKeys().primarySharedKey
       }
     }
   }
@@ -164,8 +177,8 @@ resource apiApp 'Microsoft.App/containerApps@2024-03-01' = {
       ]
       secrets: [
         {
-          name: 'database-url'
-          keyVaultUrl: '${keyVaultUri}secrets/database-url'
+          name: 'cosmos-key'
+          keyVaultUrl: '${keyVaultUri}secrets/cosmos-key'
           identity: 'system'
         }
         {
@@ -177,6 +190,10 @@ resource apiApp 'Microsoft.App/containerApps@2024-03-01' = {
           name: 'storage-connection-string'
           keyVaultUrl: '${keyVaultUri}secrets/storage-connection-string'
           identity: 'system'
+        }
+        {
+          name: 'storage-account-key'
+          value: storageAccount.listKeys().keys[0].value
         }
       ]
     }
@@ -195,8 +212,20 @@ resource apiApp 'Microsoft.App/containerApps@2024-03-01' = {
               value: string(enableDocs)
             }
             {
-              name: 'DATABASE_URL'
-              secretRef: 'database-url'
+              name: 'DB_BACKEND'
+              value: 'cosmos'
+            }
+            {
+              name: 'COSMOS_ENDPOINT'
+              value: cosmosEndpoint
+            }
+            {
+              name: 'COSMOS_KEY'
+              secretRef: 'cosmos-key'
+            }
+            {
+              name: 'COSMOS_DATABASE'
+              value: cosmosDatabase
             }
             {
               name: 'STORAGE_CONNECTION_STRING'
@@ -207,6 +236,10 @@ resource apiApp 'Microsoft.App/containerApps@2024-03-01' = {
               value: storageAccountName
             }
             {
+              name: 'AZURE_STORAGE_ACCOUNT_KEY'
+              secretRef: 'storage-account-key'
+            }
+            {
               name: 'AZURE_STORAGE_ACCOUNT_URL'
               value: 'https://${storageAccountName}.blob.${environment().suffixes.storage}'
             }
@@ -215,20 +248,12 @@ resource apiApp 'Microsoft.App/containerApps@2024-03-01' = {
               value: 'https://${storageAccountName}.queue.${environment().suffixes.storage}'
             }
             {
-              name: 'BLOB_CONTAINER_NAME'
-              value: rawContainerName
-            }
-            {
               name: 'AZURE_POLICY_RAW_CONTAINER'
               value: rawContainerName
             }
             {
               name: 'AZURE_POLICY_EXTRACTED_CONTAINER'
               value: extractedContainerName
-            }
-            {
-              name: 'QUEUE_NAME'
-              value: queueName
             }
             {
               name: 'AZURE_POLICY_EXTRACTION_QUEUE_NAME'
@@ -255,8 +280,20 @@ resource apiApp 'Microsoft.App/containerApps@2024-03-01' = {
               value: string(embeddingDim)
             }
             {
-              name: 'RETRIEVER_BACKEND'
-              value: retrieverBackend
+              name: 'EMBEDDINGS_ENABLED'
+              value: 'true'
+            }
+            {
+              name: 'EMBEDDINGS_TOP_K'
+              value: '40'
+            }
+            {
+              name: 'AZURE_OPENAI_CHAT_DEPLOYMENT'
+              value: azureOpenAiChatDeployment
+            }
+            {
+              name: 'ANSWER_REFUSAL_MIN_SCORE'
+              value: answerRefusalMinScore
             }
           ]
           probes: [
@@ -317,8 +354,8 @@ resource workerApp 'Microsoft.App/containerApps@2024-03-01' = {
       ]
       secrets: [
         {
-          name: 'database-url'
-          keyVaultUrl: '${keyVaultUri}secrets/database-url'
+          name: 'cosmos-key'
+          keyVaultUrl: '${keyVaultUri}secrets/cosmos-key'
           identity: 'system'
         }
         {
@@ -330,6 +367,10 @@ resource workerApp 'Microsoft.App/containerApps@2024-03-01' = {
           name: 'storage-connection-string'
           keyVaultUrl: '${keyVaultUri}secrets/storage-connection-string'
           identity: 'system'
+        }
+        {
+          name: 'storage-account-key'
+          value: storageAccount.listKeys().keys[0].value
         }
       ]
     }
@@ -344,8 +385,20 @@ resource workerApp 'Microsoft.App/containerApps@2024-03-01' = {
               value: appEnvironment
             }
             {
-              name: 'DATABASE_URL'
-              secretRef: 'database-url'
+              name: 'DB_BACKEND'
+              value: 'cosmos'
+            }
+            {
+              name: 'COSMOS_ENDPOINT'
+              value: cosmosEndpoint
+            }
+            {
+              name: 'COSMOS_KEY'
+              secretRef: 'cosmos-key'
+            }
+            {
+              name: 'COSMOS_DATABASE'
+              value: cosmosDatabase
             }
             {
               name: 'STORAGE_CONNECTION_STRING'
@@ -356,6 +409,10 @@ resource workerApp 'Microsoft.App/containerApps@2024-03-01' = {
               value: storageAccountName
             }
             {
+              name: 'AZURE_STORAGE_ACCOUNT_KEY'
+              secretRef: 'storage-account-key'
+            }
+            {
               name: 'AZURE_STORAGE_ACCOUNT_URL'
               value: 'https://${storageAccountName}.blob.${environment().suffixes.storage}'
             }
@@ -364,20 +421,12 @@ resource workerApp 'Microsoft.App/containerApps@2024-03-01' = {
               value: 'https://${storageAccountName}.queue.${environment().suffixes.storage}'
             }
             {
-              name: 'BLOB_CONTAINER_NAME'
-              value: rawContainerName
-            }
-            {
               name: 'AZURE_POLICY_RAW_CONTAINER'
               value: rawContainerName
             }
             {
               name: 'AZURE_POLICY_EXTRACTED_CONTAINER'
               value: extractedContainerName
-            }
-            {
-              name: 'QUEUE_NAME'
-              value: queueName
             }
             {
               name: 'AZURE_POLICY_EXTRACTION_QUEUE_NAME'
@@ -404,8 +453,12 @@ resource workerApp 'Microsoft.App/containerApps@2024-03-01' = {
               value: string(embeddingDim)
             }
             {
-              name: 'RETRIEVER_BACKEND'
-              value: retrieverBackend
+              name: 'EMBEDDINGS_ENABLED'
+              value: 'true'
+            }
+            {
+              name: 'EMBEDDINGS_TOP_K'
+              value: '40'
             }
             {
               name: 'WORKER_POLL_SECONDS'

@@ -1,17 +1,35 @@
 """Cosmos DB NoSQL vector search retrieval provider.
 
 Uses the DiskANN vector index on the `embeddings` container for semantic
-search, with optional keyword pre-filtering.
+search. Embedding documents are denormalized (they carry the section text and
+policy/section metadata needed to build a candidate), so retrieval is a single
+vector query with no secondary lookups.
+
+`VectorDistance` with a cosine distance function returns the cosine similarity
+directly (higher = more similar, ~[0, 1] for normalized embeddings), and
+`ORDER BY VectorDistance(...)` returns most-similar-first. The returned value is
+used as the candidate score as-is, so the downstream refusal threshold operates
+on a true similarity.
 """
 
 from __future__ import annotations
 
 import logging
-import os
+import re
 import uuid
 from typing import Any, List, Optional
 
 from packages.core.dtos import EvidenceCandidate
+
+# Matches NIST control identifiers in a query, e.g. "AC-2", "ac-2", "IA-5(1)".
+_CONTROL_ID_RE = re.compile(r"\b([A-Za-z]{2})-(\d+)(\(\d+\))?\b")
+# How much to boost a candidate whose section_path exactly matches a control
+# named in the query — large enough to surface the named control to the top.
+_EXACT_ID_BOOST = 0.4
+
+
+def _query_control_ids(query: str) -> set[str]:
+    return {f"{m.group(1).upper()}-{int(m.group(2))}{m.group(3) or ''}" for m in _CONTROL_ID_RE.finditer(query)}
 
 try:
     from packages.core.dtos import PolicyScope, UserContext
@@ -36,12 +54,14 @@ class CosmosVectorRetriever(IVectorRetriever):
         self,
         *,
         embeddings_container: Any,
-        policies_container: Any,
+        policies_container: Any = None,
+        sections_container: Any = None,
         embed_fn: Any = None,
         default_top_k: int = 20,
     ) -> None:
         self._embeddings = embeddings_container
         self._policies = policies_container
+        self._sections = sections_container
         self._embed_fn = embed_fn
         self._default_top_k = default_top_k
 
@@ -59,18 +79,16 @@ class CosmosVectorRetriever(IVectorRetriever):
 
         top_k = min(top_k, self._default_top_k)
 
-        # Generate query embedding
         query_vector = self._get_query_embedding(query)
         if query_vector is None:
             logger.warning("cosmos_vector.no_embedding_available")
             return []
 
-        # Build the vector search query
-        # Cosmos DB NoSQL vector search syntax
         cosmos_query = (
-            "SELECT TOP @topK c.id, c.tenant_id, c.policy_version_id, c.policy_section_id, "
-            "c.embedding_model, c.authority_level, c.department_scope, c.policy_type, "
-            "c.effective_date, "
+            "SELECT TOP @topK c.policy_id, c.policy_version_id, c.policy_section_id, "
+            "c.policy_name, c.section_title, c.section_path, c.section_index, c.text, "
+            "c.authority_level, c.department_scope, c.policy_type, c.is_current, "
+            "c.effective_date, c.public_url, "
             "VectorDistance(c.embedding, @queryVector) AS similarity_score "
             "FROM c "
             "WHERE c.tenant_id = @tenantId "
@@ -83,74 +101,96 @@ class CosmosVectorRetriever(IVectorRetriever):
         ]
 
         try:
-            results = list(self._embeddings.query_items(
-                query=cosmos_query,
-                parameters=params,
-                partition_key=str(tenant_id),
-            ))
+            results = list(
+                self._embeddings.query_items(
+                    query=cosmos_query,
+                    parameters=params,
+                    partition_key=str(tenant_id),
+                )
+            )
         except Exception:
             logger.exception("cosmos_vector.query_failed")
             return []
 
-        # Convert to EvidenceCandidate by looking up section text
-        candidates = []
+        candidates: List[EvidenceCandidate] = []
         for row in results:
-            section_data = self._get_section_data(
-                tenant_id=tenant_id,
-                section_id=row["policy_section_id"],
-            )
-            if section_data is None:
+            section_id = row.get("policy_section_id")
+            policy_id = row.get("policy_id")
+            policy_version_id = row.get("policy_version_id")
+            if not (section_id and policy_id and policy_version_id):
                 continue
 
-            similarity = row.get("similarity_score", 0.0)
+            text = row.get("text")
+            if not text:
+                # Fallback for non-denormalized embeddings: look up section text.
+                text = self._lookup_section_text(tenant_id=tenant_id, section_id=section_id)
+            if not text:
+                continue
 
-            candidates.append(EvidenceCandidate(
-                section_id=uuid.UUID(row["policy_section_id"]),
-                policy_id=section_data["policy_id"],
-                policy_version_id=uuid.UUID(row["policy_version_id"]),
-                policy_name=section_data.get("policy_name", ""),
-                section_index=section_data.get("section_index", 0),
-                section_title=section_data.get("title", ""),
-                text=section_data.get("text", ""),
-                score=float(similarity),
-                source="cosmos_vector",
-                authority_level=row.get("authority_level", 0),
-                department_scope=row.get("department_scope", "all"),
-                is_current=section_data.get("is_current", False),
-                effective_date=section_data.get("effective_date"),
-            ))
+            candidates.append(
+                EvidenceCandidate(
+                    policy_id=uuid.UUID(str(policy_id)),
+                    policy_version_id=uuid.UUID(str(policy_version_id)),
+                    section_id=uuid.UUID(str(section_id)),
+                    text=text,
+                    score=float(row.get("similarity_score") or 0.0),
+                    source="cosmos_vector",
+                    metadata={
+                        "policy_name": row.get("policy_name"),
+                        "title": row.get("section_title"),
+                        "section_path": row.get("section_path"),
+                        "section_index": row.get("section_index"),
+                        "authority_level": row.get("authority_level") or 0,
+                        "department_scope": row.get("department_scope") or "all",
+                        "policy_type": row.get("policy_type"),
+                        "is_current": bool(row.get("is_current", True)),
+                        "effective_date": row.get("effective_date"),
+                        "public_url": row.get("public_url"),
+                    },
+                )
+            )
+
+        # Lexical boost: if the query names specific controls (e.g. "AC-2"),
+        # surface the exact control above semantically-near neighbours so its
+        # text is in the evidence the LLM sees.
+        named = _query_control_ids(query)
+        if named:
+            for cand in candidates:
+                path = (cand.metadata or {}).get("section_path")
+                if path and str(path).upper() in named:
+                    cand.score = min(0.99, float(cand.score) + _EXACT_ID_BOOST)
+            candidates.sort(key=lambda c: c.score, reverse=True)
 
         return candidates
 
     def _get_query_embedding(self, query: str) -> Optional[List[float]]:
-        """Generate embedding for the query text."""
         if self._embed_fn is not None:
             return self._embed_fn(query)
-
-        # Try using the embeddings package
         try:
-            from packages.embeddings.embed import embed_texts
+            from packages.embeddings import embed_texts
+
             results = embed_texts([query])
             return results[0] if results else None
         except Exception:
-            logger.warning("cosmos_vector.embed_fn_unavailable")
+            logger.exception("cosmos_vector.embed_fn_unavailable")
             return None
 
-    def _get_section_data(self, *, tenant_id: uuid.UUID, section_id: str) -> Optional[dict]:
-        """Look up section text and parent policy info from the policies container."""
-        query = "SELECT * FROM c WHERE c.tenant_id = @tid"
-        params = [{"name": "@tid", "value": str(tenant_id)}]
-        for doc in self._policies.query_items(query=query, parameters=params, partition_key=str(tenant_id)):
-            for v in doc.get("versions", []):
-                for s in v.get("sections", []):
-                    if s["id"] == str(section_id):
-                        return {
-                            "policy_id": uuid.UUID(doc["id"]),
-                            "policy_name": doc["name"],
-                            "section_index": s.get("section_index", 0),
-                            "title": s.get("title", ""),
-                            "text": s.get("text", ""),
-                            "is_current": v.get("is_current", False),
-                            "effective_date": v.get("effective_date"),
-                        }
-        return None
+    def _lookup_section_text(self, *, tenant_id: uuid.UUID, section_id: str) -> Optional[str]:
+        """Fallback section-text lookup from the standalone sections container."""
+        if self._sections is None:
+            return None
+        try:
+            rows = list(
+                self._sections.query_items(
+                    query="SELECT c.text FROM c WHERE c.id = @sid AND c.tenant_id = @tid",
+                    parameters=[
+                        {"name": "@sid", "value": str(section_id)},
+                        {"name": "@tid", "value": str(tenant_id)},
+                    ],
+                    partition_key=str(tenant_id),
+                )
+            )
+        except Exception:
+            logger.exception("cosmos_vector.section_lookup_failed")
+            return None
+        return rows[0].get("text") if rows else None

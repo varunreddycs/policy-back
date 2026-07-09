@@ -717,6 +717,25 @@ class CosmosIngestItemRepository(IIngestItemRepository):
                 break
         self._c.upsert_item(doc)
 
+    def set_status_by_result_version(self, *, policy_version_id: uuid.UUID, status: str,
+                                     error_code: Optional[str] = None,
+                                     error_message: Optional[str] = None) -> None:
+        pvid = str(policy_version_id)
+        query = "SELECT * FROM c WHERE ARRAY_CONTAINS(c.items, {'result_policy_version_id': @pvid}, true)"
+        params = [{"name": "@pvid", "value": pvid}]
+        docs = list(self._c.query_items(query=query, parameters=params, enable_cross_partition_query=True))
+        for doc in docs:
+            changed = False
+            for it in doc.get("items", []):
+                if it.get("result_policy_version_id") == pvid:
+                    it["status"] = status
+                    it["error_code"] = error_code
+                    it["error_message"] = error_message
+                    it["updated_at"] = _now_iso()
+                    changed = True
+            if changed:
+                self._c.upsert_item(doc)
+
     def count_active_for_batch(self, *, batch_id: uuid.UUID) -> int:
         query = "SELECT * FROM c WHERE c.id = @id"
         params = [{"name": "@id", "value": str(batch_id)}]

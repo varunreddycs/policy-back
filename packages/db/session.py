@@ -42,7 +42,11 @@ def get_sessionmaker():
 	return _SessionLocal
 
 
-def get_db_session() -> Generator[Session, None, None]:
+def get_db_session() -> Generator[Session | None, None, None]:
+	import os
+	if os.getenv("DB_BACKEND", "postgresql").strip().lower() != "postgresql":
+		yield None
+		return
 	session = get_sessionmaker()()
 	try:
 		yield session

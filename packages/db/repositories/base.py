@@ -255,6 +255,22 @@ class IIngestItemRepository(ABC):
         ...
 
     @abstractmethod
+    def set_status_by_result_version(
+        self,
+        *,
+        policy_version_id: uuid.UUID,
+        status: str,
+        error_code: Optional[str] = None,
+        error_message: Optional[str] = None,
+    ) -> None:
+        """Update every ingest item whose ``result_policy_version_id`` matches.
+
+        Used by the worker, which knows the produced policy_version_id but not
+        the originating ingest_item_id.
+        """
+        ...
+
+    @abstractmethod
     def count_active_for_batch(self, *, batch_id: uuid.UUID) -> int:
         """Count items still in a non-terminal state (received/queued/processing)."""
         ...

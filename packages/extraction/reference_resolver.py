@@ -11,7 +11,7 @@ from __future__ import annotations
 import re
 import uuid
 from dataclasses import dataclass
-from typing import Iterable, List, Optional, Sequence
+from typing import Any, Dict, Iterable, List, Optional, Sequence, Tuple
 
 from sqlalchemy import select
 from sqlalchemy.orm import Session
@@ -22,7 +22,48 @@ from packages.db.models.policy_models import (
 	PolicySection,
 	PolicyVersion,
 )
+from packages.db.repositories.repo_dtos import PolicySectionDTO
 from packages.extraction.reference_extractor import EXTRACTOR_VERSION, ExtractedReference
+
+
+# Section rows for path matching: (section_id, section_path, section_index).
+_SectionRow = Tuple[uuid.UUID, Optional[str], Optional[int]]
+
+
+def _match_section_path(
+	rows: Sequence[_SectionRow],
+	parsed_section_path: str,
+) -> Optional[uuid.UUID]:
+	"""Pure section-path matcher shared by the ORM and DTO resolution paths.
+
+	Strategy: (1) exact section_path, (2) token-bounded contains, (3) integer
+	fallback against section_index.
+	"""
+	if not parsed_section_path:
+		return None
+
+	exact: Optional[uuid.UUID] = None
+	contains: Optional[uuid.UUID] = None
+	for sid, path, _idx in rows:
+		if path == parsed_section_path:
+			exact = sid
+			break
+		# token-bounded contains: avoid "3.2" matching "13.21"
+		if re.search(rf"(?:^|\s|-){re.escape(parsed_section_path)}(?:\s|$|[^\d.])", path or ""):
+			if contains is None:
+				contains = sid
+	if exact:
+		return exact
+	if contains:
+		return contains
+
+	if parsed_section_path.isdigit():
+		idx = int(parsed_section_path)
+		for sid, _path, sec_idx in rows:
+			if sec_idx == idx:
+				return sid
+
+	return None
 
 
 # ---------------------------------------------------------------------------
@@ -51,7 +92,6 @@ def _resolve_internal_section(
 	if not parsed_section_path:
 		return None
 
-	# Strategy 1+2: text match against section_path
 	stmt = (
 		select(PolicySection.id, PolicySection.section_path, PolicySection.section_index)
 		.where(
@@ -60,31 +100,8 @@ def _resolve_internal_section(
 			PolicySection.section_path.isnot(None),
 		)
 	)
-	rows = list(session.execute(stmt).all())
-
-	exact: Optional[uuid.UUID] = None
-	contains: Optional[uuid.UUID] = None
-	for sid, path, _idx in rows:
-		if path == parsed_section_path:
-			exact = sid
-			break
-		# token-bounded contains: avoid "3.2" matching "13.21"
-		if re.search(rf"(?:^|\s|-){re.escape(parsed_section_path)}(?:\s|$|[^\d.])", path or ""):
-			if contains is None:
-				contains = sid
-	if exact:
-		return exact
-	if contains:
-		return contains
-
-	# Strategy 3: integer fallback against section_index
-	if parsed_section_path.isdigit():
-		idx = int(parsed_section_path)
-		for sid, _path, sec_idx in rows:
-			if sec_idx == idx:
-				return sid
-
-	return None
+	rows = [(sid, path, idx) for sid, path, idx in session.execute(stmt).all()]
+	return _match_section_path(rows, parsed_section_path)
 
 
 # ---------------------------------------------------------------------------
@@ -249,3 +266,117 @@ def extract_and_resolve_for_version(
 		)
 		all_rows.extend(rows)
 	return all_rows
+
+
+# ---------------------------------------------------------------------------
+# Backend-agnostic resolution (DTO + repository driven)
+# ---------------------------------------------------------------------------
+#
+# These mirror resolve_references / extract_and_resolve_for_version but operate
+# on portable DTOs and return plain dicts ready for IReferenceRepository.
+# bulk_insert — so the same logic works against PostgreSQL or Cosmos DB.
+
+
+def resolve_references_from_dtos(
+	*,
+	source_section: PolicySectionDTO,
+	source_policy_id: uuid.UUID,
+	sibling_rows: Sequence[_SectionRow],
+	tenant_policies: Sequence["_PolicyCandidate"],
+	extracted: Iterable[ExtractedReference],
+) -> List[Dict[str, Any]]:
+	"""DTO-based variant of :func:`resolve_references`.
+
+	Returns dicts whose keys match the ``PolicyReference`` columns, suitable for
+	``IReferenceRepository.bulk_insert`` on any backend.
+	"""
+	extracted_list = list(extracted)
+	if not extracted_list:
+		return []
+
+	source_section_id = source_section.id
+	tenant_id = source_section.tenant_id
+	source_policy_version_id = source_section.policy_version_id
+
+	out: List[Dict[str, Any]] = []
+	for ref in extracted_list:
+		row: Dict[str, Any] = {
+			"tenant_id": tenant_id,
+			"source_section_id": source_section_id,
+			"source_policy_version_id": source_policy_version_id,
+			"reference_type": ref.reference_type,
+			"resolution_status": "unresolved",
+			"matched_text": ref.matched_text,
+			"match_offset": ref.match_offset,
+			"extractor_version": ref.extractor_version or EXTRACTOR_VERSION,
+			"confidence": float(ref.confidence),
+			"target_section_id": None,
+			"target_policy_id": None,
+			"target_external_uri": None,
+			"target_external_label": None,
+		}
+
+		if ref.reference_type == "internal_section":
+			target_section_id = _match_section_path(sibling_rows, ref.parsed_section_path or "")
+			if target_section_id == source_section_id:
+				continue
+			if target_section_id is not None:
+				row["target_section_id"] = target_section_id
+				row["target_policy_id"] = source_policy_id
+				row["resolution_status"] = "resolved"
+
+		elif ref.reference_type == "cross_policy":
+			target_policy_id = _resolve_cross_policy(tenant_policies, ref.matched_text)
+			if target_policy_id == source_policy_id:
+				continue
+			if target_policy_id is not None:
+				row["target_policy_id"] = target_policy_id
+				row["resolution_status"] = "resolved"
+
+		elif ref.reference_type == "external_authority":
+			row["resolution_status"] = "external"
+			row["target_external_uri"] = ref.external_uri
+			row["target_external_label"] = ref.external_label or ref.matched_text
+
+		else:
+			continue
+
+		out.append(row)
+
+	return out
+
+
+def extract_and_resolve_for_sections(
+	*,
+	sections: Sequence[PolicySectionDTO],
+	source_policy_id: uuid.UUID,
+	tenant_policies: Sequence[Tuple[uuid.UUID, str]],
+) -> List[Dict[str, Any]]:
+	"""Backend-agnostic variant of :func:`extract_and_resolve_for_version`.
+
+	``sections`` must be every section of the source policy version (used both
+	as work items and as internal-resolution targets). ``tenant_policies`` is
+	the ``(policy_id, name)`` set for cross-policy fuzzy resolution.
+	"""
+	from packages.extraction.reference_extractor import extract_references
+
+	sibling_rows: List[_SectionRow] = [
+		(s.id, s.section_path, s.section_index) for s in sections
+	]
+	candidates = [_PolicyCandidate(id=pid, name=name) for pid, name in tenant_policies]
+
+	out: List[Dict[str, Any]] = []
+	for section in sections:
+		extracted = extract_references(section.text or "")
+		if not extracted:
+			continue
+		out.extend(
+			resolve_references_from_dtos(
+				source_section=section,
+				source_policy_id=source_policy_id,
+				sibling_rows=sibling_rows,
+				tenant_policies=candidates,
+				extracted=extracted,
+			)
+		)
+	return out
