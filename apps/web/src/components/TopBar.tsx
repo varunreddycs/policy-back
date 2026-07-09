@@ -37,6 +37,14 @@ export default function TopBar() {
           >
             Ingest
           </Button>
+          <Button
+            component={NavLink}
+            to="/roadmap"
+            variant={location.pathname.startsWith("/roadmap") ? "contained" : "outlined"}
+            size="small"
+          >
+            Roadmap
+          </Button>
         </Box>
       </Toolbar>
     </AppBar>

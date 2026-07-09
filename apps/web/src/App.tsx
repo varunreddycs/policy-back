@@ -4,6 +4,7 @@ import TopBar from "./components/TopBar";
 import AuditPage from "./pages/AuditPage";
 import ConsolePage from "./pages/ConsolePage";
 import IngestPage from "./pages/IngestPage";
+import RoadmapPage from "./pages/RoadmapPage";
 import { API_BASE_URL } from "./api/client";
 
 const tenantId = import.meta.env.VITE_TENANT_ID || "00000000-0000-0000-0000-000000000001";
@@ -34,6 +35,7 @@ export default function App() {
             <Route path="/console" element={<ConsolePage />} />
             <Route path="/audit" element={<AuditPage />} />
             <Route path="/ingest" element={<IngestPage />} />
+            <Route path="/roadmap" element={<RoadmapPage />} />
             <Route path="*" element={<Navigate to="/console" replace />} />
           </Routes>
         </Container>
