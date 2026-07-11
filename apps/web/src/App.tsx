@@ -13,7 +13,9 @@ function AppFooter() {
   return (
     <Box sx={{ py: 2, borderTop: 1, borderColor: "divider" }}>
       <Container maxWidth="xl">
-        <Typography variant="caption" color="text.secondary">
+        <Typography variant="caption" sx={{
+          color: "text.secondary"
+        }}>
           Build {import.meta.env.MODE} · Mistrv Policy Console
         </Typography>
       </Container>

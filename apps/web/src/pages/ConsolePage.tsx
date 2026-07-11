@@ -97,7 +97,9 @@ export default function ConsolePage() {
                   <DepartmentSelect department={department} onChange={setDepartment} />
                   <AskForm question={question} loading={loading} onChangeQuestion={setQuestion} onSubmit={ask} />
                   <QuickReplyChips options={QUICK_REPLIES} onSelect={setQuestion} />
-                  <Stack direction="row" justifyContent="flex-end">
+                  <Stack direction="row" sx={{
+                    justifyContent: "flex-end"
+                  }}>
                     <Button
                       variant="outlined"
                       startIcon={<AutoFixHighRoundedIcon />}
@@ -129,14 +131,18 @@ export default function ConsolePage() {
             />
 
             {!answers.length && (
-              <Typography variant="body2" color="text.secondary" textAlign="center">
+              <Typography
+                variant="body2"
+                sx={{
+                  color: "text.secondary",
+                  textAlign: "center"
+                }}>
                 Premium evidence and citations view becomes available after your first answer.
               </Typography>
             )}
           </Stack>
         </Grid>
       </Grid>
-
       <EvidenceDrawer
         open={drawerOpen}
         onClose={() => {
@@ -146,7 +152,6 @@ export default function ConsolePage() {
         answer={latest}
         onCopy={handleCopy}
       />
-
       <Snackbar
         open={snack.open}
         autoHideDuration={2600}

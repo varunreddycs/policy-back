@@ -31,17 +31,28 @@ export default function EvidenceDrawer({ open, onClose, answer, onCopy }: Eviden
       anchor="right"
       open={open}
       onClose={onClose}
-      PaperProps={{ sx: { width: fullScreen ? "100%" : 540 } }}
+      slotProps={{ paper: { sx: { width: fullScreen ? "100%" : 540 } } }}
     >
       <Box sx={{ p: 2, display: "flex", flexDirection: "column", gap: 2, height: "100%" }}>
-        <Stack direction="row" alignItems="center" justifyContent="space-between">
+        <Stack
+          direction="row"
+          sx={{
+            alignItems: "center",
+            justifyContent: "space-between"
+          }}>
           <Typography variant="h6">Evidence Console</Typography>
           <Chip label={`${evidence.length} rows`} />
         </Stack>
 
         {top ? (
           <Box sx={{ p: 2, border: 1, borderColor: "divider", borderRadius: 2, bgcolor: "background.default" }}>
-            <Stack direction="row" spacing={1} alignItems="center" sx={{ mb: 1 }}>
+            <Stack
+              direction="row"
+              spacing={1}
+              sx={{
+                alignItems: "center",
+                mb: 1
+              }}>
               <AutoAwesomeRoundedIcon color="primary" fontSize="small" />
               <Typography variant="subtitle2">Best Candidate</Typography>
             </Stack>
@@ -55,7 +66,9 @@ export default function EvidenceDrawer({ open, onClose, answer, onCopy }: Eviden
           </Box>
         ) : (
           <Box sx={{ p: 2, border: 1, borderColor: "divider", borderRadius: 2, bgcolor: "background.default" }}>
-            <Typography variant="body2" color="text.secondary">
+            <Typography variant="body2" sx={{
+              color: "text.secondary"
+            }}>
               No evidence available for this response.
             </Typography>
           </Box>

@@ -29,7 +29,9 @@ export default function AnswerStream({ answers, tenantId, department, onCopy, on
         <Typography variant="h6" sx={{ mt: 1 }}>
           Ask your first policy question
         </Typography>
-        <Typography variant="body2" color="text.secondary">
+        <Typography variant="body2" sx={{
+          color: "text.secondary"
+        }}>
           Answers and evidence will stream here.
         </Typography>
       </Box>

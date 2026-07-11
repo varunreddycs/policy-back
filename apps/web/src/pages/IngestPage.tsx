@@ -171,10 +171,11 @@ export default function IngestPage() {
   return (
     <Stack spacing={2}>
       <Typography variant="h5">Ingest Policy File</Typography>
-      <Typography variant="body2" color="text.secondary">
+      <Typography variant="body2" sx={{
+        color: "text.secondary"
+      }}>
         Upload a document directly from the web app, then register it into the ingestion pipeline.
       </Typography>
-
       <Card>
         <CardContent>
           <Stack spacing={2}>
@@ -260,21 +261,23 @@ export default function IngestPage() {
           </Stack>
         </CardContent>
       </Card>
-
       {loading && <LinearProgress />}
       {error && <Alert severity="error">{error}</Alert>}
-
       {result && (
         <Alert severity="success">
           <Stack spacing={1}>
             <Typography variant="body2">File registered successfully.</Typography>
-            <Stack direction="row" spacing={1} flexWrap="wrap">
+            <Stack direction="row" spacing={1} sx={{
+              flexWrap: "wrap"
+            }}>
               <Chip size="small" label={`batch ${result.batchId.slice(0, 8)}`} />
               <Chip size="small" label={`policy ${result.policyId.slice(0, 8)}`} />
               <Chip size="small" label={`version ${result.policyVersionId.slice(0, 8)}`} />
               <Chip size="small" label={`parse ${result.parseStatus}`} color="success" />
             </Stack>
-            <Typography variant="caption" color="text.secondary">
+            <Typography variant="caption" sx={{
+              color: "text.secondary"
+            }}>
               Blob path: {result.blobPath}
             </Typography>
           </Stack>

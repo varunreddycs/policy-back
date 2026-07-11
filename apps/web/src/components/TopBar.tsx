@@ -8,7 +8,13 @@ export default function TopBar() {
   return (
     <AppBar position="sticky" color="transparent" sx={{ borderBottom: 1, borderColor: "divider" }}>
       <Toolbar variant="dense" sx={{ minHeight: 52 }}>
-        <Stack direction="row" spacing={1} alignItems="center" sx={{ flex: 1 }}>
+        <Stack
+          direction="row"
+          spacing={1}
+          sx={{
+            alignItems: "center",
+            flex: 1
+          }}>
           <GavelRoundedIcon color="primary" fontSize="small" />
           <Typography variant="subtitle1">Mistrv Policy Console</Typography>
         </Stack>

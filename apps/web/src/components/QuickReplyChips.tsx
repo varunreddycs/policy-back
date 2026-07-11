@@ -8,10 +8,14 @@ interface QuickReplyChipsProps {
 export default function QuickReplyChips({ options, onSelect }: QuickReplyChipsProps) {
   return (
     <Stack spacing={1}>
-      <Typography variant="caption" color="text.secondary">
+      <Typography variant="caption" sx={{
+        color: "text.secondary"
+      }}>
         Quick replies
       </Typography>
-      <Stack direction="row" spacing={1} useFlexGap flexWrap="wrap">
+      <Stack direction="row" spacing={1} useFlexGap sx={{
+        flexWrap: "wrap"
+      }}>
         {options.map((option) => (
           <Chip key={option} label={option} onClick={() => onSelect(option)} variant="outlined" />
         ))}
