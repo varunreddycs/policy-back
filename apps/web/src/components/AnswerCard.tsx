@@ -76,7 +76,9 @@ export default function AnswerCard({ answer, tenantId, department, onCopy, onOpe
       <Card>
         <CardContent>
           <Stack spacing={2}>
-            <Stack direction="row" spacing={1} useFlexGap flexWrap="wrap">
+            <Stack direction="row" spacing={1} useFlexGap sx={{
+              flexWrap: "wrap"
+            }}>
               <Chip label="Mode: strict" color="primary" />
               <Chip label={`Department: ${department || "unknown"}`} variant="outlined" />
               {typeof answer.confidence === "number" && <Chip label={`Confidence: ${Math.round(answer.confidence * 100)}%`} />}
@@ -95,7 +97,9 @@ export default function AnswerCard({ answer, tenantId, department, onCopy, onOpe
 
             <Divider />
 
-            <Typography variant="body2" color="text.secondary">
+            <Typography variant="body2" sx={{
+              color: "text.secondary"
+            }}>
               Evidence: {answer.evidence.length} · Top authority: {topAuthority(answer)} · Selected bucket: {bucket}
             </Typography>
 
@@ -110,7 +114,14 @@ export default function AnswerCard({ answer, tenantId, department, onCopy, onOpe
                 <Typography variant="subtitle2">Citations</Typography>
                 {citationItems.map((item, index) => (
                   <Box key={`${item.policy_version_id}-${item.section_id}-${index}`} sx={{ p: 1.5, border: 1, borderColor: "divider", borderRadius: 2 }}>
-                    <Stack direction="row" spacing={1} useFlexGap flexWrap="wrap" sx={{ mb: 1 }}>
+                    <Stack
+                      direction="row"
+                      spacing={1}
+                      useFlexGap
+                      sx={{
+                        flexWrap: "wrap",
+                        mb: 1
+                      }}>
                       <Chip size="small" label={item.policy_name || "Policy"} />
                       <Chip size="small" variant="outlined" label={(item.section_title || item.section_path || "Section").slice(0, 60)} />
                       <Chip size="small" variant="outlined" label={`Score ${item.score.toFixed(3)}`} />
@@ -118,7 +129,9 @@ export default function AnswerCard({ answer, tenantId, department, onCopy, onOpe
                     <Typography variant="body2" sx={{ mb: 1 }}>
                       {item.snippet}
                     </Typography>
-                    <Stack direction="row" spacing={1} useFlexGap flexWrap="wrap">
+                    <Stack direction="row" spacing={1} useFlexGap sx={{
+                      flexWrap: "wrap"
+                    }}>
                       {item.public_url && (
                         <Button size="small" endIcon={<OpenInNewRoundedIcon />} onClick={() => window.open(item.public_url || undefined, "_blank", "noopener,noreferrer")}>Open URL</Button>
                       )}
@@ -146,7 +159,9 @@ export default function AnswerCard({ answer, tenantId, department, onCopy, onOpe
                         <Typography variant="body2">
                           {(item.policy_name || "Policy") + " - " + (item.section_title || "Section")}
                         </Typography>
-                        <Typography variant="caption" color="text.secondary">
+                        <Typography variant="caption" sx={{
+                          color: "text.secondary"
+                        }}>
                           Score {item.score.toFixed(3)} · Scope {item.department_scope || "all"}
                         </Typography>
                         {!!item.public_url && (
@@ -161,8 +176,17 @@ export default function AnswerCard({ answer, tenantId, department, onCopy, onOpe
               </Accordion>
             )}
 
-            <Stack direction="row" alignItems="center" spacing={1} useFlexGap flexWrap="wrap">
-              <Typography variant="body2" color="text.secondary">
+            <Stack
+              direction="row"
+              spacing={1}
+              useFlexGap
+              sx={{
+                alignItems: "center",
+                flexWrap: "wrap"
+              }}>
+              <Typography variant="body2" sx={{
+                color: "text.secondary"
+              }}>
                 Audit ID: {answer.audit_id}
               </Typography>
               <CopyButton value={answer.audit_id} label="audit id" onCopied={() => onCopy(answer.audit_id, "audit id")} />
@@ -176,7 +200,6 @@ export default function AnswerCard({ answer, tenantId, department, onCopy, onOpe
           </Stack>
         </CardContent>
       </Card>
-
       <Dialog open={sectionOpen} onClose={() => setSectionOpen(false)} fullWidth maxWidth="md">
         <DialogTitle>Section Detail</DialogTitle>
         <DialogContent>
@@ -185,7 +208,9 @@ export default function AnswerCard({ answer, tenantId, department, onCopy, onOpe
           {sectionDetail && (
             <Stack spacing={1.5}>
               <Typography variant="subtitle2">{sectionDetail.policy_name}</Typography>
-              <Typography variant="body2" color="text.secondary">
+              <Typography variant="body2" sx={{
+                color: "text.secondary"
+              }}>
                 {sectionDetail.section_title || sectionDetail.section_path || `Section ${sectionDetail.section_index}`}
               </Typography>
               <Typography variant="body2" sx={{ whiteSpace: "pre-wrap" }}>

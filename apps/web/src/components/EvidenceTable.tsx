@@ -29,7 +29,9 @@ export default function EvidenceTable({ evidence, onCopy }: EvidenceTableProps) 
   if (!evidence.length) {
     return (
       <Box sx={{ py: 3 }}>
-        <Typography variant="body2" color="text.secondary">
+        <Typography variant="body2" sx={{
+          color: "text.secondary"
+        }}>
           No evidence rows available.
         </Typography>
       </Box>
@@ -65,7 +67,9 @@ export default function EvidenceTable({ evidence, onCopy }: EvidenceTableProps) 
                   <TableCell>{item.metadata.authority_level}</TableCell>
                   <TableCell>{item.metadata.department_scope || "org"}</TableCell>
                   <TableCell align="right">
-                    <Stack direction="row" justifyContent="flex-end" spacing={1}>
+                    <Stack direction="row" spacing={1} sx={{
+                      justifyContent: "flex-end"
+                    }}>
                       <Tooltip title="Copy IDs">
                         <IconButton
                           size="small"
@@ -99,7 +103,9 @@ export default function EvidenceTable({ evidence, onCopy }: EvidenceTableProps) 
                   <TableCell colSpan={6} sx={{ py: 0 }}>
                     <Collapse in={isExpanded} timeout="auto" unmountOnExit>
                       <Box sx={{ p: 2, bgcolor: "background.default", borderTop: 1, borderColor: "divider" }}>
-                        <Typography variant="caption" color="text.secondary">
+                        <Typography variant="caption" sx={{
+                          color: "text.secondary"
+                        }}>
                           Section Path: {item.metadata.section_path}
                         </Typography>
                         <Typography variant="body2" sx={{ mt: 1, whiteSpace: "pre-wrap" }}>

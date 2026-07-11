@@ -46,11 +46,18 @@ function describeTarget(ref: PolicyReferenceItem): string {
 function ReferenceList({ title, items }: { title: string; items: PolicyReferenceItem[] }) {
   return (
     <Box>
-      <Typography variant="overline" color="text.secondary">
+      <Typography variant="overline" sx={{
+        color: "text.secondary"
+      }}>
         {title} ({items.length})
       </Typography>
       {items.length === 0 ? (
-        <Typography variant="body2" color="text.secondary" sx={{ mt: 0.5 }}>
+        <Typography
+          variant="body2"
+          sx={{
+            color: "text.secondary",
+            mt: 0.5
+          }}>
           None
         </Typography>
       ) : (
@@ -66,7 +73,13 @@ function ReferenceList({ title, items }: { title: string; items: PolicyReference
                 bgcolor: "background.paper"
               }}
             >
-              <Stack direction="row" spacing={0.75} alignItems="center" sx={{ mb: 0.5 }}>
+              <Stack
+                direction="row"
+                spacing={0.75}
+                sx={{
+                  alignItems: "center",
+                  mb: 0.5
+                }}>
                 <Chip size="small" label={TYPE_LABELS[ref.reference_type]} />
                 <Chip
                   size="small"
@@ -79,7 +92,9 @@ function ReferenceList({ title, items }: { title: string; items: PolicyReference
                 {describeTarget(ref)}
               </Typography>
               {ref.matched_text && ref.matched_text !== describeTarget(ref) ? (
-                <Typography variant="caption" color="text.secondary">
+                <Typography variant="caption" sx={{
+                  color: "text.secondary"
+                }}>
                   “{ref.matched_text}”
                 </Typography>
               ) : null}
@@ -139,7 +154,9 @@ export default function ReferencesPanel({ sectionId, tenantId }: ReferencesPanel
         References
       </Typography>
       {loading ? (
-        <Typography variant="body2" color="text.secondary">
+        <Typography variant="body2" sx={{
+          color: "text.secondary"
+        }}>
           Loading…
         </Typography>
       ) : error ? (
@@ -147,7 +164,9 @@ export default function ReferencesPanel({ sectionId, tenantId }: ReferencesPanel
           {error}
         </Typography>
       ) : data && (data.outbound.length === 0 && data.inbound.length === 0) ? (
-        <Typography variant="body2" color="text.secondary">
+        <Typography variant="body2" sx={{
+          color: "text.secondary"
+        }}>
           No references detected for this section.
         </Typography>
       ) : data ? (

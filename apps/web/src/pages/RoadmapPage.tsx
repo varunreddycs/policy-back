@@ -415,11 +415,23 @@ function IdeaCard({ idea }: { idea: Idea }) {
       }}
     >
       <CardContent>
-        <Stack direction="row" spacing={1} alignItems="flex-start" sx={{ mb: 1 }}>
+        <Stack
+          direction="row"
+          spacing={1}
+          sx={{
+            alignItems: "flex-start",
+            mb: 1
+          }}>
           <Typography variant="subtitle1" sx={{ flex: 1, lineHeight: 1.3 }}>
             {idea.title}
           </Typography>
-          <Typography variant="caption" color="text.secondary" sx={{ fontFamily: "monospace", pt: 0.4 }}>
+          <Typography
+            variant="caption"
+            sx={{
+              color: "text.secondary",
+              fontFamily: "monospace",
+              pt: 0.4
+            }}>
             {idea.id}
           </Typography>
         </Stack>
@@ -434,7 +446,12 @@ function IdeaCard({ idea }: { idea: Idea }) {
         <Typography variant="body2" sx={{ mb: 1 }}>
           {idea.what}
         </Typography>
-        <Typography variant="body2" color="text.secondary" sx={{ mb: 1.25 }}>
+        <Typography
+          variant="body2"
+          sx={{
+            color: "text.secondary",
+            mb: 1.25
+          }}>
           <Box component="span" sx={{ fontWeight: 700, color: "text.primary" }}>
             Why:{" "}
           </Box>
@@ -442,7 +459,14 @@ function IdeaCard({ idea }: { idea: Idea }) {
         </Typography>
 
         {idea.market && (
-          <Typography variant="caption" color="text.secondary" sx={{ display: "block", mb: 1, fontStyle: "italic" }}>
+          <Typography
+            variant="caption"
+            sx={{
+              color: "text.secondary",
+              display: "block",
+              mb: 1,
+              fontStyle: "italic"
+            }}>
             Market: {idea.market}
           </Typography>
         )}
@@ -477,7 +501,13 @@ function IdeaCard({ idea }: { idea: Idea }) {
 export default function RoadmapPage() {
   return (
     <Box>
-      <Stack direction="row" spacing={1} alignItems="center" sx={{ mb: 1 }}>
+      <Stack
+        direction="row"
+        spacing={1}
+        sx={{
+          alignItems: "center",
+          mb: 1
+        }}>
         <BoltRoundedIcon color="primary" />
         <Typography variant="overline" color="primary" sx={{ letterSpacing: 2 }}>
           PolicyPlatform · Backend · Improvement Scan
@@ -486,10 +516,15 @@ export default function RoadmapPage() {
       <Typography variant="h4" sx={{ fontWeight: 800, mb: 1, maxWidth: 900 }}>
         What to build next, and what to fix before anything else
       </Typography>
-      <Typography variant="body1" color="text.secondary" sx={{ mb: 2, maxWidth: 720 }}>
+      <Typography
+        variant="body1"
+        sx={{
+          color: "text.secondary",
+          mb: 2,
+          maxWidth: 720
+        }}>
         A code-grounded, market-compared roadmap for the compliance-grade policy answer engine.
       </Typography>
-
       <Paper
         sx={{
           p: 2,
@@ -501,7 +536,6 @@ export default function RoadmapPage() {
       >
         <Typography variant="body2">{THESIS}</Typography>
       </Paper>
-
       <Stack direction="row" spacing={1.5} sx={{ mb: 4, flexWrap: "wrap", gap: 1.5 }}>
         {STATS.map((s) => (
           <Paper key={s.label} sx={{ p: 2, minWidth: 170, flex: "1 1 170px", maxWidth: 240 }}>
@@ -511,16 +545,23 @@ export default function RoadmapPage() {
             >
               {s.n}
             </Typography>
-            <Typography variant="caption" color="text.secondary">
+            <Typography variant="caption" sx={{
+              color: "text.secondary"
+            }}>
               {s.label}
             </Typography>
           </Paper>
         ))}
       </Stack>
-
       {HORIZONS.map((h) => (
         <Box key={h.key} sx={{ mb: 5 }}>
-          <Stack direction="row" spacing={1} alignItems="baseline" sx={{ mb: 0.5 }}>
+          <Stack
+            direction="row"
+            spacing={1}
+            sx={{
+              alignItems: "baseline",
+              mb: 0.5
+            }}>
             <Typography variant="caption" sx={{ fontFamily: "monospace", color: "text.disabled" }}>
               {h.num}
             </Typography>
@@ -529,7 +570,13 @@ export default function RoadmapPage() {
             </Typography>
             {h.key === "fix-first" && <ReportProblemRoundedIcon color="error" fontSize="small" />}
           </Stack>
-          <Typography variant="body2" color="text.secondary" sx={{ mb: 2, maxWidth: 760 }}>
+          <Typography
+            variant="body2"
+            sx={{
+              color: "text.secondary",
+              mb: 2,
+              maxWidth: 760
+            }}>
             {h.subtitle}
           </Typography>
           <Box
@@ -545,9 +592,14 @@ export default function RoadmapPage() {
           </Box>
         </Box>
       ))}
-
       <Divider sx={{ mb: 3 }} />
-      <Stack direction="row" spacing={1} alignItems="baseline" sx={{ mb: 1.5 }}>
+      <Stack
+        direction="row"
+        spacing={1}
+        sx={{
+          alignItems: "baseline",
+          mb: 1.5
+        }}>
         <Typography variant="caption" sx={{ fontFamily: "monospace", color: "text.disabled" }}>
           05
         </Typography>
@@ -555,7 +607,13 @@ export default function RoadmapPage() {
           Already done well
         </Typography>
       </Stack>
-      <Typography variant="body2" color="text.secondary" sx={{ mb: 2, maxWidth: 760 }}>
+      <Typography
+        variant="body2"
+        sx={{
+          color: "text.secondary",
+          mb: 2,
+          maxWidth: 760
+        }}>
         Verified present in the code — genuine strengths, not gaps. Build on them.
       </Typography>
       <Stack direction="row" spacing={1} sx={{ flexWrap: "wrap", gap: 1, mb: 4 }}>
@@ -563,9 +621,10 @@ export default function RoadmapPage() {
           <Chip key={s} label={s} color="success" variant="outlined" />
         ))}
       </Stack>
-
       <Paper sx={{ p: 2, maxWidth: 900 }}>
-        <Typography variant="caption" color="text.secondary">
+        <Typography variant="caption" sx={{
+          color: "text.secondary"
+        }}>
           Generated from a 21-agent code + market scan — 8 subsystem readers, 6 market researchers, 5 ideation
           lenses, plus an adversarial verify pass that pruned every item against the actual source. Every gap is
           grounded in a real file:line. Tracked as GitHub stories in varunreddycs/policy-back.

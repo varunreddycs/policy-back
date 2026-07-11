@@ -20,7 +20,9 @@ export default function AskForm({ question, loading, onChangeQuestion, onSubmit 
         onChange={(event) => onChangeQuestion(event.target.value)}
         placeholder="Ask a policy question..."
       />
-      <Stack direction="row" justifyContent="flex-end">
+      <Stack direction="row" sx={{
+        justifyContent: "flex-end"
+      }}>
         <Button
           variant="contained"
           endIcon={<SendRoundedIcon />}
