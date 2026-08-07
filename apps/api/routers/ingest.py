@@ -6,14 +6,16 @@ import uuid
 from datetime import datetime
 from datetime import date
 from html import unescape
+from socket import gaierror
 from typing import Any, Dict, Optional
+from urllib.error import HTTPError, URLError
 from urllib.parse import urlparse
-from urllib.request import Request, urlopen
 
 from fastapi import APIRouter, Depends, File, Form, HTTPException, Path, Query, UploadFile, status
 from pydantic import BaseModel, ConfigDict, Field
 
 from apps.api.deps import get_blob_service, get_ingestion_service
+from packages.core.utils.safe_http import SsrfError, safe_fetch
 from packages.db.models.policy_models import IngestionBatchCreateRequest, IngestionBatchResponse
 from packages.extraction.extractor import extract_sections
 from packages.ingestion.ingestion_service import (
@@ -34,6 +36,11 @@ from packages.storage.blob_service import (
 logger = logging.getLogger(__name__)
 
 router = APIRouter(prefix="/v1/ingest", tags=["Ingestion"])
+
+_CRAWL_USER_AGENT = (
+	"Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+	"AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+)
 
 
 class UploadUrlRequest(BaseModel):
@@ -433,25 +440,38 @@ def crawl_and_register_document(
 	blob_service: BlobService = Depends(get_blob_service),
 ) -> RegisterDocumentResponse:
 	try:
-		parsed = urlparse(request.url)
-		if parsed.scheme not in {"http", "https"} or not parsed.netloc:
+		try:
+			fetch_result = safe_fetch(request.url, user_agent=_CRAWL_USER_AGENT)
+		except SsrfError as exc:
+			# Blocked/invalid URL (bad scheme, non-public target, oversized body,
+			# too many redirects). Do not leak the resolved internal IP or specific
+			# reason to the caller; safe_http already logged it at warning level.
+			logger.warning(
+				"api.ingest.crawl_url_rejected",
+				extra={
+					"batch_id": str(batch_id),
+					"tenant_id": str(tenant_id),
+					"url": request.url,
+					"reason": str(exc),
+				},
+			)
 			raise HTTPException(
 				status_code=status.HTTP_400_BAD_REQUEST,
-				detail={"code": "INVALID_URL", "message": "Only http/https URLs are supported"},
-			)
+				detail={"code": "INVALID_URL", "message": "The provided URL is not allowed"},
+			) from exc
+		except gaierror as exc:
+			raise HTTPException(
+				status_code=status.HTTP_400_BAD_REQUEST,
+				detail={"code": "DNS_RESOLUTION_FAILED", "message": "Could not resolve the URL host"},
+			) from exc
+		except (HTTPError, URLError, OSError) as exc:
+			raise HTTPException(
+				status_code=status.HTTP_502_BAD_GATEWAY,
+				detail={"code": "FETCH_FAILED", "message": "Failed to fetch the source URL"},
+			) from exc
 
-		req = Request(
-			request.url,
-			headers={
-				"User-Agent": (
-					"Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
-					"AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
-				)
-			},
-		)
-		with urlopen(req, timeout=60) as response:
-			source_bytes = response.read()
-			content_type = response.headers.get("Content-Type", "application/octet-stream").split(";")[0].strip()
+		source_bytes = fetch_result.content
+		content_type = fetch_result.content_type
 
 		if not source_bytes:
 			raise HTTPException(
