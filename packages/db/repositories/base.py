@@ -203,7 +203,13 @@ class IAuditRepository(ABC):
         ...
 
     @abstractmethod
-    def get_by_id(self, *, audit_id: uuid.UUID) -> Optional[AuditLogDTO]:
+    def get_by_id(self, *, tenant_id: uuid.UUID, audit_id: uuid.UUID) -> Optional[AuditLogDTO]:
+        """Fetch an audit row scoped to *tenant_id*.
+
+        Returns ``None`` if no row with *audit_id* exists OR if a row exists but
+        belongs to a different tenant. Callers must not be able to distinguish
+        those two cases (no cross-tenant existence oracle).
+        """
         ...
 
     @abstractmethod

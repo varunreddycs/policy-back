@@ -46,8 +46,8 @@ class AuditService:
             payload=payload,
         )
 
-    def get(self, *, audit_id: uuid.UUID) -> Dict[str, Any]:
-        dto = self._repo.get_by_id(audit_id=audit_id)
+    def get(self, *, tenant_id: uuid.UUID, audit_id: uuid.UUID) -> Dict[str, Any]:
+        dto = self._repo.get_by_id(tenant_id=tenant_id, audit_id=audit_id)
         if dto is None:
             raise AuditNotFound(audit_id)
         return {
@@ -61,8 +61,8 @@ class AuditService:
             "payload": dto.payload,
         }
 
-    def replay(self, *, audit_id: uuid.UUID, ask_service: Any) -> Dict[str, Any]:
-        record = self.get(audit_id=audit_id)
+    def replay(self, *, tenant_id: uuid.UUID, audit_id: uuid.UUID, ask_service: Any) -> Dict[str, Any]:
+        record = self.get(tenant_id=tenant_id, audit_id=audit_id)
         request_payload = record.get("payload", {}).get("request")
         if not isinstance(request_payload, dict):
             raise DomainError(code="AUDIT_INVALID", message="Audit record does not contain an ask request")

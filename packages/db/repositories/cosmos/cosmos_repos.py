@@ -548,10 +548,15 @@ class CosmosAuditRepository(IAuditRepository):
         self._c.upsert_item(doc)
         return doc_id
 
-    def get_by_id(self, *, audit_id: uuid.UUID) -> Optional[AuditLogDTO]:
-        query = "SELECT * FROM c WHERE c.id = @id"
-        params = [{"name": "@id", "value": str(audit_id)}]
-        items = list(self._c.query_items(query=query, parameters=params, enable_cross_partition_query=True))
+    def get_by_id(self, *, tenant_id: uuid.UUID, audit_id: uuid.UUID) -> Optional[AuditLogDTO]:
+        query = "SELECT * FROM c WHERE c.id = @id AND c.tenant_id = @tid"
+        params = [
+            {"name": "@id", "value": str(audit_id)},
+            {"name": "@tid", "value": str(tenant_id)},
+        ]
+        items = list(
+            self._c.query_items(query=query, parameters=params, partition_key=str(tenant_id))
+        )
         if not items:
             return None
         d = items[0]
