@@ -8,12 +8,13 @@ import uuid
 from contextlib import contextmanager
 from dataclasses import dataclass
 from datetime import datetime, timezone
-from typing import Any, Iterator, Optional
+from typing import Any, Iterator
 
 from azure.core.credentials import AzureNamedKeyCredential
 from azure.identity import DefaultAzureCredential
 from azure.storage.queue import QueueClient
 
+from apps.worker.jobs.embed_sections import embed_sections_for_version
 from packages.db.models.policy_models import ParseStatus, sha256_hex
 from packages.db.repositories.factory import RepositorySet, build_repositories
 from packages.db.repositories.repo_dtos import (
@@ -456,6 +457,28 @@ def _process_one_message(
 	except Exception:
 		logger.exception(
 			"worker.reference_extraction_failed",
+			extra={"policy_version_id": str(version.id), "correlation_id": correlation_id},
+		)
+		uow.rollback()
+
+	# F3 — auto-embed the freshly persisted sections so pgvector/hybrid/Cosmos
+	# retrieval stays current without a manual backfill run. Advisory: like the
+	# reference block, a failure (or missing embedding config) must not regress
+	# ingestion, so it runs in its own try/except with an independent commit.
+	try:
+		result = embed_sections_for_version(
+			repos=repos,
+			policy=policy,
+			version=version,
+			correlation_id=correlation_id,
+		)
+		if result.skipped_reason is None:
+			uow.commit()
+		else:
+			uow.rollback()
+	except Exception:
+		logger.exception(
+			"worker.auto_embed_failed",
 			extra={"policy_version_id": str(version.id), "correlation_id": correlation_id},
 		)
 		uow.rollback()
