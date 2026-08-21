@@ -24,3 +24,6 @@ apps/web/dist/
 __blobstorage__/
 __azurite_db_blob__.json
 __azurite_db_blob_extent__.json
+
+# Daily story agent run logs (local only)
+.claude/logs/

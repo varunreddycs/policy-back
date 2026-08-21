@@ -1,0 +1,101 @@
+# .github/workflows/daily-story-agent.yml
+#
+# SUPERSEDED 2026-08-20: the scheduled trigger now runs locally via
+# Windows Task Scheduler (daily 10am, only fires if the PC is on),
+# invoking the Claude Code CLI directly against this repo so it can
+# use the real agents in ~/.claude/agents/ (explorer/planner/executor/
+# code-reviewer/etc.) without duplicating them into this repo.
+# See: scripts/daily-story-agent.ps1 and .claude/daily-story-agent.md
+#
+# The `schedule` trigger below is disabled. This workflow is kept as a
+# manual-dispatch fallback (e.g. to run the story agent from the cloud
+# if your PC is off) — it is NOT wired to real .claude/agents/ in-repo,
+# so agent delegation inside claude_code_action won't resolve the same
+# subagents your local sessions use unless you commit them here too.
+#
+# Original doc, still accurate if you re-enable the schedule:
+#   Every weekday at 9:00 AM Eastern (13:00 UTC), Claude picks the next
+#   ready GitHub Issue, implements it using the agents defined in the
+#   repo's .claude/agents/ folder, and opens a PR for your review.
+#
+# Requires (one-time setup):
+#   1. Install the Claude GitHub App on this repo: https://github.com/apps/claude
+#      (or run `/install-github-app` inside Claude Code — easiest path)
+#   2. Add a repo secret:
+#        ANTHROPIC_API_KEY  (from console.anthropic.com), or
+#        CLAUDE_CODE_OAUTH_TOKEN (run `claude setup-token` to generate
+#        one from your Claude subscription) — if you use the token,
+#        swap the anthropic_api_key line below accordingly.
+#   3. Commit your agents to .claude/agents/ in this repo.
+#   4. Label issues you want worked on with "ready".
+
+name: Daily Story Agent
+
+on:
+  # schedule:
+  #   - cron: "0 13 * * 1-5"   # DISABLED — superseded by local Task Scheduler job, see header note
+  workflow_dispatch: {}       # manual trigger / cloud fallback still works
+
+concurrency:
+  group: daily-story-agent
+  cancel-in-progress: false   # never kill a run mid-story
+
+jobs:
+  work-on-story:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    permissions:
+      contents: write
+      pull-requests: write
+      issues: write
+      id-token: write
+      actions: read
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 1
+
+      # If your project needs a runtime to build/test, set it up here, e.g.:
+      # - uses: actions/setup-node@v4
+      #   with:
+      #     node-version: 20
+
+      - uses: anthropics/claude-code-action@v1
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          # claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          prompt: |
+            You are the daily story agent for this repository. Do the following:
+
+            1. PICK A STORY. List open issues with the label "ready"
+               (`gh issue list --label ready --state open`). Skip any issue
+               that has the label "claude-working" or already has an open
+               linked PR. Pick the oldest remaining one. If none qualify,
+               say so and stop.
+
+            2. CLAIM IT. Add the label "claude-working" to the issue and
+               comment that you are starting on it.
+
+            3. IMPLEMENT IT. Read the issue carefully. Use the specialized
+               agents defined in this repo's .claude/agents/ directory —
+               delegate work to whichever agent fits each part of the task
+               (via the Task tool). Follow the conventions in CLAUDE.md.
+               Write tests where appropriate and run the existing test
+               suite; fix anything you break.
+
+            4. OPEN A PR. Create a branch named claude/issue-<number>,
+               commit with clear messages, push, and open a pull request
+               with `gh pr create`. The PR description must summarize the
+               approach, list the changes, note how you tested them, and
+               include "Closes #<number>" so the issue auto-closes on merge.
+
+            5. WRAP UP. Comment on the issue with a link to the PR, and
+               replace the "claude-working" label with "needs-review".
+
+            If you cannot complete the story (blocked, ambiguous
+            requirements, failing tests you can't fix), still push what you
+            have as a DRAFT PR, explain the blocker in the PR description,
+            and comment on the issue asking your question.
+          claude_args: |
+            --max-turns 80
+            --allowedTools "Bash(git:*),Bash(gh:*),Bash(npm:*),Bash(npx:*),Bash(yarn:*),Bash(pnpm:*),Bash(make:*),Bash(pytest:*),Bash(python:*),Bash(ls:*),Bash(cat:*),Bash(mkdir:*),Read,Write,Edit,Glob,Grep,Task"
