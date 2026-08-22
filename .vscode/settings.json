@@ -1,3 +1,5 @@
 {
-  "python.envFile": "${workspaceFolder}/.env"
+  "python.envFile": "${workspaceFolder}/.env",
+  "sarif-viewer.connectToGithubCodeScanning": "off",
+  "codeQL.createQuery.qlPackLocation": "c:\\VarunProjects\\2026\\MistrV\\PolicyPlatform\\policy-back"
 }
