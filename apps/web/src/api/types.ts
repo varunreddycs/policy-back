@@ -48,9 +48,26 @@ export interface AskResponse {
   decision?: DecisionInfo | null;
   secondary_evidence?: SecondaryEvidenceItem[];
   confidence: number | null;
-  refusal_reason: "insufficient_evidence" | null;
+  refusal_reason: RefusalCode | null;
+  refusal?: RefusalInfo | null;
   evidence: EvidenceItem[];
   created_at: string;
+}
+
+export type RefusalCode =
+  | "no_authoritative_control"
+  | "department_scope_ambiguous"
+  | "conflicting_versions"
+  | "below_groundedness_threshold";
+
+export interface RefusalInfo {
+  code: RefusalCode;
+  explanation: string;
+  selected_bucket: string | null;
+  user_department: string | null;
+  candidates_considered: number;
+  best_score: number | null;
+  threshold: number | null;
 }
 
 export interface CitationItem {

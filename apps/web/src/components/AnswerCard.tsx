@@ -21,9 +21,20 @@ import {
 } from "@mui/material";
 import { useState } from "react";
 import { policyApi } from "../api/policyApi";
-import type { AskResponse, PolicySectionDetailResponse } from "../api/types";
+import type { AskResponse, PolicySectionDetailResponse, RefusalCode } from "../api/types";
 import CitationsChips from "./CitationsChips";
 import CopyButton from "./CopyButton";
+
+const REFUSAL_LABELS: Record<RefusalCode, string> = {
+  no_authoritative_control: "No authoritative control",
+  department_scope_ambiguous: "Department scope ambiguous",
+  conflicting_versions: "Conflicting versions",
+  below_groundedness_threshold: "Below grounding threshold"
+};
+
+function refusalLabel(code: RefusalCode): string {
+  return REFUSAL_LABELS[code] ?? code;
+}
 
 interface AnswerCardProps {
   answer: AskResponse;
@@ -83,12 +94,16 @@ export default function AnswerCard({ answer, tenantId, department, onCopy, onOpe
               <Chip label={`Department: ${department || "unknown"}`} variant="outlined" />
               {typeof answer.confidence === "number" && <Chip label={`Confidence: ${Math.round(answer.confidence * 100)}%`} />}
               {answer.refusal_reason && (
-                <Chip icon={<WarningAmberRoundedIcon />} label={`Refusal: ${answer.refusal_reason}`} color="warning" variant="outlined" />
+                <Chip icon={<WarningAmberRoundedIcon />} label={`Refusal: ${refusalLabel(answer.refusal_reason)}`} color="warning" variant="outlined" />
               )}
             </Stack>
 
-            {answer.refusal_reason === "insufficient_evidence" && (
-              <Alert severity="warning">Insufficient evidence. The model could not answer with high confidence.</Alert>
+            {answer.refusal_reason && (
+              <Alert severity="warning">
+                <strong>{refusalLabel(answer.refusal_reason)}.</strong>{" "}
+                {answer.refusal?.explanation ??
+                  "Insufficient evidence. The model could not answer with high confidence."}
+              </Alert>
             )}
 
             <Typography variant="body1" sx={{ whiteSpace: "pre-wrap" }}>

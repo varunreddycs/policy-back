@@ -1,17 +1,43 @@
 from __future__ import annotations
 
 from datetime import datetime, timezone
-from uuid import uuid4
+from uuid import UUID, uuid4
 
-from packages.core.dtos import AskRequest, EvidenceCandidate, UserContext
+from packages.core.dtos import (
+    AskRequest,
+    EvidenceCandidate,
+    PolicyScope,
+    RefusalCode,
+    UserContext,
+)
+from packages.llm.client import REFUSAL_PHRASE, LlmClient
 from packages.rag.answer_service import AnswerService
+from packages.retrieval.base import IVectorRetriever
 
 
-class _StaticRetriever:
-    def __init__(self, items):
+class _RefusingLlm(LlmClient):
+    """Stub LLM that always emits the refusal phrase."""
+
+    def __init__(self) -> None:
+        super().__init__(endpoint="https://stub", api_key="stub", deployment="stub")
+
+    def complete(self, system_prompt: str, user_message: str) -> str:
+        return REFUSAL_PHRASE
+
+
+class _StaticRetriever(IVectorRetriever):
+    def __init__(self, items: list[EvidenceCandidate]) -> None:
         self._items = items
 
-    def retrieve(self, **kwargs):
+    def retrieve(
+        self,
+        *,
+        tenant_id: UUID,
+        query: str,
+        scope: PolicyScope | None = None,
+        user: UserContext | None = None,
+        top_k: int = 10,
+    ) -> list[EvidenceCandidate]:
         return self._items
 
 
@@ -89,7 +115,10 @@ def test_answer_service_returns_rich_citation_and_decision_fields() -> None:
 
     assert response.citation_items
     assert response.citation_items[0].policy_name == "Department Guidance"
-    assert response.citation_items[0].public_url == "https://example.org/department/guidance"
+    assert (
+        response.citation_items[0].public_url
+        == "https://example.org/department/guidance"
+    )
     assert response.secondary_evidence
     assert response.secondary_evidence[0].policy_name == "Organization Guidance"
     assert response.created_at <= datetime.now(timezone.utc)
@@ -99,7 +128,11 @@ def test_answer_service_insufficient_evidence_keeps_additive_fields_stable() -> 
     service = AnswerService(retriever=_StaticRetriever([]))
     response = service.ask(_make_request())
 
-    assert response.refusal_reason == "insufficient_evidence"
+    assert response.refusal_reason == RefusalCode.NO_AUTHORITATIVE_CONTROL
+    assert response.refusal is not None
+    assert response.refusal.code is RefusalCode.NO_AUTHORITATIVE_CONTROL
+    assert response.refusal.explanation
+    assert response.refusal.candidates_considered == 0
     assert response.citations == []
     assert response.citation_items == []
     assert response.secondary_evidence == []
@@ -169,9 +202,14 @@ def test_answer_service_cross_dept_candidates_surface_in_secondary_evidence() ->
     assert response.decision.selected_bucket == "department_specific"
     # JFS + org-wide both go to secondary; at least one should clear the 80% threshold
     secondary_depts = {s.department_scope for s in response.secondary_evidence}
-    assert secondary_depts, "secondary_evidence should not be empty for cross-dept conflicts"
+    assert secondary_depts, (
+        "secondary_evidence should not be empty for cross-dept conflicts"
+    )
     # Primary winner must be operations-scoped
-    assert "30 days" in response.answer or response.citation_items[0].policy_name == "Ops Handbook"
+    assert (
+        "30 days" in response.answer
+        or response.citation_items[0].policy_name == "Ops Handbook"
+    )
 
 
 def test_answer_service_populates_retrieval_log() -> None:
@@ -238,7 +276,112 @@ def test_answer_service_refuses_when_primary_score_below_threshold() -> None:
     )
     response = AnswerService(retriever=_StaticRetriever([weak])).ask(request)
 
-    assert response.refusal_reason == "insufficient_evidence"
+    assert response.refusal_reason == RefusalCode.BELOW_GROUNDEDNESS_THRESHOLD
+    assert response.refusal is not None
+    assert response.refusal.code is RefusalCode.BELOW_GROUNDEDNESS_THRESHOLD
+    assert response.refusal.best_score == 0.42
+    assert response.refusal.threshold == 0.5
+    assert response.refusal.selected_bucket == "department_specific"
     assert response.confidence == 0.0
     assert response.citation_items == []
     assert response.retrieval_log is not None
+
+
+def test_answer_service_refuses_with_scope_ambiguous_on_cross_dept_fallback() -> None:
+    """Q1: a weak match that only came from the cross-department bucket is a scope finding."""
+    tid = uuid4()
+    candidate = EvidenceCandidate(
+        policy_id=uuid4(),
+        policy_version_id=uuid4(),
+        section_id=uuid4(),
+        text="Some other department's rule.",
+        score=0.31,
+        source="hybrid",
+        metadata={
+            "department_scope": "jfs",
+            "user_department": "operations",
+            "is_current": True,
+        },
+    )
+    request = AskRequest(
+        tenant_id=tid,
+        question="What is the deadline?",
+        user=UserContext(tenant_id=tid, department="operations"),
+    )
+
+    response = AnswerService(retriever=_StaticRetriever([candidate])).ask(request)
+
+    assert response.refusal is not None
+    assert response.refusal.code is RefusalCode.DEPARTMENT_SCOPE_AMBIGUOUS
+    assert response.refusal.selected_bucket == "other"
+    assert response.refusal.candidates_considered == 1
+    assert "cross-department" in response.refusal.explanation
+
+
+def test_answer_service_refusal_codes_are_distinct_across_gates() -> None:
+    """Q1: the three gates must not collapse to one reason."""
+    weak = EvidenceCandidate(
+        policy_id=uuid4(),
+        policy_version_id=uuid4(),
+        section_id=uuid4(),
+        text="Marginal",
+        score=0.1,
+        source="hybrid",
+        metadata={"department_scope": "operations", "user_department": "operations"},
+    )
+
+    empty = AnswerService(retriever=_StaticRetriever([])).ask(_make_request())
+    below = AnswerService(retriever=_StaticRetriever([weak])).ask(_make_request())
+
+    assert empty.refusal_reason != below.refusal_reason
+    assert {empty.refusal_reason, below.refusal_reason} == {
+        RefusalCode.NO_AUTHORITATIVE_CONTROL,
+        RefusalCode.BELOW_GROUNDEDNESS_THRESHOLD,
+    }
+
+
+def _strong(policy_id, version_id, text: str) -> EvidenceCandidate:
+    return EvidenceCandidate(
+        policy_id=policy_id,
+        policy_version_id=version_id,
+        section_id=uuid4(),
+        text=text,
+        score=0.92,
+        source="hybrid",
+        metadata={
+            "department_scope": "operations",
+            "user_department": "operations",
+            "is_current": True,
+        },
+    )
+
+
+def test_answer_service_llm_refusal_reports_conflicting_versions() -> None:
+    """Q1: two versions of the SAME policy behind an LLM refusal is a version conflict."""
+    policy_id = uuid4()
+    candidates = [
+        _strong(policy_id, uuid4(), "v1: submit within 30 days."),
+        _strong(policy_id, uuid4(), "v2: submit within 60 days."),
+    ]
+
+    service = AnswerService(retriever=_StaticRetriever(candidates), llm=_RefusingLlm())
+    response = service.ask(_make_request())
+
+    assert response.refusal is not None
+    assert response.refusal.code is RefusalCode.CONFLICTING_VERSIONS
+    assert response.refusal_reason == RefusalCode.CONFLICTING_VERSIONS
+    assert response.citation_items == []
+
+
+def test_answer_service_llm_refusal_on_distinct_policies_is_no_control() -> None:
+    """Q1: distinct policies behind an LLM refusal means no control covers the question."""
+    candidates = [
+        _strong(uuid4(), uuid4(), "Unrelated rule A."),
+        _strong(uuid4(), uuid4(), "Unrelated rule B."),
+    ]
+
+    service = AnswerService(retriever=_StaticRetriever(candidates), llm=_RefusingLlm())
+    response = service.ask(_make_request())
+
+    assert response.refusal is not None
+    assert response.refusal.code is RefusalCode.NO_AUTHORITATIVE_CONTROL

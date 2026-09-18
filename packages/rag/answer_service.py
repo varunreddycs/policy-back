@@ -3,14 +3,22 @@ from __future__ import annotations
 import logging
 import os
 from datetime import datetime, timezone
-from typing import Any, Dict, List, Tuple
+from typing import Any
 
-from packages.core.dtos import AnswerResponse, AskRequest, CitationItem, DecisionInfo, EvidenceCandidate, SecondaryEvidenceItem
+from packages.core.dtos import (
+    AnswerResponse,
+    AskRequest,
+    CitationItem,
+    DecisionInfo,
+    EvidenceCandidate,
+    RefusalCode,
+    RefusalInfo,
+    SecondaryEvidenceItem,
+)
 from packages.governance.prompt_registry import default_registry
-from packages.llm.client import LlmClient, REFUSAL_PHRASE
+from packages.llm.client import REFUSAL_PHRASE, LlmClient
 from packages.ranking.ranker import PolicyRanker
 from packages.retrieval.base import IVectorRetriever
-
 
 logger = logging.getLogger(__name__)
 
@@ -60,7 +68,7 @@ class AnswerService:
         return text or "all"
 
     @staticmethod
-    def _extract_user_department(candidates: List[EvidenceCandidate]) -> str | None:
+    def _extract_user_department(candidates: list[EvidenceCandidate]) -> str | None:
         """Fallback: read user_department from retrieval metadata if not in request."""
         for item in candidates:
             dept = (item.metadata or {}).get("user_department")
@@ -74,7 +82,7 @@ class AnswerService:
     def _resolve_user_department(
         self,
         request: AskRequest,
-        candidates: List[EvidenceCandidate],
+        candidates: list[EvidenceCandidate],
     ) -> str | None:
         """Prefer request.user.department; fall back to metadata round-trip."""
         if request.user and request.user.department:
@@ -85,12 +93,12 @@ class AnswerService:
 
     def _bucket_candidates(
         self,
-        candidates: List[EvidenceCandidate],
+        candidates: list[EvidenceCandidate],
         user_department: str | None,
-    ) -> Tuple[List[EvidenceCandidate], List[EvidenceCandidate], str, str]:
-        bucket_a: List[EvidenceCandidate] = []   # user's dept-specific
-        bucket_b: List[EvidenceCandidate] = []   # org-wide ("all")
-        bucket_c: List[EvidenceCandidate] = []   # other dept-specific (cross-dept)
+    ) -> tuple[list[EvidenceCandidate], list[EvidenceCandidate], str, str]:
+        bucket_a: list[EvidenceCandidate] = []  # user's dept-specific
+        bucket_b: list[EvidenceCandidate] = []  # org-wide ("all")
+        bucket_c: list[EvidenceCandidate] = []  # other dept-specific (cross-dept)
         for item in candidates:
             dept_scope = self._norm_dept((item.metadata or {}).get("department_scope"))
             if user_department and dept_scope == user_department:
@@ -102,19 +110,83 @@ class AnswerService:
 
         if bucket_a:
             # Dept-specific wins; secondary = org-wide + cross-dept (surfaces conflicts)
-            return bucket_a, bucket_b + bucket_c, "department_specific", "department bucket had direct matches"
+            return (
+                bucket_a,
+                bucket_b + bucket_c,
+                "department_specific",
+                "department bucket had direct matches",
+            )
         if bucket_b:
             # No dept match; org-wide wins; secondary = cross-dept fallback
-            return bucket_b, bucket_c, "org_wide", "no department matches; fell back to org-wide bucket"
+            return (
+                bucket_b,
+                bucket_c,
+                "org_wide",
+                "no department matches; fell back to org-wide bucket",
+            )
         # Last resort: cross-dept evidence only
-        return bucket_c, [], "other", "no department or org-wide matches; using cross-department evidence"
+        return (
+            bucket_c,
+            [],
+            "other",
+            "no department or org-wide matches; using cross-department evidence",
+        )
+
+    @staticmethod
+    def _distinct_versions(candidates: list[EvidenceCandidate]) -> int:
+        return len({item.policy_version_id for item in candidates})
+
+    @staticmethod
+    def _classify_empty_primary(
+        candidates: list[EvidenceCandidate],
+        user_department: str | None,
+    ) -> tuple[RefusalCode, str]:
+        """No primary evidence survived bucketing.
+
+        Bucket C is a catch-all, so a non-empty retrieval always produces a primary
+        pool; reaching here with candidates means every one was discarded downstream.
+        """
+        if not candidates:
+            return (
+                RefusalCode.NO_AUTHORITATIVE_CONTROL,
+                "No policy section in scope matched the question, so no authoritative control could be cited.",
+            )
+        scope = f"'{user_department}'" if user_department else "the asking department"
+        return (
+            RefusalCode.DEPARTMENT_SCOPE_AMBIGUOUS,
+            (
+                f"{len(candidates)} section(s) matched but none could be attributed to {scope} "
+                "or to an organization-wide scope, so no authoritative control applies."
+            ),
+        )
+
+    @staticmethod
+    def _refusal(
+        code: RefusalCode,
+        explanation: str,
+        *,
+        selected_bucket: str | None,
+        user_department: str | None,
+        candidates_considered: int,
+        best_score: float | None = None,
+        threshold: float | None = None,
+    ) -> RefusalInfo:
+        return RefusalInfo(
+            code=code,
+            explanation=explanation,
+            selected_bucket=selected_bucket,
+            user_department=user_department,
+            candidates_considered=candidates_considered,
+            best_score=best_score,
+            threshold=threshold,
+        )
 
     @staticmethod
     def _build_retrieval_log(
-        candidates: List[EvidenceCandidate],
+        candidates: list[EvidenceCandidate],
         selected_bucket: str,
         primary_score: float,
-    ) -> Dict[str, Any]:
+    ) -> dict[str, Any]:
         """Lift hybrid retriever debug counters off candidate metadata into a top-level log."""
         meta = (candidates[0].metadata or {}) if candidates else {}
         return {
@@ -134,7 +206,7 @@ class AnswerService:
         return snippet[:max_chars].rstrip() + "..."
 
     @staticmethod
-    def _build_user_message(question: str, candidates: List[EvidenceCandidate]) -> str:
+    def _build_user_message(question: str, candidates: list[EvidenceCandidate]) -> str:
         """Format evidence + question for the LLM."""
         lines = [f"Question: {question}", "", "Evidence:"]
         for i, c in enumerate(candidates, start=1):
@@ -144,10 +216,14 @@ class AnswerService:
                 text = text[:600].rstrip() + "…"
             lines.append(f"[{i}] {ref} {text}")
         lines.append("")
-        lines.append("Answer (cite using the format [policy_version_id=... section_id=...]):")
+        lines.append(
+            "Answer (cite using the format [policy_version_id=... section_id=...]):"
+        )
         return "\n".join(lines)
 
-    def _call_llm(self, question: str, candidates: List[EvidenceCandidate]) -> str | None:
+    def _call_llm(
+        self, question: str, candidates: list[EvidenceCandidate]
+    ) -> str | None:
         """Call LLM; returns answer text or None if LLM not available."""
         if not self._llm.available:
             logger.info("llm.unavailable; using excerpt fallback")
@@ -179,20 +255,39 @@ class AnswerService:
         )
 
         user_department = self._resolve_user_department(request, candidates)
-        primary_pool, secondary_pool, selected_bucket, reason = self._bucket_candidates(candidates, user_department)
+        primary_pool, secondary_pool, selected_bucket, reason = self._bucket_candidates(
+            candidates, user_department
+        )
         ranked_primary = self._ranker.rank(primary_pool)
         ranked_secondary = self._ranker.rank(secondary_pool) if secondary_pool else []
         created_at = datetime.now(timezone.utc)
 
         if not ranked_primary:
+            code, explanation = self._classify_empty_primary(
+                candidates, user_department
+            )
+            refusal = self._refusal(
+                code,
+                explanation,
+                selected_bucket=selected_bucket,
+                user_department=user_department,
+                candidates_considered=len(candidates),
+            )
+            logger.info(
+                "answer.refused",
+                extra={"refusal_code": str(code), "selected_bucket": selected_bucket},
+            )
             return AnswerResponse(
                 answer=REFUSAL_PHRASE,
-                refusal_reason="insufficient_evidence",
+                refusal_reason=str(code),
+                refusal=refusal,
                 evidence=[],
                 citations=[],
                 citation_items=[],
                 secondary_evidence=[],
-                retrieval_log=self._build_retrieval_log(candidates, selected_bucket, 0.0),
+                retrieval_log=self._build_retrieval_log(
+                    candidates, selected_bucket, 0.0
+                ),
                 confidence=0.0,
                 created_at=created_at,
             )
@@ -203,14 +298,55 @@ class AnswerService:
         # Phase 2.7 spec: refuse below confidence threshold even if we have candidates.
         refusal_threshold = float(os.getenv("ANSWER_REFUSAL_MIN_SCORE", "0.5") or "0.5")
         if primary_score_check < refusal_threshold:
+            # A weak match that also fell through to the cross-department bucket is a
+            # scope finding, not just a scoring one — the officer needs to know no
+            # policy owned by their department (or the org) covered the question.
+            if selected_bucket == "other":
+                code = RefusalCode.DEPARTMENT_SCOPE_AMBIGUOUS
+                scope = (
+                    f"'{user_department}'"
+                    if user_department
+                    else "the asking department"
+                )
+                explanation = (
+                    f"Only cross-department evidence was available (best score "
+                    f"{primary_score_check:.3f}); nothing scoped to {scope} or to the "
+                    "organization applies to this question."
+                )
+            else:
+                code = RefusalCode.BELOW_GROUNDEDNESS_THRESHOLD
+                explanation = (
+                    f"Best matching section scored {primary_score_check:.3f}, below the "
+                    f"{refusal_threshold:.3f} grounding threshold required to cite it as authoritative."
+                )
+            refusal = self._refusal(
+                code,
+                explanation,
+                selected_bucket=selected_bucket,
+                user_department=user_department,
+                candidates_considered=len(ranked_primary),
+                best_score=primary_score_check,
+                threshold=refusal_threshold,
+            )
+            logger.info(
+                "answer.refused",
+                extra={
+                    "refusal_code": str(code),
+                    "selected_bucket": selected_bucket,
+                    "best_score": primary_score_check,
+                },
+            )
             return AnswerResponse(
                 answer=REFUSAL_PHRASE,
-                refusal_reason="insufficient_evidence",
+                refusal_reason=str(code),
+                refusal=refusal,
                 evidence=ranked_primary,
                 citations=[],
                 citation_items=[],
                 secondary_evidence=[],
-                retrieval_log=self._build_retrieval_log(ranked_primary, selected_bucket, primary_score_check),
+                retrieval_log=self._build_retrieval_log(
+                    ranked_primary, selected_bucket, primary_score_check
+                ),
                 confidence=0.0,
                 created_at=created_at,
             )
@@ -220,8 +356,12 @@ class AnswerService:
             "retrieval.summary",
             extra={
                 "fts_candidates": int(hybrid_debug.get("hybrid_fts_candidates") or 0),
-                "vector_candidates": int(hybrid_debug.get("hybrid_vector_candidates") or 0),
-                "merged_candidates": int(hybrid_debug.get("hybrid_merged_candidates") or len(candidates)),
+                "vector_candidates": int(
+                    hybrid_debug.get("hybrid_vector_candidates") or 0
+                ),
+                "merged_candidates": int(
+                    hybrid_debug.get("hybrid_merged_candidates") or len(candidates)
+                ),
                 "selected_bucket": selected_bucket,
                 "primary_score": float(best.score or 0.0),
             },
@@ -231,14 +371,52 @@ class AnswerService:
         llm_answer = self._call_llm(request.question, ranked_primary[:5])
 
         if llm_answer and REFUSAL_PHRASE.lower() in llm_answer.lower():
+            # The evidence cleared retrieval and grounding but the model still would not
+            # answer from it. Competing versions of the same policy are the one signal we
+            # can attribute; otherwise the cited controls simply do not cover the question.
+            considered = ranked_primary[:5]
+            if self._distinct_versions(considered) > 1 and len(
+                {c.policy_id for c in considered}
+            ) < len(considered):
+                code = RefusalCode.CONFLICTING_VERSIONS
+                explanation = (
+                    "Evidence spans multiple versions of the same policy; the applicable "
+                    "version could not be determined, so no single requirement was cited."
+                )
+            else:
+                code = RefusalCode.NO_AUTHORITATIVE_CONTROL
+                explanation = (
+                    "Sections were retrieved and cleared the grounding threshold, but none "
+                    "state a requirement that answers the question."
+                )
+            refusal = self._refusal(
+                code,
+                explanation,
+                selected_bucket=selected_bucket,
+                user_department=user_department,
+                candidates_considered=len(ranked_primary),
+                best_score=float(best.score or 0.0),
+                threshold=refusal_threshold,
+            )
+            logger.info(
+                "answer.refused",
+                extra={
+                    "refusal_code": str(code),
+                    "selected_bucket": selected_bucket,
+                    "gate": "llm",
+                },
+            )
             return AnswerResponse(
                 answer=llm_answer,
-                refusal_reason="insufficient_evidence",
+                refusal_reason=str(code),
+                refusal=refusal,
                 evidence=ranked_primary,
                 citations=[],
                 citation_items=[],
                 secondary_evidence=[],
-                retrieval_log=self._build_retrieval_log(ranked_primary, selected_bucket, float(best.score or 0.0)),
+                retrieval_log=self._build_retrieval_log(
+                    ranked_primary, selected_bucket, float(best.score or 0.0)
+                ),
                 confidence=float(best.score or 0.0),
                 created_at=created_at,
             )
@@ -274,9 +452,11 @@ class AnswerService:
         ]
 
         primary_score = float(best.score or 0.0)
-        primary_department = self._norm_dept((best.metadata or {}).get("department_scope"))
+        primary_department = self._norm_dept(
+            (best.metadata or {}).get("department_scope")
+        )
         secondary_threshold = primary_score * 0.8
-        secondary_filtered: List[EvidenceCandidate] = []
+        secondary_filtered: list[EvidenceCandidate] = []
         for item in ranked_secondary:
             item_dept = self._norm_dept((item.metadata or {}).get("department_scope"))
             if item_dept == primary_department:
@@ -314,7 +494,9 @@ class AnswerService:
             citations=citations,
             citation_items=citation_items,
             decision=decision,
-            retrieval_log=self._build_retrieval_log(ranked_primary, selected_bucket, primary_score),
+            retrieval_log=self._build_retrieval_log(
+                ranked_primary, selected_bucket, primary_score
+            ),
             secondary_evidence=secondary_evidence,
             confidence=primary_score,
             created_at=created_at,
