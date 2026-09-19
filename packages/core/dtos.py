@@ -120,7 +120,20 @@ class AnswerResponse(BaseModel):
     decision: DecisionInfo | None = None
     retrieval_log: dict[str, Any] | None = None
     secondary_evidence: list[SecondaryEvidenceItem] = Field(default_factory=list)
-    confidence: float | None = None
+    confidence: float | None = Field(
+        default=None,
+        description=(
+            "Relevance heuristic (the fused retrieval score of the top evidence), "
+            "NOT a calibrated probability that the answer is correct."
+        ),
+    )
+    grounding_score: float | None = Field(
+        default=None,
+        description=(
+            "Absolute similarity the refusal gate was evaluated against. "
+            "Comparable across retrieval backends, unlike confidence."
+        ),
+    )
     refusal_reason: str | None = Field(
         default=None,
         description="Typed RefusalCode value; kept as a plain string for backward compatibility.",

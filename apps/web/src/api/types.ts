@@ -47,7 +47,10 @@ export interface AskResponse {
   citation_items?: CitationItem[];
   decision?: DecisionInfo | null;
   secondary_evidence?: SecondaryEvidenceItem[];
+  /** Relevance heuristic from retrieval — NOT a calibrated correctness probability. */
   confidence: number | null;
+  /** Absolute similarity the refusal gate evaluated; comparable across backends. */
+  grounding_score?: number | null;
   refusal_reason: RefusalCode | null;
   refusal?: RefusalInfo | null;
   answer_source?: AnswerSource;

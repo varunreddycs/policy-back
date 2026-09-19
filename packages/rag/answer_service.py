@@ -134,6 +134,25 @@ class AnswerService:
         )
 
     @staticmethod
+    def _grounding_score(candidate: EvidenceCandidate) -> float:
+        """The value ANSWER_REFUSAL_MIN_SCORE is compared against.
+
+        Q5: the fused hybrid score is batch-relative — the top candidate trends
+        toward the weight ceiling regardless of how well it actually matched —
+        so gating on it means the 0.5 threshold denotes something different per
+        backend. Prefer a true cosine similarity when retrieval carried one
+        (pgvector, cosmos, and hybrid's vector leg all do), and fall back to the
+        candidate score only when no absolute measure is available.
+        """
+        similarity = (candidate.metadata or {}).get("vector_similarity")
+        if isinstance(similarity, (int, float)):
+            return float(similarity)
+        # No absolute measure available: either a non-hybrid backend, where
+        # score already IS a true cosine, or a hybrid candidate that only FTS
+        # surfaced, where the fused score is the only signal there is.
+        return float(candidate.score or 0.0)
+
+    @staticmethod
     def _distinct_versions(candidates: list[EvidenceCandidate]) -> int:
         return len({item.policy_version_id for item in candidates})
 
@@ -316,7 +335,7 @@ class AnswerService:
             )
 
         best = ranked_primary[0]
-        primary_score_check = float(best.score or 0.0)
+        primary_score_check = self._grounding_score(best)
 
         # Phase 2.7 spec: refuse below confidence threshold even if we have candidates.
         refusal_threshold = float(os.getenv("ANSWER_REFUSAL_MIN_SCORE", "0.5") or "0.5")
@@ -372,6 +391,7 @@ class AnswerService:
                     ranked_primary, selected_bucket, primary_score_check
                 ),
                 confidence=0.0,
+                grounding_score=primary_score_check,
                 created_at=created_at,
             )
 
@@ -443,6 +463,7 @@ class AnswerService:
                     ranked_primary, selected_bucket, float(best.score or 0.0)
                 ),
                 confidence=float(best.score or 0.0),
+                grounding_score=self._grounding_score(best),
                 created_at=created_at,
             )
 
@@ -526,6 +547,7 @@ class AnswerService:
             ),
             secondary_evidence=secondary_evidence,
             confidence=primary_score,
+            grounding_score=self._grounding_score(best),
             answer_source=answer_source,
             is_fallback=answer_source is AnswerSource.EXCERPT_FALLBACK,
             llm_error=llm_error,

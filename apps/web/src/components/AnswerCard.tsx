@@ -92,7 +92,10 @@ export default function AnswerCard({ answer, tenantId, department, onCopy, onOpe
             }}>
               <Chip label="Mode: strict" color="primary" />
               <Chip label={`Department: ${department || "unknown"}`} variant="outlined" />
-              {typeof answer.confidence === "number" && <Chip label={`Confidence: ${Math.round(answer.confidence * 100)}%`} />}
+              {typeof answer.confidence === "number" && <Chip label={`Relevance: ${Math.round(answer.confidence * 100)}%`} />}
+              {typeof answer.grounding_score === "number" && (
+                <Chip label={`Grounding: ${Math.round(answer.grounding_score * 100)}%`} variant="outlined" />
+              )}
               {answer.refusal_reason && (
                 <Chip icon={<WarningAmberRoundedIcon />} label={`Refusal: ${refusalLabel(answer.refusal_reason)}`} color="warning" variant="outlined" />
               )}
