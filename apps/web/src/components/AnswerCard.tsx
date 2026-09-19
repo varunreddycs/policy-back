@@ -98,6 +98,12 @@ export default function AnswerCard({ answer, tenantId, department, onCopy, onOpe
               )}
             </Stack>
 
+            {answer.is_fallback && !answer.refusal_reason && (
+              <Alert severity="info">
+                Generated answer unavailable — showing the closest policy excerpt verbatim.
+              </Alert>
+            )}
+
             {answer.refusal_reason && (
               <Alert severity="warning">
                 <strong>{refusalLabel(answer.refusal_reason)}.</strong>{" "}

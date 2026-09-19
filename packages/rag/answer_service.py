@@ -7,6 +7,7 @@ from typing import Any
 
 from packages.core.dtos import (
     AnswerResponse,
+    AnswerSource,
     AskRequest,
     CitationItem,
     DecisionInfo,
@@ -16,7 +17,7 @@ from packages.core.dtos import (
     SecondaryEvidenceItem,
 )
 from packages.governance.prompt_registry import default_registry
-from packages.llm.client import REFUSAL_PHRASE, LlmClient
+from packages.llm.client import REFUSAL_PHRASE, LlmClient, LlmError
 from packages.ranking.ranker import PolicyRanker
 from packages.retrieval.base import IVectorRetriever
 
@@ -223,17 +224,38 @@ class AnswerService:
 
     def _call_llm(
         self, question: str, candidates: list[EvidenceCandidate]
-    ) -> str | None:
-        """Call LLM; returns answer text or None if LLM not available."""
+    ) -> tuple[str | None, str | None]:
+        """Generate an answer.
+
+        Returns (answer_text, degradation_reason). A non-None reason means the
+        caller must fall back to an excerpt and surface that on the response —
+        Q2: a silently degraded compliance answer is worse than a flagged one.
+        """
         if not self._llm.available:
             logger.info("llm.unavailable; using excerpt fallback")
-            return None
+            return None, "llm_not_configured"
         try:
             user_msg = self._build_user_message(question, candidates)
-            return self._llm.complete(self._system_prompt(), user_msg)
-        except Exception as exc:
-            logger.warning("llm.call.failed", extra={"error": str(exc)})
-            return None
+            completion = self._llm.complete_detailed(self._system_prompt(), user_msg)
+        except LlmError as exc:
+            logger.warning(
+                "llm.call.failed",
+                extra={"error": str(exc), "error_type": type(exc).__name__},
+            )
+            return None, f"{type(exc).__name__}: {exc}"
+        except Exception as exc:  # unexpected client fault; never fail the ask
+            logger.exception("llm.call.unexpected_error", extra={"error": str(exc)})
+            return None, f"{type(exc).__name__}: {exc}"
+
+        logger.info(
+            "llm.call.succeeded",
+            extra={
+                "finish_reason": completion.finish_reason,
+                "attempts": completion.attempts,
+                "completion_tokens": completion.completion_tokens,
+            },
+        )
+        return completion.content, None
 
     def ask(self, request: AskRequest) -> AnswerResponse:
         user = request.user
@@ -281,6 +303,7 @@ class AnswerService:
                 answer=REFUSAL_PHRASE,
                 refusal_reason=str(code),
                 refusal=refusal,
+                answer_source=AnswerSource.REFUSAL,
                 evidence=[],
                 citations=[],
                 citation_items=[],
@@ -340,6 +363,7 @@ class AnswerService:
                 answer=REFUSAL_PHRASE,
                 refusal_reason=str(code),
                 refusal=refusal,
+                answer_source=AnswerSource.REFUSAL,
                 evidence=ranked_primary,
                 citations=[],
                 citation_items=[],
@@ -368,7 +392,7 @@ class AnswerService:
         )
 
         # LLM answer generation — falls back to excerpt if LLM not configured or fails.
-        llm_answer = self._call_llm(request.question, ranked_primary[:5])
+        llm_answer, llm_error = self._call_llm(request.question, ranked_primary[:5])
 
         if llm_answer and REFUSAL_PHRASE.lower() in llm_answer.lower():
             # The evidence cleared retrieval and grounding but the model still would not
@@ -410,6 +434,7 @@ class AnswerService:
                 answer=llm_answer,
                 refusal_reason=str(code),
                 refusal=refusal,
+                answer_source=AnswerSource.REFUSAL,
                 evidence=ranked_primary,
                 citations=[],
                 citation_items=[],
@@ -423,7 +448,9 @@ class AnswerService:
 
         if llm_answer:
             answer = llm_answer
+            answer_source = AnswerSource.LLM
         else:
+            answer_source = AnswerSource.EXCERPT_FALLBACK
             # Excerpt fallback: plain-text citation without LLM.
             excerpt = (best.text or "").strip().replace("\n", " ")
             if len(excerpt) > 600:
@@ -499,5 +526,8 @@ class AnswerService:
             ),
             secondary_evidence=secondary_evidence,
             confidence=primary_score,
+            answer_source=answer_source,
+            is_fallback=answer_source is AnswerSource.EXCERPT_FALLBACK,
+            llm_error=llm_error,
             created_at=created_at,
         )

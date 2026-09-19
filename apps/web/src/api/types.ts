@@ -50,9 +50,14 @@ export interface AskResponse {
   confidence: number | null;
   refusal_reason: RefusalCode | null;
   refusal?: RefusalInfo | null;
+  answer_source?: AnswerSource;
+  is_fallback?: boolean;
+  llm_error?: string | null;
   evidence: EvidenceItem[];
   created_at: string;
 }
+
+export type AnswerSource = "llm" | "excerpt_fallback" | "refusal";
 
 export type RefusalCode =
   | "no_authoritative_control"

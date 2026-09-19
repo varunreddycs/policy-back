@@ -4,13 +4,14 @@ from datetime import datetime, timezone
 from uuid import UUID, uuid4
 
 from packages.core.dtos import (
+    AnswerSource,
     AskRequest,
     EvidenceCandidate,
     PolicyScope,
     RefusalCode,
     UserContext,
 )
-from packages.llm.client import REFUSAL_PHRASE, LlmClient
+from packages.llm.client import REFUSAL_PHRASE, LlmClient, LlmCompletion, LlmError
 from packages.rag.answer_service import AnswerService
 from packages.retrieval.base import IVectorRetriever
 
@@ -21,8 +22,8 @@ class _RefusingLlm(LlmClient):
     def __init__(self) -> None:
         super().__init__(endpoint="https://stub", api_key="stub", deployment="stub")
 
-    def complete(self, system_prompt: str, user_message: str) -> str:
-        return REFUSAL_PHRASE
+    def complete_detailed(self, system_prompt: str, user_message: str) -> LlmCompletion:
+        return LlmCompletion(content=REFUSAL_PHRASE, finish_reason="stop")
 
 
 class _StaticRetriever(IVectorRetriever):
@@ -385,3 +386,66 @@ def test_answer_service_llm_refusal_on_distinct_policies_is_no_control() -> None
 
     assert response.refusal is not None
     assert response.refusal.code is RefusalCode.NO_AUTHORITATIVE_CONTROL
+
+
+class _FailingLlm(LlmClient):
+    """Stub LLM that always fails, to exercise the excerpt fallback."""
+
+    def __init__(self, message: str = "upstream throttled") -> None:
+        super().__init__(endpoint="https://stub", api_key="stub", deployment="stub")
+        self._message = message
+
+    def complete_detailed(self, system_prompt: str, user_message: str) -> LlmCompletion:
+        raise LlmError(self._message)
+
+
+def test_answer_marks_llm_source_when_generation_succeeds() -> None:
+    """Q2: a genuine generated answer is flagged as such."""
+    candidate = _strong(uuid4(), uuid4(), "Submit within 30 days.")
+
+    class _Ok(LlmClient):
+        def __init__(self) -> None:
+            super().__init__(endpoint="https://stub", api_key="stub", deployment="stub")
+
+        def complete_detailed(
+            self, system_prompt: str, user_message: str
+        ) -> LlmCompletion:
+            return LlmCompletion(
+                content="Submit within 30 days [AC-2].", finish_reason="stop"
+            )
+
+    response = AnswerService(retriever=_StaticRetriever([candidate]), llm=_Ok()).ask(
+        _make_request()
+    )
+
+    assert response.answer_source is AnswerSource.LLM
+    assert response.is_fallback is False
+    assert response.llm_error is None
+
+
+def test_excerpt_fallback_is_flagged_with_reason() -> None:
+    """Q2: a degraded answer must never look like a generated one."""
+    candidate = _strong(uuid4(), uuid4(), "Submit within 30 days.")
+
+    response = AnswerService(
+        retriever=_StaticRetriever([candidate]), llm=_FailingLlm("HTTP 429")
+    ).ask(_make_request())
+
+    assert response.answer_source is AnswerSource.EXCERPT_FALLBACK
+    assert response.is_fallback is True
+    assert response.llm_error is not None
+    assert "429" in response.llm_error
+    # the excerpt itself still answers, with a citation
+    assert "30 days" in response.answer
+
+
+def test_unconfigured_llm_reports_not_configured() -> None:
+    candidate = _strong(uuid4(), uuid4(), "Submit within 30 days.")
+    unconfigured = LlmClient(endpoint="", api_key="", deployment="")
+
+    response = AnswerService(
+        retriever=_StaticRetriever([candidate]), llm=unconfigured
+    ).ask(_make_request())
+
+    assert response.answer_source is AnswerSource.EXCERPT_FALLBACK
+    assert response.llm_error == "llm_not_configured"

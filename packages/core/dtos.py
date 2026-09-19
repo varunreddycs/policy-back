@@ -70,6 +70,18 @@ class RefusalCode(StrEnum):
     BELOW_GROUNDEDNESS_THRESHOLD = "below_groundedness_threshold"
 
 
+class AnswerSource(StrEnum):
+    """Where the returned answer text actually came from.
+
+    Q2: an excerpt fallback is a materially weaker product than a generated
+    answer, so the degradation must be visible on the response rather than silent.
+    """
+
+    LLM = "llm"
+    EXCERPT_FALLBACK = "excerpt_fallback"
+    REFUSAL = "refusal"
+
+
 class RefusalInfo(BaseModel):
     """Auditable refusal detail: typed code plus the signals that produced it."""
 
@@ -114,5 +126,14 @@ class AnswerResponse(BaseModel):
         description="Typed RefusalCode value; kept as a plain string for backward compatibility.",
     )
     refusal: RefusalInfo | None = None
+    answer_source: AnswerSource = AnswerSource.LLM
+    is_fallback: bool = Field(
+        default=False,
+        description="True when the answer text is a raw excerpt because the LLM was unavailable or failed.",
+    )
+    llm_error: str | None = Field(
+        default=None,
+        description="Why generation degraded to the fallback, when it did.",
+    )
     evidence: list[EvidenceCandidate] = Field(default_factory=list)
     created_at: datetime
