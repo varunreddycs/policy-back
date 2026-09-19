@@ -38,10 +38,10 @@ def _has_embedding_config() -> bool:
     return all(bool(item and str(item).strip()) for item in required)
 
 
-def build_retriever(
+def _build_base_retriever(
     *,
-    session: "Session | None" = None,
-    cosmos_containers: "Any | None" = None,
+    session: Session | None = None,
+    cosmos_containers: Any | None = None,
 ) -> IVectorRetriever:
     db_backend = os.getenv("DB_BACKEND", "postgresql").strip().lower()
 
@@ -54,6 +54,7 @@ def build_retriever(
                 create_cosmos_client,
                 get_or_create_containers,
             )
+
             client = create_cosmos_client()
             cosmos_containers = get_or_create_containers(
                 client, os.getenv("COSMOS_DATABASE", "policydb")
@@ -77,7 +78,9 @@ def build_retriever(
     fts_top_k = max(1, _env_int("FTS_TOP_K", 40))
 
     fts_retriever = PgsqlFtsRetriever(session=session, default_top_k=fts_top_k)
-    vector_retriever = PgVectorRetriever(session=session, default_top_k=embeddings_top_k)
+    vector_retriever = PgVectorRetriever(
+        session=session, default_top_k=embeddings_top_k
+    )
 
     if backend == "pgvector":
         return vector_retriever if embeddings_enabled else fts_retriever
@@ -85,7 +88,36 @@ def build_retriever(
     if backend == "hybrid":
         if not embeddings_enabled:
             return fts_retriever
-        return HybridRetriever(vector_retriever=vector_retriever, fts_retriever=fts_retriever)
+        return HybridRetriever(
+            vector_retriever=vector_retriever, fts_retriever=fts_retriever
+        )
 
     # default: pgsql_fts
     return fts_retriever
+
+
+def build_retriever(
+    *,
+    session: Session | None = None,
+    cosmos_containers: Any | None = None,
+) -> IVectorRetriever:
+    """Build the configured retriever, wrapped in the rerank stage when enabled.
+
+    Reranking is a no-op unless RERANKER_BACKEND names a configured provider,
+    so the default pipeline is unchanged.
+    """
+    from packages.reranking.base import PassthroughReranker
+    from packages.reranking.factory import build_reranker, rerank_top_k
+    from packages.reranking.reranking_retriever import RerankingRetriever
+
+    base = _build_base_retriever(session=session, cosmos_containers=cosmos_containers)
+
+    reranker = build_reranker()
+    if isinstance(reranker, PassthroughReranker):
+        return base
+
+    return RerankingRetriever(
+        retriever=base,
+        reranker=reranker,
+        rerank_top_k=rerank_top_k(),
+    )
