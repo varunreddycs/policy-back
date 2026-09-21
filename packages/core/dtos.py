@@ -35,7 +35,9 @@ class PolicyScope(BaseModel):
 
 class AskRequest(BaseModel):
     tenant_id: UUID
-    question: str
+    # Q6: unbounded question text flowed straight into embeddings + the LLM as
+    # cost amplification. 4000 chars is far above any real compliance question.
+    question: str = Field(min_length=1, max_length=4000)
     mode: str | None = Field(
         default=None, description="Optional mode (e.g., 'strict', 'draft')"
     )

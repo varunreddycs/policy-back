@@ -35,6 +35,38 @@ logger = logging.getLogger(__name__)
 
 router = APIRouter(prefix="/v1/ingest", tags=["Ingestion"])
 
+_UPLOAD_CHUNK_BYTES = 1024 * 1024
+
+
+async def _read_capped(file: UploadFile) -> bytes:
+	"""Read an upload in chunks, refusing once it exceeds MAX_UPLOAD_BYTES.
+
+	Q6: the previous ``await file.read()`` buffered the whole body with no
+	ceiling, so one large upload could exhaust container memory.
+	"""
+	from apps.api.config import ApiConfig
+
+	max_bytes = ApiConfig.from_env().max_upload_bytes
+	chunks: list[bytes] = []
+	total = 0
+
+	while True:
+		chunk = await file.read(_UPLOAD_CHUNK_BYTES)
+		if not chunk:
+			break
+		total += len(chunk)
+		if total > max_bytes:
+			raise HTTPException(
+				status_code=status.HTTP_413_REQUEST_ENTITY_TOO_LARGE,
+				detail={
+					"code": "FILE_TOO_LARGE",
+					"message": f"Uploaded file exceeds the {max_bytes} byte limit",
+				},
+			)
+		chunks.append(chunk)
+
+	return b"".join(chunks)
+
 
 class UploadUrlRequest(BaseModel):
 	model_config = ConfigDict(extra="forbid")
@@ -349,7 +381,7 @@ async def upload_and_register_document(
 	blob_service: BlobService = Depends(get_blob_service),
 ) -> RegisterDocumentResponse:
 	try:
-		file_bytes = await file.read()
+		file_bytes = await _read_capped(file)
 		if not file_bytes:
 			raise HTTPException(
 				status_code=status.HTTP_400_BAD_REQUEST,
