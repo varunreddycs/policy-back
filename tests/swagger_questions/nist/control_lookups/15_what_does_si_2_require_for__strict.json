@@ -1,0 +1,13 @@
+{
+  "tenant_id": "11111111-1111-1111-1111-111111111111",
+  "question": "What does SI-2 require for flaw remediation and patching?",
+  "mode": "strict",
+  "user": {
+    "tenant_id": "11111111-1111-1111-1111-111111111111",
+    "email": "demo@local",
+    "role": "staff"
+  },
+  "scope": {
+    "only_current": true
+  }
+}

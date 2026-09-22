@@ -78,12 +78,17 @@ def main() -> int:
         "--notes", default=None, help="Note stored with a recorded baseline"
     )
     parser.add_argument(
+        "--suite",
+        default=None,
+        help="Restrict to one corpus (e.g. nist). Baselines are per-suite.",
+    )
+    parser.add_argument(
         "--out", type=Path, default=None, help="Also write the full report here"
     )
     args = parser.parse_args()
 
     ask_url = f"{args.base_url.rstrip('/')}/v1/ask"
-    questions = load_questions()
+    questions = load_questions(suite=args.suite)
     if not questions:
         print("No eval questions found", file=sys.stderr)
         return 2
@@ -121,7 +126,9 @@ def main() -> int:
 
     metrics = aggregate(results)
     backend = os.environ.get("RETRIEVER_BACKEND", "unknown")
-    report = build_report(metrics, results, backend=backend, notes=args.notes)
+    report = build_report(
+        metrics, results, backend=backend, notes=args.notes, suite=args.suite
+    )
 
     print("\n--- metrics ---")
     for key, value in metrics.to_dict().items():
@@ -135,11 +142,11 @@ def main() -> int:
         print(f"\nReport written to {args.out}")
 
     if args.record:
-        path = save_baseline(report)
+        path = save_baseline(report, suite=args.suite)
         print(f"\nBaseline recorded at {path}")
         return 0
 
-    baseline = load_baseline()
+    baseline = load_baseline(suite=args.suite)
     if baseline is None:
         print("\nNo baseline recorded yet — run with --record to create one.")
         return 0

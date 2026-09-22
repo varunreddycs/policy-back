@@ -49,8 +49,10 @@ class Regression:
         )
 
 
-def baseline_path() -> Path:
-    return Path(__file__).resolve().parents[2] / "tests" / "eval" / "baseline.json"
+def baseline_path(suite: str | None = None) -> Path:
+    """Baselines are per-corpus: a NIST run must not be compared to an Ohio one."""
+    name = f"baseline_{suite}.json" if suite else "baseline.json"
+    return Path(__file__).resolve().parents[2] / "tests" / "eval" / name
 
 
 def build_report(
@@ -59,18 +61,22 @@ def build_report(
     *,
     backend: str,
     notes: str | None = None,
+    suite: str | None = None,
 ) -> dict[str, Any]:
     return {
         "recorded_at": datetime.now(timezone.utc).isoformat(),
         "retriever_backend": backend,
+        "suite": suite,
         "notes": notes,
         "metrics": metrics.to_dict(),
         "questions": {r.question_id: r.to_dict() for r in results},
     }
 
 
-def save_baseline(report: dict[str, Any], path: Path | None = None) -> Path:
-    target = path or baseline_path()
+def save_baseline(
+    report: dict[str, Any], path: Path | None = None, *, suite: str | None = None
+) -> Path:
+    target = path or baseline_path(suite)
     target.parent.mkdir(parents=True, exist_ok=True)
     target.write_text(
         json.dumps(report, indent=2, sort_keys=True) + "\n", encoding="utf-8"
@@ -78,8 +84,10 @@ def save_baseline(report: dict[str, Any], path: Path | None = None) -> Path:
     return target
 
 
-def load_baseline(path: Path | None = None) -> dict[str, Any] | None:
-    target = path or baseline_path()
+def load_baseline(
+    path: Path | None = None, *, suite: str | None = None
+) -> dict[str, Any] | None:
+    target = path or baseline_path(suite)
     if not target.exists():
         return None
     return json.loads(target.read_text(encoding="utf-8"))

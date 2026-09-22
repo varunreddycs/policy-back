@@ -1,0 +1,13 @@
+{
+  "tenant_id": "11111111-1111-1111-1111-111111111111",
+  "question": "An employee was just terminated \u2014 which access-related controls apply?",
+  "mode": "strict",
+  "user": {
+    "tenant_id": "11111111-1111-1111-1111-111111111111",
+    "email": "demo@local",
+    "role": "staff"
+  },
+  "scope": {
+    "only_current": true
+  }
+}

@@ -38,8 +38,15 @@ def questions_dir() -> Path:
     return Path(__file__).resolve().parents[2] / "tests" / "swagger_questions"
 
 
-def load_questions(root: Path | None = None) -> list[EvalQuestion]:
-    """Load every question payload, sorted by id for stable reporting."""
+def load_questions(
+    root: Path | None = None, *, suite: str | None = None
+) -> list[EvalQuestion]:
+    """Load question payloads, sorted by id for stable reporting.
+
+    ``suite`` restricts to one corpus (e.g. "nist"). A baseline is only
+    meaningful against the corpus actually loaded, so mixing suites would bake
+    in refusals for content that simply is not present.
+    """
     base = root or questions_dir()
     if not base.exists():
         raise FileNotFoundError(f"Question set not found at {base}")
@@ -58,13 +65,15 @@ def load_questions(root: Path | None = None) -> list[EvalQuestion]:
 
         topic, variant = _parse_name(path)
         parts = rel.parts
-        suite = parts[0]
+        found_suite = parts[0]
+        if suite is not None and found_suite != suite:
+            continue
         category = parts[1] if len(parts) > 2 else "root"
 
         found.append(
             EvalQuestion(
                 question_id="/".join([*parts[:-1], topic]),
-                suite=suite,
+                suite=found_suite,
                 category=category,
                 variant=variant,
                 payload=payload,

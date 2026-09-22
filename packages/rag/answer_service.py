@@ -134,22 +134,29 @@ class AnswerService:
         )
 
     @staticmethod
-    def _grounding_score(candidate: EvidenceCandidate) -> float:
+    def _grounding_score(candidate: EvidenceCandidate) -> float | None:
         """The value ANSWER_REFUSAL_MIN_SCORE is compared against.
 
         Q5: the fused hybrid score is batch-relative — the top candidate trends
         toward the weight ceiling regardless of how well it actually matched —
         so gating on it means the 0.5 threshold denotes something different per
-        backend. Prefer a true cosine similarity when retrieval carried one
-        (pgvector, cosmos, and hybrid's vector leg all do), and fall back to the
-        candidate score only when no absolute measure is available.
+        backend. Only a true cosine similarity is comparable against an absolute
+        threshold.
+
+        Returns None when no absolute measure exists, which is not the same as
+        scoring zero: a section that only full-text search surfaced has no
+        similarity at all, and gating its *fused rank* against a cosine
+        threshold would refuse good lexical matches — the exact cross-backend
+        mis-calibration this was meant to remove.
         """
-        similarity = (candidate.metadata or {}).get("vector_similarity")
+        md = candidate.metadata or {}
+        similarity = md.get("vector_similarity")
         if isinstance(similarity, (int, float)):
             return float(similarity)
-        # No absolute measure available: either a non-hybrid backend, where
-        # score already IS a true cosine, or a hybrid candidate that only FTS
-        # surfaced, where the fused score is the only signal there is.
+        # Fused scores are rank-derived, not similarities; refuse to pretend.
+        if md.get("fusion") == "rrf" or md.get("retriever") == "hybrid":
+            return None
+        # Non-hybrid backends (pgvector, cosmos) put a true cosine on score.
         return float(candidate.score or 0.0)
 
     @staticmethod
@@ -338,8 +345,11 @@ class AnswerService:
         primary_score_check = self._grounding_score(best)
 
         # Phase 2.7 spec: refuse below confidence threshold even if we have candidates.
+        # Q5: only gate when an absolute similarity exists — see _grounding_score.
+        # A strong lexical-only match has no cosine to compare, and refusing it
+        # against a cosine threshold would reject correct evidence.
         refusal_threshold = float(os.getenv("ANSWER_REFUSAL_MIN_SCORE", "0.5") or "0.5")
-        if primary_score_check < refusal_threshold:
+        if primary_score_check is not None and primary_score_check < refusal_threshold:
             # A weak match that also fell through to the cross-department bucket is a
             # scope finding, not just a scoring one — the officer needs to know no
             # policy owned by their department (or the org) covered the question.

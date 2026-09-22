@@ -223,7 +223,7 @@ def _fts_tokens(query: str) -> list[str]:
     import re
 
     ids = extract_control_ids(query)
-    control_tokens = sorted({f"'{cid.split('(')[0].lower()}'" for cid in ids})
+    control_tokens = sorted({f"'{cid.lower()}'" for cid in ids})
     control_words = {
         part.lower() for cid in ids for part in re.findall(r"[A-Za-z0-9]+", cid)
     }
@@ -242,16 +242,26 @@ def test_fts_keeps_short_control_codes() -> None:
     assert "'ac-2'" in tokens
 
 
-def test_fts_tokens_never_contain_tsquery_operators() -> None:
-    """to_tsquery treats '(' and ')' as grouping; a raw one is a syntax error."""
+def test_fts_control_tokens_are_always_quoted() -> None:
+    """An unquoted '(' is a tsquery syntax error; quoting makes it a phrase term.
+
+    Verified against PostgreSQL 16: to_tsquery accepts '''ia-5(1)''' and
+    rejects a bare ia-5(1). See test_fts_tsquery_syntax_is_valid in
+    tests/integration/test_fts_tsquery.py for the live check.
+    """
     for query in [
         "IA-5(1) authenticator management",
         "SC-7(3) boundary protection",
         "ac-02 and sc-7(3)",
     ]:
-        joined = " | ".join(_fts_tokens(query))
-        assert "(" not in joined
-        assert ")" not in joined
+        for token in _fts_tokens(query):
+            if "(" in token or "-" in token:
+                assert token.startswith("'") and token.endswith("'"), token
+
+
+def test_fts_keeps_the_full_enhancement_identifier() -> None:
+    """IA-5(1) must not be truncated to IA-5 in the FTS term."""
+    assert "'ia-5(1)'" in _fts_tokens("what does IA-5(1) require")
 
 
 def test_fts_does_not_duplicate_control_words_as_plain_tokens() -> None:

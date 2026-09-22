@@ -10,6 +10,7 @@ from packages.core.dtos import (
     AskRequest,
     EvidenceCandidate,
     PolicyScope,
+    RefusalCode,
     UserContext,
 )
 from packages.rag.answer_service import AnswerService
@@ -319,3 +320,65 @@ def test_backends_without_similarity_fall_back_to_score() -> None:
 
     assert response.refusal_reason is None
     assert response.grounding_score == pytest.approx(0.77)
+
+
+def test_lexical_only_match_is_not_gated_against_a_cosine_threshold() -> None:
+    """Q5 regression: an FTS-only candidate has no similarity to compare.
+
+    Found live: "What does SC-7 require?" retrieved the right section by full
+    text, but with no vector_similarity the gate fell back to the fused RRF
+    score (~0.35) and compared it to the 0.5 cosine threshold, refusing a
+    correct answer — the same cross-backend mis-calibration Q5 removes.
+    """
+    candidate = EvidenceCandidate(
+        policy_id=uuid4(),
+        policy_version_id=uuid4(),
+        section_id=uuid4(),
+        text="SC-7 Boundary Protection: monitor and control communications.",
+        score=0.35,  # rank-derived, NOT a similarity
+        source="hybrid",
+        metadata={
+            "department_scope": "all",
+            "is_current": True,
+            "retriever": "hybrid",
+            "fusion": "rrf",
+            "fts_rank": 1,
+            "vector_rank": None,
+            # no vector_similarity: FTS surfaced this, the vector leg did not
+        },
+    )
+
+    tid = uuid4()
+    request = AskRequest(tenant_id=tid, question="What does SC-7 require?")
+    response = AnswerService(retriever=_StaticRetriever([candidate])).ask(request)
+
+    assert response.refusal_reason is None, "lexical-only evidence must not be refused"
+    assert response.grounding_score is None, "no absolute measure exists to report"
+    assert response.confidence == pytest.approx(0.35)
+
+
+def test_weak_cosine_is_still_gated() -> None:
+    """The fix must not disable the gate where a real similarity exists."""
+    candidate = EvidenceCandidate(
+        policy_id=uuid4(),
+        policy_version_id=uuid4(),
+        section_id=uuid4(),
+        text="Loosely related text.",
+        score=0.95,
+        source="hybrid",
+        metadata={
+            "department_scope": "all",
+            "is_current": True,
+            "retriever": "hybrid",
+            "fusion": "rrf",
+            "vector_similarity": 0.28,
+        },
+    )
+
+    tid = uuid4()
+    request = AskRequest(tenant_id=tid, question="What is the deadline?")
+    response = AnswerService(retriever=_StaticRetriever([candidate])).ask(request)
+
+    assert response.refusal is not None
+    assert response.refusal.code is RefusalCode.BELOW_GROUNDEDNESS_THRESHOLD
+    assert response.grounding_score == pytest.approx(0.28)

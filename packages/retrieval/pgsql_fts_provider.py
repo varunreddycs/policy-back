@@ -60,15 +60,13 @@ class PgsqlFtsRetriever(IVectorRetriever):
 		# search by — "AC-2" tokenizes to "ac" + "2", both shorter than 3 — so
 		# control IDs are extracted first and always kept.
 		_control_ids = extract_control_ids(q)
-		# to_tsquery reads '-', '(' and ')' as operators. Quoting handles the
-		# hyphen, but parentheses stay risky inside a lexeme, so the enhancement
-		# suffix is dropped for the FTS term only: "IA-5(1)" searches as
-		# 'ia-5', which still retrieves the control family. Exact-enhancement
-		# precision is restored by the post-fusion boost, which keeps the full id.
-		_control_tokens = [
-			f"'{cid.split('(')[0].lower()}'" for cid in sorted(_control_ids)
-		]
-		_control_tokens = sorted(set(_control_tokens))
+		# to_tsquery treats an unquoted '(' as a grouping operator, so a bare
+		# "ia-5(1)" is a syntax error; quoting makes it a valid phrase term.
+		# Verified against PG16: '''ia-5(1)''' lexes to 'ia' <-> '-5' <-> '1' and
+		# matches a section titled "IA-5(1) ...", while '''ac-2''' matches
+		# "AC-2 ..." without also matching "AC-20 ...". See
+		# tests/integration/test_fts_tsquery.py for the live check.
+		_control_tokens = sorted({f"'{cid.lower()}'" for cid in _control_ids})
 		_control_words = {
 			part.lower()
 			for cid in _control_ids
