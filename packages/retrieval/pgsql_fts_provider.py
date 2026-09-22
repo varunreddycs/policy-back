@@ -1,18 +1,22 @@
 from __future__ import annotations
 
+import re
 from typing import List
 from uuid import UUID
 
-import re
-
 import sqlalchemy as sa
-
 from sqlalchemy import func, select
 from sqlalchemy.orm import Session
 
-from packages.db.models.policy_models import ParseStatus, Policy, PolicySection, PolicyVersion
 from packages.core.dtos import EvidenceCandidate
+from packages.db.models.policy_models import (
+	ParseStatus,
+	Policy,
+	PolicySection,
+	PolicyVersion,
+)
 from packages.retrieval.base import IVectorRetriever
+from packages.retrieval.control_ids import extract_control_ids
 
 
 class PgsqlFtsRetriever(IVectorRetriever):
@@ -52,7 +56,30 @@ class PgsqlFtsRetriever(IVectorRetriever):
 		# Fallback: plainto_tsquery ANDs tokens (e.g., 'deadlin' & 'file' & 'appeal'),
 		# which can be too strict for natural-language questions. If AND yields no rows,
 		# try an OR query built from tokens.
-		_tokens = [t.lower() for t in re.findall(r"[A-Za-z0-9]+", q) if len(t) >= 3]
+		# Q7: the >= 3 filter silently discarded the very codes compliance users
+		# search by — "AC-2" tokenizes to "ac" + "2", both shorter than 3 — so
+		# control IDs are extracted first and always kept.
+		_control_ids = extract_control_ids(q)
+		# to_tsquery reads '-', '(' and ')' as operators. Quoting handles the
+		# hyphen, but parentheses stay risky inside a lexeme, so the enhancement
+		# suffix is dropped for the FTS term only: "IA-5(1)" searches as
+		# 'ia-5', which still retrieves the control family. Exact-enhancement
+		# precision is restored by the post-fusion boost, which keeps the full id.
+		_control_tokens = [
+			f"'{cid.split('(')[0].lower()}'" for cid in sorted(_control_ids)
+		]
+		_control_tokens = sorted(set(_control_tokens))
+		_control_words = {
+			part.lower()
+			for cid in _control_ids
+			for part in re.findall(r"[A-Za-z0-9]+", cid)
+		}
+		_words = [
+			t.lower()
+			for t in re.findall(r"[A-Za-z0-9]+", q)
+			if len(t) >= 3 and t.lower() not in _control_words
+		]
+		_tokens = _control_tokens + _words
 		_tokens = _tokens[:8]
 		or_tsquery = None
 		if len(_tokens) >= 2:

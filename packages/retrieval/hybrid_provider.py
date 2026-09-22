@@ -5,6 +5,7 @@ from datetime import date, datetime
 
 from packages.core.dtos import EvidenceCandidate
 from packages.retrieval.base import IVectorRetriever
+from packages.retrieval.control_ids import boost_exact_control_matches
 
 
 class HybridRetriever(IVectorRetriever):
@@ -389,6 +390,11 @@ class HybridRetriever(IVectorRetriever):
         final.sort(key=lambda item: float(item.score or 0.0), reverse=True)
         before_cap = len(final)
         final = self._cap_per_policy(final, max_per_policy=2)
+
+        # Q7: post-fusion lexical boost so an exact-identifier query surfaces the
+        # named control on Postgres exactly as it already did on Cosmos. Applied
+        # before truncation so a boosted control cannot be cut off first.
+        final = boost_exact_control_matches(query, final)
 
         selected = final[: max(1, int(top_k))]
         debug_meta = {

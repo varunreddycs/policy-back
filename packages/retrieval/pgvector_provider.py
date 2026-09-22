@@ -11,6 +11,7 @@ from packages.core.dtos import EvidenceCandidate
 from packages.db.models.policy_models import ParseStatus
 from packages.embeddings.azure_openai_client import embed_texts
 from packages.retrieval.base import IVectorRetriever
+from packages.retrieval.control_ids import normalize_control_ids
 
 
 class PgVectorRetriever(IVectorRetriever):
@@ -31,7 +32,9 @@ class PgVectorRetriever(IVectorRetriever):
 		if not q:
 			return []
 
-		vectors = self._embedder([q])
+		# Q7: canonicalize control IDs before embedding so "ac-02" and "AC-2"
+		# produce the same vector as the form used in the corpus.
+		vectors = self._embedder([normalize_control_ids(q)])
 		if not vectors:
 			return []
 		query_vector = self._vector_literal(vectors[0])
