@@ -28,6 +28,11 @@ from packages.db.repositories.base import (
     IPolicyVersionRepository,
     IReferenceRepository,
 )
+from packages.db.repositories.cosmos.concurrency import rmw
+from packages.db.repositories.errors import (
+    DuplicateVersionConflict,
+    VersionLabelConflict,
+)
 from packages.db.repositories.repo_dtos import (
     AuditLogDTO,
     EmbeddingDTO,
@@ -207,21 +212,24 @@ class CosmosPolicyRepository(IPolicyRepository):
         dto = self.get_by_id(policy_id=policy_id)
         if dto is None:
             return None
-        # Re-read the full document to update it
-        query = "SELECT * FROM c WHERE c.id = @id"
-        params = [{"name": "@id", "value": str(policy_id)}]
-        items = list(self._c.query_items(query=query, parameters=params, partition_key=str(dto.tenant_id)))
-        if not items:
-            return None
-        doc = items[0]
+        def _read() -> Optional[Dict[str, Any]]:
+            query = "SELECT * FROM c WHERE c.id = @id"
+            params = [{"name": "@id", "value": str(policy_id)}]
+            items = list(self._c.query_items(query=query, parameters=params, partition_key=str(dto.tenant_id)))
+            return items[0] if items else None
+
         sentinel = object()
-        for key in ("current_version_id", "policy_type", "department_scope", "authority_level", "updated_by_user_id"):
-            val = kwargs.get(key, sentinel)
-            if val is not sentinel:
-                doc[key] = _uuid_str(val) if key.endswith("_id") and val is not None else val
-        doc["updated_at"] = _now_iso()
-        self._c.upsert_item(doc)
-        return _doc_to_policy_dto(doc)
+
+        def _apply(doc: Dict[str, Any]) -> Optional[PolicyDTO]:
+            for key in ("current_version_id", "policy_type", "department_scope",
+                        "authority_level", "updated_by_user_id"):
+                val = kwargs.get(key, sentinel)
+                if val is not sentinel:
+                    doc[key] = _uuid_str(val) if key.endswith("_id") and val is not None else val
+            doc["updated_at"] = _now_iso()
+            return _doc_to_policy_dto(doc)
+
+        return rmw(self._c, read=_read, mutate=_apply, missing=lambda: None)
 
 
 # ---------------------------------------------------------------------------
@@ -238,6 +246,12 @@ class CosmosPolicyVersionRepository(IPolicyVersionRepository):
     def _get_policy_doc(self, policy_id: uuid.UUID) -> Optional[Dict[str, Any]]:
         query = "SELECT * FROM c WHERE c.id = @id"
         params = [{"name": "@id", "value": str(policy_id)}]
+        items = list(self._c.query_items(query=query, parameters=params, enable_cross_partition_query=True))
+        return items[0] if items else None
+
+    def _get_doc_by_version(self, version_id: uuid.UUID) -> Optional[Dict[str, Any]]:
+        query = "SELECT * FROM c WHERE ARRAY_CONTAINS(c.versions, {'id': @vid}, true)"
+        params = [{"name": "@vid", "value": str(version_id)}]
         items = list(self._c.query_items(query=query, parameters=params, enable_cross_partition_query=True))
         return items[0] if items else None
 
@@ -297,9 +311,6 @@ class CosmosPolicyVersionRepository(IPolicyVersionRepository):
 
     def create(self, **fields: Any) -> PolicyVersionDTO:
         policy_id = fields.get("policy_id")
-        doc = self._get_policy_doc(policy_id)
-        if doc is None:
-            raise ValueError(f"Policy {policy_id} not found")
         version_doc = {
             "id": str(fields.get("id", uuid.uuid4())),
             "version_number": fields["version_number"],
@@ -326,51 +337,93 @@ class CosmosPolicyVersionRepository(IPolicyVersionRepository):
             "created_by_user_id": _uuid_str(fields.get("created_by_user_id")) or None,
             "correlation_id": fields.get("correlation_id"),
         }
-        doc.setdefault("versions", []).append(version_doc)
-        self._c.upsert_item(doc)
-        return _version_dict_to_dto(version_doc, _to_uuid(doc["tenant_id"]), uuid.UUID(doc["id"]))
+
+        def _append(doc: Dict[str, Any]) -> PolicyVersionDTO:
+            # Re-checked on every attempt, so the guards hold against whatever a
+            # concurrent writer just committed rather than against a stale read.
+            existing = doc.get("versions", [])
+            for v in existing:
+                if (
+                    v.get("content_sha256") == version_doc["content_sha256"]
+                    and v.get("metadata_sha256") == version_doc["metadata_sha256"]
+                ):
+                    raise DuplicateVersionConflict(uuid.UUID(v["id"]))
+            label = version_doc.get("version_label")
+            if label:
+                for v in existing:
+                    if v.get("version_label") == label:
+                        raise VersionLabelConflict(label, uuid.UUID(v["id"]))
+            # The caller computed version_number from its own read; recompute so
+            # a racing writer cannot produce two versions with the same number.
+            if existing:
+                version_doc["version_number"] = max(
+                    v.get("version_number", 0) for v in existing
+                ) + 1
+            doc.setdefault("versions", []).append(version_doc)
+            return _version_dict_to_dto(
+                version_doc, _to_uuid(doc["tenant_id"]), uuid.UUID(doc["id"])
+            )
+
+        def _absent() -> PolicyVersionDTO:
+            raise ValueError(f"Policy {policy_id} not found")
+
+        return rmw(
+            self._c,
+            read=lambda: self._get_policy_doc(policy_id),
+            mutate=_append,
+            missing=_absent,
+        )
 
     def set_parse_status(self, *, version_id: uuid.UUID, status: str,
                          error_code: Optional[str] = None, error_message: Optional[str] = None) -> None:
-        query = "SELECT * FROM c WHERE ARRAY_CONTAINS(c.versions, {'id': @vid}, true)"
-        params = [{"name": "@vid", "value": str(version_id)}]
-        items = list(self._c.query_items(query=query, parameters=params, enable_cross_partition_query=True))
-        if not items:
-            return
-        doc = items[0]
-        for v in doc.get("versions", []):
-            if v["id"] == str(version_id):
-                v["parse_status"] = status
-                v["parse_status_updated_at"] = _now_iso()
-                v["parse_error_code"] = error_code
-                v["parse_error_message"] = error_message
-                break
-        self._c.upsert_item(doc)
+        def _apply(doc: Dict[str, Any]) -> None:
+            for v in doc.get("versions", []):
+                if v["id"] == str(version_id):
+                    v["parse_status"] = status
+                    v["parse_status_updated_at"] = _now_iso()
+                    v["parse_error_code"] = error_code
+                    v["parse_error_message"] = error_message
+                    break
+
+        rmw(
+            self._c,
+            read=lambda: self._get_doc_by_version(version_id),
+            mutate=_apply,
+            missing=lambda: None,
+        )
 
     def set_current(self, *, policy_id: uuid.UUID, version_id: uuid.UUID) -> None:
-        doc = self._get_policy_doc(policy_id)
-        if doc is None:
-            return
-        for v in doc.get("versions", []):
-            v["is_current"] = (v["id"] == str(version_id))
-        doc["current_version_id"] = str(version_id)
-        self._c.upsert_item(doc)
+        def _apply(doc: Dict[str, Any]) -> None:
+            # Exactly one current version per policy. Postgres guaranteed this with
+            # a partial unique index; here the whole flip rides on one ETag-guarded
+            # write so a racing flip cannot half-apply.
+            for v in doc.get("versions", []):
+                v["is_current"] = (v["id"] == str(version_id))
+            doc["current_version_id"] = str(version_id)
+
+        rmw(
+            self._c,
+            read=lambda: self._get_policy_doc(policy_id),
+            mutate=_apply,
+            missing=lambda: None,
+        )
 
     def set_extracted_blob(self, *, version_id: uuid.UUID, extracted_blob_container: str,
                            extracted_blob_name: str, extracted_blob_uri: str) -> None:
-        query = "SELECT * FROM c WHERE ARRAY_CONTAINS(c.versions, {'id': @vid}, true)"
-        params = [{"name": "@vid", "value": str(version_id)}]
-        items = list(self._c.query_items(query=query, parameters=params, enable_cross_partition_query=True))
-        if not items:
-            return
-        doc = items[0]
-        for v in doc.get("versions", []):
-            if v["id"] == str(version_id):
-                v["extracted_blob_container"] = extracted_blob_container
-                v["extracted_blob_name"] = extracted_blob_name
-                v["extracted_blob_uri"] = extracted_blob_uri
-                break
-        self._c.upsert_item(doc)
+        def _apply(doc: Dict[str, Any]) -> None:
+            for v in doc.get("versions", []):
+                if v["id"] == str(version_id):
+                    v["extracted_blob_container"] = extracted_blob_container
+                    v["extracted_blob_name"] = extracted_blob_name
+                    v["extracted_blob_uri"] = extracted_blob_uri
+                    break
+
+        rmw(
+            self._c,
+            read=lambda: self._get_doc_by_version(version_id),
+            mutate=_apply,
+            missing=lambda: None,
+        )
 
 
 # ---------------------------------------------------------------------------
@@ -594,6 +647,12 @@ class CosmosIngestBatchRepository(IIngestBatchRepository):
     def __init__(self, container: Any) -> None:
         self._c = container
 
+    def _get_batch_doc(self, batch_id: uuid.UUID) -> Optional[Dict[str, Any]]:
+        query = "SELECT * FROM c WHERE c.id = @id"
+        params = [{"name": "@id", "value": str(batch_id)}]
+        items = list(self._c.query_items(query=query, parameters=params, enable_cross_partition_query=True))
+        return items[0] if items else None
+
     def get(self, batch_id: uuid.UUID) -> Optional[IngestBatchDTO]:
         query = "SELECT * FROM c WHERE c.id = @id"
         params = [{"name": "@id", "value": str(batch_id)}]
@@ -640,15 +699,11 @@ class CosmosIngestBatchRepository(IIngestBatchRepository):
         )
 
     def update_status(self, *, batch_id: uuid.UUID, status: str) -> None:
-        query = "SELECT * FROM c WHERE c.id = @id"
-        params = [{"name": "@id", "value": str(batch_id)}]
-        items = list(self._c.query_items(query=query, parameters=params, enable_cross_partition_query=True))
-        if not items:
-            return
-        doc = items[0]
-        doc["status"] = status
-        doc["updated_at"] = _now_iso()
-        self._c.upsert_item(doc)
+        def _apply(doc: Dict[str, Any]) -> None:
+            doc["status"] = status
+            doc["updated_at"] = _now_iso()
+
+        rmw(self._c, read=lambda: self._get_batch_doc(batch_id), mutate=_apply, missing=lambda: None)
 
 
 class CosmosIngestItemRepository(IIngestItemRepository):
@@ -657,14 +712,14 @@ class CosmosIngestItemRepository(IIngestItemRepository):
     def __init__(self, container: Any) -> None:
         self._c = container
 
-    def create(self, **fields: Any) -> IngestItemDTO:
-        batch_id = str(fields["batch_id"])
+    def _get_batch_doc(self, batch_id: uuid.UUID) -> Optional[Dict[str, Any]]:
         query = "SELECT * FROM c WHERE c.id = @id"
-        params = [{"name": "@id", "value": batch_id}]
+        params = [{"name": "@id", "value": str(batch_id)}]
         items = list(self._c.query_items(query=query, parameters=params, enable_cross_partition_query=True))
-        if not items:
-            raise ValueError(f"Batch {batch_id} not found")
-        doc = items[0]
+        return items[0] if items else None
+
+    def create(self, **fields: Any) -> IngestItemDTO:
+        batch_id = _to_uuid(fields["batch_id"])
         item_id = uuid.uuid4()
         item_doc = {
             "id": str(item_id),
@@ -680,16 +735,22 @@ class CosmosIngestItemRepository(IIngestItemRepository):
             "correlation_id": fields.get("correlation_id"),
             "error_code": None,
             "error_message": None,
-            "result_policy_version_id": None,
+            "result_policy_version_id": _uuid_str(fields.get("result_policy_version_id")) or None,
             "created_at": _now_iso(),
             "updated_at": _now_iso(),
         }
-        doc.setdefault("items", []).append(item_doc)
-        self._c.upsert_item(doc)
+
+        def _append(doc: Dict[str, Any]) -> None:
+            doc.setdefault("items", []).append(item_doc)
+
+        def _absent() -> None:
+            raise ValueError(f"Batch {batch_id} not found")
+
+        rmw(self._c, read=lambda: self._get_batch_doc(batch_id), mutate=_append, missing=_absent)
         return IngestItemDTO(
             id=item_id,
             tenant_id=_to_uuid(item_doc["tenant_id"]),
-            batch_id=uuid.UUID(batch_id),
+            batch_id=batch_id,
             status=item_doc["status"],
             policy_id=_to_uuid(item_doc.get("policy_id")),
             created_at=_parse_dt(item_doc["created_at"]),
@@ -699,23 +760,24 @@ class CosmosIngestItemRepository(IIngestItemRepository):
     def set_status(self, *, item_id: uuid.UUID, status: str,
                    error_code: Optional[str] = None, error_message: Optional[str] = None,
                    result_policy_version_id: Optional[uuid.UUID] = None) -> None:
-        # Scan batches for the item
-        query = "SELECT * FROM c WHERE ARRAY_CONTAINS(c.items, {'id': @iid}, true)"
-        params = [{"name": "@iid", "value": str(item_id)}]
-        items = list(self._c.query_items(query=query, parameters=params, enable_cross_partition_query=True))
-        if not items:
-            return
-        doc = items[0]
-        for it in doc.get("items", []):
-            if it["id"] == str(item_id):
-                it["status"] = status
-                it["error_code"] = error_code
-                it["error_message"] = error_message
-                if result_policy_version_id is not None:
-                    it["result_policy_version_id"] = str(result_policy_version_id)
-                it["updated_at"] = _now_iso()
-                break
-        self._c.upsert_item(doc)
+        def _read_doc() -> Optional[Dict[str, Any]]:
+            query = "SELECT * FROM c WHERE ARRAY_CONTAINS(c.items, {'id': @iid}, true)"
+            params = [{"name": "@iid", "value": str(item_id)}]
+            found = list(self._c.query_items(query=query, parameters=params, enable_cross_partition_query=True))
+            return found[0] if found else None
+
+        def _apply(doc: Dict[str, Any]) -> None:
+            for it in doc.get("items", []):
+                if it["id"] == str(item_id):
+                    it["status"] = status
+                    it["error_code"] = error_code
+                    it["error_message"] = error_message
+                    if result_policy_version_id is not None:
+                        it["result_policy_version_id"] = str(result_policy_version_id)
+                    it["updated_at"] = _now_iso()
+                    break
+
+        rmw(self._c, read=_read_doc, mutate=_apply, missing=lambda: None)
 
     def set_status_by_result_version(self, *, policy_version_id: uuid.UUID, status: str,
                                      error_code: Optional[str] = None,
@@ -724,17 +786,22 @@ class CosmosIngestItemRepository(IIngestItemRepository):
         query = "SELECT * FROM c WHERE ARRAY_CONTAINS(c.items, {'result_policy_version_id': @pvid}, true)"
         params = [{"name": "@pvid", "value": pvid}]
         docs = list(self._c.query_items(query=query, parameters=params, enable_cross_partition_query=True))
-        for doc in docs:
-            changed = False
+        def _apply(doc: Dict[str, Any]) -> None:
             for it in doc.get("items", []):
                 if it.get("result_policy_version_id") == pvid:
                     it["status"] = status
                     it["error_code"] = error_code
                     it["error_message"] = error_message
                     it["updated_at"] = _now_iso()
-                    changed = True
-            if changed:
-                self._c.upsert_item(doc)
+
+        for stale in docs:
+            batch_id = uuid.UUID(stale["id"])
+            rmw(
+                self._c,
+                read=lambda bid=batch_id: self._get_batch_doc(bid),
+                mutate=_apply,
+                missing=lambda: None,
+            )
 
     def count_active_for_batch(self, *, batch_id: uuid.UUID) -> int:
         query = "SELECT * FROM c WHERE c.id = @id"
