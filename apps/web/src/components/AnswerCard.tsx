@@ -29,7 +29,8 @@ const REFUSAL_LABELS: Record<RefusalCode, string> = {
   no_authoritative_control: "No authoritative control",
   department_scope_ambiguous: "Department scope ambiguous",
   conflicting_versions: "Conflicting versions",
-  below_groundedness_threshold: "Below grounding threshold"
+  below_groundedness_threshold: "Below grounding threshold",
+  ungrounded_answer: "Answer failed grounding verification"
 };
 
 function refusalLabel(code: RefusalCode): string {
@@ -93,6 +94,9 @@ export default function AnswerCard({ answer, tenantId, department, onCopy, onOpe
               <Chip label="Mode: strict" color="primary" />
               <Chip label={`Department: ${department || "unknown"}`} variant="outlined" />
               {typeof answer.confidence === "number" && <Chip label={`Relevance: ${Math.round(answer.confidence * 100)}%`} />}
+              {answer.grounding?.verified === true && (
+                <Chip label={`Grounded ${answer.grounding.faithfulness_score !== null ? Math.round(answer.grounding.faithfulness_score * 100) + "%" : ""}`} color="success" variant="outlined" />
+              )}
               {typeof answer.grounding_score === "number" && (
                 <Chip label={`Grounding: ${Math.round(answer.grounding_score * 100)}%`} variant="outlined" />
               )}

@@ -21,6 +21,8 @@ from typing import Any
 # Matches the citation handles the answer contract emits, e.g.
 # [policy_version_id=... section_id=...]
 _CITATION_RE = re.compile(r"\[policy_version_id=[^\]]+\]")
+# S1 evidence-handle citations, e.g. [E1] or [E1, E3].
+_HANDLE_RE = re.compile(r"\[\s*E(\d+)(?:\s*,\s*E\d+)*\s*\]", re.IGNORECASE)
 
 # NIST-style control identifiers: AC-2, IA-5(1), SC-7(3).
 _CONTROL_ID_RE = re.compile(r"\b[A-Z]{2}-\d+(?:\(\d+\))?")
@@ -162,21 +164,28 @@ def score_response(
         top = log.get("primary_score")
         result.top_score = float(top) if isinstance(top, (int, float)) else None
 
-    # Groundedness proxy: does the answer text actually carry a citation handle
-    # pointing at a version we retrieved? Catches a prompt edit that drops the
-    # citation format without needing an LLM judge.
-    handles = _CITATION_RE.findall(answer)
-    if handles and isinstance(evidence, list):
-        retrieved_versions = {
-            str((item or {}).get("policy_version_id"))
-            for item in evidence
-            if isinstance(item, dict)
-        }
-        result.answer_cites_evidence = any(
-            version and version in handle
-            for handle in handles
-            for version in retrieved_versions
-        )
+    # Groundedness proxy: does the answer text actually carry a citation
+    # pointing at evidence we retrieved? Catches a prompt edit that drops the
+    # citation format without needing an LLM judge. Two formats are valid:
+    # the legacy [policy_version_id=... section_id=...] handle, and the S1
+    # [En] evidence handle, which is grounded when n is within the evidence
+    # the response returned.
+    if isinstance(evidence, list):
+        legacy = _CITATION_RE.findall(answer)
+        if legacy:
+            retrieved_versions = {
+                str((item or {}).get("policy_version_id"))
+                for item in evidence
+                if isinstance(item, dict)
+            }
+            result.answer_cites_evidence = any(
+                version and version in handle
+                for handle in legacy
+                for version in retrieved_versions
+            )
+        if not result.answer_cites_evidence and evidence:
+            indices = [int(m.group(1)) for m in _HANDLE_RE.finditer(answer)]
+            result.answer_cites_evidence = any(1 <= n <= len(evidence) for n in indices)
 
     result.control_ids_in_answer = sorted(set(_CONTROL_ID_RE.findall(answer)))
     return result

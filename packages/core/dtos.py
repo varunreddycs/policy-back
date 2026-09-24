@@ -70,6 +70,7 @@ class RefusalCode(StrEnum):
     DEPARTMENT_SCOPE_AMBIGUOUS = "department_scope_ambiguous"
     CONFLICTING_VERSIONS = "conflicting_versions"
     BELOW_GROUNDEDNESS_THRESHOLD = "below_groundedness_threshold"
+    UNGROUNDED_ANSWER = "ungrounded_answer"
 
 
 class AnswerSource(StrEnum):
@@ -114,6 +115,38 @@ class SecondaryEvidenceItem(BaseModel):
     public_url: str | None = None
 
 
+class GroundingInfo(BaseModel):
+    """S1: post-generation verification of the answer against its citations.
+
+    ``verified`` is the gate result; the rest is the evidence for it, so an
+    officer (or an auditor) can see why an answer was allowed or refused.
+    """
+
+    verified: bool
+    enforced: bool = Field(
+        default=True,
+        description="False when checks ran in report-only mode and could not refuse.",
+    )
+    faithfulness_score: float | None = None
+    faithfulness_backend: str | None = None
+    threshold: float | None = None
+    cited_handles: list[str] = Field(default_factory=list)
+    unknown_handles: list[str] = Field(
+        default_factory=list,
+        description="Handles the model cited that were never supplied to it.",
+    )
+    verified_citations: int = 0
+    unverified_citations: int = 0
+    citation_density: float | None = Field(
+        default=None,
+        description="Share of substantive claims carrying at least one citation.",
+    )
+    supported_claims: int = 0
+    total_claims: int = 0
+    unsupported_claims: list[str] = Field(default_factory=list)
+    failure_reason: str | None = None
+
+
 class AnswerResponse(BaseModel):
     answer: str
     audit_id: UUID | None = None
@@ -150,5 +183,6 @@ class AnswerResponse(BaseModel):
         default=None,
         description="Why generation degraded to the fallback, when it did.",
     )
+    grounding: GroundingInfo | None = None
     evidence: list[EvidenceCandidate] = Field(default_factory=list)
     created_at: datetime

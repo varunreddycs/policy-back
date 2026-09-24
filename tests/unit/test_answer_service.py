@@ -411,7 +411,7 @@ def test_answer_marks_llm_source_when_generation_succeeds() -> None:
             self, system_prompt: str, user_message: str
         ) -> LlmCompletion:
             return LlmCompletion(
-                content="Submit within 30 days [AC-2].", finish_reason="stop"
+                content="Submit within 30 days of the event [E1].", finish_reason="stop"
             )
 
     response = AnswerService(retriever=_StaticRetriever([candidate]), llm=_Ok()).ask(

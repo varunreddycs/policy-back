@@ -252,3 +252,16 @@ def test_report_records_the_backend_it_ran_against() -> None:
     assert report["retriever_backend"] == "pgvector"
     assert "q0" in report["questions"]
     assert report["metrics"]["total"] == 1
+
+
+def test_s1_evidence_handle_counts_as_grounded() -> None:
+    """S1 answers cite [En] handles; n within the returned evidence is grounded."""
+    result = _score(_answered_response(answer="Reviews happen every 90 days [E1]."))
+
+    assert result.answer_cites_evidence is True
+
+
+def test_out_of_range_evidence_handle_is_not_grounded() -> None:
+    result = _score(_answered_response(answer="Reviews happen every 90 days [E7]."))
+
+    assert result.answer_cites_evidence is False

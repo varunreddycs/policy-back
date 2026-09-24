@@ -59,6 +59,14 @@ class AuditService:
             payload["refusal"] = response.refusal.model_dump(mode="json")
         elif response.refusal_reason:
             payload["refusal_code"] = response.refusal_reason
+        # S1: the groundedness verdict is the defensible artifact for a
+        # compliance answer, so promote it out of the nested response blob and
+        # make the score filterable directly.
+        if response.grounding is not None:
+            payload["grounding"] = response.grounding.model_dump(mode="json")
+            payload["grounding_verified"] = response.grounding.verified
+            if response.grounding.faithfulness_score is not None:
+                payload["faithfulness_score"] = response.grounding.faithfulness_score
         return self.write(
             tenant_id=request.tenant_id,
             event_type="ask",

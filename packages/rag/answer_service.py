@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import logging
 import os
+import re
 from datetime import datetime, timezone
 from typing import Any
 
@@ -12,16 +13,33 @@ from packages.core.dtos import (
     CitationItem,
     DecisionInfo,
     EvidenceCandidate,
+    GroundingInfo,
     RefusalCode,
     RefusalInfo,
     SecondaryEvidenceItem,
 )
 from packages.governance.prompt_registry import default_registry
+from packages.grounding import (
+    build_scorer,
+    check_citations,
+    enforcement_enabled,
+    extract_handles,
+    faithfulness_threshold,
+    handle_for,
+    is_supported_substring,
+    verification_enabled,
+)
+from packages.grounding.base import IFaithfulnessScorer
+from packages.grounding.citations import split_sentences
 from packages.llm.client import REFUSAL_PHRASE, LlmClient, LlmError
 from packages.ranking.ranker import PolicyRanker
 from packages.retrieval.base import IVectorRetriever
 
 logger = logging.getLogger(__name__)
+
+# Quoted material in an answer is a direct claim about the source text, so
+# it must verify verbatim against the section it is attributed to.
+_QUOTED_RE = re.compile(r'"([^"]{12,})"')
 
 _FALLBACK_SYSTEM_PROMPT = (
     "You are a compliance assistant grounded in the provided policy/control excerpts.\n\n"
@@ -44,10 +62,12 @@ class AnswerService:
         retriever: IVectorRetriever,
         ranker: PolicyRanker | None = None,
         llm: LlmClient | None = None,
+        scorer: IFaithfulnessScorer | None = None,
     ) -> None:
         self._retriever = retriever
         self._ranker = ranker or PolicyRanker()
         self._llm = llm or LlmClient()
+        self._scorer = scorer or build_scorer()
         try:
             self._registry = default_registry()
         except Exception:
@@ -56,7 +76,8 @@ class AnswerService:
     def _system_prompt(self) -> str:
         if self._registry is not None:
             try:
-                return self._registry.get("strict_citation", "v2").template
+                version = os.getenv("STRICT_CITATION_VERSION", "v3")
+                return self._registry.get("strict_citation", version).template
             except KeyError:
                 pass
         return _FALLBACK_SYSTEM_PROMPT
@@ -234,17 +255,26 @@ class AnswerService:
 
     @staticmethod
     def _build_user_message(question: str, candidates: list[EvidenceCandidate]) -> str:
-        """Format evidence + question for the LLM."""
+        """Format evidence + question for the LLM.
+
+        S1: evidence carries [E1]..[En] handles and the model cites by handle.
+        Previously the system prompt asked for control-ids while this asked for
+        "[policy_version_id=... section_id=...]" -- contradictory instructions,
+        and neither was ever checked against the answer.
+        """
         lines = [f"Question: {question}", "", "Evidence:"]
         for i, c in enumerate(candidates, start=1):
-            ref = f"[policy_version_id={c.policy_version_id} section_id={c.section_id}]"
+            md = c.metadata or {}
+            label = md.get("section_path") or md.get("title")
+            title = f" ({label})" if label else ""
             text = (c.text or "").strip().replace("\n", " ")
             if len(text) > 600:
                 text = text[:600].rstrip() + "…"
-            lines.append(f"[{i}] {ref} {text}")
+            lines.append(f"[{handle_for(i)}]{title} {text}")
         lines.append("")
         lines.append(
-            "Answer (cite using the format [policy_version_id=... section_id=...]):"
+            "Answer the question using only the evidence above, citing each "
+            "requirement by its handle (e.g. [E1]):"
         )
         return "\n".join(lines)
 
@@ -282,6 +312,105 @@ class AnswerService:
             },
         )
         return completion.content, None
+
+    def _verify_grounding(
+        self,
+        answer: str,
+        shown: list[EvidenceCandidate],
+    ) -> tuple[GroundingInfo, list[EvidenceCandidate]]:
+        """S1: check the answer against the evidence it was actually given.
+
+        Returns the grounding record plus the candidates the model genuinely
+        cited, which become the response citations. Citations were previously
+        taken from retrieval ranking, so a fabricated answer still came back
+        with clean-looking citations attached to it.
+        """
+        enforced = enforcement_enabled()
+        check = check_citations(answer, shown)
+
+        # Map cited handles back to the evidence they name.
+        by_handle = {handle_for(i): c for i, c in enumerate(shown, start=1)}
+        cited = [by_handle[h] for h in check.valid_handles if h in by_handle]
+
+        # Gate 1 (the previously-dead citation_enforcer): an answer that cites
+        # nothing cannot be traced to policy, whatever it says.
+        if not cited:
+            return (
+                GroundingInfo(
+                    verified=False,
+                    enforced=enforced,
+                    cited_handles=check.cited_handles,
+                    unknown_handles=check.unknown_handles,
+                    citation_density=check.citation_density,
+                    failure_reason=(
+                        "answer cited evidence handles that were never supplied"
+                        if check.hallucinated_handles
+                        else "answer contains no citation to the supplied evidence"
+                    ),
+                ),
+                [],
+            )
+
+        # Gate 2: quoted material must appear in the section it is attributed to.
+        verified_count = 0
+        unverified_count = 0
+        for sentence in split_sentences(answer):
+            quotes = _QUOTED_RE.findall(sentence)
+            if not quotes:
+                continue
+            handles = extract_handles(sentence)
+            sources = [by_handle[h].text or "" for h in handles if h in by_handle]
+            if not sources:
+                continue
+            for quote in quotes:
+                if any(is_supported_substring(quote, src) for src in sources):
+                    verified_count += 1
+                else:
+                    unverified_count += 1
+
+        # Gate 3: faithfulness of the prose against the cited sections.
+        faithfulness = self._scorer.score(
+            answer=answer, cited_texts=[c.text or "" for c in cited]
+        )
+        threshold = faithfulness_threshold()
+
+        failure: str | None = None
+        if check.hallucinated_handles:
+            failure = (
+                f"answer cited {len(check.unknown_handles)} handle(s) that were "
+                "never supplied: " + ", ".join(check.unknown_handles[:5])
+            )
+        elif unverified_count:
+            failure = (
+                f"{unverified_count} quoted passage(s) do not appear in the "
+                "section they are attributed to"
+            )
+        elif faithfulness.score < threshold:
+            failure = (
+                f"faithfulness {faithfulness.score:.2f} is below the {threshold:.2f} "
+                f"threshold ({faithfulness.backend}); "
+                f"{len(faithfulness.unsupported)} claim(s) unsupported by cited evidence"
+            )
+
+        return (
+            GroundingInfo(
+                verified=failure is None,
+                enforced=enforced,
+                faithfulness_score=round(float(faithfulness.score), 4),
+                faithfulness_backend=faithfulness.backend,
+                threshold=threshold,
+                cited_handles=check.cited_handles,
+                unknown_handles=check.unknown_handles,
+                verified_citations=verified_count,
+                unverified_citations=unverified_count,
+                citation_density=check.citation_density,
+                supported_claims=faithfulness.supported_claims,
+                total_claims=faithfulness.total_claims,
+                unsupported_claims=faithfulness.unsupported[:5],
+                failure_reason=failure,
+            ),
+            cited,
+        )
 
     def ask(self, request: AskRequest) -> AnswerResponse:
         user = request.user
@@ -422,7 +551,10 @@ class AnswerService:
         )
 
         # LLM answer generation — falls back to excerpt if LLM not configured or fails.
-        llm_answer, llm_error = self._call_llm(request.question, ranked_primary[:5])
+        # The exact candidates the model was shown, so grounding can verify
+        # citations against what it actually received.
+        shown = ranked_primary[:5]
+        llm_answer, llm_error = self._call_llm(request.question, shown)
 
         if llm_answer and REFUSAL_PHRASE.lower() in llm_answer.lower():
             # The evidence cleared retrieval and grounding but the model still would not
@@ -477,21 +609,79 @@ class AnswerService:
                 created_at=created_at,
             )
 
+        grounding: GroundingInfo | None = None
+
         if llm_answer:
             answer = llm_answer
             answer_source = AnswerSource.LLM
+
+            # S1: verify the generated answer before returning it, and take the
+            # citations from what the model actually cited.
+            if verification_enabled():
+                grounding, cited = self._verify_grounding(answer, shown)
+                logger.info(
+                    "answer.grounding",
+                    extra={
+                        "verified": grounding.verified,
+                        "faithfulness": grounding.faithfulness_score,
+                        "backend": grounding.faithfulness_backend,
+                        "cited": len(cited),
+                        "enforced": grounding.enforced,
+                    },
+                )
+                if not grounding.verified and grounding.enforced:
+                    refusal = self._refusal(
+                        RefusalCode.UNGROUNDED_ANSWER,
+                        "The generated answer could not be verified against the "
+                        f"policy sections it cited: {grounding.failure_reason}.",
+                        selected_bucket=selected_bucket,
+                        user_department=user_department,
+                        candidates_considered=len(ranked_primary),
+                        best_score=float(best.score or 0.0),
+                        threshold=grounding.threshold,
+                    )
+                    logger.warning(
+                        "answer.refused",
+                        extra={
+                            "refusal_code": str(RefusalCode.UNGROUNDED_ANSWER),
+                            "gate": "grounding",
+                            "reason": grounding.failure_reason,
+                        },
+                    )
+                    return AnswerResponse(
+                        answer=REFUSAL_PHRASE,
+                        refusal_reason=str(RefusalCode.UNGROUNDED_ANSWER),
+                        refusal=refusal,
+                        answer_source=AnswerSource.REFUSAL,
+                        grounding=grounding,
+                        evidence=ranked_primary,
+                        citations=[],
+                        citation_items=[],
+                        secondary_evidence=[],
+                        retrieval_log=self._build_retrieval_log(
+                            ranked_primary, selected_bucket, float(best.score or 0.0)
+                        ),
+                        confidence=float(best.score or 0.0),
+                        grounding_score=self._grounding_score(best),
+                        created_at=created_at,
+                    )
+                # Verified (or report-only): cite exactly what the model cited.
+                cited_for_response = cited or ranked_primary[:3]
+            else:
+                cited_for_response = ranked_primary[:3]
         else:
             answer_source = AnswerSource.EXCERPT_FALLBACK
-            # Excerpt fallback: plain-text citation without LLM.
-            excerpt = (best.text or "").strip().replace("\n", " ")
+            # Excerpt fallback: the excerpt IS the source text, so it is
+            # grounded by construction and needs no model verification.
+            excerpt = (best.text or "").strip().replace(chr(10), " ")
             if len(excerpt) > 600:
                 excerpt = excerpt[:600].rstrip() + "…"
-            citation = f"[policy_version_id={best.policy_version_id} section_id={best.section_id}]"
-            answer = f"{excerpt} {citation}"
+            answer = f"{excerpt} [{handle_for(1)}]"
+            cited_for_response = [best]
 
         citations = [
             f"[policy_version_id={item.policy_version_id} section_id={item.section_id}]"
-            for item in ranked_primary[:3]
+            for item in cited_for_response[:3]
         ]
 
         citation_items = [
@@ -506,7 +696,7 @@ class AnswerService:
                 score=float(item.score or 0.0),
                 public_url=(item.metadata or {}).get("public_url"),
             )
-            for item in ranked_primary[:5]
+            for item in cited_for_response[:5]
         ]
 
         primary_score = float(best.score or 0.0)
@@ -561,5 +751,6 @@ class AnswerService:
             answer_source=answer_source,
             is_fallback=answer_source is AnswerSource.EXCERPT_FALLBACK,
             llm_error=llm_error,
+            grounding=grounding,
             created_at=created_at,
         )
