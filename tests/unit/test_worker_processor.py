@@ -205,3 +205,42 @@ def test_process_one_message_marks_ready_and_persists_sections() -> None:
 	assert repos.references.deleted == 1  # type: ignore[attr-defined]
 	ext = [r for r in repos.references.rows if r["resolution_status"] == "external"]  # type: ignore[attr-defined]
 	assert ext, "expected an external_authority reference for the CFR citation"
+
+
+class _EmptyBlob:
+	"""Stands in for a scanned/image-only source: downloads fine, extracts to nothing."""
+
+	def download_blob_bytes(self, container: str, name: str) -> bytes:
+		return b""
+
+	def upload_blob_bytes(self, container, name, data, content_type=None, overwrite=True) -> str:
+		return f"https://blob/{container}/{name}"
+
+
+def test_process_one_message_parks_zero_text_extraction_in_needs_review() -> None:
+	repos = _build_repos()
+	uow = UnitOfWork(repos=repos, session=None)
+	version = repos.versions.get_by_id(version_id=repos.versions._v.id)  # type: ignore[attr-defined]
+	assert version is not None
+
+	_process_one_message(
+		uow=uow,
+		blob_service=_EmptyBlob(),  # type: ignore[arg-type]
+		policy_version_id=version.id,
+		correlation_id="corr-zero",
+		extracted_container="policy-extracted",
+	)
+
+	# The version parks for OCR review instead of publishing an empty policy as READY.
+	final = repos.versions.get_by_id(version_id=version.id)
+	assert final is not None
+	assert final.parse_status == "needs_review"
+	assert final.is_current is False
+	assert repos.versions.statuses == ["processing", "needs_review"]  # type: ignore[attr-defined]
+
+	# Nothing was persisted or promoted.
+	assert repos.sections.rows == []  # type: ignore[attr-defined]
+	assert repos.policies.current_version_id is None  # type: ignore[attr-defined]
+
+	# Ingest tracking uses 'failed': its CHECK constraint admits no review state.
+	assert repos.ingest_items.status_by_version[version.id] == "failed"  # type: ignore[attr-defined]
