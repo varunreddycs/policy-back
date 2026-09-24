@@ -107,11 +107,16 @@ export interface CitationItem {
   snippet: string;
   score: number;
   public_url: string | null;
+  /** S2: when the cited version took effect (ISO date). */
+  effective_date?: string | null;
+  version_label?: string | null;
 }
 
 export interface DecisionInfo {
   selected_bucket: "department_specific" | "org_wide" | string;
   reason: string;
+  /** S2: the point-in-time the answer was evaluated against (ISO date). */
+  as_of?: string | null;
   user_department: string | null;
   primary_candidates: number;
   secondary_candidates: number;

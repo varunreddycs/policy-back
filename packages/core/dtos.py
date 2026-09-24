@@ -31,6 +31,14 @@ class PolicyScope(BaseModel):
     policy_ids: list[UUID] | None = None
     policy_types: list[str] | None = None
     only_current: bool = True
+    as_of: date | None = Field(
+        default=None,
+        description=(
+            "S2: answer from the policy versions authoritative on this date. "
+            "Overrides only_current; a version is authoritative when it is the "
+            "latest READY version of its policy effective on or before the date."
+        ),
+    )
 
 
 class AskRequest(BaseModel):
@@ -57,6 +65,11 @@ class CitationItem(BaseModel):
     snippet: str
     score: float = Field(default=0.0)
     public_url: str | None = None
+    effective_date: date | None = Field(
+        default=None,
+        description="S2: when the cited version took effect — the auditor's anchor.",
+    )
+    version_label: str | None = None
 
 
 class RefusalCode(StrEnum):
@@ -100,6 +113,10 @@ class RefusalInfo(BaseModel):
 class DecisionInfo(BaseModel):
     selected_bucket: str
     reason: str
+    as_of: date | None = Field(
+        default=None,
+        description="S2: the point-in-time this answer was evaluated against, when requested.",
+    )
     user_department: str | None = None
     primary_candidates: int = 0
     secondary_candidates: int = 0

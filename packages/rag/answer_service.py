@@ -14,6 +14,7 @@ from packages.core.dtos import (
     DecisionInfo,
     EvidenceCandidate,
     GroundingInfo,
+    PolicyScope,
     RefusalCode,
     RefusalInfo,
     SecondaryEvidenceItem,
@@ -423,10 +424,17 @@ class AnswerService:
             int(os.getenv("FTS_TOP_K", "40") or "40"),
         )
 
+        # S2: as_of rides on the scope so it reaches every retrieval backend
+        # without touching the retrieve() signature.
+        effective_scope = request.scope
+        if request.as_of is not None:
+            base_scope = request.scope or PolicyScope()
+            effective_scope = base_scope.model_copy(update={"as_of": request.as_of})
+
         candidates = self._retriever.retrieve(
             tenant_id=request.tenant_id,
             query=request.question,
-            scope=request.scope,
+            scope=effective_scope,
             user=user,
             top_k=top_k,
         )
@@ -695,6 +703,8 @@ class AnswerService:
                 snippet=self._clip_snippet(item.text),
                 score=float(item.score or 0.0),
                 public_url=(item.metadata or {}).get("public_url"),
+                effective_date=(item.metadata or {}).get("effective_date"),
+                version_label=(item.metadata or {}).get("version_label"),
             )
             for item in cited_for_response[:5]
         ]
@@ -731,6 +741,7 @@ class AnswerService:
         decision = DecisionInfo(
             selected_bucket=selected_bucket,
             reason=reason,
+            as_of=request.as_of,
             user_department=user_department,
             primary_candidates=len(primary_pool),
             secondary_candidates=len(secondary_pool),

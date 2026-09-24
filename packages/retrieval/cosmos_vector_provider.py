@@ -16,9 +16,10 @@ from __future__ import annotations
 
 import logging
 import uuid
-from typing import Any, List, Optional
+from typing import Any
 
-from packages.core.dtos import EvidenceCandidate
+from packages.core.dtos import EvidenceCandidate, PolicyScope, UserContext
+from packages.retrieval.base import IVectorRetriever
 
 # Q7: control-ID handling now lives in one place so the Postgres and Cosmos
 # paths behave identically on exact-identifier queries. The local regex also
@@ -27,14 +28,6 @@ from packages.retrieval.control_ids import (
     boost_exact_control_matches,
     normalize_control_ids,
 )
-
-try:
-    from packages.core.dtos import PolicyScope, UserContext
-except Exception:
-    PolicyScope = object  # type: ignore
-    UserContext = object  # type: ignore
-
-from packages.retrieval.base import IVectorRetriever
 
 logger = logging.getLogger(__name__)
 
@@ -66,10 +59,10 @@ class CosmosVectorRetriever(IVectorRetriever):
         *,
         tenant_id: uuid.UUID,
         query: str,
-        scope: "PolicyScope | None" = None,
-        user: "UserContext | None" = None,
+        scope: PolicyScope | None = None,
+        user: UserContext | None = None,
         top_k: int = 10,
-    ) -> List[EvidenceCandidate]:
+    ) -> list[EvidenceCandidate]:
         if not query or not query.strip():
             return []
 
@@ -109,7 +102,7 @@ class CosmosVectorRetriever(IVectorRetriever):
             logger.exception("cosmos_vector.query_failed")
             return []
 
-        candidates: List[EvidenceCandidate] = []
+        candidates: list[EvidenceCandidate] = []
         for row in results:
             section_id = row.get("policy_section_id")
             policy_id = row.get("policy_id")
@@ -120,7 +113,9 @@ class CosmosVectorRetriever(IVectorRetriever):
             text = row.get("text")
             if not text:
                 # Fallback for non-denormalized embeddings: look up section text.
-                text = self._lookup_section_text(tenant_id=tenant_id, section_id=section_id)
+                text = self._lookup_section_text(
+                    tenant_id=tenant_id, section_id=section_id
+                )
             if not text:
                 continue
 
@@ -147,6 +142,36 @@ class CosmosVectorRetriever(IVectorRetriever):
                 )
             )
 
+        # S2: as-of answers, best-effort on Cosmos. The embedding documents are
+        # denormalized and carry effective_date but no created_at fallback and no
+        # full per-policy version universe, so the filter operates on what the
+        # vector search returned: drop candidates effective after the date, then
+        # keep only each policy's latest remaining version. A version outside the
+        # top-k cannot be considered — the Postgres path is exact; this one is
+        # documented as best-effort.
+        as_of = getattr(scope, "as_of", None) if scope is not None else None
+        if as_of is not None and candidates:
+            as_of_iso = as_of.isoformat()
+
+            def _eff(c: EvidenceCandidate) -> str:
+                # ISO date strings compare lexicographically; undated versions
+                # sort first (always effective).
+                return str((c.metadata or {}).get("effective_date") or "0000-00-00")
+
+            in_range = [c for c in candidates if _eff(c) <= as_of_iso]
+            latest_by_policy: dict[str, str] = {}
+            for c in in_range:
+                key = str(c.policy_id)
+                latest_by_policy[key] = max(latest_by_policy.get(key, ""), _eff(c))
+            candidates = [
+                c for c in in_range if _eff(c) == latest_by_policy[str(c.policy_id)]
+            ]
+            for c in candidates:
+                md = dict(c.metadata or {})
+                md["is_current"] = True
+                md["as_of"] = as_of_iso
+                c.metadata = md
+
         # Lexical boost: if the query names specific controls (e.g. "AC-2"),
         # surface the exact control above semantically-near neighbours so its
         # text is in the evidence the LLM sees.
@@ -154,7 +179,7 @@ class CosmosVectorRetriever(IVectorRetriever):
 
         return candidates
 
-    def _get_query_embedding(self, query: str) -> Optional[List[float]]:
+    def _get_query_embedding(self, query: str) -> list[float] | None:
         if self._embed_fn is not None:
             return self._embed_fn(query)
         try:
@@ -166,7 +191,9 @@ class CosmosVectorRetriever(IVectorRetriever):
             logger.exception("cosmos_vector.embed_fn_unavailable")
             return None
 
-    def _lookup_section_text(self, *, tenant_id: uuid.UUID, section_id: str) -> Optional[str]:
+    def _lookup_section_text(
+        self, *, tenant_id: uuid.UUID, section_id: str
+    ) -> str | None:
         """Fallback section-text lookup from the standalone sections container."""
         if self._sections is None:
             return None
