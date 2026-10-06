@@ -62,6 +62,14 @@ class CitationItem(BaseModel):
     policy_name: str | None = None
     section_title: str | None = None
     section_path: str | None = None
+    control_id: str | None = Field(
+        default=None,
+        description="S3: canonical NIST control id this citation covers, e.g. 'AC-2(3)'.",
+    )
+    control_name: str | None = Field(
+        default=None,
+        description="S3: the control's name, e.g. 'Account Management'.",
+    )
     snippet: str
     score: float = Field(default=0.0)
     public_url: str | None = None

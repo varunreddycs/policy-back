@@ -151,7 +151,7 @@ export default function AnswerCard({ answer, tenantId, department, onCopy, onOpe
                         mb: 1
                       }}>
                       <Chip size="small" label={item.policy_name || "Policy"} />
-                      <Chip size="small" variant="outlined" label={(item.section_title || item.section_path || "Section").slice(0, 60)} />
+                      <Chip size="small" variant="outlined" label={(item.control_id ? `${item.control_id} ${item.control_name ?? ""}`.trim() : (item.section_title || item.section_path || "Section")).slice(0, 60)} />
                       <Chip size="small" variant="outlined" label={`Score ${item.score.toFixed(3)}`} />
                     </Stack>
                     <Typography variant="body2" sx={{ mb: 1 }}>

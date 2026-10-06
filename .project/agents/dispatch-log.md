@@ -15,6 +15,14 @@ for judgment — correctness review, architecture, root-cause analysis.
 
 ---
 
+## 2026-10-06 — S3 crosswalk recon
+
+| Agent | Model | Task | Outcome |
+|---|---|---|---|
+| Explore | sonnet | Map reference schema/pipeline, CitationItem, why Cosmos refs=0 | ✅ Found the seed bypasses the worker and the references router 500s in prod — both verified |
+| researcher | sonnet | Find official NIST CSF↔800-53 crosswalk data + STRM vocabulary | 🟡 Useful leads, but the key fact was UNCONFIRMED; fetching the file showed it is XLSX and untyped |
+| executor | sonnet | Implement half B (control citations) to a written spec | ✅ Built to spec, 302 pass. Review then caught a non-NIST mislabel path (HR-4) the spec itself missed — fixed |
+
 ## 2026-10-05 — INC-001 platform.mistrv.com
 
 | Agent | Model | Task | Outcome |

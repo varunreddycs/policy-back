@@ -3,9 +3,15 @@ from __future__ import annotations
 import logging
 import os
 import re
+from collections.abc import Mapping
 from datetime import datetime, timezone
 from typing import Any
 
+from packages.core.control_ids import (
+    is_nist_control_id,
+    primary_control_id,
+    strip_control_prefix,
+)
 from packages.core.dtos import (
     AnswerResponse,
     AnswerSource,
@@ -53,6 +59,23 @@ _FALLBACK_SYSTEM_PROMPT = (
     "4) Only if none of the provided evidence is relevant to the question, refuse with exactly: "
     '"Insufficient evidence in available policy sections."\n'
 )
+
+
+def _citation_control(md: Mapping[str, object]) -> tuple[str | None, str | None]:
+    """(control_id, control_name) for a citation, from structured metadata only."""
+    # Deliberately no fallback to the title or body: a section titled
+    # "Implementing AC-2" under path "4.1" is not itself control AC-2, and
+    # mislabeling a citation's control is worse than leaving it blank.
+    path = md.get("section_path")
+    control_id = primary_control_id(str(path)) if path else None
+    if control_id is None:
+        explicit = md.get("control_id")
+        control_id = primary_control_id(str(explicit)) if explicit else None
+    # The field promises a NIST control; an "HR-4"-shaped department code is not one.
+    if not is_nist_control_id(control_id):
+        return None, None
+    title = md.get("title")
+    return control_id, strip_control_prefix(str(title) if title else None, control_id)
 
 
 class AnswerService:
@@ -246,6 +269,26 @@ class AnswerService:
             "selected_bucket": selected_bucket,
             "primary_score": float(primary_score),
         }
+
+    @classmethod
+    def _build_citation(cls, item: EvidenceCandidate) -> CitationItem:
+        md = item.metadata or {}
+        control_id, control_name = _citation_control(md)
+        return CitationItem(
+            policy_id=item.policy_id,
+            policy_version_id=item.policy_version_id,
+            section_id=item.section_id,
+            policy_name=md.get("policy_name"),
+            section_title=md.get("title"),
+            section_path=md.get("section_path"),
+            control_id=control_id,
+            control_name=control_name,
+            snippet=cls._clip_snippet(item.text),
+            score=float(item.score or 0.0),
+            public_url=md.get("public_url"),
+            effective_date=md.get("effective_date"),
+            version_label=md.get("version_label"),
+        )
 
     @staticmethod
     def _clip_snippet(text: str, max_chars: int = 280) -> str:
@@ -693,20 +736,7 @@ class AnswerService:
         ]
 
         citation_items = [
-            CitationItem(
-                policy_id=item.policy_id,
-                policy_version_id=item.policy_version_id,
-                section_id=item.section_id,
-                policy_name=(item.metadata or {}).get("policy_name"),
-                section_title=(item.metadata or {}).get("title"),
-                section_path=(item.metadata or {}).get("section_path"),
-                snippet=self._clip_snippet(item.text),
-                score=float(item.score or 0.0),
-                public_url=(item.metadata or {}).get("public_url"),
-                effective_date=(item.metadata or {}).get("effective_date"),
-                version_label=(item.metadata or {}).get("version_label"),
-            )
-            for item in cited_for_response[:5]
+            self._build_citation(item) for item in cited_for_response[:5]
         ]
 
         primary_score = float(best.score or 0.0)

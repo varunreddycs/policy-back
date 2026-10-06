@@ -1,6 +1,6 @@
 # Milestone index
 
-Last updated: 2026-10-05
+Last updated: 2026-10-06
 
 | # | Milestone | Status | Detail |
 |---|---|---|---|
@@ -8,7 +8,7 @@ Last updated: 2026-10-05
 | 01 | S5 structure-aware sectioning | ✅ done | [01](01-s5-sectioning.md) |
 | 02 | Cosmos cutover — Phase 0 | ✅ done | [02](02-cosmos-cutover.md) |
 | 02 | Cosmos cutover — Phases 1–6 | ⏸️ **parked** | [02](02-cosmos-cutover.md) |
-| 03 | S3 OSCAL crosswalk (#14) | 📋 planned | unblocked by S5 |
+| 03 | S3 OSCAL crosswalk (#14) | 🟡 **active** — recon | [03](03-s3-crosswalk.md) |
 | 04 | S4, S6, S7 (#15, #17, #18) | 📋 planned | GitHub milestone "02 Strategic bets" |
 | 05 | S5b parser scope (#39) | 📋 planned | DOCX tables, headers/footers, PDF headings |
 
