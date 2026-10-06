@@ -69,5 +69,11 @@ jobs:
           azd env config set infra.parameters.azureOpenAiApiKey "${{ secrets.AZURE_OPENAI_API_KEY }}"
           azd env config set infra.parameters.cosmosKey "${{ secrets.COSMOS_KEY }}"
 
+      # Not `azd up`: current azd packages services in parallel with
+      # provisioning, so the web prepackage hook runs before the API_URL
+      # output exists on this fresh runner env and fails the whole deploy.
+      - name: Provision
+        run: azd provision --no-prompt
+
       - name: Deploy
-        run: azd up --no-prompt
+        run: azd deploy --no-prompt
