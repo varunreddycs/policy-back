@@ -1,18 +1,22 @@
 from __future__ import annotations
 
+import re
 from typing import List
 from uuid import UUID
 
-import re
-
 import sqlalchemy as sa
-
 from sqlalchemy import func, select
 from sqlalchemy.orm import Session
 
-from packages.db.models.policy_models import ParseStatus, Policy, PolicySection, PolicyVersion
 from packages.core.dtos import EvidenceCandidate
+from packages.db.models.policy_models import (
+	ParseStatus,
+	Policy,
+	PolicySection,
+	PolicyVersion,
+)
 from packages.retrieval.base import IVectorRetriever
+from packages.retrieval.control_ids import extract_control_ids
 
 
 class PgsqlFtsRetriever(IVectorRetriever):
@@ -52,7 +56,28 @@ class PgsqlFtsRetriever(IVectorRetriever):
 		# Fallback: plainto_tsquery ANDs tokens (e.g., 'deadlin' & 'file' & 'appeal'),
 		# which can be too strict for natural-language questions. If AND yields no rows,
 		# try an OR query built from tokens.
-		_tokens = [t.lower() for t in re.findall(r"[A-Za-z0-9]+", q) if len(t) >= 3]
+		# Q7: the >= 3 filter silently discarded the very codes compliance users
+		# search by — "AC-2" tokenizes to "ac" + "2", both shorter than 3 — so
+		# control IDs are extracted first and always kept.
+		_control_ids = extract_control_ids(q)
+		# to_tsquery treats an unquoted '(' as a grouping operator, so a bare
+		# "ia-5(1)" is a syntax error; quoting makes it a valid phrase term.
+		# Verified against PG16: '''ia-5(1)''' lexes to 'ia' <-> '-5' <-> '1' and
+		# matches a section titled "IA-5(1) ...", while '''ac-2''' matches
+		# "AC-2 ..." without also matching "AC-20 ...". See
+		# tests/integration/test_fts_tsquery.py for the live check.
+		_control_tokens = sorted({f"'{cid.lower()}'" for cid in _control_ids})
+		_control_words = {
+			part.lower()
+			for cid in _control_ids
+			for part in re.findall(r"[A-Za-z0-9]+", cid)
+		}
+		_words = [
+			t.lower()
+			for t in re.findall(r"[A-Za-z0-9]+", q)
+			if len(t) >= 3 and t.lower() not in _control_words
+		]
+		_tokens = _control_tokens + _words
 		_tokens = _tokens[:8]
 		or_tsquery = None
 		if len(_tokens) >= 2:

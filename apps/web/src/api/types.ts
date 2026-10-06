@@ -47,10 +47,35 @@ export interface AskResponse {
   citation_items?: CitationItem[];
   decision?: DecisionInfo | null;
   secondary_evidence?: SecondaryEvidenceItem[];
+  /** Relevance heuristic from retrieval — NOT a calibrated correctness probability. */
   confidence: number | null;
-  refusal_reason: "insufficient_evidence" | null;
+  /** Absolute similarity the refusal gate evaluated; comparable across backends. */
+  grounding_score?: number | null;
+  refusal_reason: RefusalCode | null;
+  refusal?: RefusalInfo | null;
+  answer_source?: AnswerSource;
+  is_fallback?: boolean;
+  llm_error?: string | null;
   evidence: EvidenceItem[];
   created_at: string;
+}
+
+export type AnswerSource = "llm" | "excerpt_fallback" | "refusal";
+
+export type RefusalCode =
+  | "no_authoritative_control"
+  | "department_scope_ambiguous"
+  | "conflicting_versions"
+  | "below_groundedness_threshold";
+
+export interface RefusalInfo {
+  code: RefusalCode;
+  explanation: string;
+  selected_bucket: string | null;
+  user_department: string | null;
+  candidates_considered: number;
+  best_score: number | null;
+  threshold: number | null;
 }
 
 export interface CitationItem {
