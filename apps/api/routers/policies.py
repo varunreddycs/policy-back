@@ -43,7 +43,14 @@ def list_policy_versions(
 
     results: List[PolicyVersionResponse] = []
     for version in versions:
-        raw_blob_uri = blob_service.get_blob_uri(version.blob_container, version.blob_name)
+        # Catalog-seeded versions (e.g. NIST 800-53 from OSCAL) have no uploaded
+        # source file. get_blob_uri raises on an empty name, and one such version
+        # used to 500 the whole list.
+        raw_blob_uri = (
+            blob_service.get_blob_uri(version.blob_container, version.blob_name)
+            if version.blob_container and version.blob_name
+            else None
+        )
         if hasattr(PolicyVersionResponse, "model_validate"):
             resp = PolicyVersionResponse.model_validate(version)  # type: ignore[attr-defined]
             resp = resp.model_copy(update={"raw_blob_uri": raw_blob_uri})  # type: ignore[attr-defined]

@@ -8,6 +8,12 @@ from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 
 from apps.api.config import ApiConfig
+from apps.api.exception_handlers import register_exception_handlers
+from apps.api.hardening import (
+    BodySizeLimitMiddleware,
+    RateLimitMiddleware,
+    SecurityHeadersMiddleware,
+)
 from apps.api.logging_config import configure_logging
 from apps.api.middleware import RequestContextMiddleware
 from apps.api.routers import ask, audit, health, ingest, policies, references, sections
@@ -24,7 +30,17 @@ def create_app() -> FastAPI:
         redoc_url="/redoc" if config.enable_docs else None,
         openapi_url="/openapi.json" if config.enable_docs else None,
     )
-    app.add_middleware(RequestContextMiddleware)
+    # Middleware runs in reverse registration order, so RequestContextMiddleware
+    # is added last to run FIRST — every error envelope below needs its
+    # correlation_id to already be set.
+    app.add_middleware(SecurityHeadersMiddleware, hsts=config.hsts_enabled)
+    app.add_middleware(BodySizeLimitMiddleware, max_bytes=config.max_body_bytes)
+    if config.rate_limit_enabled:
+        app.add_middleware(
+            RateLimitMiddleware,
+            max_requests=config.rate_limit_requests,
+            window_seconds=config.rate_limit_window_seconds,
+        )
     app.add_middleware(
         CORSMiddleware,
         allow_origins=list(config.cors_allow_origins),
@@ -32,6 +48,9 @@ def create_app() -> FastAPI:
         allow_methods=["*"],
         allow_headers=["*"],
     )
+    app.add_middleware(RequestContextMiddleware)
+
+    register_exception_handlers(app)
 
     app.include_router(health.router)
     app.include_router(ingest.router)
@@ -46,7 +65,9 @@ def create_app() -> FastAPI:
 
     if web_dist.exists():
         if web_assets.exists():
-            app.mount("/assets", StaticFiles(directory=str(web_assets)), name="web-assets")
+            app.mount(
+                "/assets", StaticFiles(directory=str(web_assets)), name="web-assets"
+            )
 
         @app.get("/", include_in_schema=False)
         def serve_web_index() -> FileResponse:
@@ -54,7 +75,13 @@ def create_app() -> FastAPI:
 
         @app.get("/{full_path:path}", include_in_schema=False)
         def serve_web_spa(full_path: str) -> FileResponse:
-            requested = web_dist / full_path
+            # Resolve and confirm containment: a traversal like ../../.env must
+            # fall through to index.html rather than read outside the bundle.
+            try:
+                requested = (web_dist / full_path).resolve()
+                requested.relative_to(web_dist.resolve())
+            except (ValueError, OSError):
+                return FileResponse(web_dist / "index.html")
             if requested.is_file():
                 return FileResponse(requested)
             return FileResponse(web_dist / "index.html")
@@ -63,4 +90,3 @@ def create_app() -> FastAPI:
 
 
 app = create_app()
-

@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "Bash(npm view *)",
+      "Bash(npx --yes @mui/codemod@latest v9.0.0/system-props src)",
+      "Bash(python -m pytest --version)",
+      "Bash(python -m ruff --version)",
+      "Bash(python -m pyright --version)",
+      "Bash(uvx ruff *)",
+      "Bash(uvx pyright *)",
+      "Bash(command -v npx)",
+      "Bash(.venv/Scripts/python.exe -m pytest tests/unit -q)"
+    ]
+  }
+}

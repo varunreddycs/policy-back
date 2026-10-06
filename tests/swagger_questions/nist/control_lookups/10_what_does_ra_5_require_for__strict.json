@@ -1,0 +1,13 @@
+{
+  "tenant_id": "11111111-1111-1111-1111-111111111111",
+  "question": "What does RA-5 require for vulnerability scanning?",
+  "mode": "strict",
+  "user": {
+    "tenant_id": "11111111-1111-1111-1111-111111111111",
+    "email": "demo@local",
+    "role": "staff"
+  },
+  "scope": {
+    "only_current": true
+  }
+}

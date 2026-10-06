@@ -1,0 +1,14 @@
+{
+  "tenant_id": "00000000-0000-0000-0000-000000000001",
+  "question": "What ethics rules apply when hiring a relative or former colleague?",
+  "mode": "strict",
+  "user": {
+    "tenant_id": "00000000-0000-0000-0000-000000000001",
+    "email": "test@test.com",
+    "role": "staff",
+    "department": "compliance"
+  },
+  "scope": {
+    "only_current": true
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "tenant_id": "00000000-0000-0000-0000-000000000001",
+  "question": "What are the records retention requirements and how long must documents be kept?",
+  "mode": "strict",
+  "user": {
+    "tenant_id": "00000000-0000-0000-0000-000000000001",
+    "email": "test@test.com",
+    "role": "staff",
+    "department": "compliance"
+  },
+  "scope": {
+    "only_current": true
+  }
+}

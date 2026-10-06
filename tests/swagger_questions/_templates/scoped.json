@@ -1,0 +1,15 @@
+{
+  "tenant_id": "00000000-0000-0000-0000-000000000001",
+  "question": "REPLACE_WITH_YOUR_QUESTION",
+  "mode": "strict",
+  "user": {
+    "tenant_id": "00000000-0000-0000-0000-000000000001",
+    "email": "test@test.com",
+    "role": "staff",
+    "department": "REPLACE_DEPARTMENT"
+  },
+  "scope": {
+    "only_current": true,
+    "policy_types": ["REPLACE_POLICY_TYPE"]
+  }
+}

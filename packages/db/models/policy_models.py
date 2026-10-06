@@ -73,6 +73,9 @@ class ParseStatus(str, Enum):
 	READY = "ready"
 	PARSED = "parsed"
 	FAILED = "failed"
+	# Extraction produced no usable text (scanned/image-only source); the file
+	# is intact but needs OCR, unlike FAILED where the parser itself errored.
+	NEEDS_REVIEW = "needs_review"
 	CANCELLED = "cancelled"
 	SUPERSEDED = "superseded"
 
@@ -307,7 +310,7 @@ class PolicyVersion(Base):
 		),
 		CheckConstraint("version_number >= 1", name="version_number_gte_1"),
 		CheckConstraint(
-			"parse_status in ('pending','queued','processing','ready','parsed','failed','cancelled','superseded')",
+			"parse_status in ('pending','queued','processing','ready','parsed','failed','cancelled','superseded','needs_review')",
 			name="parse_status_allowed",
 		),
 		Index("ix_policy_versions_policy_id_created_at", "policy_id", "created_at"),
