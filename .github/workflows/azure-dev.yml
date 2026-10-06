@@ -10,6 +10,15 @@ permissions:
   id-token: write
   contents: read
 
+# Serialize deploys: azd up against the same environment is not safe to run
+# concurrently (two `docker build`s racing on the runner, two `azd up`s
+# racing on the same Azure resources). Merges landing seconds apart used to
+# fire overlapping runs that starved/killed each other's builds. Queue
+# instead of canceling so every merge to main still gets deployed, in order.
+concurrency:
+  group: azure-dev-${{ github.ref }}
+  cancel-in-progress: false
+
 jobs:
   deploy:
     runs-on: ubuntu-latest

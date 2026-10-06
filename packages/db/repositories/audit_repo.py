@@ -46,9 +46,12 @@ class PgAuditRepository(IAuditRepository):
         self._session.commit()
         return row.id
 
-    def get_by_id(self, *, audit_id: uuid.UUID) -> Optional[AuditLogDTO]:
+    def get_by_id(self, *, tenant_id: uuid.UUID, audit_id: uuid.UUID) -> Optional[AuditLogDTO]:
         row = self._session.execute(
-            select(AuditLog).where(AuditLog.id == audit_id)
+            select(AuditLog).where(
+                AuditLog.id == audit_id,
+                AuditLog.tenant_id == tenant_id,
+            )
         ).scalar_one_or_none()
         return _audit_to_dto(row) if row else None
 
