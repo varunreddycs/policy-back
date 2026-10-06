@@ -4,7 +4,8 @@
 
 | Date | Count | Change | Driver |
 |---|---|---|---|
-| 2026-10-06 | **306** | +23 | S3 control citations |
+| 2026-10-06 | **317** | +11 | INC-002 references router + versions fix |
+| 2026-10-06 | 306 | +23 | S3 control citations |
 | 2026-10-05 | **283** | +9 | Cosmos repo tests (first ever direct coverage) |
 | 2026-09-24 | 274 | +58 | S5 sectioner + DOCX parser tests |
 | 2026-09-24 | 216 | +1 | zero-text → `needs_review` worker test |

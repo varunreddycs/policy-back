@@ -21,6 +21,7 @@ for judgment — correctness review, architecture, root-cause analysis.
 |---|---|---|---|
 | Explore | sonnet | Map reference schema/pipeline, CitationItem, why Cosmos refs=0 | ✅ Found the seed bypasses the worker and the references router 500s in prod — both verified |
 | researcher | sonnet | Find official NIST CSF↔800-53 crosswalk data + STRM vocabulary | 🟡 Useful leads, but the key fact was UNCONFIRMED; fetching the file showed it is XLSX and untyped |
+| executor | sonnet | Port references router + Cosmos hydration (INC-002) | ✅ Clean; live Cosmos check confirmed the new query is valid SQL, which fakes could not |
 | executor | sonnet | Implement half B (control citations) to a written spec | ✅ Built to spec, 302 pass. Review then caught a non-NIST mislabel path (HR-4) the spec itself missed — fixed |
 
 ## 2026-10-05 — INC-001 platform.mistrv.com

@@ -4,6 +4,7 @@ Last updated: 2026-10-06
 
 | # | Milestone | Status | Detail |
 |---|---|---|---|
+| — | INC-002 three read endpoints 500 in prod | 🟡 fixed, not deployed | [incidents/002](../incidents/002-read-endpoints-500.md) |
 | — | INC-001 platform.mistrv.com degraded | ✅ resolved 2026-10-05 | [incidents/001](../incidents/001-platform-insufficient-evidence.md) |
 | 01 | S5 structure-aware sectioning | ✅ done | [01](01-s5-sectioning.md) |
 | 02 | Cosmos cutover — Phase 0 | ✅ done | [02](02-cosmos-cutover.md) |

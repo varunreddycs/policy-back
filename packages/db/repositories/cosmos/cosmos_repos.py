@@ -14,6 +14,7 @@ uuid.UUID happens at the repository boundary.
 
 from __future__ import annotations
 
+import dataclasses
 import uuid
 from datetime import date, datetime, timezone
 from typing import Any, Dict, List, Optional
@@ -891,6 +892,38 @@ class CosmosReferenceRepository(IReferenceRepository):
             created_at=_parse_dt(d.get("created_at")),
         )
 
+    def _hydrate(self, tenant_id: uuid.UUID, dtos: List[PolicyReferenceDTO]) -> List[PolicyReferenceDTO]:
+        """Fill target display fields with at most one query per container (mirrors Postgres _hydrate_target)."""
+        section_ids = sorted({str(d.target_section_id) for d in dtos if d.target_section_id is not None})
+        policy_ids = sorted({str(d.target_policy_id) for d in dtos if d.target_policy_id is not None})
+        sections: Dict[str, tuple[Optional[str], Optional[str]]] = {}
+        policies: Dict[str, Optional[str]] = {}
+        pk = str(tenant_id)
+
+        if self._sections is not None and section_ids:
+            rows = self._sections.query_items(
+                query="SELECT c.id, c.title, c.section_path FROM c WHERE ARRAY_CONTAINS(@ids, c.id)",
+                parameters=[{"name": "@ids", "value": section_ids}],
+                partition_key=pk,
+            )
+            sections = {r["id"]: (r.get("title"), r.get("section_path")) for r in rows}
+        if policy_ids:
+            rows = self._policies.query_items(
+                query="SELECT c.id, c.name FROM c WHERE ARRAY_CONTAINS(@ids, c.id)",
+                parameters=[{"name": "@ids", "value": policy_ids}],
+                partition_key=pk,
+            )
+            policies = {r["id"]: r.get("name") for r in rows}
+
+        hydrated: List[PolicyReferenceDTO] = []
+        for d in dtos:
+            title, path = sections.get(str(d.target_section_id), (None, None)) if d.target_section_id else (None, None)
+            name = (policies.get(str(d.target_policy_id)) or None) if d.target_policy_id else None
+            hydrated.append(
+                dataclasses.replace(d, target_section_title=title, target_section_path=path, target_policy_name=name)
+            )
+        return hydrated
+
     def list_outbound_for_section(self, *, tenant_id: uuid.UUID, section_id: uuid.UUID) -> List[PolicyReferenceDTO]:
         query = "SELECT * FROM c WHERE c.tenant_id = @tid AND c.source_section_id = @sid ORDER BY c.match_offset ASC"
         params = [
@@ -898,7 +931,7 @@ class CosmosReferenceRepository(IReferenceRepository):
             {"name": "@sid", "value": str(section_id)},
         ]
         items = list(self._c.query_items(query=query, parameters=params, partition_key=str(tenant_id)))
-        return [self._to_ref_dto(d) for d in items]
+        return self._hydrate(tenant_id, [self._to_ref_dto(d) for d in items])
 
     def list_inbound_for_section(self, *, tenant_id: uuid.UUID, section_id: uuid.UUID) -> List[PolicyReferenceDTO]:
         query = "SELECT * FROM c WHERE c.tenant_id = @tid AND c.target_section_id = @sid ORDER BY c.created_at ASC"
@@ -907,7 +940,7 @@ class CosmosReferenceRepository(IReferenceRepository):
             {"name": "@sid", "value": str(section_id)},
         ]
         items = list(self._c.query_items(query=query, parameters=params, partition_key=str(tenant_id)))
-        return [self._to_ref_dto(d) for d in items]
+        return self._hydrate(tenant_id, [self._to_ref_dto(d) for d in items])
 
     def list_for_policy_version(self, *, tenant_id: uuid.UUID, policy_version_id: uuid.UUID,
                                  limit: int = 50, offset: int = 0) -> List[PolicyReferenceDTO]:
@@ -920,7 +953,7 @@ class CosmosReferenceRepository(IReferenceRepository):
             {"name": "@lim", "value": limit},
         ]
         items = list(self._c.query_items(query=query, parameters=params, partition_key=str(tenant_id)))
-        return [self._to_ref_dto(d) for d in items]
+        return self._hydrate(tenant_id, [self._to_ref_dto(d) for d in items])
 
     def section_exists_for_tenant(self, *, tenant_id: uuid.UUID, section_id: uuid.UUID) -> bool:
         if self._sections is not None:

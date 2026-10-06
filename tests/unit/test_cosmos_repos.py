@@ -323,3 +323,92 @@ def test_rmw_gives_up_and_raises_conflict_under_permanent_contention() -> None:
 
     with pytest.raises(RepositoryConflict):
         rmw(_AlwaysStale(), read=lambda: {"id": "x", "_etag": '"e"'}, mutate=lambda d: None)
+
+
+# --- CosmosReferenceRepository target hydration -------------------------------
+
+
+class _LookupContainer:
+    """Serves reference rows or id-lookups, counting every query issued."""
+
+    def __init__(self, rows: list[dict[str, Any]]) -> None:
+        self.rows = rows
+        self.query_count = 0
+
+    def query_items(
+        self, *, query: str, parameters: list[dict[str, Any]] | None = None, **kwargs: Any
+    ) -> list[dict[str, Any]]:
+        self.query_count += 1
+        params = {p["name"]: p["value"] for p in (parameters or [])}
+        if "ARRAY_CONTAINS(@ids" in query:
+            return [r for r in self.rows if r["id"] in params["@ids"]]
+        return list(self.rows)
+
+
+def _ref_doc(tenant: uuid.UUID, **over: Any) -> dict[str, Any]:
+    doc: dict[str, Any] = {
+        "id": str(uuid.uuid4()),
+        "tenant_id": str(tenant),
+        "reference_type": "internal_section",
+        "resolution_status": "resolved",
+        "matched_text": "see section 4",
+        "source_section_id": str(uuid.uuid4()),
+        "source_policy_version_id": str(uuid.uuid4()),
+    }
+    doc.update(over)
+    return doc
+
+
+def test_reference_listing_hydrates_target_display_fields() -> None:
+    from packages.db.repositories.cosmos.cosmos_repos import CosmosReferenceRepository
+
+    tenant, sec_id, pol_id = uuid.uuid4(), uuid.uuid4(), uuid.uuid4()
+    refs = _LookupContainer([_ref_doc(tenant, target_section_id=str(sec_id), target_policy_id=str(pol_id))])
+    sections = _LookupContainer([{"id": str(sec_id), "title": "Access control", "section_path": "4.2"}])
+    policies = _LookupContainer([{"id": str(pol_id), "name": "Security Policy"}])
+    repo = CosmosReferenceRepository(refs, policies, sections)
+
+    [dto] = repo.list_for_policy_version(tenant_id=tenant, policy_version_id=uuid.uuid4())
+
+    assert dto.target_section_title == "Access control"
+    assert dto.target_section_path == "4.2"
+    assert dto.target_policy_name == "Security Policy"
+
+
+def test_reference_hydration_is_one_query_per_container() -> None:
+    from packages.db.repositories.cosmos.cosmos_repos import CosmosReferenceRepository
+
+    tenant = uuid.uuid4()
+    sec_ids = [uuid.uuid4() for _ in range(5)]
+    pol_id = uuid.uuid4()
+    refs = _LookupContainer(
+        [_ref_doc(tenant, target_section_id=str(s), target_policy_id=str(pol_id)) for s in sec_ids]
+    )
+    sections = _LookupContainer(
+        [{"id": str(s), "title": f"T{i}", "section_path": str(i)} for i, s in enumerate(sec_ids)]
+    )
+    policies = _LookupContainer([{"id": str(pol_id), "name": "P"}])
+    repo = CosmosReferenceRepository(refs, policies, sections)
+
+    dtos = repo.list_outbound_for_section(tenant_id=tenant, section_id=uuid.uuid4())
+
+    assert len(dtos) == 5
+    assert refs.query_count == 1
+    assert sections.query_count == 1
+    assert policies.query_count == 1
+
+
+def test_reference_without_target_leaves_display_fields_none() -> None:
+    from packages.db.repositories.cosmos.cosmos_repos import CosmosReferenceRepository
+
+    tenant = uuid.uuid4()
+    refs = _LookupContainer([_ref_doc(tenant, reference_type="external_url", resolution_status="external")])
+    sections = _LookupContainer([])
+    policies = _LookupContainer([])
+    repo = CosmosReferenceRepository(refs, policies, sections)
+
+    [dto] = repo.list_inbound_for_section(tenant_id=tenant, section_id=uuid.uuid4())
+
+    assert (dto.target_section_title, dto.target_section_path, dto.target_policy_name) == (None, None, None)
+    assert sections.query_count == 0
+    assert policies.query_count == 0
