@@ -243,6 +243,43 @@ def _all_sections_for_version(
 	return out
 
 
+def _mark_policy_version_terminal(
+	*,
+	uow: UnitOfWork,
+	version: PolicyVersionDTO,
+	parse_status: str,
+	item_status: str,
+	batch_status: str,
+	error_code: str,
+	error_message: str,
+) -> None:
+	"""Park a version in a terminal state and propagate it to its ingest batch."""
+	repos = uow.repos
+	try:
+		repos.versions.set_parse_status(
+			version_id=version.id,
+			status=parse_status,
+			error_code=error_code,
+			error_message=error_message,
+		)
+		if version.ingest_batch_id:
+			repos.ingest_items.set_status_by_result_version(
+				policy_version_id=version.id,
+				status=item_status,
+				error_code=error_code,
+				error_message=error_message,
+			)
+			if repos.ingest_items.count_active_for_batch(batch_id=version.ingest_batch_id) == 0:
+				repos.ingest_batches.update_status(batch_id=version.ingest_batch_id, status=batch_status)
+		uow.commit()
+	except Exception:
+		logger.exception(
+			"worker.mark_terminal_error",
+			extra={"policy_version_id": str(version.id), "parse_status": parse_status},
+		)
+		uow.rollback()
+
+
 def _mark_policy_version_failed(
 	*,
 	uow: UnitOfWork,
@@ -250,30 +287,40 @@ def _mark_policy_version_failed(
 	error_code: str,
 	error_message: str,
 ) -> None:
-	repos = uow.repos
-	try:
-		repos.versions.set_parse_status(
-			version_id=version.id,
-			status=ParseStatus.FAILED.value,
-			error_code=error_code,
-			error_message=error_message,
-		)
-		if version.ingest_batch_id:
-			repos.ingest_items.set_status_by_result_version(
-				policy_version_id=version.id,
-				status="failed",
-				error_code=error_code,
-				error_message=error_message,
-			)
-			if repos.ingest_items.count_active_for_batch(batch_id=version.ingest_batch_id) == 0:
-				repos.ingest_batches.update_status(batch_id=version.ingest_batch_id, status="failed")
-		uow.commit()
-	except Exception:
-		logger.exception(
-			"worker.mark_failed_error",
-			extra={"policy_version_id": str(version.id)},
-		)
-		uow.rollback()
+	_mark_policy_version_terminal(
+		uow=uow,
+		version=version,
+		parse_status=ParseStatus.FAILED.value,
+		item_status="failed",
+		batch_status="failed",
+		error_code=error_code,
+		error_message=error_message,
+	)
+
+
+def _mark_policy_version_needs_review(
+	*,
+	uow: UnitOfWork,
+	version: PolicyVersionDTO,
+	error_code: str,
+	error_message: str,
+) -> None:
+	"""Park a version whose source is intact but yielded no text (scanned/image-only).
+
+	The version itself gets NEEDS_REVIEW so an operator can route it to OCR rather
+	than re-uploading a file that parsed fine. The ingest item/batch stay on
+	'failed': their CHECK constraints admit no review state, and for batch
+	accounting "did not produce a usable policy" is the fact that matters.
+	"""
+	_mark_policy_version_terminal(
+		uow=uow,
+		version=version,
+		parse_status=ParseStatus.NEEDS_REVIEW.value,
+		item_status="failed",
+		batch_status="failed",
+		error_code=error_code,
+		error_message=error_message,
+	)
 
 
 def _make_current(*, repos: RepositorySet, policy: PolicyDTO, version_id: uuid.UUID) -> None:
@@ -343,6 +390,25 @@ def _process_one_message(
 	try:
 		source_bytes = blob_service.download_blob_bytes(version.blob_container, version.blob_name)
 		sections_payload = _extract_sections_for_blob(blob_name=version.blob_name, source_bytes=source_bytes)
+		if not any(section.get("text", "").strip() for section in sections_payload):
+			logger.warning(
+				"worker.zero_text_extraction",
+				extra={
+					"policy_version_id": str(policy_version_id),
+					"correlation_id": correlation_id,
+					"blob_name": version.blob_name,
+				},
+			)
+			uow.rollback()
+			_mark_policy_version_needs_review(
+				uow=uow,
+				version=version,
+				error_code="zero_text_extraction",
+				error_message=(
+					"Extraction produced no text; the source is likely scanned or image-only and needs OCR."
+				),
+			)
+			return
 		extracted_doc = {
 			"policy_version_id": str(version.id),
 			"policy_id": str(policy.id),

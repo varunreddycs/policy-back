@@ -11,49 +11,31 @@ the normalization behave identically on every backend.
 
 HyDE is deliberately NOT used anywhere here: generating a hypothetical document
 degrades exact-identifier precision, which is the case this module exists for.
+
+The identifier logic itself lives in packages/core/control_ids.py; it is
+re-exported here for existing importers.
 """
 
 from __future__ import annotations
 
-import re
-
+from packages.core.control_ids import (
+    _CONTROL_ID_RE,
+    extract_control_ids,
+    normalize_control_ids,
+)
 from packages.core.dtos import EvidenceCandidate
 
-# NIST-style control identifiers: AC-2, ac-2, IA-5(1), SC-7(3).
-# No trailing \b — ")" is not a word character, so a trailing boundary would
-# refuse to match the enhancement suffix and silently truncate "IA-5(1)" to
-# "IA-5".
-_CONTROL_ID_RE = re.compile(r"\b([A-Za-z]{2})-(\d+)(\(\d+\))?")
+__all__ = [
+    "EXACT_ID_BOOST",
+    "_CONTROL_ID_RE",
+    "boost_exact_control_matches",
+    "extract_control_ids",
+    "normalize_control_ids",
+]
 
 # How much to boost a candidate whose section_path exactly matches a control
 # named in the query — large enough to surface the named control to the top.
 EXACT_ID_BOOST = 0.4
-
-
-def extract_control_ids(text: str) -> set[str]:
-    """Normalized control IDs named in ``text`` (e.g. {"AC-2", "IA-5(1)"}).
-
-    Normalizes case and strips leading zeros so "ac-02" and "AC-2" are one id.
-    """
-    return {
-        f"{m.group(1).upper()}-{int(m.group(2))}{m.group(3) or ''}"
-        for m in _CONTROL_ID_RE.finditer(text or "")
-    }
-
-
-def normalize_control_ids(text: str) -> str:
-    """Rewrite control IDs in a query to canonical form before embedding.
-
-    "what does ac-02 require" -> "what does AC-2 require", so the embedded text
-    matches how identifiers appear in the corpus.
-    """
-    if not text:
-        return text
-
-    def _replace(match: re.Match[str]) -> str:
-        return f"{match.group(1).upper()}-{int(match.group(2))}{match.group(3) or ''}"
-
-    return _CONTROL_ID_RE.sub(_replace, text)
 
 
 def _candidate_ids(candidate: EvidenceCandidate) -> set[str]:

@@ -56,17 +56,36 @@ export interface AskResponse {
   answer_source?: AnswerSource;
   is_fallback?: boolean;
   llm_error?: string | null;
+  grounding?: GroundingInfo | null;
   evidence: EvidenceItem[];
   created_at: string;
 }
 
 export type AnswerSource = "llm" | "excerpt_fallback" | "refusal";
 
+export interface GroundingInfo {
+  verified: boolean;
+  enforced: boolean;
+  faithfulness_score: number | null;
+  faithfulness_backend: string | null;
+  threshold: number | null;
+  cited_handles: string[];
+  unknown_handles: string[];
+  verified_citations: number;
+  unverified_citations: number;
+  citation_density: number | null;
+  supported_claims: number;
+  total_claims: number;
+  unsupported_claims: string[];
+  failure_reason: string | null;
+}
+
 export type RefusalCode =
   | "no_authoritative_control"
   | "department_scope_ambiguous"
   | "conflicting_versions"
-  | "below_groundedness_threshold";
+  | "below_groundedness_threshold"
+  | "ungrounded_answer";
 
 export interface RefusalInfo {
   code: RefusalCode;
@@ -85,14 +104,21 @@ export interface CitationItem {
   policy_name: string | null;
   section_title: string | null;
   section_path: string | null;
+  control_id?: string | null;
+  control_name?: string | null;
   snippet: string;
   score: number;
   public_url: string | null;
+  /** S2: when the cited version took effect (ISO date). */
+  effective_date?: string | null;
+  version_label?: string | null;
 }
 
 export interface DecisionInfo {
   selected_bucket: "department_specific" | "org_wide" | string;
   reason: string;
+  /** S2: the point-in-time the answer was evaluated against (ISO date). */
+  as_of?: string | null;
   user_department: string | null;
   primary_candidates: number;
   secondary_candidates: number;

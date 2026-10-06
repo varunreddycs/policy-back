@@ -29,7 +29,8 @@ const REFUSAL_LABELS: Record<RefusalCode, string> = {
   no_authoritative_control: "No authoritative control",
   department_scope_ambiguous: "Department scope ambiguous",
   conflicting_versions: "Conflicting versions",
-  below_groundedness_threshold: "Below grounding threshold"
+  below_groundedness_threshold: "Below grounding threshold",
+  ungrounded_answer: "Answer failed grounding verification"
 };
 
 function refusalLabel(code: RefusalCode): string {
@@ -93,6 +94,9 @@ export default function AnswerCard({ answer, tenantId, department, onCopy, onOpe
               <Chip label="Mode: strict" color="primary" />
               <Chip label={`Department: ${department || "unknown"}`} variant="outlined" />
               {typeof answer.confidence === "number" && <Chip label={`Relevance: ${Math.round(answer.confidence * 100)}%`} />}
+              {answer.grounding?.verified === true && (
+                <Chip label={`Grounded ${answer.grounding.faithfulness_score !== null ? Math.round(answer.grounding.faithfulness_score * 100) + "%" : ""}`} color="success" variant="outlined" />
+              )}
               {typeof answer.grounding_score === "number" && (
                 <Chip label={`Grounding: ${Math.round(answer.grounding_score * 100)}%`} variant="outlined" />
               )}
@@ -147,7 +151,7 @@ export default function AnswerCard({ answer, tenantId, department, onCopy, onOpe
                         mb: 1
                       }}>
                       <Chip size="small" label={item.policy_name || "Policy"} />
-                      <Chip size="small" variant="outlined" label={(item.section_title || item.section_path || "Section").slice(0, 60)} />
+                      <Chip size="small" variant="outlined" label={(item.control_id ? `${item.control_id} ${item.control_name ?? ""}`.trim() : (item.section_title || item.section_path || "Section")).slice(0, 60)} />
                       <Chip size="small" variant="outlined" label={`Score ${item.score.toFixed(3)}`} />
                     </Stack>
                     <Typography variant="body2" sx={{ mb: 1 }}>

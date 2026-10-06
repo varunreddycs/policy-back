@@ -37,17 +37,25 @@ param cosmosKey string
 @description('Cosmos DB database name.')
 param cosmosDatabase string = 'policydb'
 
-@description('Azure OpenAI endpoint URL.')
-param azureOpenAiEndpoint string = ''
+// These defaulted to '' until 2026-10-05, which shipped the platform with
+// embeddings enabled and no endpoint to call: every query threw inside the
+// retriever, was swallowed into an empty candidate list, and came back as
+// "insufficient_evidence" with a healthy 200. It went unnoticed for 47 days.
+// Keep these pointing at a real deployment; an empty value is not a safe default.
+@description('Azure OpenAI endpoint URL. Must be non-empty when embeddings are enabled.')
+@minLength(1)
+param azureOpenAiEndpoint string = 'https://mythri-resource.cognitiveservices.azure.com'
 
 @description('Azure OpenAI API version.')
 param azureOpenAiApiVersion string = '2024-02-15-preview'
 
-@description('Azure OpenAI embeddings deployment name.')
-param azureOpenAiEmbeddingsDeployment string = ''
+@description('Azure OpenAI embeddings deployment. Must emit EMBEDDING_DIM-sized vectors.')
+@minLength(1)
+param azureOpenAiEmbeddingsDeployment string = 'text-embedding-3-large'
 
 @description('Azure OpenAI chat deployment name (LLM answer synthesis).')
-param azureOpenAiChatDeployment string = ''
+@minLength(1)
+param azureOpenAiChatDeployment string = 'gpt-5.2-chat'
 
 @description('Minimum primary-evidence similarity before the API answers (else refuses).')
 param answerRefusalMinScore string = '0.40'
