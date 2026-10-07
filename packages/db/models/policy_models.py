@@ -456,6 +456,13 @@ class PolicyReference(Base):
 	extractor_version: Mapped[str] = mapped_column(Text, nullable=False)
 	confidence: Mapped[float] = mapped_column(Float, nullable=False, default=1.0)
 
+	# Mapping provenance (migration 009). relationship_type/strength follow the NIST
+	# OLIR STRM vocabulary and stay NULL for untyped mappings.
+	relationship_type: Mapped[Optional[str]] = mapped_column(Text, nullable=True)
+	strength: Mapped[Optional[float]] = mapped_column(Float, nullable=True)
+	mapping_source: Mapped[Optional[str]] = mapped_column(Text, nullable=True)
+	mapping_revision: Mapped[Optional[str]] = mapped_column(Text, nullable=True)
+
 	created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), nullable=False, server_default=func.now())
 
 	source_section: Mapped[PolicySection] = relationship(

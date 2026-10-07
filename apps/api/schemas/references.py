@@ -29,6 +29,15 @@ class PolicyReferenceItem(BaseModel):
 	target_external_uri: Optional[str] = None
 	target_external_label: Optional[str] = None
 
+	relationship_type: Optional[str] = None
+	strength: Optional[float] = None
+	mapping_source: Optional[str] = None
+	mapping_revision: Optional[str] = None
+
+	source_section_title: Optional[str] = None
+	source_section_path: Optional[str] = None
+	source_policy_name: Optional[str] = None
+
 	created_at: datetime
 
 

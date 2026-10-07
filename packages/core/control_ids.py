@@ -9,10 +9,13 @@ from __future__ import annotations
 import re
 
 # NIST-style control identifiers: AC-2, ac-2, IA-5(1), SC-7(3).
+# The leading lookbehind (not a word boundary) also rejects a preceding "." so NIST CSF 2.0
+# subcategory ids ("GV.SC-01", "PR.AT-02") are not misread as 800-53 controls
+# ("SC-1", "AT-2"); "see AC-2." is unaffected because the dot FOLLOWS the id.
 # No trailing \b — ")" is not a word character, so a trailing boundary would
 # refuse to match the enhancement suffix and silently truncate "IA-5(1)" to
 # "IA-5".
-_CONTROL_ID_RE = re.compile(r"\b([A-Za-z]{2})-(\d+)(\(\d+\))?")
+_CONTROL_ID_RE = re.compile(r"(?<![\w.])([A-Za-z]{2})-(\d+)(\(\d+\))?")
 
 _TITLE_SEPARATORS = " \t-–—:."
 

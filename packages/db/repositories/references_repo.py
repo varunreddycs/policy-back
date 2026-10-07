@@ -48,6 +48,18 @@ def _hydrate_target(session: Session, *, ref: PolicyReference) -> PolicyReferenc
         if name:
             target_policy_name = name
 
+    source_section_title: Optional[str] = None
+    source_section_path: Optional[str] = None
+    source_policy_name: Optional[str] = None
+    source_row = session.execute(
+        select(PolicySection.title, PolicySection.section_path, Policy.name)
+        .join(PolicyVersion, PolicyVersion.id == PolicySection.policy_version_id)
+        .join(Policy, Policy.id == PolicyVersion.policy_id)
+        .where(PolicySection.id == ref.source_section_id)
+    ).first()
+    if source_row:
+        source_section_title, source_section_path, source_policy_name = source_row
+
     return PolicyReferenceDTO(
         id=ref.id,
         reference_type=ref.reference_type,
@@ -66,6 +78,13 @@ def _hydrate_target(session: Session, *, ref: PolicyReference) -> PolicyReferenc
         target_external_uri=ref.target_external_uri,
         target_external_label=ref.target_external_label,
         created_at=ref.created_at,
+        relationship_type=ref.relationship_type,
+        strength=ref.strength,
+        mapping_source=ref.mapping_source,
+        mapping_revision=ref.mapping_revision,
+        source_section_title=source_section_title,
+        source_section_path=source_section_path,
+        source_policy_name=source_policy_name,
     )
 
 
@@ -275,4 +294,11 @@ def _dto_to_dict(d: PolicyReferenceDTO) -> Dict[str, Any]:
         "target_external_uri": d.target_external_uri,
         "target_external_label": d.target_external_label,
         "created_at": d.created_at,
+        "relationship_type": d.relationship_type,
+        "strength": d.strength,
+        "mapping_source": d.mapping_source,
+        "mapping_revision": d.mapping_revision,
+        "source_section_title": d.source_section_title,
+        "source_section_path": d.source_section_path,
+        "source_policy_name": d.source_policy_name,
     }

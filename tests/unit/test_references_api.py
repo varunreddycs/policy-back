@@ -144,3 +144,80 @@ def test_router_does_not_depend_on_sql_session(client: TestClient) -> None:
     response = client.get(f"/v1/policy-sections/{SECTION}/references", params={"tenant_id": str(TENANT)})
 
     assert response.status_code == 200
+
+
+def test_mapping_provenance_fields_round_trip(client: TestClient, fake_refs: _FakeReferences) -> None:
+    fake_refs.outbound = [
+        PolicyReferenceDTO(
+            id=uuid.uuid4(),
+            reference_type="cross_policy",
+            resolution_status="resolved",
+            matched_text="SP 800-53 Rev 5.2.0: AC-2",
+            confidence=1.0,
+            extractor_version="nist-olir-csf2@abc",
+            source_section_id=SECTION,
+            source_policy_version_id=VERSION,
+            created_at=datetime(2026, 1, 1, tzinfo=timezone.utc),
+            relationship_type="subset_of",
+            strength=7.5,
+            mapping_source="NIST CSF 2.0 Reference Tool (informative references)",
+            mapping_revision="SP 800-53 Rev 5.2.0",
+        )
+    ]
+
+    response = client.get(
+        f"/v1/policy-sections/{SECTION}/references",
+        params={"tenant_id": str(TENANT), "direction": "outbound"},
+    )
+
+    assert response.status_code == 200
+    item = response.json()["outbound"][0]
+    assert item["relationship_type"] == "subset_of"
+    assert item["strength"] == 7.5
+    assert item["mapping_source"] == "NIST CSF 2.0 Reference Tool (informative references)"
+    assert item["mapping_revision"] == "SP 800-53 Rev 5.2.0"
+
+
+def test_untyped_references_serialise_provenance_as_null(client: TestClient) -> None:
+    response = client.get(f"/v1/policy-sections/{SECTION}/references", params={"tenant_id": str(TENANT)})
+
+    assert response.status_code == 200
+    for item in response.json()["outbound"] + response.json()["inbound"]:
+        for key in ("relationship_type", "strength", "mapping_source", "mapping_revision"):
+            assert key in item
+            assert item[key] is None
+
+
+def test_source_display_fields_serialise(client: TestClient, fake_refs: _FakeReferences) -> None:
+    fake_refs.inbound = [
+        PolicyReferenceDTO(
+            id=uuid.uuid4(),
+            reference_type="cross_policy",
+            resolution_status="resolved",
+            matched_text="SP 800-53 Rev 5.2.0: AC-2",
+            confidence=1.0,
+            extractor_version="v1",
+            source_section_id=OTHER_SECTION,
+            source_policy_version_id=VERSION,
+            target_section_id=SECTION,
+            created_at=datetime(2026, 1, 1, tzinfo=timezone.utc),
+            source_section_title="Supply chain",
+            source_section_path="GV.SC-01",
+            source_policy_name="NIST CSF 2.0 - Govern (GV)",
+        )
+    ]
+
+    response = client.get(
+        f"/v1/policy-sections/{SECTION}/references",
+        params={"tenant_id": str(TENANT), "direction": "inbound"},
+    )
+
+    item = response.json()["inbound"][0]
+    assert item["source_section_path"] == "GV.SC-01"
+    assert item["source_section_title"] == "Supply chain"
+    assert item["source_policy_name"] == "NIST CSF 2.0 - Govern (GV)"
+
+
+def test_source_display_fields_default_to_null(client: TestClient) -> None:
+    item = client.get(f"/v1/policy-sections/{SECTION}/references", params={"tenant_id": str(TENANT)}).json()["inbound"][0]
+    assert item["source_section_path"] is None and item["source_policy_name"] is None

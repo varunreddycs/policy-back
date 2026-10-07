@@ -1,2 +1,3 @@
 -r requirements.txt
 pytest
+openpyxl==3.1.5
