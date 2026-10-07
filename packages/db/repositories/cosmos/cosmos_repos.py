@@ -904,8 +904,9 @@ class CosmosReferenceRepository(IReferenceRepository):
     def _hydrate(self, tenant_id: uuid.UUID, dtos: List[PolicyReferenceDTO]) -> List[PolicyReferenceDTO]:
         """Fill source and target display fields: one sections query, then at most one policies query.
 
-        The source policy id is not stored on reference docs, so it is read from the source section's
-        own policy_id (hence the sections query also returns it).
+        Neither reference nor section docs store the source policy id; section docs carry only
+        policy_version_id, and versions live embedded in policy docs. The source policy is therefore
+        matched through the reference's source_policy_version_id against each policy's versions.
         """
         section_ids = sorted(
             {str(d.target_section_id) for d in dtos if d.target_section_id is not None}
@@ -917,31 +918,35 @@ class CosmosReferenceRepository(IReferenceRepository):
 
         if self._sections is not None and section_ids:
             rows = self._sections.query_items(
-                query="SELECT c.id, c.title, c.section_path, c.policy_id FROM c WHERE ARRAY_CONTAINS(@ids, c.id)",
+                query="SELECT c.id, c.title, c.section_path FROM c WHERE ARRAY_CONTAINS(@ids, c.id)",
                 parameters=[{"name": "@ids", "value": section_ids}],
                 partition_key=pk,
             )
             sections = {r["id"]: r for r in rows}
 
-        policy_ids = {str(d.target_policy_id) for d in dtos if d.target_policy_id is not None}
-        policy_ids |= {
-            str(sections[str(d.source_section_id)]["policy_id"])
-            for d in dtos
-            if sections.get(str(d.source_section_id), {}).get("policy_id")
-        }
-        if policy_ids:
+        policy_ids = sorted({str(d.target_policy_id) for d in dtos if d.target_policy_id is not None})
+        version_ids = sorted({str(d.source_policy_version_id) for d in dtos})
+        policy_by_version: Dict[str, str] = {}
+        if policy_ids or version_ids:
             rows = self._policies.query_items(
-                query="SELECT c.id, c.name FROM c WHERE ARRAY_CONTAINS(@ids, c.id)",
-                parameters=[{"name": "@ids", "value": sorted(policy_ids)}],
+                query=(
+                    "SELECT c.id, c.name, ARRAY(SELECT VALUE v.id FROM v IN c.versions) AS version_ids FROM c "
+                    "WHERE ARRAY_CONTAINS(@pids, c.id) "
+                    "OR EXISTS(SELECT VALUE v FROM v IN c.versions WHERE ARRAY_CONTAINS(@vids, v.id))"
+                ),
+                parameters=[{"name": "@pids", "value": policy_ids}, {"name": "@vids", "value": version_ids}],
                 partition_key=pk,
             )
-            policies = {r["id"]: r.get("name") for r in rows}
+            for r in rows:
+                policies[r["id"]] = r.get("name")
+                for vid in r.get("version_ids") or []:
+                    policy_by_version[vid] = r["id"]
 
         hydrated: List[PolicyReferenceDTO] = []
         for d in dtos:
             target = sections.get(str(d.target_section_id), {}) if d.target_section_id else {}
             source = sections.get(str(d.source_section_id), {})
-            source_policy_id = source.get("policy_id")
+            source_policy_id = policy_by_version.get(str(d.source_policy_version_id))
             hydrated.append(
                 dataclasses.replace(
                     d,
