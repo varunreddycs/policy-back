@@ -269,3 +269,34 @@ def test_fts_does_not_duplicate_control_words_as_plain_tokens() -> None:
 
     assert tokens.count("'ac-2'") == 1
     assert "account" in tokens
+
+
+# --- CSF subcategory ids are not 800-53 controls --------------------------
+
+
+@pytest.mark.parametrize(
+    "csf_id",
+    ["GV.SC-01", "ID.RA-01", "PR.AT-02", "DE.CM-09", "RS.MA-01", "GV.OC-05"],
+)
+def test_csf_ids_are_not_control_ids(csf_id: str) -> None:
+    """Regression: \b let 'SC-01' inside 'GV.SC-01' match as 800-53 SC-1."""
+    from packages.core.control_ids import primary_control_id
+
+    assert primary_control_id(csf_id) is None
+    assert extract_control_ids(f"see {csf_id} for details") == set()
+    assert normalize_control_ids(csf_id) == csf_id
+
+
+@pytest.mark.parametrize(
+    ("text", "expected"),
+    [
+        ("AC-2(3)", "AC-2(3)"),
+        ("see AC-2.", "AC-2"),
+        ("(AC-2)", "AC-2"),
+        ("controls: AC-2, AC-3", "AC-2"),
+    ],
+)
+def test_real_control_ids_still_match_after_csf_fix(text: str, expected: str) -> None:
+    from packages.core.control_ids import primary_control_id
+
+    assert primary_control_id(text) == expected

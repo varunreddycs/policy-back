@@ -43,7 +43,34 @@ function describeTarget(ref: PolicyReferenceItem): string {
   return ref.matched_text;
 }
 
-function ReferenceList({ title, items }: { title: string; items: PolicyReferenceItem[] }) {
+function describeSource(ref: PolicyReferenceItem): string {
+  const label = [ref.source_section_path, ref.source_section_title].filter(Boolean).join(" · ");
+  const head = label || ref.source_section_id.slice(0, 8);
+  return ref.source_policy_name ? `${head} · ${ref.source_policy_name}` : head;
+}
+
+function describeMapping(ref: PolicyReferenceItem): string | null {
+  if (!ref.mapping_source) {
+    return null;
+  }
+  const relation = ref.relationship_type
+    ? ref.relationship_type.replace(/_/g, " ")
+    : "Related";
+  const revision = ref.mapping_revision ? ` · ${ref.mapping_revision}` : "";
+  return `${relation} · ${ref.mapping_source}${revision}`;
+}
+
+function ReferenceList({
+  title,
+  items,
+  direction
+}: {
+  title: string;
+  items: PolicyReferenceItem[];
+  direction: "outbound" | "inbound";
+}) {
+  const label = (ref: PolicyReferenceItem) =>
+    direction === "inbound" ? describeSource(ref) : describeTarget(ref);
   return (
     <Box>
       <Typography variant="overline" sx={{
@@ -89,13 +116,20 @@ function ReferenceList({ title, items }: { title: string; items: PolicyReference
                 />
               </Stack>
               <Typography variant="body2" sx={{ fontWeight: 500 }}>
-                {describeTarget(ref)}
+                {label(ref)}
               </Typography>
-              {ref.matched_text && ref.matched_text !== describeTarget(ref) ? (
+              {ref.matched_text && ref.matched_text !== label(ref) ? (
                 <Typography variant="caption" sx={{
                   color: "text.secondary"
                 }}>
                   “{ref.matched_text}”
+                </Typography>
+              ) : null}
+              {describeMapping(ref) ? (
+                <Typography variant="caption" component="div" sx={{
+                  color: "text.secondary"
+                }}>
+                  {describeMapping(ref)}
                 </Typography>
               ) : null}
               {ref.target_external_uri ? (
@@ -171,8 +205,8 @@ export default function ReferencesPanel({ sectionId, tenantId }: ReferencesPanel
         </Typography>
       ) : data ? (
         <Stack spacing={1.5}>
-          <ReferenceList title="Outbound" items={data.outbound} />
-          <ReferenceList title="Inbound" items={data.inbound} />
+          <ReferenceList title="Outbound" items={data.outbound} direction="outbound" />
+          <ReferenceList title="Inbound" items={data.inbound} direction="inbound" />
         </Stack>
       ) : null}
     </Box>

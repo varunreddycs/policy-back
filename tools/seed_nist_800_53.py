@@ -22,19 +22,20 @@ Usage:
 from __future__ import annotations
 
 import argparse
-import hashlib
 import json
 import os
 import re
 import urllib.request
-import uuid
-from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
 from azure.cosmos import CosmosClient
 
 from packages.embeddings import embed_texts
+from tools import nist_seed_common as common
+from tools.nist_seed_common import EMBED_MODEL
+from tools.nist_seed_common import NS as _NS  # noqa: F401  (kept: ids must not drift)
+from tools.nist_seed_common import det_id as _det_id
 
 CATALOG_URL = (
     "https://raw.githubusercontent.com/usnistgov/oscal-content/main/"
@@ -43,21 +44,7 @@ CATALOG_URL = (
 EFFECTIVE_DATE = "2023-10-12"  # SP 800-53 Rev 5.1.1
 CATEGORY = "NIST SP 800-53 Rev 5"
 AUTHORITY_LEVEL = 5
-EMBED_MODEL = "text-embedding-3-large"
 _PARAM_RE = re.compile(r"\{\{\s*insert:\s*param,\s*([^}\s]+)\s*\}\}")
-_NS = uuid.UUID("11111111-2222-3333-4444-555555555555")  # deterministic id namespace
-
-
-def _now() -> str:
-    return datetime.now(timezone.utc).isoformat()
-
-
-def _sha(text: str) -> str:
-    return hashlib.sha256(text.encode("utf-8")).hexdigest()
-
-
-def _det_id(*parts: str) -> str:
-    return str(uuid.uuid5(_NS, "/".join(parts)))
 
 
 def _label(node: dict[str, Any]) -> str:
@@ -180,85 +167,50 @@ def build_docs(catalog: dict[str, Any], tenant_id: str, limit: int | None) -> tu
         if limit:
             controls = controls[:limit]
 
-        version_doc = {
-            "id": version_id,
-            "version_number": 1,
-            "version_label": "Rev 5",
-            "title": fam_title,
-            "effective_date": EFFECTIVE_DATE,
-            "blob_container": "",
-            "blob_name": "",
-            "content_sha256": "",
-            "metadata_json": {"source": "NIST SP 800-53 Rev 5", "family": fam},
-            "metadata_sha256": "",
-            "parse_status": "ready",
-            "is_current": True,
-            "parse_status_updated_at": _now(),
-            "parse_error_code": None,
-            "parse_error_message": None,
-            "created_at": _now(),
-            "correlation_id": None,
-        }
-        policies.append({
-            "id": policy_id,
-            "tenant_id": tenant_id,
-            "external_id": f"nist-800-53-{fam.lower()}",
-            "name": policy_name,
-            "status": "active",
-            "jurisdiction": "US Federal",
-            "category": CATEGORY,
-            "authority_level": AUTHORITY_LEVEL,
-            "department_scope": "all",
-            "policy_type": "security_control_catalog",
-            "current_version_id": version_id,
-            "created_by_user_id": None,
-            "updated_by_user_id": None,
-            "created_at": _now(),
-            "updated_at": _now(),
-            "versions": [version_doc],
-        })
+        version_doc = common.version_doc(
+            version_id=version_id,
+            version_label="Rev 5",
+            title=fam_title,
+            effective_date=EFFECTIVE_DATE,
+            metadata={"source": "NIST SP 800-53 Rev 5", "family": fam},
+        )
+        policies.append(
+            common.policy_doc(
+                policy_id=policy_id,
+                tenant_id=tenant_id,
+                external_id=f"nist-800-53-{fam.lower()}",
+                name=policy_name,
+                category=CATEGORY,
+                authority_level=AUTHORITY_LEVEL,
+                version=version_doc,
+            )
+        )
 
         for idx, (control, label) in enumerate(controls):
             text = _control_text(control, label)
             if not text.strip():
                 continue
-            section_id = _det_id("section", fam, control["id"])
-            sha = _sha(text)
-            sections.append({
-                "id": section_id,
-                "tenant_id": tenant_id,
-                "policy_version_id": version_id,
-                "section_index": idx,
-                "section_path": label,
-                "title": control.get("title", ""),
-                "text": text,
-                "start_offset": 0,
-                "end_offset": len(text),
-                "content_sha256": sha,
-                "created_at": _now(),
-            })
-            embeddings.append({
-                "id": _det_id("embedding", fam, control["id"]),
-                "tenant_id": tenant_id,
-                "policy_id": policy_id,
-                "policy_version_id": version_id,
-                "policy_section_id": section_id,
-                "embedding_model": EMBED_MODEL,
-                "policy_name": policy_name,
-                "section_title": control.get("title", ""),
-                "section_path": label,
-                "section_index": idx,
-                "text": text,
-                "authority_level": AUTHORITY_LEVEL,
-                "department_scope": "all",
-                "policy_type": "security_control_catalog",
-                "is_current": True,
-                "effective_date": EFFECTIVE_DATE,
-                "public_url": _csrc_url(label),
-                "content_sha256": sha,
-                "created_at": _now(),
-                # 'embedding' vector filled in after embedding
-            })
+            section = common.section_doc(
+                section_id=_det_id("section", fam, control["id"]),
+                tenant_id=tenant_id,
+                version_id=version_id,
+                index=idx,
+                path=label,
+                title=control.get("title", ""),
+                text=text,
+            )
+            sections.append(section)
+            embeddings.append(
+                common.embedding_doc(
+                    embedding_id=_det_id("embedding", fam, control["id"]),
+                    section=section,
+                    policy_id=policy_id,
+                    policy_name=policy_name,
+                    authority_level=AUTHORITY_LEVEL,
+                    effective_date=EFFECTIVE_DATE,
+                    public_url=_csrc_url(label),
+                )
+            )
 
     return policies, sections, embeddings
 

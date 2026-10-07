@@ -895,37 +895,63 @@ class CosmosReferenceRepository(IReferenceRepository):
             target_external_label=d.get("target_external_label"),
             match_offset=d.get("match_offset"),
             created_at=_parse_dt(d.get("created_at")),
+            relationship_type=d.get("relationship_type"),
+            strength=d.get("strength"),
+            mapping_source=d.get("mapping_source"),
+            mapping_revision=d.get("mapping_revision"),
         )
 
     def _hydrate(self, tenant_id: uuid.UUID, dtos: List[PolicyReferenceDTO]) -> List[PolicyReferenceDTO]:
-        """Fill target display fields with at most one query per container (mirrors Postgres _hydrate_target)."""
-        section_ids = sorted({str(d.target_section_id) for d in dtos if d.target_section_id is not None})
-        policy_ids = sorted({str(d.target_policy_id) for d in dtos if d.target_policy_id is not None})
-        sections: Dict[str, tuple[Optional[str], Optional[str]]] = {}
+        """Fill source and target display fields: one sections query, then at most one policies query.
+
+        The source policy id is not stored on reference docs, so it is read from the source section's
+        own policy_id (hence the sections query also returns it).
+        """
+        section_ids = sorted(
+            {str(d.target_section_id) for d in dtos if d.target_section_id is not None}
+            | {str(d.source_section_id) for d in dtos}
+        )
+        sections: Dict[str, Dict[str, Any]] = {}
         policies: Dict[str, Optional[str]] = {}
         pk = str(tenant_id)
 
         if self._sections is not None and section_ids:
             rows = self._sections.query_items(
-                query="SELECT c.id, c.title, c.section_path FROM c WHERE ARRAY_CONTAINS(@ids, c.id)",
+                query="SELECT c.id, c.title, c.section_path, c.policy_id FROM c WHERE ARRAY_CONTAINS(@ids, c.id)",
                 parameters=[{"name": "@ids", "value": section_ids}],
                 partition_key=pk,
             )
-            sections = {r["id"]: (r.get("title"), r.get("section_path")) for r in rows}
+            sections = {r["id"]: r for r in rows}
+
+        policy_ids = {str(d.target_policy_id) for d in dtos if d.target_policy_id is not None}
+        policy_ids |= {
+            str(sections[str(d.source_section_id)]["policy_id"])
+            for d in dtos
+            if sections.get(str(d.source_section_id), {}).get("policy_id")
+        }
         if policy_ids:
             rows = self._policies.query_items(
                 query="SELECT c.id, c.name FROM c WHERE ARRAY_CONTAINS(@ids, c.id)",
-                parameters=[{"name": "@ids", "value": policy_ids}],
+                parameters=[{"name": "@ids", "value": sorted(policy_ids)}],
                 partition_key=pk,
             )
             policies = {r["id"]: r.get("name") for r in rows}
 
         hydrated: List[PolicyReferenceDTO] = []
         for d in dtos:
-            title, path = sections.get(str(d.target_section_id), (None, None)) if d.target_section_id else (None, None)
-            name = (policies.get(str(d.target_policy_id)) or None) if d.target_policy_id else None
+            target = sections.get(str(d.target_section_id), {}) if d.target_section_id else {}
+            source = sections.get(str(d.source_section_id), {})
+            source_policy_id = source.get("policy_id")
             hydrated.append(
-                dataclasses.replace(d, target_section_title=title, target_section_path=path, target_policy_name=name)
+                dataclasses.replace(
+                    d,
+                    target_section_title=target.get("title"),
+                    target_section_path=target.get("section_path"),
+                    target_policy_name=(policies.get(str(d.target_policy_id)) or None) if d.target_policy_id else None,
+                    source_section_title=source.get("title"),
+                    source_section_path=source.get("section_path"),
+                    source_policy_name=(policies.get(str(source_policy_id)) or None) if source_policy_id else None,
+                )
             )
         return hydrated
 

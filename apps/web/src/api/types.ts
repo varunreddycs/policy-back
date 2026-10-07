@@ -154,6 +154,13 @@ export interface PolicyReferenceItem {
   target_policy_name: string | null;
   target_external_uri: string | null;
   target_external_label: string | null;
+  relationship_type?: string | null;
+  strength?: number | null;
+  mapping_source?: string | null;
+  mapping_revision?: string | null;
+  source_section_title?: string | null;
+  source_section_path?: string | null;
+  source_policy_name?: string | null;
   created_at: string;
 }
 

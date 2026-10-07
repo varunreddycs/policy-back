@@ -410,5 +410,33 @@ def test_reference_without_target_leaves_display_fields_none() -> None:
     [dto] = repo.list_inbound_for_section(tenant_id=tenant, section_id=uuid.uuid4())
 
     assert (dto.target_section_title, dto.target_section_path, dto.target_policy_name) == (None, None, None)
-    assert sections.query_count == 0
+    assert sections.query_count == 1  # source display fields are looked up even without a target
     assert policies.query_count == 0
+
+
+def test_inbound_references_hydrate_source_display_fields() -> None:
+    from packages.db.repositories.cosmos.cosmos_repos import CosmosReferenceRepository
+
+    tenant, target_sec, csf_sec = uuid.uuid4(), uuid.uuid4(), uuid.uuid4()
+    csf_pol, nist_pol = uuid.uuid4(), uuid.uuid4()
+    refs = _LookupContainer(
+        [_ref_doc(tenant, source_section_id=str(csf_sec), target_section_id=str(target_sec), target_policy_id=str(nist_pol))]
+    )
+    sections = _LookupContainer(
+        [
+            {"id": str(csf_sec), "title": "Supply chain", "section_path": "GV.SC-01", "policy_id": str(csf_pol)},
+            {"id": str(target_sec), "title": "Account Management", "section_path": "AC-2", "policy_id": str(nist_pol)},
+        ]
+    )
+    policies = _LookupContainer(
+        [{"id": str(csf_pol), "name": "NIST CSF 2.0 - Govern (GV)"}, {"id": str(nist_pol), "name": "800-53 AC"}]
+    )
+    repo = CosmosReferenceRepository(refs, policies, sections)
+
+    [dto] = repo.list_inbound_for_section(tenant_id=tenant, section_id=target_sec)
+
+    assert dto.source_section_path == "GV.SC-01"
+    assert dto.source_section_title == "Supply chain"
+    assert dto.source_policy_name == "NIST CSF 2.0 - Govern (GV)"
+    assert (dto.target_section_path, dto.target_policy_name) == ("AC-2", "800-53 AC")
+    assert (refs.query_count, sections.query_count, policies.query_count) == (1, 1, 1)
