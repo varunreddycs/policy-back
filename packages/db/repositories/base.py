@@ -324,6 +324,13 @@ class IReferenceRepository(ABC):
         ...
 
     @abstractmethod
+    def list_mappings_for_sections(
+        self, *, tenant_id: uuid.UUID, section_ids: List[uuid.UUID]
+    ) -> List[PolicyReferenceDTO]:
+        """Crosswalk rows (mapping_source set) touching any of *section_ids* on either side, hydrated."""
+        ...
+
+    @abstractmethod
     def section_exists_for_tenant(self, *, tenant_id: uuid.UUID, section_id: uuid.UUID) -> bool:
         ...
 

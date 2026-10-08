@@ -991,6 +991,19 @@ class CosmosReferenceRepository(IReferenceRepository):
         items = list(self._c.query_items(query=query, parameters=params, partition_key=str(tenant_id)))
         return self._hydrate(tenant_id, [self._to_ref_dto(d) for d in items])
 
+    def list_mappings_for_sections(
+        self, *, tenant_id: uuid.UUID, section_ids: List[uuid.UUID]
+    ) -> List[PolicyReferenceDTO]:
+        if not section_ids:
+            return []
+        query = (
+            "SELECT * FROM c WHERE IS_DEFINED(c.mapping_source) AND NOT IS_NULL(c.mapping_source) "
+            "AND (ARRAY_CONTAINS(@ids, c.source_section_id) OR ARRAY_CONTAINS(@ids, c.target_section_id))"
+        )
+        params = [{"name": "@ids", "value": sorted({str(s) for s in section_ids})}]
+        items = list(self._c.query_items(query=query, parameters=params, partition_key=str(tenant_id)))
+        return self._hydrate(tenant_id, [self._to_ref_dto(d) for d in items])
+
     def section_exists_for_tenant(self, *, tenant_id: uuid.UUID, section_id: uuid.UUID) -> bool:
         if self._sections is not None:
             query = "SELECT c.id FROM c WHERE c.id = @sid AND c.tenant_id = @tid"

@@ -97,6 +97,16 @@ export interface RefusalInfo {
   threshold: number | null;
 }
 
+/** S3: a control another framework officially maps to a cited section. */
+export interface RelatedControl {
+  label: string;
+  framework: string;
+  control_id: string;
+  section_id?: string | null;
+  relationship: string;
+  mapping_source: string;
+}
+
 export interface CitationItem {
   policy_id: string;
   policy_version_id: string;
@@ -112,6 +122,8 @@ export interface CitationItem {
   /** S2: when the cited version took effect (ISO date). */
   effective_date?: string | null;
   version_label?: string | null;
+  related_controls?: RelatedControl[];
+  related_controls_truncated?: boolean;
 }
 
 export interface DecisionInfo {

@@ -157,6 +157,21 @@ export default function AnswerCard({ answer, tenantId, department, onCopy, onOpe
                     <Typography variant="body2" sx={{ mb: 1 }}>
                       {item.snippet}
                     </Typography>
+                    {!!item.related_controls?.length && (
+                      <Stack direction="row" spacing={0.5} useFlexGap sx={{ flexWrap: "wrap", alignItems: "center", mb: 1 }}>
+                        <Typography variant="caption" color="text.secondary">Maps to:</Typography>
+                        {item.related_controls.map((rc) => (
+                          <Chip
+                            key={`${rc.framework}-${rc.control_id}`}
+                            size="small"
+                            variant="outlined"
+                            label={rc.label}
+                            title={`${rc.mapping_source} (${rc.relationship})`}
+                          />
+                        ))}
+                        {item.related_controls_truncated && <Chip size="small" variant="outlined" label="more not shown" />}
+                      </Stack>
+                    )}
                     <Stack direction="row" spacing={1} useFlexGap sx={{
                       flexWrap: "wrap"
                     }}>

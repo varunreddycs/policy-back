@@ -75,9 +75,9 @@ def get_ask_service(
 ) -> AskService:
     if _DB_BACKEND == "cosmos":
         retriever = build_retriever(cosmos_containers=_cosmos_containers())
-        return AskService(retriever=retriever, audit_repo=repos.audit)
+        return AskService(retriever=retriever, audit_repo=repos.audit, references_repo=repos.references)
     retriever = build_retriever(session=session)
-    return AskService(session=session, retriever=retriever)
+    return AskService(session=session, retriever=retriever, references_repo=repos.references)
 
 
 def get_audit_service(repos: RepositorySet = Depends(get_repositories)) -> AuditService:
