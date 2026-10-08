@@ -55,6 +55,19 @@ class AskRequest(BaseModel):
     correlation_id: str | None = None
 
 
+class RelatedControl(BaseModel):
+    """S3: a control another framework officially maps to a cited section (display metadata only)."""
+
+    label: str = Field(description="Display text, e.g. 'CSF 2.0 PR.AA-01'.")
+    framework: str
+    control_id: str
+    section_id: UUID | None = Field(
+        default=None, description="Set when the mapped control is itself a section in the corpus."
+    )
+    relationship: str = "related"
+    mapping_source: str
+
+
 class CitationItem(BaseModel):
     policy_id: UUID
     policy_version_id: UUID
@@ -78,6 +91,11 @@ class CitationItem(BaseModel):
         description="S2: when the cited version took effect — the auditor's anchor.",
     )
     version_label: str | None = None
+    related_controls: list[RelatedControl] = Field(
+        default_factory=list,
+        description="S3: authoritative crosswalk mappings for this section; never LLM-derived or transitive.",
+    )
+    related_controls_truncated: bool = False
 
 
 class RefusalCode(StrEnum):

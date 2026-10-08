@@ -9,7 +9,7 @@ from __future__ import annotations
 import uuid
 from typing import Any, Dict, Iterable, List, Optional
 
-from sqlalchemy import delete, select
+from sqlalchemy import delete, or_, select
 from sqlalchemy.orm import Session
 
 from packages.db.models.policy_models import (
@@ -169,6 +169,22 @@ class PgReferenceRepository(IReferenceRepository):
             .order_by(PolicyReference.created_at.asc())
             .limit(limit)
             .offset(offset)
+        )
+        rows = list(self._session.execute(stmt).scalars().all())
+        return [_hydrate_target(self._session, ref=r) for r in rows]
+
+    def list_mappings_for_sections(
+        self, *, tenant_id: uuid.UUID, section_ids: List[uuid.UUID]
+    ) -> List[PolicyReferenceDTO]:
+        if not section_ids:
+            return []
+        stmt = select(PolicyReference).where(
+            PolicyReference.tenant_id == tenant_id,
+            PolicyReference.mapping_source.is_not(None),
+            or_(
+                PolicyReference.source_section_id.in_(section_ids),
+                PolicyReference.target_section_id.in_(section_ids),
+            ),
         )
         rows = list(self._session.execute(stmt).scalars().all())
         return [_hydrate_target(self._session, ref=r) for r in rows]
