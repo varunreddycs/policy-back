@@ -342,6 +342,13 @@ class _LookupContainer:
         params = {p["name"]: p["value"] for p in (parameters or [])}
         if "ARRAY_CONTAINS(@ids" in query:
             return [r for r in self.rows if r["id"] in params["@ids"]]
+        if "@vids" in params:
+            # Mirrors the real policies query: match by id OR by an embedded version id.
+            return [
+                {**r, "version_ids": [v["id"] for v in r.get("versions", [])]}
+                for r in self.rows
+                if r["id"] in params["@pids"] or any(v["id"] in params["@vids"] for v in r.get("versions", []))
+            ]
         return list(self.rows)
 
 
@@ -411,25 +418,39 @@ def test_reference_without_target_leaves_display_fields_none() -> None:
 
     assert (dto.target_section_title, dto.target_section_path, dto.target_policy_name) == (None, None, None)
     assert sections.query_count == 1  # source display fields are looked up even without a target
-    assert policies.query_count == 0
+    assert policies.query_count == 1  # the source policy is resolved through its version id
+    assert dto.source_policy_name is None
 
 
 def test_inbound_references_hydrate_source_display_fields() -> None:
     from packages.db.repositories.cosmos.cosmos_repos import CosmosReferenceRepository
 
     tenant, target_sec, csf_sec = uuid.uuid4(), uuid.uuid4(), uuid.uuid4()
-    csf_pol, nist_pol = uuid.uuid4(), uuid.uuid4()
+    csf_pol, nist_pol, csf_ver, nist_ver = uuid.uuid4(), uuid.uuid4(), uuid.uuid4(), uuid.uuid4()
     refs = _LookupContainer(
-        [_ref_doc(tenant, source_section_id=str(csf_sec), target_section_id=str(target_sec), target_policy_id=str(nist_pol))]
+        [
+            _ref_doc(
+                tenant,
+                source_section_id=str(csf_sec),
+                source_policy_version_id=str(csf_ver),
+                target_section_id=str(target_sec),
+                target_policy_id=str(nist_pol),
+            )
+        ]
     )
+    # Real Cosmos section docs carry policy_version_id but no policy_id; versions are
+    # embedded in the policy doc. The fakes must keep that shape or the test proves nothing.
     sections = _LookupContainer(
         [
-            {"id": str(csf_sec), "title": "Supply chain", "section_path": "GV.SC-01", "policy_id": str(csf_pol)},
-            {"id": str(target_sec), "title": "Account Management", "section_path": "AC-2", "policy_id": str(nist_pol)},
+            {"id": str(csf_sec), "title": "Supply chain", "section_path": "GV.SC-01", "policy_version_id": str(csf_ver)},
+            {"id": str(target_sec), "title": "Account Management", "section_path": "AC-2", "policy_version_id": str(nist_ver)},
         ]
     )
     policies = _LookupContainer(
-        [{"id": str(csf_pol), "name": "NIST CSF 2.0 - Govern (GV)"}, {"id": str(nist_pol), "name": "800-53 AC"}]
+        [
+            {"id": str(csf_pol), "name": "NIST CSF 2.0 - Govern (GV)", "versions": [{"id": str(csf_ver)}]},
+            {"id": str(nist_pol), "name": "800-53 AC", "versions": [{"id": str(nist_ver)}]},
+        ]
     )
     repo = CosmosReferenceRepository(refs, policies, sections)
 

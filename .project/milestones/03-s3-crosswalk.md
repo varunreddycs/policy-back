@@ -1,6 +1,6 @@
 # 03 — S3 OSCAL-typed crosswalk graph + control_id citations (#14)
 
-**Status: recon.** Started 2026-10-06. Depends on S5 (done).
+**Status: half A + half B deployed; close-out (mapped controls on citations) in progress.**
 
 ## Scope, as written in the issue
 
@@ -178,3 +178,29 @@ Suite: 283 → **306**. Frontend `tsc --noEmit` clean.
 
 **Not deployed.** Production still runs the 2026-08-19 image plus the INC-001
 env fix; these citation fields reach users only after the next build + deploy.
+
+## Half A — CSF 2.0 + crosswalk (deployed 2026-10-07, PR #43)
+
+Loaded into production Cosmos for tenant 0001:
+
+| Item | Count |
+|---|---|
+| CSF policies (functions) | 6 |
+| CSF sections (22 categories + 106 subcategories), embedded | 128 |
+| CSF → 800-53 Rev 5.2.0 links | 737 (736 resolved; RA-4 withdrawn in Rev 5, NIST still lists it) |
+| CSF → ISO 27001:2022 links (IDs only) | 390 (89 Clause, 301 Annex A) |
+
+Review caught, before load:
+- **ISO clause vs Annex A collapse.** Bare "6.1" means clause 6.1 (risk actions) or
+  A.6.1 (screening). Ids keep the kind: `Clause 6.1`, `A.6.1`.
+- **Inbound rows had no source label.** Every CSF link is inbound on an 800-53
+  section; the panel showed N identical "AC-2" rows. Source fields now hydrated.
+
+Missed until live (my sequencing error):
+- **CSF ids cited as 800-53 controls** (`GV.SC-01` → SC-1) was live from the seed
+  until the PR #43 deploy, because data was loaded before the regex fix shipped.
+  Lesson: deploy code fixes that guard new data *before* loading the data.
+- **Source policy name empty in prod.** Cosmos section docs have no `policy_id`;
+  the unit fake did. Fixed on `fix/ref-source-policy-name` by matching
+  `source_policy_version_id` against policies' embedded versions (query validated
+  on live Cosmos). Lesson: fakes must mirror real doc shapes.
